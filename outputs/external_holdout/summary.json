@@ -1,0 +1,122 @@
+{
+  "training_performed": false,
+  "checkpoint_epoch": 14,
+  "exactly_one_query": true,
+  "query_shape": [
+    1,
+    1,
+    32
+  ],
+  "decoder_parameters": 170401,
+  "subjects_discovered": 131,
+  "pilot_subjects_excluded": 40,
+  "holdout_candidates": 91,
+  "subjects_evaluated": 91,
+  "subjects_excluded": 0,
+  "mean_dice": 0.9779041852059535,
+  "median_dice": 0.9789575313475234,
+  "std_dice": 0.005968941599248636,
+  "min_dice": 0.9558242067939178,
+  "max_dice": 0.9852907415308907,
+  "percentile_5": 0.9652662141436172,
+  "percentile_95": 0.9844391267058374,
+  "mean_precision": 0.9963546846607977,
+  "mean_recall": 0.9602013691895291,
+  "mean_iou": 0.9568299858164996,
+  "mean_hd95": 0.19648774229068453,
+  "mean_inference_seconds": 15.968103538021976,
+  "pilot_dice": {
+    "train": 0.9881198015565341,
+    "validation": 0.9828010830803637,
+    "test": 0.9878275119611732
+  },
+  "gaps": {
+    "pilot_train_minus_holdout": 0.010215616350580659,
+    "pilot_validation_minus_holdout": 0.004896897874410278,
+    "pilot_test_minus_holdout": 0.009923326755219786
+  },
+  "best_10": [
+    {
+      "subject": "122",
+      "dice": 0.9852907415308907
+    },
+    {
+      "subject": "101",
+      "dice": 0.9850578280137567
+    },
+    {
+      "subject": "011",
+      "dice": 0.9847280135430888
+    },
+    {
+      "subject": "104",
+      "dice": 0.9846615959975664
+    },
+    {
+      "subject": "124",
+      "dice": 0.9844545773985769
+    },
+    {
+      "subject": "129",
+      "dice": 0.9844236760130979
+    },
+    {
+      "subject": "130",
+      "dice": 0.9842505976626744
+    },
+    {
+      "subject": "013",
+      "dice": 0.984199429313903
+    },
+    {
+      "subject": "041",
+      "dice": 0.9838229584579555
+    },
+    {
+      "subject": "121",
+      "dice": 0.983818846010373
+    }
+  ],
+  "worst_10": [
+    {
+      "subject": "108",
+      "dice": 0.9558242067939178
+    },
+    {
+      "subject": "075",
+      "dice": 0.962518186647681
+    },
+    {
+      "subject": "111",
+      "dice": 0.9633369193502604
+    },
+    {
+      "subject": "051",
+      "dice": 0.963657946400728
+    },
+    {
+      "subject": "110",
+      "dice": 0.9642583160887301
+    },
+    {
+      "subject": "074",
+      "dice": 0.9662741121985042
+    },
+    {
+      "subject": "015",
+      "dice": 0.9666193747921036
+    },
+    {
+      "subject": "106",
+      "dice": 0.967053817738597
+    },
+    {
+      "subject": "058",
+      "dice": 0.9692856944961769
+    },
+    {
+      "subject": "062",
+      "dice": 0.9716676439483983
+    }
+  ]
+}

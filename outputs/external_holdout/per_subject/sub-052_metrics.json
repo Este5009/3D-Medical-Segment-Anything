@@ -1,0 +1,21 @@
+{
+  "subject": "052",
+  "dice": 0.9769262938432353,
+  "iou": 0.9548933649306914,
+  "precision": 0.9962626603925953,
+  "recall": 0.9583262318035647,
+  "false_positives": 907,
+  "false_negatives": 10514,
+  "hd95": 0.20761199295520782,
+  "brain_volume_voxels": 252293,
+  "brain_volume_mm3": 2012.2633965765328,
+  "slice_count": 64,
+  "spacing_x": 0.20761199295520782,
+  "spacing_y": 0.19208665192127228,
+  "spacing_z": 0.20000000298023224,
+  "mean_spacing": 0.19989954928557077,
+  "inference_seconds": 19.958234499999996,
+  "image_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/CAMRI Rat Brain MRI Data/sub-052/ses-1/anat/sub-052_ses-1_acq-RARE_T2w.nii.gz",
+  "ground_truth_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-052_restored_mask.nii.gz",
+  "prediction_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/native_predictions/sub-052_prediction_0000.nii.gz"
+}

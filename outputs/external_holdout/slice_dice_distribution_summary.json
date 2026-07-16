@@ -1,0 +1,335 @@
+{
+  "subjects": 91,
+  "total_slices": 3900,
+  "nonempty_expert_slices": 3439,
+  "empty_expert_slices": 461,
+  "range_distribution": [
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "Empty expert and empty prediction",
+      "slice_count": 434,
+      "percentage_all_slices": 11.128205128205128,
+      "percentage_nonempty_expert_slices": 0.0,
+      "subjects_contributing": 53,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "Dice = 0.00",
+      "slice_count": 63,
+      "percentage_all_slices": 1.6153846153846154,
+      "percentage_nonempty_expert_slices": 1.0468159348647863,
+      "subjects_contributing": 38,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.00 < Dice < 0.50",
+      "slice_count": 59,
+      "percentage_all_slices": 1.5128205128205128,
+      "percentage_nonempty_expert_slices": 1.715615004361733,
+      "subjects_contributing": 33,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.50 <= Dice < 0.70",
+      "slice_count": 41,
+      "percentage_all_slices": 1.0512820512820513,
+      "percentage_nonempty_expert_slices": 1.1922070369293398,
+      "subjects_contributing": 30,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.70 <= Dice < 0.80",
+      "slice_count": 48,
+      "percentage_all_slices": 1.2307692307692308,
+      "percentage_nonempty_expert_slices": 1.395754579819715,
+      "subjects_contributing": 34,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.80 <= Dice < 0.90",
+      "slice_count": 169,
+      "percentage_all_slices": 4.333333333333333,
+      "percentage_nonempty_expert_slices": 4.9142192497819135,
+      "subjects_contributing": 53,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.90 <= Dice < 0.95",
+      "slice_count": 276,
+      "percentage_all_slices": 7.076923076923077,
+      "percentage_nonempty_expert_slices": 8.025588833963361,
+      "subjects_contributing": 53,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.95 <= Dice < 0.97",
+      "slice_count": 430,
+      "percentage_all_slices": 11.025641025641026,
+      "percentage_nonempty_expert_slices": 12.503634777551614,
+      "subjects_contributing": 66,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.97 <= Dice < 0.98",
+      "slice_count": 877,
+      "percentage_all_slices": 22.487179487179485,
+      "percentage_nonempty_expert_slices": 25.50159930212271,
+      "subjects_contributing": 91,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.98 <= Dice < 0.99",
+      "slice_count": 1461,
+      "percentage_all_slices": 37.46153846153846,
+      "percentage_nonempty_expert_slices": 42.48328002326257,
+      "subjects_contributing": 91,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    },
+    {
+      "scope": "dataset",
+      "scope_value": "all",
+      "dice_range": "0.99 <= Dice <= 1.00",
+      "slice_count": 42,
+      "percentage_all_slices": 1.0769230769230769,
+      "percentage_nonempty_expert_slices": 1.2212852573422506,
+      "subjects_contributing": 9,
+      "all_slice_denominator": 3900,
+      "nonempty_slice_denominator": 3439
+    }
+  ],
+  "cumulative_nonempty": {
+    "all subjects": {
+      "dice_gte_0.80": {
+        "count": 3255,
+        "percentage": 94.64960744402443,
+        "denominator": 3439
+      },
+      "dice_gte_0.90": {
+        "count": 3086,
+        "percentage": 89.73538819424252,
+        "denominator": 3439
+      },
+      "dice_gte_0.95": {
+        "count": 2810,
+        "percentage": 81.70979936027915,
+        "denominator": 3439
+      },
+      "dice_gte_0.97": {
+        "count": 2380,
+        "percentage": 69.20616458272754,
+        "denominator": 3439
+      },
+      "dice_gte_0.98": {
+        "count": 1503,
+        "percentage": 43.704565280604825,
+        "denominator": 3439
+      },
+      "dice_gte_0.99": {
+        "count": 42,
+        "percentage": 1.2212852573422506,
+        "denominator": 3439
+      }
+    },
+    "12-slice": {
+      "dice_gte_0.80": {
+        "count": 444,
+        "percentage": 100.0,
+        "denominator": 444
+      },
+      "dice_gte_0.90": {
+        "count": 444,
+        "percentage": 100.0,
+        "denominator": 444
+      },
+      "dice_gte_0.95": {
+        "count": 444,
+        "percentage": 100.0,
+        "denominator": 444
+      },
+      "dice_gte_0.97": {
+        "count": 423,
+        "percentage": 95.27027027027027,
+        "denominator": 444
+      },
+      "dice_gte_0.98": {
+        "count": 331,
+        "percentage": 74.54954954954955,
+        "denominator": 444
+      },
+      "dice_gte_0.99": {
+        "count": 4,
+        "percentage": 0.9009009009009009,
+        "denominator": 444
+      }
+    },
+    "64-slice": {
+      "dice_gte_0.80": {
+        "count": 2811,
+        "percentage": 93.85642737896494,
+        "denominator": 2995
+      },
+      "dice_gte_0.90": {
+        "count": 2642,
+        "percentage": 88.21368948247078,
+        "denominator": 2995
+      },
+      "dice_gte_0.95": {
+        "count": 2366,
+        "percentage": 78.9983305509182,
+        "denominator": 2995
+      },
+      "dice_gte_0.97": {
+        "count": 1957,
+        "percentage": 65.34223706176962,
+        "denominator": 2995
+      },
+      "dice_gte_0.98": {
+        "count": 1172,
+        "percentage": 39.13188647746244,
+        "denominator": 2995
+      },
+      "dice_gte_0.99": {
+        "count": 38,
+        "percentage": 1.2687813021702838,
+        "denominator": 2995
+      }
+    },
+    "first 20%": {
+      "dice_gte_0.80": {
+        "count": 616,
+        "percentage": 92.35382308845577,
+        "denominator": 667
+      },
+      "dice_gte_0.90": {
+        "count": 556,
+        "percentage": 83.35832083958022,
+        "denominator": 667
+      },
+      "dice_gte_0.95": {
+        "count": 467,
+        "percentage": 70.01499250374813,
+        "denominator": 667
+      },
+      "dice_gte_0.97": {
+        "count": 316,
+        "percentage": 47.37631184407796,
+        "denominator": 667
+      },
+      "dice_gte_0.98": {
+        "count": 119,
+        "percentage": 17.841079460269864,
+        "denominator": 667
+      },
+      "dice_gte_0.99": {
+        "count": 7,
+        "percentage": 1.0494752623688155,
+        "denominator": 667
+      }
+    },
+    "middle 60%": {
+      "dice_gte_0.80": {
+        "count": 2103,
+        "percentage": 99.90498812351544,
+        "denominator": 2105
+      },
+      "dice_gte_0.90": {
+        "count": 2094,
+        "percentage": 99.47743467933492,
+        "denominator": 2105
+      },
+      "dice_gte_0.95": {
+        "count": 2059,
+        "percentage": 97.8147268408551,
+        "denominator": 2105
+      },
+      "dice_gte_0.97": {
+        "count": 1929,
+        "percentage": 91.63895486935867,
+        "denominator": 2105
+      },
+      "dice_gte_0.98": {
+        "count": 1338,
+        "percentage": 63.56294536817102,
+        "denominator": 2105
+      },
+      "dice_gte_0.99": {
+        "count": 35,
+        "percentage": 1.66270783847981,
+        "denominator": 2105
+      }
+    },
+    "last 20%": {
+      "dice_gte_0.80": {
+        "count": 536,
+        "percentage": 80.35982008995502,
+        "denominator": 667
+      },
+      "dice_gte_0.90": {
+        "count": 436,
+        "percentage": 65.36731634182908,
+        "denominator": 667
+      },
+      "dice_gte_0.95": {
+        "count": 284,
+        "percentage": 42.57871064467766,
+        "denominator": 667
+      },
+      "dice_gte_0.97": {
+        "count": 135,
+        "percentage": 20.239880059970016,
+        "denominator": 667
+      },
+      "dice_gte_0.98": {
+        "count": 46,
+        "percentage": 6.896551724137931,
+        "denominator": 667
+      },
+      "dice_gte_0.99": {
+        "count": 0,
+        "percentage": 0.0,
+        "denominator": 667
+      }
+    }
+  },
+  "empty_expert": {
+    "true_empty_predictions": 434,
+    "false_positive_prediction_slices": 27,
+    "percentage_with_predicted_foreground": 5.856832971800434
+  },
+  "nonempty_expert": {
+    "zero_predicted_foreground": 32,
+    "dice_below_0_50": 95,
+    "dice_below_0_90": 353,
+    "dice_above_0_95": 2810,
+    "dice_above_0_98": 1503
+  }
+}

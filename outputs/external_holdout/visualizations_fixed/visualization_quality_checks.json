@@ -1,0 +1,1326 @@
+{
+  "figures_regenerated": 159,
+  "subjects_validated": 91,
+  "blank_figures": 0,
+  "clipped_labels_detected": 0,
+  "best_subjects": [
+    "122",
+    "101",
+    "011",
+    "104",
+    "124"
+  ],
+  "median_subjects": [
+    "095",
+    "096",
+    "076",
+    "047",
+    "090"
+  ],
+  "worst_subjects": [
+    "108",
+    "075",
+    "111",
+    "051",
+    "110",
+    "074",
+    "015",
+    "106",
+    "058",
+    "062"
+  ],
+  "hard_slices": 40,
+  "representative_sample": [
+    "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-122_overview.png",
+    "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-101_overview.png",
+    "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-108_overview.png",
+    "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-075_overview.png",
+    "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-122_per_slice_metrics.png",
+    "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-108_per_slice_metrics.png",
+    "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-076_per_slice_metrics.png",
+    "outputs/external_holdout/visualizations_fixed/hard_slices/sub-044_slice-003.png",
+    "outputs/external_holdout/visualizations_fixed/hard_slices/sub-045_slice-054.png",
+    "outputs/external_holdout/visualizations_fixed/hard_slices/sub-046_slice-054.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/sorted_dice_by_subject.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_histogram.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_by_acquisition_group.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_vs_brain_volume.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_vs_slice_count.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/recall_vs_dice.png",
+    "outputs/external_holdout/visualizations_fixed/dataset_charts/precision_vs_dice.png"
+  ],
+  "image_checks": [
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-011_overview.png",
+      "width": 2998,
+      "height": 2810,
+      "nonwhite_fraction": 0.6822112725209452,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-015_overview.png",
+      "width": 2998,
+      "height": 2810,
+      "nonwhite_fraction": 0.6525600697024588,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-047_overview.png",
+      "width": 2848,
+      "height": 2810,
+      "nonwhite_fraction": 0.418210069375025,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-051_overview.png",
+      "width": 2852,
+      "height": 2810,
+      "nonwhite_fraction": 0.42562003064591,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-058_overview.png",
+      "width": 2850,
+      "height": 2810,
+      "nonwhite_fraction": 0.42242654679403135,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-062_overview.png",
+      "width": 2848,
+      "height": 2810,
+      "nonwhite_fraction": 0.4117622655843896,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-074_overview.png",
+      "width": 2848,
+      "height": 2810,
+      "nonwhite_fraction": 0.41713020812507495,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-075_overview.png",
+      "width": 2848,
+      "height": 2810,
+      "nonwhite_fraction": 0.4151106851533448,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-076_overview.png",
+      "width": 2843,
+      "height": 2810,
+      "nonwhite_fraction": 0.4040237431513751,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-090_overview.png",
+      "width": 2841,
+      "height": 2810,
+      "nonwhite_fraction": 0.3997157784901061,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-095_overview.png",
+      "width": 2844,
+      "height": 2810,
+      "nonwhite_fraction": 0.4046778883933711,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-096_overview.png",
+      "width": 2844,
+      "height": 2810,
+      "nonwhite_fraction": 0.40579480557182257,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-101_overview.png",
+      "width": 2998,
+      "height": 2810,
+      "nonwhite_fraction": 0.6079484781075878,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-104_overview.png",
+      "width": 2998,
+      "height": 2810,
+      "nonwhite_fraction": 0.6389200154788839,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-106_overview.png",
+      "width": 2850,
+      "height": 2810,
+      "nonwhite_fraction": 0.4205228195042767,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-108_overview.png",
+      "width": 2858,
+      "height": 2810,
+      "nonwhite_fraction": 0.44163103382152613,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-110_overview.png",
+      "width": 2853,
+      "height": 2810,
+      "nonwhite_fraction": 0.42905039709714315,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-111_overview.png",
+      "width": 2857,
+      "height": 2810,
+      "nonwhite_fraction": 0.4377581690472424,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-122_overview.png",
+      "width": 2998,
+      "height": 2810,
+      "nonwhite_fraction": 0.6483012399725558,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/subject_overviews/sub-124_overview.png",
+      "width": 2998,
+      "height": 2810,
+      "nonwhite_fraction": 0.6381388303946404,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-001_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06313770379412989,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-002_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.05971767014470651,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-004_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06302008821605588,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-008_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06454974657996634,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-010_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06413634312617834,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-011_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06225187048120075,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-012_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06051693139645107,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-013_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06185005369216724,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-014_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06124514234545576,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-015_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.060312087908244105,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-016_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06360751025747756,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-017_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06266658563288549,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-019_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06254787697323087,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-026_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.0624151768693444,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-027_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06417460098149981,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-028_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06294838206436763,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-029_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06269238235818797,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-031_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06235374568451392,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-032_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06085141436011879,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-033_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06413918513828794,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-034_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06210452308413405,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-036_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06354804661949218,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-037_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06404780351814865,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-038_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06454493702101165,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-039_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06306599764244164,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-040_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06383137336518718,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-041_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06249868830210326,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-044_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1950217129725173,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-045_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1841569192938518,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-046_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19481293439062014,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-047_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.16582441087275132,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-048_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.14213908195138672,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-049_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.20578878515787596,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-051_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19598777847346346,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-052_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.20578594314576637,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-053_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.13302693527907686,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-054_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.13268414489539646,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-055_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.14458911500617372,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-056_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.18880907450094267,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-057_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1522041771456754,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-058_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19698117101392498,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-059_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.15434705427631004,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-060_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1737929755954234,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-061_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.13181711258565387,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-062_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1767950148484202,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-065_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1736994078121229,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-067_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.145109859071178,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-068_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.15351718674030831,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-069_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.15091936905582237,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-072_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1751610765017192,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-074_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1318829160968068,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-075_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1012442766248439,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-076_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.18697838146973125,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-077_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.17456906351765894,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-079_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1440985399927944,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-080_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.15418812021448883,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-082_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.15423905781614541,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-083_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1555278009996887,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-084_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.20705916457086493,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-085_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.20780923715148186,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-086_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.16321872300088497,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-087_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19827188174431334,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-089_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1970084980534403,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-090_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.20862708079009687,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-091_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19648097688263627,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-092_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19396907541038655,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-093_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.142706172675409,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-095_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19769845114712353,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-096_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.19874518606871897,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-098_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.061716479123016275,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-101_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06315759787889705,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-103_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06040915355260258,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-104_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.062172512758448206,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-105_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06258722791013295,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-106_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.11010763792940617,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-107_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.08920529471228344,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-108_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.09752036629600999,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-110_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1752074231607372,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-111_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.14255576464991657,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-113_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.16451511775549252,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-115_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.10954994770697718,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-116_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.10123203411114104,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-117_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.1421089128997618,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-118_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.11089531251639623,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-119_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.10971063069932736,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-121_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.05983616018804501,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-122_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.061288209759731926,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-124_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06084354417273837,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-128_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06412672400826894,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-129_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.062033910014026424,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/per_slice_charts/sub-130_per_slice_metrics.png",
+      "width": 2278,
+      "height": 2008,
+      "nonwhite_fraction": 0.06279994158572033,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/hard_slice_contact_sheet_top12.png",
+      "width": 2548,
+      "height": 5061,
+      "nonwhite_fraction": 0.45896778300030056,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-015_slice-000.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.4645302916266556,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-044_slice-003.png",
+      "width": 2790,
+      "height": 795,
+      "nonwhite_fraction": 0.5866418701111337,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-045_slice-054.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.6671597761110102,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-046_slice-054.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.47964971927365846,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-048_slice-057.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.3470214459353075,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-048_slice-058.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.3762338549912192,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-051_slice-055.png",
+      "width": 2874,
+      "height": 795,
+      "nonwhite_fraction": 0.6738440058997824,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-052_slice-056.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.5270111511942764,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-053_slice-003.png",
+      "width": 2835,
+      "height": 795,
+      "nonwhite_fraction": 0.631177220946613,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-054_slice-060.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.3762515896291298,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-062_slice-059.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.7180664054051716,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-067_slice-062.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.26289221665671797,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-074_slice-001.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.35731791717491546,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-074_slice-058.png",
+      "width": 2762,
+      "height": 795,
+      "nonwhite_fraction": 0.5587118986788354,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-075_slice-003.png",
+      "width": 2668,
+      "height": 795,
+      "nonwhite_fraction": 0.4547773283169736,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-079_slice-012.png",
+      "width": 2684,
+      "height": 795,
+      "nonwhite_fraction": 0.445402993748184,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-079_slice-014.png",
+      "width": 2690,
+      "height": 795,
+      "nonwhite_fraction": 0.45759182623740385,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-079_slice-015.png",
+      "width": 2693,
+      "height": 795,
+      "nonwhite_fraction": 0.46282161765770563,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-079_slice-016.png",
+      "width": 2692,
+      "height": 795,
+      "nonwhite_fraction": 0.46275150223817135,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-079_slice-017.png",
+      "width": 2695,
+      "height": 795,
+      "nonwhite_fraction": 0.46833339167570975,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-079_slice-061.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.37608678726220446,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-080_slice-006.png",
+      "width": 2819,
+      "height": 795,
+      "nonwhite_fraction": 0.6042264864876925,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-080_slice-061.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.29083897813881465,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-082_slice-004.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.6521177752978121,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-082_slice-059.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.37612225653802567,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-083_slice-058.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.25556435078248685,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-084_slice-050.png",
+      "width": 2908,
+      "height": 795,
+      "nonwhite_fraction": 0.7182735978822247,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-105_slice-001.png",
+      "width": 2748,
+      "height": 795,
+      "nonwhite_fraction": 0.54162753014199,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-105_slice-002.png",
+      "width": 2769,
+      "height": 795,
+      "nonwhite_fraction": 0.5585637028103145,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-105_slice-003.png",
+      "width": 2703,
+      "height": 795,
+      "nonwhite_fraction": 0.48832859831959363,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-045.png",
+      "width": 2811,
+      "height": 795,
+      "nonwhite_fraction": 0.6081400786219456,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-046.png",
+      "width": 2811,
+      "height": 795,
+      "nonwhite_fraction": 0.6087159832553602,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-047.png",
+      "width": 2810,
+      "height": 795,
+      "nonwhite_fraction": 0.6075328454083574,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-048.png",
+      "width": 2813,
+      "height": 795,
+      "nonwhite_fraction": 0.6104921668712424,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-049.png",
+      "width": 2817,
+      "height": 795,
+      "nonwhite_fraction": 0.6144843861282465,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-050.png",
+      "width": 2816,
+      "height": 795,
+      "nonwhite_fraction": 0.612332493567753,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-051.png",
+      "width": 2819,
+      "height": 795,
+      "nonwhite_fraction": 0.6167591433690077,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-108_slice-052.png",
+      "width": 2821,
+      "height": 795,
+      "nonwhite_fraction": 0.6189985709157955,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-111_slice-051.png",
+      "width": 2771,
+      "height": 795,
+      "nonwhite_fraction": 0.5674335945745355,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/hard_slices/sub-111_slice-053.png",
+      "width": 2766,
+      "height": 795,
+      "nonwhite_fraction": 0.5617861999026817,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_by_acquisition_group.png",
+      "width": 1468,
+      "height": 1108,
+      "nonwhite_fraction": 0.04016552887594802,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_histogram.png",
+      "width": 1648,
+      "height": 1108,
+      "nonwhite_fraction": 0.2247352660264274,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_vs_brain_volume.png",
+      "width": 1558,
+      "height": 1108,
+      "nonwhite_fraction": 0.05583560799506912,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/dice_vs_slice_count.png",
+      "width": 1558,
+      "height": 1108,
+      "nonwhite_fraction": 0.04399906387435525,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/precision_vs_dice.png",
+      "width": 1558,
+      "height": 1108,
+      "nonwhite_fraction": 0.05522851661159591,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/recall_vs_dice.png",
+      "width": 1558,
+      "height": 1108,
+      "nonwhite_fraction": 0.047127785784793055,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "path": "outputs/external_holdout/visualizations_fixed/dataset_charts/sorted_dice_by_subject.png",
+      "width": 1828,
+      "height": 3988,
+      "nonwhite_fraction": 0.3382123942944808,
+      "border_ink_fraction": 0.0,
+      "passed": true
+    }
+  ]
+}

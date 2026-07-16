@@ -1,0 +1,12 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "pilot_split": "outputs/generalization_pilot/subject_split.json",
+  "checkpoint": "outputs/generalization_pilot/best_checkpoint.pt",
+  "output_directory": "outputs/external_holdout",
+  "image_root": "Image_Database/CAMRI Rat Brain MRI Data",
+  "mask_directory": "Mask_Database/RodentBrainMask/CAMRI Rat",
+  "embedding_dim": 32,
+  "num_heads": 4,
+  "expected_decoder_parameters": 170401,
+  "expected_checkpoint_epoch": 14
+}

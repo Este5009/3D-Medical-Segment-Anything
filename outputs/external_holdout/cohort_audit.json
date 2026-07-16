@@ -1,0 +1,422 @@
+{
+  "subjects_discovered": 131,
+  "pilot_subjects_excluded": [
+    "003",
+    "005",
+    "006",
+    "007",
+    "009",
+    "018",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "030",
+    "035",
+    "042",
+    "043",
+    "050",
+    "063",
+    "064",
+    "066",
+    "070",
+    "071",
+    "073",
+    "078",
+    "081",
+    "088",
+    "094",
+    "097",
+    "099",
+    "100",
+    "102",
+    "109",
+    "112",
+    "114",
+    "120",
+    "123",
+    "125",
+    "126",
+    "127",
+    "131"
+  ],
+  "holdout_candidates": 91,
+  "geometry": {
+    "001": {
+      "status": "original_geometry_valid"
+    },
+    "002": {
+      "status": "original_geometry_valid"
+    },
+    "004": {
+      "status": "original_geometry_valid"
+    },
+    "008": {
+      "status": "original_geometry_valid"
+    },
+    "010": {
+      "status": "original_geometry_valid"
+    },
+    "011": {
+      "status": "original_geometry_valid"
+    },
+    "012": {
+      "status": "original_geometry_valid"
+    },
+    "013": {
+      "status": "original_geometry_valid"
+    },
+    "014": {
+      "status": "original_geometry_valid"
+    },
+    "015": {
+      "status": "original_geometry_valid"
+    },
+    "016": {
+      "status": "original_geometry_valid"
+    },
+    "017": {
+      "status": "original_geometry_valid"
+    },
+    "019": {
+      "status": "original_geometry_valid"
+    },
+    "026": {
+      "status": "original_geometry_valid"
+    },
+    "027": {
+      "status": "original_geometry_valid"
+    },
+    "028": {
+      "status": "original_geometry_valid"
+    },
+    "029": {
+      "status": "original_geometry_valid"
+    },
+    "031": {
+      "status": "original_geometry_valid"
+    },
+    "032": {
+      "status": "original_geometry_valid"
+    },
+    "033": {
+      "status": "original_geometry_valid"
+    },
+    "034": {
+      "status": "original_geometry_valid"
+    },
+    "036": {
+      "status": "original_geometry_valid"
+    },
+    "037": {
+      "status": "original_geometry_valid"
+    },
+    "038": {
+      "status": "original_geometry_valid"
+    },
+    "039": {
+      "status": "original_geometry_valid"
+    },
+    "040": {
+      "status": "original_geometry_valid"
+    },
+    "041": {
+      "status": "original_geometry_valid"
+    },
+    "044": {
+      "status": "original_geometry_valid"
+    },
+    "045": {
+      "status": "original_geometry_valid"
+    },
+    "046": {
+      "status": "original_geometry_valid"
+    },
+    "047": {
+      "status": "original_geometry_valid"
+    },
+    "048": {
+      "status": "original_geometry_valid"
+    },
+    "049": {
+      "status": "original_geometry_valid"
+    },
+    "051": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 271808,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-051_restored_mask.nii.gz"
+    },
+    "052": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 252293,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-052_restored_mask.nii.gz"
+    },
+    "053": {
+      "status": "original_geometry_valid"
+    },
+    "054": {
+      "status": "original_geometry_valid"
+    },
+    "055": {
+      "status": "original_geometry_valid"
+    },
+    "056": {
+      "status": "original_geometry_valid"
+    },
+    "057": {
+      "status": "original_geometry_valid"
+    },
+    "058": {
+      "status": "original_geometry_valid"
+    },
+    "059": {
+      "status": "original_geometry_valid"
+    },
+    "060": {
+      "status": "original_geometry_valid"
+    },
+    "061": {
+      "status": "original_geometry_valid"
+    },
+    "062": {
+      "status": "original_geometry_valid"
+    },
+    "065": {
+      "status": "original_geometry_valid"
+    },
+    "067": {
+      "status": "original_geometry_valid"
+    },
+    "068": {
+      "status": "original_geometry_valid"
+    },
+    "069": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 256739,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-069_restored_mask.nii.gz"
+    },
+    "072": {
+      "status": "original_geometry_valid"
+    },
+    "074": {
+      "status": "original_geometry_valid"
+    },
+    "075": {
+      "status": "original_geometry_valid"
+    },
+    "076": {
+      "status": "original_geometry_valid"
+    },
+    "077": {
+      "status": "original_geometry_valid"
+    },
+    "079": {
+      "status": "original_geometry_valid"
+    },
+    "080": {
+      "status": "original_geometry_valid"
+    },
+    "082": {
+      "status": "original_geometry_valid"
+    },
+    "083": {
+      "status": "original_geometry_valid"
+    },
+    "084": {
+      "status": "original_geometry_valid"
+    },
+    "085": {
+      "status": "original_geometry_valid"
+    },
+    "086": {
+      "status": "original_geometry_valid"
+    },
+    "087": {
+      "status": "original_geometry_valid"
+    },
+    "089": {
+      "status": "original_geometry_valid"
+    },
+    "090": {
+      "status": "original_geometry_valid"
+    },
+    "091": {
+      "status": "original_geometry_valid"
+    },
+    "092": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 259570,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-092_restored_mask.nii.gz"
+    },
+    "093": {
+      "status": "original_geometry_valid"
+    },
+    "095": {
+      "status": "original_geometry_valid"
+    },
+    "096": {
+      "status": "original_geometry_valid"
+    },
+    "098": {
+      "status": "original_geometry_valid"
+    },
+    "101": {
+      "status": "original_geometry_valid"
+    },
+    "103": {
+      "status": "original_geometry_valid"
+    },
+    "104": {
+      "status": "original_geometry_valid"
+    },
+    "105": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 247500,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-105_restored_mask.nii.gz"
+    },
+    "106": {
+      "status": "original_geometry_valid"
+    },
+    "107": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 277735,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-107_restored_mask.nii.gz"
+    },
+    "108": {
+      "status": "original_geometry_valid"
+    },
+    "110": {
+      "status": "original_geometry_valid"
+    },
+    "111": {
+      "status": "original_geometry_valid"
+    },
+    "113": {
+      "status": "original_geometry_valid"
+    },
+    "115": {
+      "status": "original_geometry_valid"
+    },
+    "116": {
+      "status": "restored",
+      "method": "SimpleITK identity physical transform with nearest-neighbor interpolation",
+      "original_mask_size": [
+        144,
+        144,
+        64
+      ],
+      "image_size": [
+        144,
+        144,
+        64
+      ],
+      "restored_foreground_voxels": 260984,
+      "simpleitk_reference_geometry_matches": true,
+      "restored_mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/external_holdout/per_subject/sub-116_restored_mask.nii.gz"
+    },
+    "117": {
+      "status": "original_geometry_valid"
+    },
+    "118": {
+      "status": "original_geometry_valid"
+    },
+    "119": {
+      "status": "original_geometry_valid"
+    },
+    "121": {
+      "status": "original_geometry_valid"
+    },
+    "122": {
+      "status": "original_geometry_valid"
+    },
+    "124": {
+      "status": "original_geometry_valid"
+    },
+    "128": {
+      "status": "original_geometry_valid"
+    },
+    "129": {
+      "status": "original_geometry_valid"
+    },
+    "130": {
+      "status": "original_geometry_valid"
+    }
+  },
+  "excluded": [],
+  "subjects_evaluated": 91,
+  "subjects_excluded": 0
+}

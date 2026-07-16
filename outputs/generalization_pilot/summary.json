@@ -1,0 +1,213 @@
+{
+  "architecture": "frozen RS2 encoder; one query; multi-scale attention; top-down FPN; one mask head",
+  "trainable_parameters": 170401,
+  "device": "cpu",
+  "encoder_gradients_disabled": true,
+  "available_paired_subjects": 124,
+  "subset_subjects": 40,
+  "split_subjects": {
+    "train": [
+      "030",
+      "025",
+      "003",
+      "066",
+      "020",
+      "006",
+      "042",
+      "070",
+      "102",
+      "100",
+      "005",
+      "088",
+      "125",
+      "120",
+      "114",
+      "050",
+      "071",
+      "081",
+      "097",
+      "024",
+      "126",
+      "018",
+      "131",
+      "022",
+      "073",
+      "023",
+      "021",
+      "063"
+    ],
+    "validation": [
+      "035",
+      "112",
+      "123",
+      "094",
+      "109",
+      "127"
+    ],
+    "test": [
+      "064",
+      "007",
+      "043",
+      "078",
+      "009",
+      "099"
+    ]
+  },
+  "best_epoch": 14,
+  "epochs_run": 20,
+  "best_validation_dice": 0.9828010830803637,
+  "metrics": {
+    "train": {
+      "count": 28,
+      "mean_dice": 0.9881198015565341,
+      "median_dice": 0.9883039823700395,
+      "std_dice": 0.0012206289396466642,
+      "mean_precision": 0.990473818963557,
+      "mean_recall": 0.9857958179425461,
+      "false_positives": 55181,
+      "false_negatives": 76635,
+      "best_subject": "024",
+      "best_dice": 0.9903898775141537,
+      "worst_subject": "066",
+      "worst_dice": 0.9858026185329931
+    },
+    "validation": {
+      "count": 6,
+      "mean_dice": 0.9828010830803637,
+      "median_dice": 0.9876899203307555,
+      "std_dice": 0.008008421658433375,
+      "mean_precision": 0.9821529341925489,
+      "mean_recall": 0.9835416157351261,
+      "false_positives": 23334,
+      "false_negatives": 20180,
+      "best_subject": "123",
+      "best_dice": 0.9892303793194481,
+      "worst_subject": "112",
+      "worst_dice": 0.9693569253513273
+    },
+    "test": {
+      "count": 6,
+      "mean_dice": 0.9878275119611732,
+      "median_dice": 0.9879913349964944,
+      "std_dice": 0.0012252117781513408,
+      "mean_precision": 0.9900036065150815,
+      "mean_recall": 0.9856787927307776,
+      "false_positives": 12448,
+      "false_negatives": 16462,
+      "best_subject": "099",
+      "best_dice": 0.9891848375874777,
+      "worst_subject": "064",
+      "worst_dice": 0.9860176322873824
+    }
+  },
+  "train_validation_gap": 0.005318718476170381,
+  "train_test_gap": 0.00029228959536087284,
+  "overfitting_detected": false,
+  "worst_10": [
+    {
+      "split": "validation",
+      "subject": "112",
+      "dice": 0.9693569253513273
+    },
+    {
+      "split": "validation",
+      "subject": "109",
+      "dice": 0.9739853185770081
+    },
+    {
+      "split": "train",
+      "subject": "066",
+      "dice": 0.9858026185329931
+    },
+    {
+      "split": "train",
+      "subject": "050",
+      "dice": 0.9858493488737841
+    },
+    {
+      "split": "test",
+      "subject": "064",
+      "dice": 0.9860176322873824
+    },
+    {
+      "split": "train",
+      "subject": "114",
+      "dice": 0.9861798227102959
+    },
+    {
+      "split": "train",
+      "subject": "102",
+      "dice": 0.9862414475278396
+    },
+    {
+      "split": "train",
+      "subject": "071",
+      "dice": 0.9865914313140857
+    },
+    {
+      "split": "train",
+      "subject": "120",
+      "dice": 0.9866455580989475
+    },
+    {
+      "split": "test",
+      "subject": "078",
+      "dice": 0.9867738462033332
+    }
+  ],
+  "best_10": [
+    {
+      "split": "train",
+      "subject": "024",
+      "dice": 0.9903898775141537
+    },
+    {
+      "split": "train",
+      "subject": "097",
+      "dice": 0.9902167308626617
+    },
+    {
+      "split": "train",
+      "subject": "021",
+      "dice": 0.9898394824663866
+    },
+    {
+      "split": "train",
+      "subject": "020",
+      "dice": 0.9894157597247114
+    },
+    {
+      "split": "train",
+      "subject": "125",
+      "dice": 0.9892775271763001
+    },
+    {
+      "split": "validation",
+      "subject": "123",
+      "dice": 0.9892303793194481
+    },
+    {
+      "split": "test",
+      "subject": "099",
+      "dice": 0.9891848375874777
+    },
+    {
+      "split": "train",
+      "subject": "003",
+      "dice": 0.9890981352970134
+    },
+    {
+      "split": "test",
+      "subject": "043",
+      "dice": 0.9890060856958576
+    },
+    {
+      "split": "validation",
+      "subject": "127",
+      "dice": 0.9888540345728875
+    }
+  ],
+  "mean_decoder_inference_seconds": 0.3021328227249967,
+  "peak_memory_mib": 9687.015625,
+  "elapsed_training_seconds": 844.5412349170001
+}
