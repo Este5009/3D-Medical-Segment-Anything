@@ -1,0 +1,17 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "subjects": ["001", "002"],
+  "image_pattern": "Image_Database/CAMRI Rat Brain MRI Data/sub-{subject}/ses-1/anat/sub-{subject}_ses-1_acq-RARE_T2w.nii.gz",
+  "mask_directory": "Mask_Database/RodentBrainMask/CAMRI Rat",
+  "output_directory": "outputs/query_decoder_multiscale_overfit",
+  "previous_output_directory": "outputs/query_decoder_overfit",
+  "seed": 17,
+  "embedding_dim": 32,
+  "num_heads": 4,
+  "batch_size": 1,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "max_epochs": 100,
+  "minimum_improvement": 0.0005,
+  "early_stop_patience": 12
+}

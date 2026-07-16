@@ -1,0 +1,9 @@
+{
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_decoder_overfit/best_checkpoint.pt",
+  "device": "cpu",
+  "subject_dice": {
+    "001": 0.9073911309242249,
+    "002": 0.8987696170806885
+  },
+  "mean_dice": 0.9030803740024567
+}

@@ -1,0 +1,12 @@
+{
+  "previous": {
+    "mean_decoder_seconds": 0.010483410550000016,
+    "std_decoder_seconds": 0.0018253455982559473,
+    "runs": 20
+  },
+  "multiscale_fpn": {
+    "mean_decoder_seconds": 0.28073149779999973,
+    "std_decoder_seconds": 0.011307463964603661,
+    "runs": 20
+  }
+}

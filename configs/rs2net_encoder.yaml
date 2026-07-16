@@ -1,0 +1,17 @@
+{
+  "baseline_root": "../RS2-Net-Reproduction",
+  "dataset_root": "../Datasets",
+  "baseline_project": "Rodent-Skull-Stripping",
+  "checkpoint": "models/RS2_pretrained_model_clean.pt",
+  "sample_volume": "Image_Database/CAMRI Rat Brain MRI Data/sub-021/ses-1/anat/sub-021_ses-1_acq-RARE_T2w.nii.gz",
+  "model": {
+    "image_size": [128, 128, 160],
+    "in_channels": 1,
+    "out_channels": 1,
+    "feature_size": 48
+  },
+  "inference": {
+    "device": "auto",
+    "deterministic": true
+  }
+}

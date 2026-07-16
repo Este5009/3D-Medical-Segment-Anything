@@ -1,0 +1,80 @@
+{
+  "architecture": "one query; level4 cross-attention; level1 dot-product mask",
+  "trainable_parameters": 24577,
+  "subjects": [
+    "001",
+    "002"
+  ],
+  "device": "cpu",
+  "encoder_gradients_disabled": true,
+  "starting_mean_dice": 0.09724229201674461,
+  "final_mean_dice": 0.9030803740024567,
+  "best_epoch": 15,
+  "overfit_threshold": 0.9,
+  "successfully_overfit": true,
+  "epochs_run": 15,
+  "peak_memory_mib": 9666.296875,
+  "elapsed_seconds": 2.212333917617798,
+  "geometry": {
+    "001": {
+      "original_shape": [
+        256,
+        256,
+        12
+      ],
+      "voxel_spacing": [
+        0.10000000149011612,
+        0.10000000149011612,
+        1.0
+      ],
+      "affines_match": true,
+      "preprocessed_shape": [
+        1,
+        1,
+        102,
+        60,
+        160
+      ],
+      "tile_shape": [
+        1,
+        1,
+        128,
+        128,
+        160
+      ],
+      "image": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/CAMRI Rat Brain MRI Data/sub-001/ses-1/anat/sub-001_ses-1_acq-RARE_T2w.nii.gz",
+      "mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mask_Database/RodentBrainMask/CAMRI Rat/CAMRI_Rat-sub-001_ses-1_acq-RARE_T2w_061.nii.gz",
+      "final_dice": 0.9073911309242249
+    },
+    "002": {
+      "original_shape": [
+        256,
+        256,
+        12
+      ],
+      "voxel_spacing": [
+        0.10000000149011612,
+        0.10000000149011612,
+        1.0
+      ],
+      "affines_match": true,
+      "preprocessed_shape": [
+        1,
+        1,
+        102,
+        60,
+        160
+      ],
+      "tile_shape": [
+        1,
+        1,
+        128,
+        128,
+        160
+      ],
+      "image": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/CAMRI Rat Brain MRI Data/sub-002/ses-1/anat/sub-002_ses-1_acq-RARE_T2w.nii.gz",
+      "mask": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mask_Database/RodentBrainMask/CAMRI Rat/CAMRI_Rat-sub-002_ses-1_acq-RARE_T2w_018.nii.gz",
+      "final_dice": 0.8987696170806885
+    }
+  }
+}
