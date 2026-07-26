@@ -1,0 +1,48 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "initial_checkpoint": "outputs/generalization_pilot/best_checkpoint.pt",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "output_directory": "outputs/mouse_boundary_adaptation",
+  "seed": 20260716,
+  "train_mouse_ids": [
+    "mouse-30",
+    "mouse-32",
+    "mouse-41"
+  ],
+  "validation_mouse_ids": [
+    "mouse-31",
+    "mouse-40",
+    "mouse-44"
+  ],
+  "official_threshold": 0.5,
+  "embedding_dim": 32,
+  "num_heads": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0001,
+  "max_epochs": 24,
+  "early_stop_patience": 5,
+  "minimum_validation_improvement": 0.0005,
+  "loss_weights": {
+    "dice": 0.5,
+    "bce": 0.25,
+    "tversky": 0.25
+  },
+  "tversky_alpha_fp": 0.7,
+  "tversky_beta_fn": 0.3,
+  "augmentation": {
+    "flip_probability": 0.5,
+    "feature_scale": 0.03,
+    "feature_noise_std": 0.005
+  },
+  "experiment_c_trigger": {
+    "validation_dice_improvement_below": 0.02,
+    "validation_precision_below": 0.9,
+    "validation_volume_ratio_above": 1.1
+  },
+  "tile_size": [
+    128,
+    128,
+    160
+  ],
+  "temporary_feature_cache": "/tmp/rs2_mouse_boundary_adaptation_features"
+}

@@ -1,0 +1,21 @@
+domain,partition,region,fp_voxels,fn_voxels
+CAMRI,axis_halves,left,28388.0,370300.0
+CAMRI,axis_halves,right,36843.0,434772.0
+CAMRI,axis_halves,dorsal,34123.0,301564.0
+CAMRI,axis_halves,ventral,31108.0,503508.0
+CAMRI,axis_halves,rostral,36540.0,393637.0
+CAMRI,axis_halves,caudal,28691.0,411435.0
+CAMRI,center,center,11939.0,218628.0
+CAMRI,brain_position,first 20%,15649.0,137203.0
+CAMRI,brain_position,middle 60%,33980.0,504708.0
+CAMRI,brain_position,last 20%,14492.0,163161.0
+Mouse,axis_halves,left,1070801.0,189696.0
+Mouse,axis_halves,right,1691436.0,122095.0
+Mouse,axis_halves,dorsal,1536622.0,6259.0
+Mouse,axis_halves,ventral,1225615.0,305532.0
+Mouse,axis_halves,rostral,1872171.0,160254.0
+Mouse,axis_halves,caudal,890066.0,151537.0
+Mouse,center,center,742834.0,72188.0
+Mouse,brain_position,first 20%,945798.0,58710.0
+Mouse,brain_position,middle 60%,1626085.0,174891.0
+Mouse,brain_position,last 20%,188253.0,78190.0

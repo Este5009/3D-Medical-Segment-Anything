@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""Balanced CAMRI+mouse training of the unchanged one-query decoder."""
+from __future__ import annotations
+import copy,csv,json,random,sys,time
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+for p in (ROOT,ROOT/"scripts"):
+    if str(p) not in sys.path:sys.path.insert(0,str(p))
+import numpy as np
+import torch
+from models.query_mask_decoder import MultiScaleOneQueryMaskDecoder,dice_bce_loss
+from train_generalization_pilot import load_cached
+from train_mouse_boundary_adaptation import augment,metric,aggregate
+from train_query_decoder_overfit import choose_device,load_json
+
+def balanced_epoch_order(camri,mouse,seed):
+    rng=random.Random(seed);a=list(camri);b=list(mouse);rng.shuffle(a);rng.shuffle(b);n=max(len(a),len(b));a=(a*((n+len(a)-1)//len(a)))[:n];b=(b*((n+len(b)-1)//len(b)))[:n];return [x for pair in zip([("camri",v) for v in a],[('mouse',v) for v in b]) for x in pair]
+
+def cached_records(config):
+    cs=load_json(ROOT/config["camri_split"]);ms=load_json(ROOT/config["mouse_split"]);result={d:{s:[] for s in ("train","validation","test")} for d in ("camri","mouse")}
+    for split,ids in cs.items():
+        for sid in ids:result["camri"][split].append({"subject":sid,"cache_path":str(Path(config["camri_cache"])/f"{split}_{sid}.pt")})
+    for split in ("train","validation"):
+        for sid in ms[split]["scans"]:result["mouse"][split].append({"subject":sid,"cache_path":str(Path(config["mouse_cache"])/f"{split}_{sid}.pt")})
+    return result
+
+@torch.inference_mode()
+def evaluate(decoder,records,device):
+    decoder.eval();rs=[]
+    for r in records:
+        features,target=load_cached(r,device);logits=decoder(features,output_size=target.shape[-3:]);rs.append({"subject":r["subject"],**metric(logits,target)})
+    return rs
+
+def main():
+    config=load_json(ROOT/"configs/mixed_domain_decoder.yaml");out=ROOT/config["output_directory"];out.mkdir(parents=True,exist_ok=True);(out/"checkpoints").mkdir(exist_ok=True);(out/"learning_curves").mkdir(exist_ok=True);(out/"configuration.json").write_text(json.dumps(config,indent=2));random.seed(config["seed"]);np.random.seed(config["seed"]);torch.manual_seed(config["seed"]);device=choose_device();initial=torch.load(ROOT/config["initial_checkpoint"],map_location="cpu",weights_only=False);decoder=MultiScaleOneQueryMaskDecoder(32,4);decoder.load_state_dict(initial["decoder_state_dict"],strict=True);decoder=decoder.to(device);assert tuple(decoder.query.shape)==(1,1,32) and sum(p.numel() for p in decoder.parameters())==170401;records=cached_records(config)
+    camri_reference=np.mean([float(r["dice"]) for r in csv.DictReader(open(ROOT/config["camri_metrics"])) if r["split"]=="validation"]);baseline={d:aggregate(evaluate(decoder,records[d]["validation"],device)) for d in ("camri","mouse")};optimizer=torch.optim.AdamW(decoder.parameters(),lr=config["learning_rate"],weight_decay=config["weight_decay"]);best=-1;best_state=copy.deepcopy(decoder.state_dict());best_epoch=0;stale=0;history=[];stopped_for_camri=False
+    for epoch in range(1,config["max_epochs"]+1):
+        decoder.train();losses=[];order=balanced_epoch_order(records["camri"]["train"],records["mouse"]["train"],config["seed"]+epoch)
+        for j,(domain,r) in enumerate(order):
+            features,target=load_cached(r,device);features,target=augment(features,target,random.Random(config["seed"]+epoch*100+j),config["augmentation"]);optimizer.zero_grad(set_to_none=True);logits=decoder(features,output_size=target.shape[-3:]);loss,_=dice_bce_loss(logits,target);loss.backward();optimizer.step();losses.append(float(loss.detach()))
+        va={d:aggregate(evaluate(decoder,records[d]["validation"],device)) for d in ("camri","mouse")};score=(va["camri"]["dice"]+va["mouse"]["dice"])/2;row={"epoch":epoch,"loss":np.mean(losses),"balanced_validation_dice":score,**{f"{d}_validation_{k}":v for d in va for k,v in va[d].items()}};history.append(row);print(f"epoch {epoch} CAMRI={va['camri']['dice']:.4f} Mouse={va['mouse']['dice']:.4f} balanced={score:.4f}",flush=True)
+        if va["camri"]["dice"]<camri_reference-config["camri_validation_max_drop"]:stopped_for_camri=True;print("CAMRI safety stop",flush=True);break
+        if score>best+config["minimum_validation_improvement"]:best=score;best_state=copy.deepcopy(decoder.state_dict());best_epoch=epoch;stale=0
+        else:stale+=1
+        if stale>=config["early_stop_patience"]:break
+    decoder.load_state_dict(best_state);torch.save({"decoder_state_dict":best_state,"epoch":best_epoch,"balanced_validation_dice":best,"initial_checkpoint":config["initial_checkpoint"],"config":config},out/"checkpoints"/"best_mixed_domain.pt")
+    with (out/"learning_curves"/"history.csv").open("w",newline="") as f:w=csv.DictWriter(f,fieldnames=history[0]);w.writeheader();w.writerows(history)
+    split={"camri":load_json(ROOT/config["camri_split"]),"mouse":load_json(ROOT/config["mouse_split"])};(out/"split.json").write_text(json.dumps(split,indent=2));summary={"device":str(device),"initial_epoch":initial["epoch"],"encoder_frozen":True,"exactly_one_query":True,"decoder_parameters_trained":170401,"baseline_validation":baseline,"camri_validation_reference":camri_reference,"best_epoch":best_epoch,"epochs_run":len(history),"best_balanced_validation_dice":best,"camri_safety_stop":stopped_for_camri};(out/"training_summary.json").write_text(json.dumps(summary,indent=2));print(json.dumps(summary,indent=2))
+if __name__=="__main__":main()

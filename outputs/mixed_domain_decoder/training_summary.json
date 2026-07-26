@@ -1,0 +1,30 @@
+{
+  "device": "cpu",
+  "initial_epoch": 14,
+  "encoder_frozen": true,
+  "exactly_one_query": true,
+  "decoder_parameters_trained": 170401,
+  "baseline_validation": {
+    "camri": {
+      "dice": 0.9828010830799366,
+      "precision": 0.982152934191698,
+      "recall": 0.9835416157342776,
+      "false_positives": 3889.0,
+      "false_negatives": 3363.3333333333335,
+      "volume_ratio": 1.00154798838154
+    },
+    "mouse": {
+      "dice": 0.6716449604924012,
+      "precision": 0.5108296186304735,
+      "recall": 0.9856823835625906,
+      "false_positives": 53129.1,
+      "false_negatives": 791.0,
+      "volume_ratio": 1.9459039456187603
+    }
+  },
+  "camri_validation_reference": 0.9828010830803637,
+  "best_epoch": 11,
+  "epochs_run": 12,
+  "best_balanced_validation_dice": 0.9745989869041758,
+  "camri_safety_stop": false
+}

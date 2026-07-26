@@ -1,0 +1,9 @@
+{
+  "training_performed": false,
+  "fine_tuning_performed": false,
+  "checkpoint_changed": false,
+  "official_threshold_changed": false,
+  "camri_subjects": 91,
+  "mouse_scans": 101,
+  "outputs": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/domain_shift_diagnostics"
+}

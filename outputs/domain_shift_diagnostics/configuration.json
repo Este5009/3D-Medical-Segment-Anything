@@ -1,0 +1,25 @@
+{
+  "camri_metrics": "outputs/external_holdout/subject_metrics.csv",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "checkpoint": "outputs/generalization_pilot/best_checkpoint.pt",
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "output_directory": "outputs/domain_shift_diagnostics",
+  "thresholds": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "official_threshold": 0.5,
+  "boundary_band_voxels": 5,
+  "surface_dice_tolerance_mm": 0.2,
+  "representatives_per_extreme": 10,
+  "instrumented_per_domain": 20,
+  "tile_size": [
+    128,
+    128,
+    160
+  ],
+  "random_seed": 20260716
+}

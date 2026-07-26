@@ -1,0 +1,212 @@
+{
+  "ridge_alpha": 0.3359818286283781,
+  "ridge_cv_r2_mean": 0.9809042368883061,
+  "random_forest_training_r2": 0.9916883737045852,
+  "feature_importance": [
+    {
+      "variable": "volume_ratio",
+      "ridge_standardized_coefficient": -0.0544212477580672,
+      "random_forest_permutation_importance": 1.5342549607482672
+    },
+    {
+      "variable": "boundary_sharpness",
+      "ridge_standardized_coefficient": -0.007748084222572833,
+      "random_forest_permutation_importance": 0.006552734092108858
+    },
+    {
+      "variable": "brain_occupancy_percent",
+      "ridge_standardized_coefficient": 0.0018704408530997266,
+      "random_forest_permutation_importance": 0.004360676091093722
+    },
+    {
+      "variable": "brain_volume_mm3",
+      "ridge_standardized_coefficient": -0.010973744985260657,
+      "random_forest_permutation_importance": 0.002953181153213824
+    },
+    {
+      "variable": "spacing_z",
+      "ridge_standardized_coefficient": -0.005153191826234905,
+      "random_forest_permutation_importance": 0.0012405882254721537
+    },
+    {
+      "variable": "slice_count",
+      "ridge_standardized_coefficient": -0.004242087248267058,
+      "random_forest_permutation_importance": 0.0006646944890936239
+    },
+    {
+      "variable": "contrast",
+      "ridge_standardized_coefficient": 0.00012522205530425234,
+      "random_forest_permutation_importance": 0.00011401664749666196
+    }
+  ],
+  "correlations": [
+    {
+      "domain": "CAMRI",
+      "variable": "spacing_z",
+      "pearson_r": 0.6716874297285943,
+      "p_value": 3.1508340557414003e-13,
+      "n": 91
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "slice_count",
+      "pearson_r": -0.672283958534129,
+      "p_value": 2.9498926462865214e-13,
+      "n": 91
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "brain_volume_mm3",
+      "pearson_r": -0.7386593813752416,
+      "p_value": 6.440874090618285e-17,
+      "n": 91
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "brain_occupancy_percent",
+      "pearson_r": -0.6985095585716231,
+      "p_value": 1.3889166712797927e-14,
+      "n": 91
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "contrast",
+      "pearson_r": 0.24330980085262197,
+      "p_value": 0.02012642363220203,
+      "n": 91
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "boundary_sharpness",
+      "pearson_r": -0.5512270962510383,
+      "p_value": 1.4948651540806272e-08,
+      "n": 91
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "volume_ratio",
+      "pearson_r": 0.9279274971891092,
+      "p_value": 6.531721632253122e-40,
+      "n": 91
+    },
+    {
+      "domain": "Mouse",
+      "variable": "spacing_z",
+      "pearson_r": -0.19171007261209896,
+      "p_value": 0.05479039729476576,
+      "n": 101
+    },
+    {
+      "domain": "Mouse",
+      "variable": "slice_count",
+      "pearson_r": 0.11225161971896538,
+      "p_value": 0.26373389728436974,
+      "n": 101
+    },
+    {
+      "domain": "Mouse",
+      "variable": "brain_volume_mm3",
+      "pearson_r": -0.13829521652318308,
+      "p_value": 0.16783714195188681,
+      "n": 101
+    },
+    {
+      "domain": "Mouse",
+      "variable": "brain_occupancy_percent",
+      "pearson_r": -0.05494189238052678,
+      "p_value": 0.5852730314566873,
+      "n": 101
+    },
+    {
+      "domain": "Mouse",
+      "variable": "contrast",
+      "pearson_r": -0.23246680282839202,
+      "p_value": 0.01931851639534873,
+      "n": 101
+    },
+    {
+      "domain": "Mouse",
+      "variable": "boundary_sharpness",
+      "pearson_r": -0.03257735336736285,
+      "p_value": 0.7463855224511753,
+      "n": 101
+    },
+    {
+      "domain": "Mouse",
+      "variable": "volume_ratio",
+      "pearson_r": -0.9732186426372795,
+      "p_value": 5.051979782066534e-65,
+      "n": 101
+    },
+    {
+      "domain": "Combined",
+      "variable": "spacing_z",
+      "pearson_r": 0.25701797795675024,
+      "p_value": 0.0003197682547065993,
+      "n": 192
+    },
+    {
+      "domain": "Combined",
+      "variable": "slice_count",
+      "pearson_r": 0.09828828295618178,
+      "p_value": 0.174998824408427,
+      "n": 192
+    },
+    {
+      "domain": "Combined",
+      "variable": "brain_volume_mm3",
+      "pearson_r": 0.8276432015397039,
+      "p_value": 1.525804031423958e-49,
+      "n": 192
+    },
+    {
+      "domain": "Combined",
+      "variable": "brain_occupancy_percent",
+      "pearson_r": 0.8668571093739574,
+      "p_value": 2.4494011852372494e-59,
+      "n": 192
+    },
+    {
+      "domain": "Combined",
+      "variable": "contrast",
+      "pearson_r": 0.653178733507888,
+      "p_value": 9.87179558576253e-25,
+      "n": 192
+    },
+    {
+      "domain": "Combined",
+      "variable": "boundary_sharpness",
+      "pearson_r": -0.8446809420626554,
+      "p_value": 1.8334381704658742e-53,
+      "n": 192
+    },
+    {
+      "domain": "Combined",
+      "variable": "volume_ratio",
+      "pearson_r": -0.985510580533263,
+      "p_value": 2.3225587517950205e-148,
+      "n": 192
+    },
+    {
+      "domain": "CAMRI",
+      "variable": "query_attention_spread_level1",
+      "pearson_r": -0.8968428151536779,
+      "p_value": 8.593894298354271e-08,
+      "n": 20
+    },
+    {
+      "domain": "Mouse",
+      "variable": "query_attention_spread_level1",
+      "pearson_r": 0.41427003645218685,
+      "p_value": 0.06937414862292515,
+      "n": 20
+    },
+    {
+      "domain": "Combined",
+      "variable": "query_attention_spread_level1",
+      "pearson_r": 0.6323949419070294,
+      "p_value": 1.1997300742882675e-05,
+      "n": 40
+    }
+  ]
+}

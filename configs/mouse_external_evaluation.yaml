@@ -1,0 +1,14 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "checkpoint": "outputs/generalization_pilot/best_checkpoint.pt",
+  "output_directory": "outputs/mouse_external_evaluation",
+  "image_directory": "Image_Database/src_adult",
+  "mask_directory": "Mask_Database/label_adult",
+  "embedding_dim": 32,
+  "num_heads": 4,
+  "expected_decoder_parameters": 170401,
+  "expected_checkpoint_epoch": 14,
+  "probability_threshold": 0.5,
+  "connected_component_policy": "none",
+  "tile_size": [128, 128, 160]
+}

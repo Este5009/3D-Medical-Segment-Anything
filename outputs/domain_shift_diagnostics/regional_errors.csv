@@ -1,0 +1,1921 @@
+domain,subject,partition,region,fp_voxels,fn_voxels
+CAMRI,001,axis_halves,left,332,1731
+CAMRI,001,axis_halves,right,624,1773
+CAMRI,001,axis_halves,dorsal,699,1086
+CAMRI,001,axis_halves,ventral,257,2418
+CAMRI,001,axis_halves,rostral,375,2177
+CAMRI,001,axis_halves,caudal,581,1327
+CAMRI,001,center,center,433,920
+CAMRI,001,brain_position,first 20%,126,1017
+CAMRI,001,brain_position,middle 60%,496,1884
+CAMRI,001,brain_position,last 20%,334,603
+CAMRI,002,axis_halves,left,239,1985
+CAMRI,002,axis_halves,right,304,1711
+CAMRI,002,axis_halves,dorsal,265,1221
+CAMRI,002,axis_halves,ventral,278,2475
+CAMRI,002,axis_halves,rostral,337,2210
+CAMRI,002,axis_halves,caudal,206,1486
+CAMRI,002,center,center,232,1090
+CAMRI,002,brain_position,first 20%,90,1012
+CAMRI,002,brain_position,middle 60%,357,1981
+CAMRI,002,brain_position,last 20%,96,703
+CAMRI,004,axis_halves,left,233,2173
+CAMRI,004,axis_halves,right,201,2078
+CAMRI,004,axis_halves,dorsal,345,1055
+CAMRI,004,axis_halves,ventral,89,3196
+CAMRI,004,axis_halves,rostral,189,2631
+CAMRI,004,axis_halves,caudal,245,1620
+CAMRI,004,center,center,248,896
+CAMRI,004,brain_position,first 20%,38,972
+CAMRI,004,brain_position,middle 60%,303,2450
+CAMRI,004,brain_position,last 20%,93,829
+CAMRI,008,axis_halves,left,368,1971
+CAMRI,008,axis_halves,right,346,1731
+CAMRI,008,axis_halves,dorsal,463,1162
+CAMRI,008,axis_halves,ventral,251,2540
+CAMRI,008,axis_halves,rostral,319,2287
+CAMRI,008,axis_halves,caudal,395,1415
+CAMRI,008,center,center,349,866
+CAMRI,008,brain_position,first 20%,152,977
+CAMRI,008,brain_position,middle 60%,426,2102
+CAMRI,008,brain_position,last 20%,136,623
+CAMRI,010,axis_halves,left,381,2100
+CAMRI,010,axis_halves,right,455,2046
+CAMRI,010,axis_halves,dorsal,660,1050
+CAMRI,010,axis_halves,ventral,176,3096
+CAMRI,010,axis_halves,rostral,424,2719
+CAMRI,010,axis_halves,caudal,412,1427
+CAMRI,010,center,center,526,837
+CAMRI,010,brain_position,first 20%,96,1198
+CAMRI,010,brain_position,middle 60%,609,2163
+CAMRI,010,brain_position,last 20%,131,785
+CAMRI,011,axis_halves,left,329,1736
+CAMRI,011,axis_halves,right,392,1711
+CAMRI,011,axis_halves,dorsal,481,1052
+CAMRI,011,axis_halves,ventral,240,2395
+CAMRI,011,axis_halves,rostral,395,2130
+CAMRI,011,axis_halves,caudal,326,1317
+CAMRI,011,center,center,304,1147
+CAMRI,011,brain_position,first 20%,173,953
+CAMRI,011,brain_position,middle 60%,402,1950
+CAMRI,011,brain_position,last 20%,146,544
+CAMRI,012,axis_halves,left,433,1716
+CAMRI,012,axis_halves,right,558,1326
+CAMRI,012,axis_halves,dorsal,747,864
+CAMRI,012,axis_halves,ventral,244,2178
+CAMRI,012,axis_halves,rostral,394,1889
+CAMRI,012,axis_halves,caudal,597,1153
+CAMRI,012,center,center,622,893
+CAMRI,012,brain_position,first 20%,125,891
+CAMRI,012,brain_position,middle 60%,698,1593
+CAMRI,012,brain_position,last 20%,168,558
+CAMRI,013,axis_halves,left,281,1892
+CAMRI,013,axis_halves,right,283,1913
+CAMRI,013,axis_halves,dorsal,350,1367
+CAMRI,013,axis_halves,ventral,214,2438
+CAMRI,013,axis_halves,rostral,366,2168
+CAMRI,013,axis_halves,caudal,198,1637
+CAMRI,013,center,center,186,1340
+CAMRI,013,brain_position,first 20%,200,809
+CAMRI,013,brain_position,middle 60%,268,2287
+CAMRI,013,brain_position,last 20%,96,709
+CAMRI,014,axis_halves,left,241,2056
+CAMRI,014,axis_halves,right,228,1902
+CAMRI,014,axis_halves,dorsal,391,1076
+CAMRI,014,axis_halves,ventral,78,2882
+CAMRI,014,axis_halves,rostral,324,2090
+CAMRI,014,axis_halves,caudal,145,1868
+CAMRI,014,center,center,235,1143
+CAMRI,014,brain_position,first 20%,121,667
+CAMRI,014,brain_position,middle 60%,305,2345
+CAMRI,014,brain_position,last 20%,43,946
+CAMRI,015,axis_halves,left,205,4275
+CAMRI,015,axis_halves,right,580,3316
+CAMRI,015,axis_halves,dorsal,209,5513
+CAMRI,015,axis_halves,ventral,576,2078
+CAMRI,015,axis_halves,rostral,686,4661
+CAMRI,015,axis_halves,caudal,99,2930
+CAMRI,015,center,center,190,4263
+CAMRI,015,brain_position,first 20%,525,960
+CAMRI,015,brain_position,middle 60%,247,5452
+CAMRI,015,brain_position,last 20%,13,1179
+CAMRI,016,axis_halves,left,131,2715
+CAMRI,016,axis_halves,right,174,2372
+CAMRI,016,axis_halves,dorsal,155,2622
+CAMRI,016,axis_halves,ventral,150,2465
+CAMRI,016,axis_halves,rostral,167,2885
+CAMRI,016,axis_halves,caudal,138,2202
+CAMRI,016,center,center,129,1619
+CAMRI,016,brain_position,first 20%,67,1221
+CAMRI,016,brain_position,middle 60%,159,2851
+CAMRI,016,brain_position,last 20%,79,1015
+CAMRI,017,axis_halves,left,295,2026
+CAMRI,017,axis_halves,right,418,2390
+CAMRI,017,axis_halves,dorsal,574,1545
+CAMRI,017,axis_halves,ventral,139,2871
+CAMRI,017,axis_halves,rostral,303,2455
+CAMRI,017,axis_halves,caudal,410,1961
+CAMRI,017,center,center,400,1329
+CAMRI,017,brain_position,first 20%,63,998
+CAMRI,017,brain_position,middle 60%,504,2465
+CAMRI,017,brain_position,last 20%,146,953
+CAMRI,019,axis_halves,left,253,2435
+CAMRI,019,axis_halves,right,295,2201
+CAMRI,019,axis_halves,dorsal,158,2204
+CAMRI,019,axis_halves,ventral,390,2432
+CAMRI,019,axis_halves,rostral,315,2707
+CAMRI,019,axis_halves,caudal,233,1929
+CAMRI,019,center,center,199,1327
+CAMRI,019,brain_position,first 20%,188,934
+CAMRI,019,brain_position,middle 60%,261,2776
+CAMRI,019,brain_position,last 20%,99,926
+CAMRI,026,axis_halves,left,136,2067
+CAMRI,026,axis_halves,right,348,2094
+CAMRI,026,axis_halves,dorsal,342,1744
+CAMRI,026,axis_halves,ventral,142,2417
+CAMRI,026,axis_halves,rostral,305,2384
+CAMRI,026,axis_halves,caudal,179,1777
+CAMRI,026,center,center,196,1535
+CAMRI,026,brain_position,first 20%,64,972
+CAMRI,026,brain_position,middle 60%,297,2368
+CAMRI,026,brain_position,last 20%,123,821
+CAMRI,027,axis_halves,left,135,2417
+CAMRI,027,axis_halves,right,222,2155
+CAMRI,027,axis_halves,dorsal,209,2085
+CAMRI,027,axis_halves,ventral,148,2487
+CAMRI,027,axis_halves,rostral,205,2620
+CAMRI,027,axis_halves,caudal,152,1952
+CAMRI,027,center,center,162,1540
+CAMRI,027,brain_position,first 20%,67,1042
+CAMRI,027,brain_position,middle 60%,197,2582
+CAMRI,027,brain_position,last 20%,93,948
+CAMRI,028,axis_halves,left,91,2088
+CAMRI,028,axis_halves,right,113,2464
+CAMRI,028,axis_halves,dorsal,101,2087
+CAMRI,028,axis_halves,ventral,103,2465
+CAMRI,028,axis_halves,rostral,103,2586
+CAMRI,028,axis_halves,caudal,101,1966
+CAMRI,028,center,center,105,1687
+CAMRI,028,brain_position,first 20%,42,922
+CAMRI,028,brain_position,middle 60%,125,2628
+CAMRI,028,brain_position,last 20%,37,1002
+CAMRI,029,axis_halves,left,204,1987
+CAMRI,029,axis_halves,right,225,1959
+CAMRI,029,axis_halves,dorsal,195,1983
+CAMRI,029,axis_halves,ventral,234,1963
+CAMRI,029,axis_halves,rostral,296,2104
+CAMRI,029,axis_halves,caudal,133,1842
+CAMRI,029,center,center,140,1329
+CAMRI,029,brain_position,first 20%,172,689
+CAMRI,029,brain_position,middle 60%,187,2309
+CAMRI,029,brain_position,last 20%,70,948
+CAMRI,031,axis_halves,left,120,2337
+CAMRI,031,axis_halves,right,163,2219
+CAMRI,031,axis_halves,dorsal,125,2291
+CAMRI,031,axis_halves,ventral,158,2265
+CAMRI,031,axis_halves,rostral,214,2360
+CAMRI,031,axis_halves,caudal,69,2196
+CAMRI,031,center,center,123,1692
+CAMRI,031,brain_position,first 20%,94,794
+CAMRI,031,brain_position,middle 60%,163,2682
+CAMRI,031,brain_position,last 20%,26,1080
+CAMRI,032,axis_halves,left,158,2031
+CAMRI,032,axis_halves,right,225,1915
+CAMRI,032,axis_halves,dorsal,213,1826
+CAMRI,032,axis_halves,ventral,170,2120
+CAMRI,032,axis_halves,rostral,252,2102
+CAMRI,032,axis_halves,caudal,131,1844
+CAMRI,032,center,center,142,1303
+CAMRI,032,brain_position,first 20%,141,691
+CAMRI,032,brain_position,middle 60%,176,2314
+CAMRI,032,brain_position,last 20%,66,941
+CAMRI,033,axis_halves,left,163,1889
+CAMRI,033,axis_halves,right,282,2201
+CAMRI,033,axis_halves,dorsal,269,1875
+CAMRI,033,axis_halves,ventral,176,2215
+CAMRI,033,axis_halves,rostral,280,2258
+CAMRI,033,axis_halves,caudal,165,1832
+CAMRI,033,center,center,197,1412
+CAMRI,033,brain_position,first 20%,108,864
+CAMRI,033,brain_position,middle 60%,270,2280
+CAMRI,033,brain_position,last 20%,67,946
+CAMRI,034,axis_halves,left,153,2066
+CAMRI,034,axis_halves,right,193,2324
+CAMRI,034,axis_halves,dorsal,167,2125
+CAMRI,034,axis_halves,ventral,179,2265
+CAMRI,034,axis_halves,rostral,175,2591
+CAMRI,034,axis_halves,caudal,171,1799
+CAMRI,034,center,center,165,1409
+CAMRI,034,brain_position,first 20%,77,1175
+CAMRI,034,brain_position,middle 60%,190,2264
+CAMRI,034,brain_position,last 20%,79,951
+CAMRI,036,axis_halves,left,159,2359
+CAMRI,036,axis_halves,right,203,2531
+CAMRI,036,axis_halves,dorsal,166,2718
+CAMRI,036,axis_halves,ventral,196,2172
+CAMRI,036,axis_halves,rostral,247,2797
+CAMRI,036,axis_halves,caudal,115,2093
+CAMRI,036,center,center,81,1487
+CAMRI,036,brain_position,first 20%,86,1152
+CAMRI,036,brain_position,middle 60%,240,2695
+CAMRI,036,brain_position,last 20%,36,1043
+CAMRI,037,axis_halves,left,159,1900
+CAMRI,037,axis_halves,right,213,1883
+CAMRI,037,axis_halves,dorsal,218,1858
+CAMRI,037,axis_halves,ventral,154,1925
+CAMRI,037,axis_halves,rostral,185,2074
+CAMRI,037,axis_halves,caudal,187,1709
+CAMRI,037,center,center,181,1375
+CAMRI,037,brain_position,first 20%,70,705
+CAMRI,037,brain_position,middle 60%,237,2174
+CAMRI,037,brain_position,last 20%,65,904
+CAMRI,038,axis_halves,left,135,1995
+CAMRI,038,axis_halves,right,202,1960
+CAMRI,038,axis_halves,dorsal,114,2120
+CAMRI,038,axis_halves,ventral,223,1835
+CAMRI,038,axis_halves,rostral,165,2117
+CAMRI,038,axis_halves,caudal,172,1838
+CAMRI,038,center,center,183,1399
+CAMRI,038,brain_position,first 20%,79,744
+CAMRI,038,brain_position,middle 60%,204,2275
+CAMRI,038,brain_position,last 20%,54,936
+CAMRI,039,axis_halves,left,114,2067
+CAMRI,039,axis_halves,right,201,1888
+CAMRI,039,axis_halves,dorsal,173,2056
+CAMRI,039,axis_halves,ventral,142,1899
+CAMRI,039,axis_halves,rostral,208,2119
+CAMRI,039,axis_halves,caudal,107,1836
+CAMRI,039,center,center,171,1279
+CAMRI,039,brain_position,first 20%,96,728
+CAMRI,039,brain_position,middle 60%,190,2246
+CAMRI,039,brain_position,last 20%,29,981
+CAMRI,040,axis_halves,left,140,2180
+CAMRI,040,axis_halves,right,173,2281
+CAMRI,040,axis_halves,dorsal,94,2320
+CAMRI,040,axis_halves,ventral,219,2141
+CAMRI,040,axis_halves,rostral,137,2657
+CAMRI,040,axis_halves,caudal,176,1804
+CAMRI,040,center,center,144,1588
+CAMRI,040,brain_position,first 20%,68,887
+CAMRI,040,brain_position,middle 60%,170,2666
+CAMRI,040,brain_position,last 20%,75,908
+CAMRI,041,axis_halves,left,153,2099
+CAMRI,041,axis_halves,right,206,1917
+CAMRI,041,axis_halves,dorsal,152,2244
+CAMRI,041,axis_halves,ventral,207,1772
+CAMRI,041,axis_halves,rostral,200,2324
+CAMRI,041,axis_halves,caudal,159,1692
+CAMRI,041,center,center,138,913
+CAMRI,041,brain_position,first 20%,92,896
+CAMRI,041,brain_position,middle 60%,189,2285
+CAMRI,041,brain_position,last 20%,78,835
+CAMRI,044,axis_halves,left,192,5073
+CAMRI,044,axis_halves,right,196,6850
+CAMRI,044,axis_halves,dorsal,124,5915
+CAMRI,044,axis_halves,ventral,264,6008
+CAMRI,044,axis_halves,rostral,67,7543
+CAMRI,044,axis_halves,caudal,321,4380
+CAMRI,044,center,center,107,2789
+CAMRI,044,brain_position,first 20%,7,1884
+CAMRI,044,brain_position,middle 60%,156,8094
+CAMRI,044,brain_position,last 20%,225,1945
+CAMRI,045,axis_halves,left,70,5180
+CAMRI,045,axis_halves,right,192,7404
+CAMRI,045,axis_halves,dorsal,25,5145
+CAMRI,045,axis_halves,ventral,237,7439
+CAMRI,045,axis_halves,rostral,72,6929
+CAMRI,045,axis_halves,caudal,190,5655
+CAMRI,045,center,center,57,3062
+CAMRI,045,brain_position,first 20%,29,2475
+CAMRI,045,brain_position,middle 60%,142,7171
+CAMRI,045,brain_position,last 20%,46,2938
+CAMRI,046,axis_halves,left,472,5414
+CAMRI,046,axis_halves,right,250,5822
+CAMRI,046,axis_halves,dorsal,51,4948
+CAMRI,046,axis_halves,ventral,671,6288
+CAMRI,046,axis_halves,rostral,57,6713
+CAMRI,046,axis_halves,caudal,665,4523
+CAMRI,046,center,center,122,3072
+CAMRI,046,brain_position,first 20%,4,1889
+CAMRI,046,brain_position,middle 60%,169,7319
+CAMRI,046,brain_position,last 20%,271,2028
+CAMRI,047,axis_halves,left,158,4972
+CAMRI,047,axis_halves,right,146,5228
+CAMRI,047,axis_halves,dorsal,78,4126
+CAMRI,047,axis_halves,ventral,226,6074
+CAMRI,047,axis_halves,rostral,76,4225
+CAMRI,047,axis_halves,caudal,228,5975
+CAMRI,047,center,center,0,3430
+CAMRI,047,brain_position,first 20%,17,1361
+CAMRI,047,brain_position,middle 60%,151,7018
+CAMRI,047,brain_position,last 20%,136,1821
+CAMRI,048,axis_halves,left,133,6870
+CAMRI,048,axis_halves,right,209,7514
+CAMRI,048,axis_halves,dorsal,74,6289
+CAMRI,048,axis_halves,ventral,268,8095
+CAMRI,048,axis_halves,rostral,195,7367
+CAMRI,048,axis_halves,caudal,147,7017
+CAMRI,048,center,center,1,3896
+CAMRI,048,brain_position,first 20%,115,2300
+CAMRI,048,brain_position,middle 60%,71,9276
+CAMRI,048,brain_position,last 20%,93,2808
+CAMRI,049,axis_halves,left,290,4588
+CAMRI,049,axis_halves,right,411,8103
+CAMRI,049,axis_halves,dorsal,218,6499
+CAMRI,049,axis_halves,ventral,483,6192
+CAMRI,049,axis_halves,rostral,44,8051
+CAMRI,049,axis_halves,caudal,657,4640
+CAMRI,049,center,center,183,2483
+CAMRI,049,brain_position,first 20%,15,2206
+CAMRI,049,brain_position,middle 60%,192,8661
+CAMRI,049,brain_position,last 20%,494,1824
+CAMRI,051,axis_halves,left,233,7827
+CAMRI,051,axis_halves,right,347,10697
+CAMRI,051,axis_halves,dorsal,58,7727
+CAMRI,051,axis_halves,ventral,522,10797
+CAMRI,051,axis_halves,rostral,236,9381
+CAMRI,051,axis_halves,caudal,344,9143
+CAMRI,051,center,center,78,3677
+CAMRI,051,brain_position,first 20%,191,3695
+CAMRI,051,brain_position,middle 60%,137,9859
+CAMRI,051,brain_position,last 20%,155,4970
+CAMRI,052,axis_halves,left,459,4665
+CAMRI,052,axis_halves,right,448,5849
+CAMRI,052,axis_halves,dorsal,157,4301
+CAMRI,052,axis_halves,ventral,750,6213
+CAMRI,052,axis_halves,rostral,86,5533
+CAMRI,052,axis_halves,caudal,821,4981
+CAMRI,052,center,center,72,2834
+CAMRI,052,brain_position,first 20%,39,2437
+CAMRI,052,brain_position,middle 60%,125,6158
+CAMRI,052,brain_position,last 20%,666,1919
+CAMRI,053,axis_halves,left,601,4646
+CAMRI,053,axis_halves,right,385,4556
+CAMRI,053,axis_halves,dorsal,404,3498
+CAMRI,053,axis_halves,ventral,582,5704
+CAMRI,053,axis_halves,rostral,296,4442
+CAMRI,053,axis_halves,caudal,690,4760
+CAMRI,053,center,center,14,2975
+CAMRI,053,brain_position,first 20%,144,1063
+CAMRI,053,brain_position,middle 60%,370,7026
+CAMRI,053,brain_position,last 20%,472,1113
+CAMRI,054,axis_halves,left,666,4856
+CAMRI,054,axis_halves,right,553,4522
+CAMRI,054,axis_halves,dorsal,710,3160
+CAMRI,054,axis_halves,ventral,509,6218
+CAMRI,054,axis_halves,rostral,426,4698
+CAMRI,054,axis_halves,caudal,793,4680
+CAMRI,054,center,center,460,2679
+CAMRI,054,brain_position,first 20%,61,1877
+CAMRI,054,brain_position,middle 60%,806,6354
+CAMRI,054,brain_position,last 20%,352,1147
+CAMRI,055,axis_halves,left,177,3789
+CAMRI,055,axis_halves,right,398,5524
+CAMRI,055,axis_halves,dorsal,127,3765
+CAMRI,055,axis_halves,ventral,448,5548
+CAMRI,055,axis_halves,rostral,168,4925
+CAMRI,055,axis_halves,caudal,407,4388
+CAMRI,055,center,center,85,2269
+CAMRI,055,brain_position,first 20%,120,2036
+CAMRI,055,brain_position,middle 60%,206,6449
+CAMRI,055,brain_position,last 20%,249,828
+CAMRI,056,axis_halves,left,185,4594
+CAMRI,056,axis_halves,right,288,5269
+CAMRI,056,axis_halves,dorsal,315,3637
+CAMRI,056,axis_halves,ventral,158,6226
+CAMRI,056,axis_halves,rostral,324,5104
+CAMRI,056,axis_halves,caudal,149,4759
+CAMRI,056,center,center,28,2844
+CAMRI,056,brain_position,first 20%,111,1370
+CAMRI,056,brain_position,middle 60%,253,6709
+CAMRI,056,brain_position,last 20%,109,1784
+CAMRI,057,axis_halves,left,673,5826
+CAMRI,057,axis_halves,right,1244,7004
+CAMRI,057,axis_halves,dorsal,1086,4131
+CAMRI,057,axis_halves,ventral,831,8699
+CAMRI,057,axis_halves,rostral,1292,6889
+CAMRI,057,axis_halves,caudal,625,5941
+CAMRI,057,center,center,106,3226
+CAMRI,057,brain_position,first 20%,169,2911
+CAMRI,057,brain_position,middle 60%,1191,7702
+CAMRI,057,brain_position,last 20%,552,2217
+CAMRI,058,axis_halves,left,263,6847
+CAMRI,058,axis_halves,right,221,8189
+CAMRI,058,axis_halves,dorsal,24,6001
+CAMRI,058,axis_halves,ventral,460,9035
+CAMRI,058,axis_halves,rostral,17,8557
+CAMRI,058,axis_halves,caudal,467,6479
+CAMRI,058,center,center,107,3430
+CAMRI,058,brain_position,first 20%,3,3433
+CAMRI,058,brain_position,middle 60%,125,8369
+CAMRI,058,brain_position,last 20%,93,3234
+CAMRI,059,axis_halves,left,132,8003
+CAMRI,059,axis_halves,right,33,6523
+CAMRI,059,axis_halves,dorsal,92,5792
+CAMRI,059,axis_halves,ventral,73,8734
+CAMRI,059,axis_halves,rostral,79,6948
+CAMRI,059,axis_halves,caudal,86,7578
+CAMRI,059,center,center,13,3090
+CAMRI,059,brain_position,first 20%,5,2415
+CAMRI,059,brain_position,middle 60%,90,9119
+CAMRI,059,brain_position,last 20%,70,2992
+CAMRI,060,axis_halves,left,248,4727
+CAMRI,060,axis_halves,right,221,4316
+CAMRI,060,axis_halves,dorsal,162,3504
+CAMRI,060,axis_halves,ventral,307,5539
+CAMRI,060,axis_halves,rostral,95,4567
+CAMRI,060,axis_halves,caudal,374,4476
+CAMRI,060,center,center,19,2632
+CAMRI,060,brain_position,first 20%,56,1162
+CAMRI,060,brain_position,middle 60%,141,6326
+CAMRI,060,brain_position,last 20%,272,1555
+CAMRI,061,axis_halves,left,133,4032
+CAMRI,061,axis_halves,right,313,5664
+CAMRI,061,axis_halves,dorsal,76,3613
+CAMRI,061,axis_halves,ventral,370,6083
+CAMRI,061,axis_halves,rostral,50,5226
+CAMRI,061,axis_halves,caudal,396,4470
+CAMRI,061,center,center,74,2620
+CAMRI,061,brain_position,first 20%,26,1837
+CAMRI,061,brain_position,middle 60%,159,7111
+CAMRI,061,brain_position,last 20%,261,748
+CAMRI,062,axis_halves,left,204,6659
+CAMRI,062,axis_halves,right,852,7312
+CAMRI,062,axis_halves,dorsal,709,5799
+CAMRI,062,axis_halves,ventral,347,8172
+CAMRI,062,axis_halves,rostral,222,5543
+CAMRI,062,axis_halves,caudal,834,8428
+CAMRI,062,center,center,58,3702
+CAMRI,062,brain_position,first 20%,158,2064
+CAMRI,062,brain_position,middle 60%,698,8329
+CAMRI,062,brain_position,last 20%,200,3578
+CAMRI,065,axis_halves,left,690,6703
+CAMRI,065,axis_halves,right,174,6656
+CAMRI,065,axis_halves,dorsal,167,4456
+CAMRI,065,axis_halves,ventral,697,8903
+CAMRI,065,axis_halves,rostral,121,6563
+CAMRI,065,axis_halves,caudal,743,6796
+CAMRI,065,center,center,131,3866
+CAMRI,065,brain_position,first 20%,1,2219
+CAMRI,065,brain_position,middle 60%,244,8314
+CAMRI,065,brain_position,last 20%,619,2826
+CAMRI,067,axis_halves,left,38,4734
+CAMRI,067,axis_halves,right,201,6077
+CAMRI,067,axis_halves,dorsal,75,4396
+CAMRI,067,axis_halves,ventral,164,6415
+CAMRI,067,axis_halves,rostral,63,5258
+CAMRI,067,axis_halves,caudal,176,5553
+CAMRI,067,center,center,14,2880
+CAMRI,067,brain_position,first 20%,33,2091
+CAMRI,067,brain_position,middle 60%,92,7481
+CAMRI,067,brain_position,last 20%,114,1239
+CAMRI,068,axis_halves,left,257,5669
+CAMRI,068,axis_halves,right,480,6297
+CAMRI,068,axis_halves,dorsal,663,4094
+CAMRI,068,axis_halves,ventral,74,7872
+CAMRI,068,axis_halves,rostral,639,6120
+CAMRI,068,axis_halves,caudal,98,5846
+CAMRI,068,center,center,0,3516
+CAMRI,068,brain_position,first 20%,75,2691
+CAMRI,068,brain_position,middle 60%,590,7855
+CAMRI,068,brain_position,last 20%,72,1420
+CAMRI,069,axis_halves,left,322,4861
+CAMRI,069,axis_halves,right,189,7544
+CAMRI,069,axis_halves,dorsal,326,4572
+CAMRI,069,axis_halves,ventral,185,7833
+CAMRI,069,axis_halves,rostral,399,6956
+CAMRI,069,axis_halves,caudal,112,5449
+CAMRI,069,center,center,52,3145
+CAMRI,069,brain_position,first 20%,348,2437
+CAMRI,069,brain_position,middle 60%,62,8584
+CAMRI,069,brain_position,last 20%,101,1384
+CAMRI,072,axis_halves,left,232,5027
+CAMRI,072,axis_halves,right,254,5105
+CAMRI,072,axis_halves,dorsal,211,3477
+CAMRI,072,axis_halves,ventral,275,6655
+CAMRI,072,axis_halves,rostral,196,4549
+CAMRI,072,axis_halves,caudal,290,5583
+CAMRI,072,center,center,0,2822
+CAMRI,072,brain_position,first 20%,44,1468
+CAMRI,072,brain_position,middle 60%,180,6700
+CAMRI,072,brain_position,last 20%,262,1964
+CAMRI,074,axis_halves,left,528,6531
+CAMRI,074,axis_halves,right,455,9517
+CAMRI,074,axis_halves,dorsal,750,10998
+CAMRI,074,axis_halves,ventral,233,5050
+CAMRI,074,axis_halves,rostral,599,10092
+CAMRI,074,axis_halves,caudal,384,5956
+CAMRI,074,center,center,175,2701
+CAMRI,074,brain_position,first 20%,104,3151
+CAMRI,074,brain_position,middle 60%,657,10227
+CAMRI,074,brain_position,last 20%,222,2670
+CAMRI,075,axis_halves,left,465,7470
+CAMRI,075,axis_halves,right,269,11272
+CAMRI,075,axis_halves,dorsal,177,5875
+CAMRI,075,axis_halves,ventral,557,12867
+CAMRI,075,axis_halves,rostral,606,7280
+CAMRI,075,axis_halves,caudal,128,11462
+CAMRI,075,center,center,59,3768
+CAMRI,075,brain_position,first 20%,221,3401
+CAMRI,075,brain_position,middle 60%,487,10431
+CAMRI,075,brain_position,last 20%,26,4910
+CAMRI,076,axis_halves,left,516,4129
+CAMRI,076,axis_halves,right,722,4833
+CAMRI,076,axis_halves,dorsal,847,3439
+CAMRI,076,axis_halves,ventral,391,5523
+CAMRI,076,axis_halves,rostral,243,4256
+CAMRI,076,axis_halves,caudal,995,4706
+CAMRI,076,center,center,5,2966
+CAMRI,076,brain_position,first 20%,115,1316
+CAMRI,076,brain_position,middle 60%,743,6236
+CAMRI,076,brain_position,last 20%,380,1410
+CAMRI,077,axis_halves,left,424,4531
+CAMRI,077,axis_halves,right,185,4948
+CAMRI,077,axis_halves,dorsal,181,4105
+CAMRI,077,axis_halves,ventral,428,5374
+CAMRI,077,axis_halves,rostral,209,5004
+CAMRI,077,axis_halves,caudal,400,4475
+CAMRI,077,center,center,51,3256
+CAMRI,077,brain_position,first 20%,99,1393
+CAMRI,077,brain_position,middle 60%,283,6730
+CAMRI,077,brain_position,last 20%,225,1356
+CAMRI,079,axis_halves,left,748,3790
+CAMRI,079,axis_halves,right,2721,4462
+CAMRI,079,axis_halves,dorsal,2783,2147
+CAMRI,079,axis_halves,ventral,686,6105
+CAMRI,079,axis_halves,rostral,2889,3658
+CAMRI,079,axis_halves,caudal,580,4594
+CAMRI,079,center,center,147,2201
+CAMRI,079,brain_position,first 20%,1490,1388
+CAMRI,079,brain_position,middle 60%,1588,6095
+CAMRI,079,brain_position,last 20%,391,769
+CAMRI,080,axis_halves,left,166,4394
+CAMRI,080,axis_halves,right,1549,5531
+CAMRI,080,axis_halves,dorsal,1562,2602
+CAMRI,080,axis_halves,ventral,153,7323
+CAMRI,080,axis_halves,rostral,1609,4177
+CAMRI,080,axis_halves,caudal,106,5748
+CAMRI,080,center,center,5,2398
+CAMRI,080,brain_position,first 20%,1200,1833
+CAMRI,080,brain_position,middle 60%,395,6377
+CAMRI,080,brain_position,last 20%,85,1715
+CAMRI,082,axis_halves,left,228,6635
+CAMRI,082,axis_halves,right,86,5261
+CAMRI,082,axis_halves,dorsal,235,4626
+CAMRI,082,axis_halves,ventral,79,7270
+CAMRI,082,axis_halves,rostral,55,5415
+CAMRI,082,axis_halves,caudal,259,6481
+CAMRI,082,center,center,3,2944
+CAMRI,082,brain_position,first 20%,7,1672
+CAMRI,082,brain_position,middle 60%,125,7711
+CAMRI,082,brain_position,last 20%,182,2513
+CAMRI,083,axis_halves,left,181,4774
+CAMRI,083,axis_halves,right,214,4550
+CAMRI,083,axis_halves,dorsal,110,3723
+CAMRI,083,axis_halves,ventral,285,5601
+CAMRI,083,axis_halves,rostral,64,5163
+CAMRI,083,axis_halves,caudal,331,4161
+CAMRI,083,center,center,120,3400
+CAMRI,083,brain_position,first 20%,25,1673
+CAMRI,083,brain_position,middle 60%,189,6447
+CAMRI,083,brain_position,last 20%,181,1204
+CAMRI,084,axis_halves,left,1012,4828
+CAMRI,084,axis_halves,right,1241,4960
+CAMRI,084,axis_halves,dorsal,1971,3551
+CAMRI,084,axis_halves,ventral,282,6237
+CAMRI,084,axis_halves,rostral,1924,6030
+CAMRI,084,axis_halves,caudal,329,3758
+CAMRI,084,center,center,54,3551
+CAMRI,084,brain_position,first 20%,165,1365
+CAMRI,084,brain_position,middle 60%,2004,6482
+CAMRI,084,brain_position,last 20%,69,1941
+CAMRI,085,axis_halves,left,1294,4641
+CAMRI,085,axis_halves,right,1300,4959
+CAMRI,085,axis_halves,dorsal,2257,3308
+CAMRI,085,axis_halves,ventral,337,6292
+CAMRI,085,axis_halves,rostral,2414,5545
+CAMRI,085,axis_halves,caudal,180,4055
+CAMRI,085,center,center,46,3198
+CAMRI,085,brain_position,first 20%,557,1537
+CAMRI,085,brain_position,middle 60%,1902,6069
+CAMRI,085,brain_position,last 20%,135,1994
+CAMRI,086,axis_halves,left,136,5071
+CAMRI,086,axis_halves,right,346,5493
+CAMRI,086,axis_halves,dorsal,212,3786
+CAMRI,086,axis_halves,ventral,270,6778
+CAMRI,086,axis_halves,rostral,132,5953
+CAMRI,086,axis_halves,caudal,350,4611
+CAMRI,086,center,center,48,3103
+CAMRI,086,brain_position,first 20%,7,2208
+CAMRI,086,brain_position,middle 60%,256,7296
+CAMRI,086,brain_position,last 20%,219,1060
+CAMRI,087,axis_halves,left,69,4468
+CAMRI,087,axis_halves,right,274,6236
+CAMRI,087,axis_halves,dorsal,141,3667
+CAMRI,087,axis_halves,ventral,202,7037
+CAMRI,087,axis_halves,rostral,173,5617
+CAMRI,087,axis_halves,caudal,170,5087
+CAMRI,087,center,center,58,2581
+CAMRI,087,brain_position,first 20%,53,1890
+CAMRI,087,brain_position,middle 60%,208,6635
+CAMRI,087,brain_position,last 20%,82,2179
+CAMRI,089,axis_halves,left,98,4992
+CAMRI,089,axis_halves,right,155,6513
+CAMRI,089,axis_halves,dorsal,75,4197
+CAMRI,089,axis_halves,ventral,178,7308
+CAMRI,089,axis_halves,rostral,90,6763
+CAMRI,089,axis_halves,caudal,163,4742
+CAMRI,089,center,center,22,3117
+CAMRI,089,brain_position,first 20%,51,1769
+CAMRI,089,brain_position,middle 60%,66,7755
+CAMRI,089,brain_position,last 20%,124,1981
+CAMRI,090,axis_halves,left,93,4499
+CAMRI,090,axis_halves,right,269,4933
+CAMRI,090,axis_halves,dorsal,162,3849
+CAMRI,090,axis_halves,ventral,200,5583
+CAMRI,090,axis_halves,rostral,77,4625
+CAMRI,090,axis_halves,caudal,285,4807
+CAMRI,090,center,center,16,3098
+CAMRI,090,brain_position,first 20%,42,1479
+CAMRI,090,brain_position,middle 60%,167,6158
+CAMRI,090,brain_position,last 20%,153,1795
+CAMRI,091,axis_halves,left,116,4629
+CAMRI,091,axis_halves,right,451,6593
+CAMRI,091,axis_halves,dorsal,267,4106
+CAMRI,091,axis_halves,ventral,300,7116
+CAMRI,091,axis_halves,rostral,192,6111
+CAMRI,091,axis_halves,caudal,375,5111
+CAMRI,091,center,center,51,2934
+CAMRI,091,brain_position,first 20%,8,2285
+CAMRI,091,brain_position,middle 60%,279,7266
+CAMRI,091,brain_position,last 20%,280,1671
+CAMRI,092,axis_halves,left,401,5785
+CAMRI,092,axis_halves,right,103,6804
+CAMRI,092,axis_halves,dorsal,45,4510
+CAMRI,092,axis_halves,ventral,459,8079
+CAMRI,092,axis_halves,rostral,391,6520
+CAMRI,092,axis_halves,caudal,113,6069
+CAMRI,092,center,center,37,3689
+CAMRI,092,brain_position,first 20%,180,1989
+CAMRI,092,brain_position,middle 60%,248,7864
+CAMRI,092,brain_position,last 20%,66,2736
+CAMRI,093,axis_halves,left,692,5908
+CAMRI,093,axis_halves,right,1029,6390
+CAMRI,093,axis_halves,dorsal,1485,3850
+CAMRI,093,axis_halves,ventral,236,8448
+CAMRI,093,axis_halves,rostral,1570,6062
+CAMRI,093,axis_halves,caudal,151,6236
+CAMRI,093,center,center,15,3874
+CAMRI,093,brain_position,first 20%,342,2030
+CAMRI,093,brain_position,middle 60%,1249,8037
+CAMRI,093,brain_position,last 20%,130,2231
+CAMRI,095,axis_halves,left,140,4468
+CAMRI,095,axis_halves,right,253,5173
+CAMRI,095,axis_halves,dorsal,155,3487
+CAMRI,095,axis_halves,ventral,238,6154
+CAMRI,095,axis_halves,rostral,124,5201
+CAMRI,095,axis_halves,caudal,269,4440
+CAMRI,095,center,center,100,2924
+CAMRI,095,brain_position,first 20%,30,1474
+CAMRI,095,brain_position,middle 60%,226,6221
+CAMRI,095,brain_position,last 20%,137,1946
+CAMRI,096,axis_halves,left,144,4464
+CAMRI,096,axis_halves,right,220,5215
+CAMRI,096,axis_halves,dorsal,157,3297
+CAMRI,096,axis_halves,ventral,207,6382
+CAMRI,096,axis_halves,rostral,148,4935
+CAMRI,096,axis_halves,caudal,216,4744
+CAMRI,096,center,center,104,2766
+CAMRI,096,brain_position,first 20%,55,1551
+CAMRI,096,brain_position,middle 60%,243,6153
+CAMRI,096,brain_position,last 20%,66,1975
+CAMRI,098,axis_halves,left,106,2447
+CAMRI,098,axis_halves,right,264,2029
+CAMRI,098,axis_halves,dorsal,298,1677
+CAMRI,098,axis_halves,ventral,72,2799
+CAMRI,098,axis_halves,rostral,261,2445
+CAMRI,098,axis_halves,caudal,109,2031
+CAMRI,098,center,center,143,1445
+CAMRI,098,brain_position,first 20%,126,912
+CAMRI,098,brain_position,middle 60%,204,2575
+CAMRI,098,brain_position,last 20%,40,989
+CAMRI,101,axis_halves,left,405,1969
+CAMRI,101,axis_halves,right,292,1715
+CAMRI,101,axis_halves,dorsal,390,1657
+CAMRI,101,axis_halves,ventral,307,2027
+CAMRI,101,axis_halves,rostral,447,1960
+CAMRI,101,axis_halves,caudal,250,1724
+CAMRI,101,center,center,331,1157
+CAMRI,101,brain_position,first 20%,200,685
+CAMRI,101,brain_position,middle 60%,429,2169
+CAMRI,101,brain_position,last 20%,68,830
+CAMRI,103,axis_halves,left,168,1933
+CAMRI,103,axis_halves,right,170,2178
+CAMRI,103,axis_halves,dorsal,155,1436
+CAMRI,103,axis_halves,ventral,183,2675
+CAMRI,103,axis_halves,rostral,248,2267
+CAMRI,103,axis_halves,caudal,90,1844
+CAMRI,103,center,center,102,1351
+CAMRI,103,brain_position,first 20%,108,942
+CAMRI,103,brain_position,middle 60%,188,2264
+CAMRI,103,brain_position,last 20%,42,905
+CAMRI,104,axis_halves,left,251,1737
+CAMRI,104,axis_halves,right,270,1868
+CAMRI,104,axis_halves,dorsal,289,1667
+CAMRI,104,axis_halves,ventral,232,1938
+CAMRI,104,axis_halves,rostral,308,1932
+CAMRI,104,axis_halves,caudal,213,1673
+CAMRI,104,center,center,243,1137
+CAMRI,104,brain_position,first 20%,126,676
+CAMRI,104,brain_position,middle 60%,279,2112
+CAMRI,104,brain_position,last 20%,116,817
+CAMRI,105,axis_halves,left,1719,4220
+CAMRI,105,axis_halves,right,906,5434
+CAMRI,105,axis_halves,dorsal,975,2559
+CAMRI,105,axis_halves,ventral,1650,7095
+CAMRI,105,axis_halves,rostral,1438,2806
+CAMRI,105,axis_halves,caudal,1187,6848
+CAMRI,105,center,center,72,3806
+CAMRI,105,brain_position,first 20%,1334,438
+CAMRI,105,brain_position,middle 60%,935,6950
+CAMRI,105,brain_position,last 20%,356,2266
+CAMRI,106,axis_halves,left,447,6583
+CAMRI,106,axis_halves,right,1617,8682
+CAMRI,106,axis_halves,dorsal,837,2891
+CAMRI,106,axis_halves,ventral,1227,12374
+CAMRI,106,axis_halves,rostral,1877,2328
+CAMRI,106,axis_halves,caudal,187,12937
+CAMRI,106,center,center,43,3484
+CAMRI,106,brain_position,first 20%,765,462
+CAMRI,106,brain_position,middle 60%,1272,8540
+CAMRI,106,brain_position,last 20%,27,6263
+CAMRI,107,axis_halves,left,434,5995
+CAMRI,107,axis_halves,right,528,7223
+CAMRI,107,axis_halves,dorsal,343,3354
+CAMRI,107,axis_halves,ventral,619,9864
+CAMRI,107,axis_halves,rostral,615,3981
+CAMRI,107,axis_halves,caudal,347,9237
+CAMRI,107,center,center,49,3207
+CAMRI,107,brain_position,first 20%,560,786
+CAMRI,107,brain_position,middle 60%,220,9647
+CAMRI,107,brain_position,last 20%,182,2785
+CAMRI,108,axis_halves,left,721,10953
+CAMRI,108,axis_halves,right,351,13996
+CAMRI,108,axis_halves,dorsal,262,5434
+CAMRI,108,axis_halves,ventral,810,19515
+CAMRI,108,axis_halves,rostral,957,3432
+CAMRI,108,axis_halves,caudal,115,21517
+CAMRI,108,center,center,87,5138
+CAMRI,108,brain_position,first 20%,682,1317
+CAMRI,108,brain_position,middle 60%,325,13295
+CAMRI,108,brain_position,last 20%,65,10337
+CAMRI,110,axis_halves,left,1219,6768
+CAMRI,110,axis_halves,right,325,10790
+CAMRI,110,axis_halves,dorsal,242,3984
+CAMRI,110,axis_halves,ventral,1302,13574
+CAMRI,110,axis_halves,rostral,557,4407
+CAMRI,110,axis_halves,caudal,987,13151
+CAMRI,110,center,center,98,3383
+CAMRI,110,brain_position,first 20%,261,1760
+CAMRI,110,brain_position,middle 60%,1135,8667
+CAMRI,110,brain_position,last 20%,87,7131
+CAMRI,111,axis_halves,left,312,6806
+CAMRI,111,axis_halves,right,573,13268
+CAMRI,111,axis_halves,dorsal,557,3867
+CAMRI,111,axis_halves,ventral,328,16207
+CAMRI,111,axis_halves,rostral,652,3501
+CAMRI,111,axis_halves,caudal,233,16573
+CAMRI,111,center,center,40,2924
+CAMRI,111,brain_position,first 20%,452,952
+CAMRI,111,brain_position,middle 60%,349,10787
+CAMRI,111,brain_position,last 20%,84,8335
+CAMRI,113,axis_halves,left,31,5447
+CAMRI,113,axis_halves,right,174,6635
+CAMRI,113,axis_halves,dorsal,24,4910
+CAMRI,113,axis_halves,ventral,181,7172
+CAMRI,113,axis_halves,rostral,61,6473
+CAMRI,113,axis_halves,caudal,144,5609
+CAMRI,113,center,center,19,3316
+CAMRI,113,brain_position,first 20%,41,2815
+CAMRI,113,brain_position,middle 60%,108,7426
+CAMRI,113,brain_position,last 20%,56,1841
+CAMRI,115,axis_halves,left,46,5936
+CAMRI,115,axis_halves,right,68,7517
+CAMRI,115,axis_halves,dorsal,62,4770
+CAMRI,115,axis_halves,ventral,52,8683
+CAMRI,115,axis_halves,rostral,49,6220
+CAMRI,115,axis_halves,caudal,65,7233
+CAMRI,115,center,center,2,3106
+CAMRI,115,brain_position,first 20%,7,2767
+CAMRI,115,brain_position,middle 60%,91,8595
+CAMRI,115,brain_position,last 20%,16,2091
+CAMRI,116,axis_halves,left,344,4333
+CAMRI,116,axis_halves,right,745,7080
+CAMRI,116,axis_halves,dorsal,194,4402
+CAMRI,116,axis_halves,ventral,895,7011
+CAMRI,116,axis_halves,rostral,355,6398
+CAMRI,116,axis_halves,caudal,734,5015
+CAMRI,116,center,center,39,2775
+CAMRI,116,brain_position,first 20%,232,2175
+CAMRI,116,brain_position,middle 60%,195,8526
+CAMRI,116,brain_position,last 20%,570,712
+CAMRI,117,axis_halves,left,134,5132
+CAMRI,117,axis_halves,right,244,6127
+CAMRI,117,axis_halves,dorsal,15,4273
+CAMRI,117,axis_halves,ventral,363,6986
+CAMRI,117,axis_halves,rostral,22,6111
+CAMRI,117,axis_halves,caudal,356,5148
+CAMRI,117,center,center,18,2905
+CAMRI,117,brain_position,first 20%,21,2474
+CAMRI,117,brain_position,middle 60%,167,7465
+CAMRI,117,brain_position,last 20%,157,1320
+CAMRI,118,axis_halves,left,211,4765
+CAMRI,118,axis_halves,right,704,5497
+CAMRI,118,axis_halves,dorsal,167,3915
+CAMRI,118,axis_halves,ventral,748,6347
+CAMRI,118,axis_halves,rostral,138,5394
+CAMRI,118,axis_halves,caudal,777,4868
+CAMRI,118,center,center,28,3073
+CAMRI,118,brain_position,first 20%,62,1988
+CAMRI,118,brain_position,middle 60%,502,7177
+CAMRI,118,brain_position,last 20%,329,1097
+CAMRI,119,axis_halves,left,51,5455
+CAMRI,119,axis_halves,right,153,7238
+CAMRI,119,axis_halves,dorsal,31,4961
+CAMRI,119,axis_halves,ventral,173,7732
+CAMRI,119,axis_halves,rostral,120,6316
+CAMRI,119,axis_halves,caudal,84,6377
+CAMRI,119,center,center,7,2947
+CAMRI,119,brain_position,first 20%,98,2636
+CAMRI,119,brain_position,middle 60%,81,8394
+CAMRI,119,brain_position,last 20%,25,1663
+CAMRI,121,axis_halves,left,240,1851
+CAMRI,121,axis_halves,right,217,1838
+CAMRI,121,axis_halves,dorsal,342,868
+CAMRI,121,axis_halves,ventral,115,2821
+CAMRI,121,axis_halves,rostral,285,2101
+CAMRI,121,axis_halves,caudal,172,1588
+CAMRI,121,center,center,200,786
+CAMRI,121,brain_position,first 20%,127,694
+CAMRI,121,brain_position,middle 60%,268,2250
+CAMRI,121,brain_position,last 20%,62,745
+CAMRI,122,axis_halves,left,219,1647
+CAMRI,122,axis_halves,right,375,1347
+CAMRI,122,axis_halves,dorsal,251,1187
+CAMRI,122,axis_halves,ventral,343,1807
+CAMRI,122,axis_halves,rostral,384,1604
+CAMRI,122,axis_halves,caudal,210,1390
+CAMRI,122,center,center,234,1106
+CAMRI,122,brain_position,first 20%,141,548
+CAMRI,122,brain_position,middle 60%,313,1836
+CAMRI,122,brain_position,last 20%,140,610
+CAMRI,124,axis_halves,left,253,1532
+CAMRI,124,axis_halves,right,317,1747
+CAMRI,124,axis_halves,dorsal,299,1208
+CAMRI,124,axis_halves,ventral,271,2071
+CAMRI,124,axis_halves,rostral,351,1802
+CAMRI,124,axis_halves,caudal,219,1477
+CAMRI,124,center,center,220,1246
+CAMRI,124,brain_position,first 20%,161,589
+CAMRI,124,brain_position,middle 60%,274,2046
+CAMRI,124,brain_position,last 20%,135,644
+CAMRI,128,axis_halves,left,292,1835
+CAMRI,128,axis_halves,right,274,1576
+CAMRI,128,axis_halves,dorsal,245,1432
+CAMRI,128,axis_halves,ventral,321,1979
+CAMRI,128,axis_halves,rostral,293,2029
+CAMRI,128,axis_halves,caudal,273,1382
+CAMRI,128,center,center,305,1211
+CAMRI,128,brain_position,first 20%,89,756
+CAMRI,128,brain_position,middle 60%,322,2067
+CAMRI,128,brain_position,last 20%,155,588
+CAMRI,129,axis_halves,left,350,1514
+CAMRI,129,axis_halves,right,338,1608
+CAMRI,129,axis_halves,dorsal,311,981
+CAMRI,129,axis_halves,ventral,377,2141
+CAMRI,129,axis_halves,rostral,460,1734
+CAMRI,129,axis_halves,caudal,228,1388
+CAMRI,129,center,center,354,986
+CAMRI,129,brain_position,first 20%,126,677
+CAMRI,129,brain_position,middle 60%,475,1771
+CAMRI,129,brain_position,last 20%,87,674
+CAMRI,130,axis_halves,left,415,1580
+CAMRI,130,axis_halves,right,264,1450
+CAMRI,130,axis_halves,dorsal,295,1014
+CAMRI,130,axis_halves,ventral,384,2016
+CAMRI,130,axis_halves,rostral,367,1800
+CAMRI,130,axis_halves,caudal,312,1230
+CAMRI,130,center,center,227,1113
+CAMRI,130,brain_position,first 20%,188,559
+CAMRI,130,brain_position,middle 60%,313,1908
+CAMRI,130,brain_position,last 20%,178,563
+Mouse,POLYIC_20190510_mouse30__E2_P1,axis_halves,left,8446,1418
+Mouse,POLYIC_20190510_mouse30__E2_P1,axis_halves,right,12794,731
+Mouse,POLYIC_20190510_mouse30__E2_P1,axis_halves,dorsal,1624,0
+Mouse,POLYIC_20190510_mouse30__E2_P1,axis_halves,ventral,19616,2149
+Mouse,POLYIC_20190510_mouse30__E2_P1,axis_halves,rostral,12871,1509
+Mouse,POLYIC_20190510_mouse30__E2_P1,axis_halves,caudal,8369,640
+Mouse,POLYIC_20190510_mouse30__E2_P1,center,center,5049,353
+Mouse,POLYIC_20190510_mouse30__E2_P1,brain_position,first 20%,5174,712
+Mouse,POLYIC_20190510_mouse30__E2_P1,brain_position,middle 60%,14311,1090
+Mouse,POLYIC_20190510_mouse30__E2_P1,brain_position,last 20%,1755,347
+Mouse,POLYIC_20190510_mouse31__E2_P1,axis_halves,left,8364,1246
+Mouse,POLYIC_20190510_mouse31__E2_P1,axis_halves,right,11855,591
+Mouse,POLYIC_20190510_mouse31__E2_P1,axis_halves,dorsal,2323,0
+Mouse,POLYIC_20190510_mouse31__E2_P1,axis_halves,ventral,17896,1837
+Mouse,POLYIC_20190510_mouse31__E2_P1,axis_halves,rostral,12384,984
+Mouse,POLYIC_20190510_mouse31__E2_P1,axis_halves,caudal,7835,853
+Mouse,POLYIC_20190510_mouse31__E2_P1,center,center,4766,452
+Mouse,POLYIC_20190510_mouse31__E2_P1,brain_position,first 20%,5171,342
+Mouse,POLYIC_20190510_mouse31__E2_P1,brain_position,middle 60%,12915,1141
+Mouse,POLYIC_20190510_mouse31__E2_P1,brain_position,last 20%,2133,354
+Mouse,POLYIC_20190510_mouse32__E2_P1,axis_halves,left,9946,1491
+Mouse,POLYIC_20190510_mouse32__E2_P1,axis_halves,right,21142,493
+Mouse,POLYIC_20190510_mouse32__E2_P1,axis_halves,dorsal,14406,101
+Mouse,POLYIC_20190510_mouse32__E2_P1,axis_halves,ventral,16682,1883
+Mouse,POLYIC_20190510_mouse32__E2_P1,axis_halves,rostral,23522,897
+Mouse,POLYIC_20190510_mouse32__E2_P1,axis_halves,caudal,7566,1087
+Mouse,POLYIC_20190510_mouse32__E2_P1,center,center,4945,596
+Mouse,POLYIC_20190510_mouse32__E2_P1,brain_position,first 20%,13023,195
+Mouse,POLYIC_20190510_mouse32__E2_P1,brain_position,middle 60%,16288,1386
+Mouse,POLYIC_20190510_mouse32__E2_P1,brain_position,last 20%,1777,403
+Mouse,POLYIC_20190510_mouse34__E2_P1,axis_halves,left,9083,1171
+Mouse,POLYIC_20190510_mouse34__E2_P1,axis_halves,right,9098,529
+Mouse,POLYIC_20190510_mouse34__E2_P1,axis_halves,dorsal,1654,8
+Mouse,POLYIC_20190510_mouse34__E2_P1,axis_halves,ventral,16527,1692
+Mouse,POLYIC_20190510_mouse34__E2_P1,axis_halves,rostral,11866,799
+Mouse,POLYIC_20190510_mouse34__E2_P1,axis_halves,caudal,6315,901
+Mouse,POLYIC_20190510_mouse34__E2_P1,center,center,5005,336
+Mouse,POLYIC_20190510_mouse34__E2_P1,brain_position,first 20%,6609,190
+Mouse,POLYIC_20190510_mouse34__E2_P1,brain_position,middle 60%,10129,1053
+Mouse,POLYIC_20190510_mouse34__E2_P1,brain_position,last 20%,1443,457
+Mouse,POLYIC_20190510_mouse35__E3_P1,axis_halves,left,6983,1377
+Mouse,POLYIC_20190510_mouse35__E3_P1,axis_halves,right,11129,785
+Mouse,POLYIC_20190510_mouse35__E3_P1,axis_halves,dorsal,984,0
+Mouse,POLYIC_20190510_mouse35__E3_P1,axis_halves,ventral,17128,2162
+Mouse,POLYIC_20190510_mouse35__E3_P1,axis_halves,rostral,10705,1350
+Mouse,POLYIC_20190510_mouse35__E3_P1,axis_halves,caudal,7407,812
+Mouse,POLYIC_20190510_mouse35__E3_P1,center,center,4039,523
+Mouse,POLYIC_20190510_mouse35__E3_P1,brain_position,first 20%,6072,378
+Mouse,POLYIC_20190510_mouse35__E3_P1,brain_position,middle 60%,10269,1469
+Mouse,POLYIC_20190510_mouse35__E3_P1,brain_position,last 20%,1771,315
+Mouse,POLYIC_20190510_mouse37__E2_P1,axis_halves,left,13491,1753
+Mouse,POLYIC_20190510_mouse37__E2_P1,axis_halves,right,21571,1058
+Mouse,POLYIC_20190510_mouse37__E2_P1,axis_halves,dorsal,27704,81
+Mouse,POLYIC_20190510_mouse37__E2_P1,axis_halves,ventral,7358,2730
+Mouse,POLYIC_20190510_mouse37__E2_P1,axis_halves,rostral,16462,1395
+Mouse,POLYIC_20190510_mouse37__E2_P1,axis_halves,caudal,18600,1416
+Mouse,POLYIC_20190510_mouse37__E2_P1,center,center,11487,375
+Mouse,POLYIC_20190510_mouse37__E2_P1,brain_position,first 20%,8736,729
+Mouse,POLYIC_20190510_mouse37__E2_P1,brain_position,middle 60%,22696,1452
+Mouse,POLYIC_20190510_mouse37__E2_P1,brain_position,last 20%,3630,630
+Mouse,POLYIC_20190510_mouse38__E2_P1,axis_halves,left,10298,1310
+Mouse,POLYIC_20190510_mouse38__E2_P1,axis_halves,right,13303,716
+Mouse,POLYIC_20190510_mouse38__E2_P1,axis_halves,dorsal,10734,44
+Mouse,POLYIC_20190510_mouse38__E2_P1,axis_halves,ventral,12867,1982
+Mouse,POLYIC_20190510_mouse38__E2_P1,axis_halves,rostral,17547,873
+Mouse,POLYIC_20190510_mouse38__E2_P1,axis_halves,caudal,6054,1153
+Mouse,POLYIC_20190510_mouse38__E2_P1,center,center,6159,354
+Mouse,POLYIC_20190510_mouse38__E2_P1,brain_position,first 20%,8674,336
+Mouse,POLYIC_20190510_mouse38__E2_P1,brain_position,middle 60%,14063,1065
+Mouse,POLYIC_20190510_mouse38__E2_P1,brain_position,last 20%,864,625
+Mouse,POLYIC_20190510_mouse39__E4_P1,axis_halves,left,14304,1490
+Mouse,POLYIC_20190510_mouse39__E4_P1,axis_halves,right,26268,902
+Mouse,POLYIC_20190510_mouse39__E4_P1,axis_halves,dorsal,26134,66
+Mouse,POLYIC_20190510_mouse39__E4_P1,axis_halves,ventral,14438,2326
+Mouse,POLYIC_20190510_mouse39__E4_P1,axis_halves,rostral,25282,1369
+Mouse,POLYIC_20190510_mouse39__E4_P1,axis_halves,caudal,15290,1023
+Mouse,POLYIC_20190510_mouse39__E4_P1,center,center,9958,561
+Mouse,POLYIC_20190510_mouse39__E4_P1,brain_position,first 20%,13274,441
+Mouse,POLYIC_20190510_mouse39__E4_P1,brain_position,middle 60%,24615,1599
+Mouse,POLYIC_20190510_mouse39__E4_P1,brain_position,last 20%,2683,352
+Mouse,POLYIC_20190510_mouse40__E2_P1,axis_halves,left,9000,1399
+Mouse,POLYIC_20190510_mouse40__E2_P1,axis_halves,right,15160,696
+Mouse,POLYIC_20190510_mouse40__E2_P1,axis_halves,dorsal,12530,37
+Mouse,POLYIC_20190510_mouse40__E2_P1,axis_halves,ventral,11630,2058
+Mouse,POLYIC_20190510_mouse40__E2_P1,axis_halves,rostral,14159,1234
+Mouse,POLYIC_20190510_mouse40__E2_P1,axis_halves,caudal,10001,861
+Mouse,POLYIC_20190510_mouse40__E2_P1,center,center,9624,311
+Mouse,POLYIC_20190510_mouse40__E2_P1,brain_position,first 20%,6322,534
+Mouse,POLYIC_20190510_mouse40__E2_P1,brain_position,middle 60%,16465,1243
+Mouse,POLYIC_20190510_mouse40__E2_P1,brain_position,last 20%,1373,318
+Mouse,POLYIC_20190510_mouse41__E2_P1,axis_halves,left,11983,933
+Mouse,POLYIC_20190510_mouse41__E2_P1,axis_halves,right,25496,796
+Mouse,POLYIC_20190510_mouse41__E2_P1,axis_halves,dorsal,21063,2
+Mouse,POLYIC_20190510_mouse41__E2_P1,axis_halves,ventral,16416,1727
+Mouse,POLYIC_20190510_mouse41__E2_P1,axis_halves,rostral,18047,898
+Mouse,POLYIC_20190510_mouse41__E2_P1,axis_halves,caudal,19432,831
+Mouse,POLYIC_20190510_mouse41__E2_P1,center,center,14389,459
+Mouse,POLYIC_20190510_mouse41__E2_P1,brain_position,first 20%,8305,476
+Mouse,POLYIC_20190510_mouse41__E2_P1,brain_position,middle 60%,25661,865
+Mouse,POLYIC_20190510_mouse41__E2_P1,brain_position,last 20%,3513,388
+Mouse,POLYIC_20190510_mouse42__E2_P1,axis_halves,left,10072,1405
+Mouse,POLYIC_20190510_mouse42__E2_P1,axis_halves,right,20605,1187
+Mouse,POLYIC_20190510_mouse42__E2_P1,axis_halves,dorsal,19218,153
+Mouse,POLYIC_20190510_mouse42__E2_P1,axis_halves,ventral,11459,2439
+Mouse,POLYIC_20190510_mouse42__E2_P1,axis_halves,rostral,15029,1234
+Mouse,POLYIC_20190510_mouse42__E2_P1,axis_halves,caudal,15648,1358
+Mouse,POLYIC_20190510_mouse42__E2_P1,center,center,9620,688
+Mouse,POLYIC_20190510_mouse42__E2_P1,brain_position,first 20%,6657,412
+Mouse,POLYIC_20190510_mouse42__E2_P1,brain_position,middle 60%,19424,1616
+Mouse,POLYIC_20190510_mouse42__E2_P1,brain_position,last 20%,4596,564
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,axis_halves,left,4801,1124
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,axis_halves,right,7061,560
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,axis_halves,dorsal,821,16
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,axis_halves,ventral,11041,1668
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,axis_halves,rostral,10902,292
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,axis_halves,caudal,960,1392
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,center,center,2319,1582
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,brain_position,first 20%,2980,27
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,brain_position,middle 60%,8365,441
+Mouse,POLYIC_20190510_mouse43__E2_P1_1,brain_position,last 20%,125,1216
+Mouse,POLYIC_20190510_mouse43__E9_P1,axis_halves,left,9035,1781
+Mouse,POLYIC_20190510_mouse43__E9_P1,axis_halves,right,12157,422
+Mouse,POLYIC_20190510_mouse43__E9_P1,axis_halves,dorsal,1212,0
+Mouse,POLYIC_20190510_mouse43__E9_P1,axis_halves,ventral,19980,2203
+Mouse,POLYIC_20190510_mouse43__E9_P1,axis_halves,rostral,15840,718
+Mouse,POLYIC_20190510_mouse43__E9_P1,axis_halves,caudal,5352,1485
+Mouse,POLYIC_20190510_mouse43__E9_P1,center,center,3028,753
+Mouse,POLYIC_20190510_mouse43__E9_P1,brain_position,first 20%,8330,175
+Mouse,POLYIC_20190510_mouse43__E9_P1,brain_position,middle 60%,12180,1156
+Mouse,POLYIC_20190510_mouse43__E9_P1,brain_position,last 20%,682,872
+Mouse,POLYIC_20190510_mouse44__E4_P1,axis_halves,left,15760,805
+Mouse,POLYIC_20190510_mouse44__E4_P1,axis_halves,right,14710,217
+Mouse,POLYIC_20190510_mouse44__E4_P1,axis_halves,dorsal,2236,130
+Mouse,POLYIC_20190510_mouse44__E4_P1,axis_halves,ventral,28234,892
+Mouse,POLYIC_20190510_mouse44__E4_P1,axis_halves,rostral,20706,521
+Mouse,POLYIC_20190510_mouse44__E4_P1,axis_halves,caudal,9764,501
+Mouse,POLYIC_20190510_mouse44__E4_P1,center,center,4090,252
+Mouse,POLYIC_20190510_mouse44__E4_P1,brain_position,first 20%,13420,38
+Mouse,POLYIC_20190510_mouse44__E4_P1,brain_position,middle 60%,13913,826
+Mouse,POLYIC_20190510_mouse44__E4_P1,brain_position,last 20%,3137,158
+Mouse,POLYIC_20190517_mouse30__E3_P1,axis_halves,left,7040,1352
+Mouse,POLYIC_20190517_mouse30__E3_P1,axis_halves,right,30008,1078
+Mouse,POLYIC_20190517_mouse30__E3_P1,axis_halves,dorsal,28522,144
+Mouse,POLYIC_20190517_mouse30__E3_P1,axis_halves,ventral,8526,2286
+Mouse,POLYIC_20190517_mouse30__E3_P1,axis_halves,rostral,17972,1429
+Mouse,POLYIC_20190517_mouse30__E3_P1,axis_halves,caudal,19076,1001
+Mouse,POLYIC_20190517_mouse30__E3_P1,center,center,7723,876
+Mouse,POLYIC_20190517_mouse30__E3_P1,brain_position,first 20%,9905,566
+Mouse,POLYIC_20190517_mouse30__E3_P1,brain_position,middle 60%,22750,1359
+Mouse,POLYIC_20190517_mouse30__E3_P1,brain_position,last 20%,4393,505
+Mouse,POLYIC_20190517_mouse31__E3_P1,axis_halves,left,15994,3833
+Mouse,POLYIC_20190517_mouse31__E3_P1,axis_halves,right,26388,1316
+Mouse,POLYIC_20190517_mouse31__E3_P1,axis_halves,dorsal,34923,625
+Mouse,POLYIC_20190517_mouse31__E3_P1,axis_halves,ventral,7459,4524
+Mouse,POLYIC_20190517_mouse31__E3_P1,axis_halves,rostral,29424,2556
+Mouse,POLYIC_20190517_mouse31__E3_P1,axis_halves,caudal,12958,2593
+Mouse,POLYIC_20190517_mouse31__E3_P1,center,center,6668,2281
+Mouse,POLYIC_20190517_mouse31__E3_P1,brain_position,first 20%,16756,756
+Mouse,POLYIC_20190517_mouse31__E3_P1,brain_position,middle 60%,21440,3767
+Mouse,POLYIC_20190517_mouse31__E3_P1,brain_position,last 20%,4186,626
+Mouse,POLYIC_20190517_mouse32__E3_P1,axis_halves,left,7582,1189
+Mouse,POLYIC_20190517_mouse32__E3_P1,axis_halves,right,12019,1369
+Mouse,POLYIC_20190517_mouse32__E3_P1,axis_halves,dorsal,8008,5
+Mouse,POLYIC_20190517_mouse32__E3_P1,axis_halves,ventral,11593,2553
+Mouse,POLYIC_20190517_mouse32__E3_P1,axis_halves,rostral,12274,1439
+Mouse,POLYIC_20190517_mouse32__E3_P1,axis_halves,caudal,7327,1119
+Mouse,POLYIC_20190517_mouse32__E3_P1,center,center,6247,540
+Mouse,POLYIC_20190517_mouse32__E3_P1,brain_position,first 20%,5363,766
+Mouse,POLYIC_20190517_mouse32__E3_P1,brain_position,middle 60%,12814,1222
+Mouse,POLYIC_20190517_mouse32__E3_P1,brain_position,last 20%,1424,570
+Mouse,POLYIC_20190517_mouse33__E2_P1,axis_halves,left,8263,2348
+Mouse,POLYIC_20190517_mouse33__E2_P1,axis_halves,right,28313,604
+Mouse,POLYIC_20190517_mouse33__E2_P1,axis_halves,dorsal,23227,249
+Mouse,POLYIC_20190517_mouse33__E2_P1,axis_halves,ventral,13349,2703
+Mouse,POLYIC_20190517_mouse33__E2_P1,axis_halves,rostral,23080,1478
+Mouse,POLYIC_20190517_mouse33__E2_P1,axis_halves,caudal,13496,1474
+Mouse,POLYIC_20190517_mouse33__E2_P1,center,center,7975,1902
+Mouse,POLYIC_20190517_mouse33__E2_P1,brain_position,first 20%,13904,241
+Mouse,POLYIC_20190517_mouse33__E2_P1,brain_position,middle 60%,20740,2358
+Mouse,POLYIC_20190517_mouse33__E2_P1,brain_position,last 20%,1932,353
+Mouse,POLYIC_20190517_mouse35__E2_P1,axis_halves,left,10642,1021
+Mouse,POLYIC_20190517_mouse35__E2_P1,axis_halves,right,17071,697
+Mouse,POLYIC_20190517_mouse35__E2_P1,axis_halves,dorsal,12080,45
+Mouse,POLYIC_20190517_mouse35__E2_P1,axis_halves,ventral,15633,1673
+Mouse,POLYIC_20190517_mouse35__E2_P1,axis_halves,rostral,19098,941
+Mouse,POLYIC_20190517_mouse35__E2_P1,axis_halves,caudal,8615,777
+Mouse,POLYIC_20190517_mouse35__E2_P1,center,center,7593,396
+Mouse,POLYIC_20190517_mouse35__E2_P1,brain_position,first 20%,8670,229
+Mouse,POLYIC_20190517_mouse35__E2_P1,brain_position,middle 60%,17115,1306
+Mouse,POLYIC_20190517_mouse35__E2_P1,brain_position,last 20%,1928,183
+Mouse,POLYIC_20190517_mouse36__E2_P1,axis_halves,left,9849,1330
+Mouse,POLYIC_20190517_mouse36__E2_P1,axis_halves,right,15320,923
+Mouse,POLYIC_20190517_mouse36__E2_P1,axis_halves,dorsal,11051,18
+Mouse,POLYIC_20190517_mouse36__E2_P1,axis_halves,ventral,14118,2235
+Mouse,POLYIC_20190517_mouse36__E2_P1,axis_halves,rostral,12769,1275
+Mouse,POLYIC_20190517_mouse36__E2_P1,axis_halves,caudal,12400,978
+Mouse,POLYIC_20190517_mouse36__E2_P1,center,center,9545,651
+Mouse,POLYIC_20190517_mouse36__E2_P1,brain_position,first 20%,5026,629
+Mouse,POLYIC_20190517_mouse36__E2_P1,brain_position,middle 60%,18227,1206
+Mouse,POLYIC_20190517_mouse36__E2_P1,brain_position,last 20%,1916,418
+Mouse,POLYIC_20190517_mouse37__E3_P1,axis_halves,left,20313,2801
+Mouse,POLYIC_20190517_mouse37__E3_P1,axis_halves,right,26744,1663
+Mouse,POLYIC_20190517_mouse37__E3_P1,axis_halves,dorsal,18303,21
+Mouse,POLYIC_20190517_mouse37__E3_P1,axis_halves,ventral,28754,4443
+Mouse,POLYIC_20190517_mouse37__E3_P1,axis_halves,rostral,29635,3314
+Mouse,POLYIC_20190517_mouse37__E3_P1,axis_halves,caudal,17422,1150
+Mouse,POLYIC_20190517_mouse37__E3_P1,center,center,12035,1200
+Mouse,POLYIC_20190517_mouse37__E3_P1,brain_position,first 20%,17796,297
+Mouse,POLYIC_20190517_mouse37__E3_P1,brain_position,middle 60%,22404,3866
+Mouse,POLYIC_20190517_mouse37__E3_P1,brain_position,last 20%,6857,301
+Mouse,POLYIC_20190517_mouse38__E3_P1,axis_halves,left,4809,1852
+Mouse,POLYIC_20190517_mouse38__E3_P1,axis_halves,right,16953,813
+Mouse,POLYIC_20190517_mouse38__E3_P1,axis_halves,dorsal,13611,67
+Mouse,POLYIC_20190517_mouse38__E3_P1,axis_halves,ventral,8151,2598
+Mouse,POLYIC_20190517_mouse38__E3_P1,axis_halves,rostral,12518,1233
+Mouse,POLYIC_20190517_mouse38__E3_P1,axis_halves,caudal,9244,1432
+Mouse,POLYIC_20190517_mouse38__E3_P1,center,center,4888,953
+Mouse,POLYIC_20190517_mouse38__E3_P1,brain_position,first 20%,5939,477
+Mouse,POLYIC_20190517_mouse38__E3_P1,brain_position,middle 60%,12416,1604
+Mouse,POLYIC_20190517_mouse38__E3_P1,brain_position,last 20%,3407,584
+Mouse,POLYIC_20190517_mouse39__E12_P1,axis_halves,left,18804,2476
+Mouse,POLYIC_20190517_mouse39__E12_P1,axis_halves,right,26164,1159
+Mouse,POLYIC_20190517_mouse39__E12_P1,axis_halves,dorsal,6444,0
+Mouse,POLYIC_20190517_mouse39__E12_P1,axis_halves,ventral,38524,3635
+Mouse,POLYIC_20190517_mouse39__E12_P1,axis_halves,rostral,29788,2600
+Mouse,POLYIC_20190517_mouse39__E12_P1,axis_halves,caudal,15180,1035
+Mouse,POLYIC_20190517_mouse39__E12_P1,center,center,11614,959
+Mouse,POLYIC_20190517_mouse39__E12_P1,brain_position,first 20%,15020,646
+Mouse,POLYIC_20190517_mouse39__E12_P1,brain_position,middle 60%,22950,2829
+Mouse,POLYIC_20190517_mouse39__E12_P1,brain_position,last 20%,6998,160
+Mouse,POLYIC_20190517_mouse40__E3_P1,axis_halves,left,3701,1117
+Mouse,POLYIC_20190517_mouse40__E3_P1,axis_halves,right,9116,842
+Mouse,POLYIC_20190517_mouse40__E3_P1,axis_halves,dorsal,156,0
+Mouse,POLYIC_20190517_mouse40__E3_P1,axis_halves,ventral,12661,1959
+Mouse,POLYIC_20190517_mouse40__E3_P1,axis_halves,rostral,7228,1296
+Mouse,POLYIC_20190517_mouse40__E3_P1,axis_halves,caudal,5589,663
+Mouse,POLYIC_20190517_mouse40__E3_P1,center,center,3294,434
+Mouse,POLYIC_20190517_mouse40__E3_P1,brain_position,first 20%,3887,397
+Mouse,POLYIC_20190517_mouse40__E3_P1,brain_position,middle 60%,7084,1221
+Mouse,POLYIC_20190517_mouse40__E3_P1,brain_position,last 20%,1846,341
+Mouse,POLYIC_20190517_mouse41__E3_P1,axis_halves,left,3377,1602
+Mouse,POLYIC_20190517_mouse41__E3_P1,axis_halves,right,25259,1594
+Mouse,POLYIC_20190517_mouse41__E3_P1,axis_halves,dorsal,20515,27
+Mouse,POLYIC_20190517_mouse41__E3_P1,axis_halves,ventral,8121,3169
+Mouse,POLYIC_20190517_mouse41__E3_P1,axis_halves,rostral,16413,1807
+Mouse,POLYIC_20190517_mouse41__E3_P1,axis_halves,caudal,12223,1389
+Mouse,POLYIC_20190517_mouse41__E3_P1,center,center,7020,883
+Mouse,POLYIC_20190517_mouse41__E3_P1,brain_position,first 20%,6242,761
+Mouse,POLYIC_20190517_mouse41__E3_P1,brain_position,middle 60%,18841,1648
+Mouse,POLYIC_20190517_mouse41__E3_P1,brain_position,last 20%,3432,787
+Mouse,POLYIC_20190517_mouse42__E4_P1,axis_halves,left,8230,1237
+Mouse,POLYIC_20190517_mouse42__E4_P1,axis_halves,right,16871,1238
+Mouse,POLYIC_20190517_mouse42__E4_P1,axis_halves,dorsal,12593,0
+Mouse,POLYIC_20190517_mouse42__E4_P1,axis_halves,ventral,12508,2475
+Mouse,POLYIC_20190517_mouse42__E4_P1,axis_halves,rostral,10642,1533
+Mouse,POLYIC_20190517_mouse42__E4_P1,axis_halves,caudal,14459,942
+Mouse,POLYIC_20190517_mouse42__E4_P1,center,center,7744,657
+Mouse,POLYIC_20190517_mouse42__E4_P1,brain_position,first 20%,5028,649
+Mouse,POLYIC_20190517_mouse42__E4_P1,brain_position,middle 60%,16026,1381
+Mouse,POLYIC_20190517_mouse42__E4_P1,brain_position,last 20%,4047,445
+Mouse,POLYIC_20190517_mouse43__E3_P1,axis_halves,left,9312,1224
+Mouse,POLYIC_20190517_mouse43__E3_P1,axis_halves,right,25349,638
+Mouse,POLYIC_20190517_mouse43__E3_P1,axis_halves,dorsal,18658,71
+Mouse,POLYIC_20190517_mouse43__E3_P1,axis_halves,ventral,16003,1791
+Mouse,POLYIC_20190517_mouse43__E3_P1,axis_halves,rostral,19274,1246
+Mouse,POLYIC_20190517_mouse43__E3_P1,axis_halves,caudal,15387,616
+Mouse,POLYIC_20190517_mouse43__E3_P1,center,center,8224,598
+Mouse,POLYIC_20190517_mouse43__E3_P1,brain_position,first 20%,8838,384
+Mouse,POLYIC_20190517_mouse43__E3_P1,brain_position,middle 60%,22592,1168
+Mouse,POLYIC_20190517_mouse43__E3_P1,brain_position,last 20%,3231,310
+Mouse,POLYIC_20190517_mouse44__E3_P1,axis_halves,left,6856,1801
+Mouse,POLYIC_20190517_mouse44__E3_P1,axis_halves,right,20419,436
+Mouse,POLYIC_20190517_mouse44__E3_P1,axis_halves,dorsal,12614,122
+Mouse,POLYIC_20190517_mouse44__E3_P1,axis_halves,ventral,14661,2115
+Mouse,POLYIC_20190517_mouse44__E3_P1,axis_halves,rostral,13416,1219
+Mouse,POLYIC_20190517_mouse44__E3_P1,axis_halves,caudal,13859,1018
+Mouse,POLYIC_20190517_mouse44__E3_P1,center,center,4928,1168
+Mouse,POLYIC_20190517_mouse44__E3_P1,brain_position,first 20%,5514,299
+Mouse,POLYIC_20190517_mouse44__E3_P1,brain_position,middle 60%,16729,1689
+Mouse,POLYIC_20190517_mouse44__E3_P1,brain_position,last 20%,5032,249
+Mouse,POLYIC_20190524_polyic___E3_P1,axis_halves,left,16684,3150
+Mouse,POLYIC_20190524_polyic___E3_P1,axis_halves,right,30333,2277
+Mouse,POLYIC_20190524_polyic___E3_P1,axis_halves,dorsal,42038,211
+Mouse,POLYIC_20190524_polyic___E3_P1,axis_halves,ventral,4979,5216
+Mouse,POLYIC_20190524_polyic___E3_P1,axis_halves,rostral,24716,1968
+Mouse,POLYIC_20190524_polyic___E3_P1,axis_halves,caudal,22301,3459
+Mouse,POLYIC_20190524_polyic___E3_P1,center,center,11862,1246
+Mouse,POLYIC_20190524_polyic___E3_P1,brain_position,first 20%,9714,848
+Mouse,POLYIC_20190524_polyic___E3_P1,brain_position,middle 60%,32320,2644
+Mouse,POLYIC_20190524_polyic___E3_P1,brain_position,last 20%,4983,1935
+Mouse,POLYIC_20190524_polyic___E3_P1_1,axis_halves,left,7079,1976
+Mouse,POLYIC_20190524_polyic___E3_P1_1,axis_halves,right,14266,1368
+Mouse,POLYIC_20190524_polyic___E3_P1_1,axis_halves,dorsal,14491,109
+Mouse,POLYIC_20190524_polyic___E3_P1_1,axis_halves,ventral,6854,3235
+Mouse,POLYIC_20190524_polyic___E3_P1_1,axis_halves,rostral,10232,1952
+Mouse,POLYIC_20190524_polyic___E3_P1_1,axis_halves,caudal,11113,1392
+Mouse,POLYIC_20190524_polyic___E3_P1_1,center,center,8051,602
+Mouse,POLYIC_20190524_polyic___E3_P1_1,brain_position,first 20%,6352,1099
+Mouse,POLYIC_20190524_polyic___E3_P1_1,brain_position,middle 60%,12475,1721
+Mouse,POLYIC_20190524_polyic___E3_P1_1,brain_position,last 20%,2494,524
+Mouse,POLYIC_20190524_polyic___E3_P1_10,axis_halves,left,3237,2034
+Mouse,POLYIC_20190524_polyic___E3_P1_10,axis_halves,right,8379,1107
+Mouse,POLYIC_20190524_polyic___E3_P1_10,axis_halves,dorsal,3219,16
+Mouse,POLYIC_20190524_polyic___E3_P1_10,axis_halves,ventral,8397,3125
+Mouse,POLYIC_20190524_polyic___E3_P1_10,axis_halves,rostral,8260,1724
+Mouse,POLYIC_20190524_polyic___E3_P1_10,axis_halves,caudal,3356,1417
+Mouse,POLYIC_20190524_polyic___E3_P1_10,center,center,3240,1030
+Mouse,POLYIC_20190524_polyic___E3_P1_10,brain_position,first 20%,4126,903
+Mouse,POLYIC_20190524_polyic___E3_P1_10,brain_position,middle 60%,6979,1616
+Mouse,POLYIC_20190524_polyic___E3_P1_10,brain_position,last 20%,495,622
+Mouse,POLYIC_20190524_polyic___E3_P1_12,axis_halves,left,8228,2618
+Mouse,POLYIC_20190524_polyic___E3_P1_12,axis_halves,right,15160,821
+Mouse,POLYIC_20190524_polyic___E3_P1_12,axis_halves,dorsal,15376,299
+Mouse,POLYIC_20190524_polyic___E3_P1_12,axis_halves,ventral,8012,3140
+Mouse,POLYIC_20190524_polyic___E3_P1_12,axis_halves,rostral,17375,1971
+Mouse,POLYIC_20190524_polyic___E3_P1_12,axis_halves,caudal,6013,1468
+Mouse,POLYIC_20190524_polyic___E3_P1_12,center,center,4371,1905
+Mouse,POLYIC_20190524_polyic___E3_P1_12,brain_position,first 20%,8386,711
+Mouse,POLYIC_20190524_polyic___E3_P1_12,brain_position,middle 60%,12696,2539
+Mouse,POLYIC_20190524_polyic___E3_P1_12,brain_position,last 20%,2306,189
+Mouse,POLYIC_20190524_polyic___E3_P1_13,axis_halves,left,15552,2050
+Mouse,POLYIC_20190524_polyic___E3_P1_13,axis_halves,right,22747,841
+Mouse,POLYIC_20190524_polyic___E3_P1_13,axis_halves,dorsal,25679,80
+Mouse,POLYIC_20190524_polyic___E3_P1_13,axis_halves,ventral,12620,2811
+Mouse,POLYIC_20190524_polyic___E3_P1_13,axis_halves,rostral,27342,1083
+Mouse,POLYIC_20190524_polyic___E3_P1_13,axis_halves,caudal,10957,1808
+Mouse,POLYIC_20190524_polyic___E3_P1_13,center,center,9597,668
+Mouse,POLYIC_20190524_polyic___E3_P1_13,brain_position,first 20%,12671,396
+Mouse,POLYIC_20190524_polyic___E3_P1_13,brain_position,middle 60%,24505,1672
+Mouse,POLYIC_20190524_polyic___E3_P1_13,brain_position,last 20%,1123,823
+Mouse,POLYIC_20190524_polyic___E3_P1_3,axis_halves,left,21154,2527
+Mouse,POLYIC_20190524_polyic___E3_P1_3,axis_halves,right,21898,884
+Mouse,POLYIC_20190524_polyic___E3_P1_3,axis_halves,dorsal,33312,350
+Mouse,POLYIC_20190524_polyic___E3_P1_3,axis_halves,ventral,9740,3061
+Mouse,POLYIC_20190524_polyic___E3_P1_3,axis_halves,rostral,29206,1788
+Mouse,POLYIC_20190524_polyic___E3_P1_3,axis_halves,caudal,13846,1623
+Mouse,POLYIC_20190524_polyic___E3_P1_3,center,center,10352,594
+Mouse,POLYIC_20190524_polyic___E3_P1_3,brain_position,first 20%,12834,625
+Mouse,POLYIC_20190524_polyic___E3_P1_3,brain_position,middle 60%,28984,2169
+Mouse,POLYIC_20190524_polyic___E3_P1_3,brain_position,last 20%,1234,617
+Mouse,POLYIC_20190524_polyic___E3_P1_4,axis_halves,left,9219,1752
+Mouse,POLYIC_20190524_polyic___E3_P1_4,axis_halves,right,24240,1043
+Mouse,POLYIC_20190524_polyic___E3_P1_4,axis_halves,dorsal,23518,41
+Mouse,POLYIC_20190524_polyic___E3_P1_4,axis_halves,ventral,9941,2754
+Mouse,POLYIC_20190524_polyic___E3_P1_4,axis_halves,rostral,14440,1674
+Mouse,POLYIC_20190524_polyic___E3_P1_4,axis_halves,caudal,19019,1121
+Mouse,POLYIC_20190524_polyic___E3_P1_4,center,center,11229,936
+Mouse,POLYIC_20190524_polyic___E3_P1_4,brain_position,first 20%,8390,671
+Mouse,POLYIC_20190524_polyic___E3_P1_4,brain_position,middle 60%,19647,1714
+Mouse,POLYIC_20190524_polyic___E3_P1_4,brain_position,last 20%,5422,410
+Mouse,POLYIC_20190524_polyic___E3_P1_5,axis_halves,left,13557,1852
+Mouse,POLYIC_20190524_polyic___E3_P1_5,axis_halves,right,20668,1183
+Mouse,POLYIC_20190524_polyic___E3_P1_5,axis_halves,dorsal,29138,75
+Mouse,POLYIC_20190524_polyic___E3_P1_5,axis_halves,ventral,5087,2960
+Mouse,POLYIC_20190524_polyic___E3_P1_5,axis_halves,rostral,16019,1527
+Mouse,POLYIC_20190524_polyic___E3_P1_5,axis_halves,caudal,18206,1508
+Mouse,POLYIC_20190524_polyic___E3_P1_5,center,center,11099,1021
+Mouse,POLYIC_20190524_polyic___E3_P1_5,brain_position,first 20%,7107,659
+Mouse,POLYIC_20190524_polyic___E3_P1_5,brain_position,middle 60%,23095,1597
+Mouse,POLYIC_20190524_polyic___E3_P1_5,brain_position,last 20%,3764,779
+Mouse,POLYIC_20190524_polyic___E3_P1_6,axis_halves,left,8547,1681
+Mouse,POLYIC_20190524_polyic___E3_P1_6,axis_halves,right,13536,984
+Mouse,POLYIC_20190524_polyic___E3_P1_6,axis_halves,dorsal,8789,2
+Mouse,POLYIC_20190524_polyic___E3_P1_6,axis_halves,ventral,13294,2663
+Mouse,POLYIC_20190524_polyic___E3_P1_6,axis_halves,rostral,16962,1534
+Mouse,POLYIC_20190524_polyic___E3_P1_6,axis_halves,caudal,5121,1131
+Mouse,POLYIC_20190524_polyic___E3_P1_6,center,center,3375,870
+Mouse,POLYIC_20190524_polyic___E3_P1_6,brain_position,first 20%,11786,227
+Mouse,POLYIC_20190524_polyic___E3_P1_6,brain_position,middle 60%,7838,2217
+Mouse,POLYIC_20190524_polyic___E3_P1_6,brain_position,last 20%,2459,221
+Mouse,POLYIC_20190524_polyic___E3_P1_7,axis_halves,left,14818,1986
+Mouse,POLYIC_20190524_polyic___E3_P1_7,axis_halves,right,13312,1603
+Mouse,POLYIC_20190524_polyic___E3_P1_7,axis_halves,dorsal,19029,119
+Mouse,POLYIC_20190524_polyic___E3_P1_7,axis_halves,ventral,9101,3470
+Mouse,POLYIC_20190524_polyic___E3_P1_7,axis_halves,rostral,12430,1980
+Mouse,POLYIC_20190524_polyic___E3_P1_7,axis_halves,caudal,15700,1609
+Mouse,POLYIC_20190524_polyic___E3_P1_7,center,center,11317,704
+Mouse,POLYIC_20190524_polyic___E3_P1_7,brain_position,first 20%,4890,1117
+Mouse,POLYIC_20190524_polyic___E3_P1_7,brain_position,middle 60%,20433,1548
+Mouse,POLYIC_20190524_polyic___E3_P1_7,brain_position,last 20%,2807,924
+Mouse,POLYIC_20190524_polyic___E3_P1_9,axis_halves,left,8391,2433
+Mouse,POLYIC_20190524_polyic___E3_P1_9,axis_halves,right,13795,1689
+Mouse,POLYIC_20190524_polyic___E3_P1_9,axis_halves,dorsal,12119,8
+Mouse,POLYIC_20190524_polyic___E3_P1_9,axis_halves,ventral,10067,4114
+Mouse,POLYIC_20190524_polyic___E3_P1_9,axis_halves,rostral,6721,2315
+Mouse,POLYIC_20190524_polyic___E3_P1_9,axis_halves,caudal,15465,1807
+Mouse,POLYIC_20190524_polyic___E3_P1_9,center,center,10048,824
+Mouse,POLYIC_20190524_polyic___E3_P1_9,brain_position,first 20%,3386,834
+Mouse,POLYIC_20190524_polyic___E3_P1_9,brain_position,middle 60%,16838,2097
+Mouse,POLYIC_20190524_polyic___E3_P1_9,brain_position,last 20%,1962,1191
+Mouse,POLYIC_20190524_polyic___E4_P1_1,axis_halves,left,9526,1926
+Mouse,POLYIC_20190524_polyic___E4_P1_1,axis_halves,right,12771,1308
+Mouse,POLYIC_20190524_polyic___E4_P1_1,axis_halves,dorsal,16916,148
+Mouse,POLYIC_20190524_polyic___E4_P1_1,axis_halves,ventral,5381,3086
+Mouse,POLYIC_20190524_polyic___E4_P1_1,axis_halves,rostral,12043,1697
+Mouse,POLYIC_20190524_polyic___E4_P1_1,axis_halves,caudal,10254,1537
+Mouse,POLYIC_20190524_polyic___E4_P1_1,center,center,8220,929
+Mouse,POLYIC_20190524_polyic___E4_P1_1,brain_position,first 20%,5900,807
+Mouse,POLYIC_20190524_polyic___E4_P1_1,brain_position,middle 60%,15268,1650
+Mouse,POLYIC_20190524_polyic___E4_P1_1,brain_position,last 20%,1023,777
+Mouse,POLYIC_20190524_polyic___E4_P1_7,axis_halves,left,9376,1694
+Mouse,POLYIC_20190524_polyic___E4_P1_7,axis_halves,right,10548,1252
+Mouse,POLYIC_20190524_polyic___E4_P1_7,axis_halves,dorsal,8188,0
+Mouse,POLYIC_20190524_polyic___E4_P1_7,axis_halves,ventral,11736,2946
+Mouse,POLYIC_20190524_polyic___E4_P1_7,axis_halves,rostral,15711,1949
+Mouse,POLYIC_20190524_polyic___E4_P1_7,axis_halves,caudal,4213,997
+Mouse,POLYIC_20190524_polyic___E4_P1_7,center,center,6426,592
+Mouse,POLYIC_20190524_polyic___E4_P1_7,brain_position,first 20%,4980,1099
+Mouse,POLYIC_20190524_polyic___E4_P1_7,brain_position,middle 60%,13744,1433
+Mouse,POLYIC_20190524_polyic___E4_P1_7,brain_position,last 20%,1200,414
+Mouse,POLYIC_20190524_polyic___E4_P1_9,axis_halves,left,10401,3454
+Mouse,POLYIC_20190524_polyic___E4_P1_9,axis_halves,right,18006,1604
+Mouse,POLYIC_20190524_polyic___E4_P1_9,axis_halves,dorsal,14287,118
+Mouse,POLYIC_20190524_polyic___E4_P1_9,axis_halves,ventral,14120,4940
+Mouse,POLYIC_20190524_polyic___E4_P1_9,axis_halves,rostral,24169,1647
+Mouse,POLYIC_20190524_polyic___E4_P1_9,axis_halves,caudal,4238,3411
+Mouse,POLYIC_20190524_polyic___E4_P1_9,center,center,4675,1989
+Mouse,POLYIC_20190524_polyic___E4_P1_9,brain_position,first 20%,11497,266
+Mouse,POLYIC_20190524_polyic___E4_P1_9,brain_position,middle 60%,15366,3515
+Mouse,POLYIC_20190524_polyic___E4_P1_9,brain_position,last 20%,1218,1277
+Mouse,POLYIC_20190524_polyic___E8_P1_1,axis_halves,left,16296,1966
+Mouse,POLYIC_20190524_polyic___E8_P1_1,axis_halves,right,17588,967
+Mouse,POLYIC_20190524_polyic___E8_P1_1,axis_halves,dorsal,27058,242
+Mouse,POLYIC_20190524_polyic___E8_P1_1,axis_halves,ventral,6826,2691
+Mouse,POLYIC_20190524_polyic___E8_P1_1,axis_halves,rostral,18406,1442
+Mouse,POLYIC_20190524_polyic___E8_P1_1,axis_halves,caudal,15478,1491
+Mouse,POLYIC_20190524_polyic___E8_P1_1,center,center,9831,444
+Mouse,POLYIC_20190524_polyic___E8_P1_1,brain_position,first 20%,11734,568
+Mouse,POLYIC_20190524_polyic___E8_P1_1,brain_position,middle 60%,16403,1853
+Mouse,POLYIC_20190524_polyic___E8_P1_1,brain_position,last 20%,5747,512
+Mouse,POLYIC_20190524_polyic___E9_P1_1,axis_halves,left,15782,1769
+Mouse,POLYIC_20190524_polyic___E9_P1_1,axis_halves,right,22339,869
+Mouse,POLYIC_20190524_polyic___E9_P1_1,axis_halves,dorsal,22183,416
+Mouse,POLYIC_20190524_polyic___E9_P1_1,axis_halves,ventral,15938,2222
+Mouse,POLYIC_20190524_polyic___E9_P1_1,axis_halves,rostral,31747,1501
+Mouse,POLYIC_20190524_polyic___E9_P1_1,axis_halves,caudal,6374,1137
+Mouse,POLYIC_20190524_polyic___E9_P1_1,center,center,4201,1185
+Mouse,POLYIC_20190524_polyic___E9_P1_1,brain_position,first 20%,16647,104
+Mouse,POLYIC_20190524_polyic___E9_P1_1,brain_position,middle 60%,18495,2435
+Mouse,POLYIC_20190524_polyic___E9_P1_1,brain_position,last 20%,2979,99
+Mouse,POLYIC_20190531_polyic_m__E3_P1,axis_halves,left,8745,2422
+Mouse,POLYIC_20190531_polyic_m__E3_P1,axis_halves,right,16079,1207
+Mouse,POLYIC_20190531_polyic_m__E3_P1,axis_halves,dorsal,15347,104
+Mouse,POLYIC_20190531_polyic_m__E3_P1,axis_halves,ventral,9477,3525
+Mouse,POLYIC_20190531_polyic_m__E3_P1,axis_halves,rostral,20318,1813
+Mouse,POLYIC_20190531_polyic_m__E3_P1,axis_halves,caudal,4506,1816
+Mouse,POLYIC_20190531_polyic_m__E3_P1,center,center,5180,914
+Mouse,POLYIC_20190531_polyic_m__E3_P1,brain_position,first 20%,11404,559
+Mouse,POLYIC_20190531_polyic_m__E3_P1,brain_position,middle 60%,12420,2140
+Mouse,POLYIC_20190531_polyic_m__E3_P1,brain_position,last 20%,1000,930
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,axis_halves,left,9524,1795
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,axis_halves,right,14116,1614
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,axis_halves,dorsal,9224,4
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,axis_halves,ventral,14416,3405
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,axis_halves,rostral,20063,1527
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,axis_halves,caudal,3577,1882
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,center,center,6558,594
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,brain_position,first 20%,10244,667
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,brain_position,middle 60%,12977,1584
+Mouse,POLYIC_20190531_polyic_m__E3_P1_1,brain_position,last 20%,419,1158
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,axis_halves,left,11084,3419
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,axis_halves,right,30391,2229
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,axis_halves,dorsal,34371,204
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,axis_halves,ventral,7104,5444
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,axis_halves,rostral,30344,2388
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,axis_halves,caudal,11131,3260
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,center,center,10109,2166
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,brain_position,first 20%,14616,575
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,brain_position,middle 60%,26491,3223
+Mouse,POLYIC_20190531_polyic_m__E3_P1_10,brain_position,last 20%,368,1850
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,axis_halves,left,11182,2303
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,axis_halves,right,12614,1766
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,axis_halves,dorsal,14538,3
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,axis_halves,ventral,9258,4066
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,axis_halves,rostral,21196,1773
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,axis_halves,caudal,2600,2296
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,center,center,4880,737
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,brain_position,first 20%,10196,760
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,brain_position,middle 60%,12995,2063
+Mouse,POLYIC_20190531_polyic_m__E3_P1_11,brain_position,last 20%,605,1246
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,axis_halves,left,9612,2004
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,axis_halves,right,18683,1831
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,axis_halves,dorsal,14063,4
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,axis_halves,ventral,14232,3831
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,axis_halves,rostral,23903,1331
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,axis_halves,caudal,4392,2504
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,center,center,7900,1082
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,brain_position,first 20%,9895,552
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,brain_position,middle 60%,17488,1875
+Mouse,POLYIC_20190531_polyic_m__E3_P1_12,brain_position,last 20%,912,1408
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,axis_halves,left,9697,1851
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,axis_halves,right,12416,1680
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,axis_halves,dorsal,9151,0
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,axis_halves,ventral,12962,3531
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,axis_halves,rostral,18122,1712
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,axis_halves,caudal,3991,1819
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,center,center,3688,630
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,brain_position,first 20%,8015,739
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,brain_position,middle 60%,12984,1839
+Mouse,POLYIC_20190531_polyic_m__E3_P1_13,brain_position,last 20%,1114,953
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,axis_halves,left,14730,2277
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,axis_halves,right,24280,2156
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,axis_halves,dorsal,29889,60
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,axis_halves,ventral,9121,4373
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,axis_halves,rostral,26641,2025
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,axis_halves,caudal,12369,2408
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,center,center,9224,749
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,brain_position,first 20%,12398,853
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,brain_position,middle 60%,25122,2223
+Mouse,POLYIC_20190531_polyic_m__E3_P1_2,brain_position,last 20%,1490,1357
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,axis_halves,left,19490,3695
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,axis_halves,right,15696,1804
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,axis_halves,dorsal,23432,407
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,axis_halves,ventral,11754,5092
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,axis_halves,rostral,31748,2402
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,axis_halves,caudal,3438,3097
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,center,center,2715,2341
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,brain_position,first 20%,18638,617
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,brain_position,middle 60%,15394,3464
+Mouse,POLYIC_20190531_polyic_m__E3_P1_3,brain_position,last 20%,1154,1418
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,axis_halves,left,9455,1459
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,axis_halves,right,9432,984
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,axis_halves,dorsal,5812,0
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,axis_halves,ventral,13075,2443
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,axis_halves,rostral,15305,1384
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,axis_halves,caudal,3582,1059
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,center,center,3913,404
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,brain_position,first 20%,9818,524
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,brain_position,middle 60%,7650,1449
+Mouse,POLYIC_20190531_polyic_m__E3_P1_4,brain_position,last 20%,1322,470
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,axis_halves,left,12357,2593
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,axis_halves,right,18735,1990
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,axis_halves,dorsal,20145,37
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,axis_halves,ventral,10947,4546
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,axis_halves,rostral,22791,1861
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,axis_halves,caudal,8301,2722
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,center,center,8274,796
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,brain_position,first 20%,12411,838
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,brain_position,middle 60%,18322,2002
+Mouse,POLYIC_20190531_polyic_m__E3_P1_5,brain_position,last 20%,359,1743
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,axis_halves,left,10955,2286
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,axis_halves,right,27147,2306
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,axis_halves,dorsal,29914,18
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,axis_halves,ventral,8188,4574
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,axis_halves,rostral,25228,2402
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,axis_halves,caudal,12874,2190
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,center,center,11623,891
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,brain_position,first 20%,10412,1024
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,brain_position,middle 60%,27147,2206
+Mouse,POLYIC_20190531_polyic_m__E3_P1_6,brain_position,last 20%,543,1362
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,axis_halves,left,8479,2296
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,axis_halves,right,12658,1178
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,axis_halves,dorsal,9268,3
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,axis_halves,ventral,11869,3471
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,axis_halves,rostral,15968,1709
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,axis_halves,caudal,5169,1765
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,center,center,7002,644
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,brain_position,first 20%,9709,392
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,brain_position,middle 60%,10435,2219
+Mouse,POLYIC_20190531_polyic_m__E3_P1_7,brain_position,last 20%,993,863
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,axis_halves,left,9456,2419
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,axis_halves,right,12824,1624
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,axis_halves,dorsal,12085,92
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,axis_halves,ventral,10195,3951
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,axis_halves,rostral,18139,2009
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,axis_halves,caudal,4141,2034
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,center,center,5753,1005
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,brain_position,first 20%,9113,695
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,brain_position,middle 60%,12588,2127
+Mouse,POLYIC_20190531_polyic_m__E3_P1_8,brain_position,last 20%,579,1221
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,axis_halves,left,18475,1899
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,axis_halves,right,24551,965
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,axis_halves,dorsal,31468,6
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,axis_halves,ventral,11558,2858
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,axis_halves,rostral,26459,1420
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,axis_halves,caudal,16567,1444
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,center,center,11256,629
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,brain_position,first 20%,14666,400
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,brain_position,middle 60%,26580,1640
+Mouse,POLYIC_20190531_polyic_m__E3_P1_9,brain_position,last 20%,1780,824
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,axis_halves,left,9524,1045
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,axis_halves,right,12702,1117
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,axis_halves,dorsal,8249,1
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,axis_halves,ventral,13977,2161
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,axis_halves,rostral,18290,1201
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,axis_halves,caudal,3936,961
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,center,center,6094,338
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,brain_position,first 20%,9705,205
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,brain_position,middle 60%,11580,1218
+Mouse,POLYIC_20190531_polyic_m__E5_P1_11,brain_position,last 20%,941,739
+Mouse,POLYIC_20190612_polyic___E10_P1_1,axis_halves,left,6277,2251
+Mouse,POLYIC_20190612_polyic___E10_P1_1,axis_halves,right,8408,1326
+Mouse,POLYIC_20190612_polyic___E10_P1_1,axis_halves,dorsal,5520,14
+Mouse,POLYIC_20190612_polyic___E10_P1_1,axis_halves,ventral,9165,3563
+Mouse,POLYIC_20190612_polyic___E10_P1_1,axis_halves,rostral,11447,1859
+Mouse,POLYIC_20190612_polyic___E10_P1_1,axis_halves,caudal,3238,1718
+Mouse,POLYIC_20190612_polyic___E10_P1_1,center,center,3591,528
+Mouse,POLYIC_20190612_polyic___E10_P1_1,brain_position,first 20%,7687,661
+Mouse,POLYIC_20190612_polyic___E10_P1_1,brain_position,middle 60%,6429,1829
+Mouse,POLYIC_20190612_polyic___E10_P1_1,brain_position,last 20%,569,1087
+Mouse,POLYIC_20190612_polyic___E12_P1,axis_halves,left,10822,2252
+Mouse,POLYIC_20190612_polyic___E12_P1,axis_halves,right,11658,1683
+Mouse,POLYIC_20190612_polyic___E12_P1,axis_halves,dorsal,11763,0
+Mouse,POLYIC_20190612_polyic___E12_P1,axis_halves,ventral,10717,3935
+Mouse,POLYIC_20190612_polyic___E12_P1,axis_halves,rostral,15426,2391
+Mouse,POLYIC_20190612_polyic___E12_P1,axis_halves,caudal,7054,1544
+Mouse,POLYIC_20190612_polyic___E12_P1,center,center,7534,445
+Mouse,POLYIC_20190612_polyic___E12_P1,brain_position,first 20%,7260,1250
+Mouse,POLYIC_20190612_polyic___E12_P1,brain_position,middle 60%,14647,1643
+Mouse,POLYIC_20190612_polyic___E12_P1,brain_position,last 20%,573,1042
+Mouse,POLYIC_20190612_polyic___E3_P1,axis_halves,left,14798,2215
+Mouse,POLYIC_20190612_polyic___E3_P1,axis_halves,right,15092,1136
+Mouse,POLYIC_20190612_polyic___E3_P1,axis_halves,dorsal,20984,73
+Mouse,POLYIC_20190612_polyic___E3_P1,axis_halves,ventral,8906,3278
+Mouse,POLYIC_20190612_polyic___E3_P1,axis_halves,rostral,20584,1321
+Mouse,POLYIC_20190612_polyic___E3_P1,axis_halves,caudal,9306,2030
+Mouse,POLYIC_20190612_polyic___E3_P1,center,center,9553,654
+Mouse,POLYIC_20190612_polyic___E3_P1,brain_position,first 20%,11000,412
+Mouse,POLYIC_20190612_polyic___E3_P1,brain_position,middle 60%,18068,1617
+Mouse,POLYIC_20190612_polyic___E3_P1,brain_position,last 20%,822,1322
+Mouse,POLYIC_20190612_polyic___E3_P1_1,axis_halves,left,7416,1540
+Mouse,POLYIC_20190612_polyic___E3_P1_1,axis_halves,right,14993,1455
+Mouse,POLYIC_20190612_polyic___E3_P1_1,axis_halves,dorsal,10838,0
+Mouse,POLYIC_20190612_polyic___E3_P1_1,axis_halves,ventral,11571,2995
+Mouse,POLYIC_20190612_polyic___E3_P1_1,axis_halves,rostral,18643,1705
+Mouse,POLYIC_20190612_polyic___E3_P1_1,axis_halves,caudal,3766,1290
+Mouse,POLYIC_20190612_polyic___E3_P1_1,center,center,4093,662
+Mouse,POLYIC_20190612_polyic___E3_P1_1,brain_position,first 20%,9440,854
+Mouse,POLYIC_20190612_polyic___E3_P1_1,brain_position,middle 60%,12189,1367
+Mouse,POLYIC_20190612_polyic___E3_P1_1,brain_position,last 20%,780,774
+Mouse,POLYIC_20190612_polyic___E3_P1_2,axis_halves,left,10005,2280
+Mouse,POLYIC_20190612_polyic___E3_P1_2,axis_halves,right,15572,1064
+Mouse,POLYIC_20190612_polyic___E3_P1_2,axis_halves,dorsal,15473,30
+Mouse,POLYIC_20190612_polyic___E3_P1_2,axis_halves,ventral,10104,3314
+Mouse,POLYIC_20190612_polyic___E3_P1_2,axis_halves,rostral,15569,1620
+Mouse,POLYIC_20190612_polyic___E3_P1_2,axis_halves,caudal,10008,1724
+Mouse,POLYIC_20190612_polyic___E3_P1_2,center,center,10393,681
+Mouse,POLYIC_20190612_polyic___E3_P1_2,brain_position,first 20%,7971,576
+Mouse,POLYIC_20190612_polyic___E3_P1_2,brain_position,middle 60%,16700,1846
+Mouse,POLYIC_20190612_polyic___E3_P1_2,brain_position,last 20%,906,922
+Mouse,POLYIC_20190612_polyic___E3_P1_3,axis_halves,left,6149,1718
+Mouse,POLYIC_20190612_polyic___E3_P1_3,axis_halves,right,12386,1028
+Mouse,POLYIC_20190612_polyic___E3_P1_3,axis_halves,dorsal,7193,16
+Mouse,POLYIC_20190612_polyic___E3_P1_3,axis_halves,ventral,11342,2730
+Mouse,POLYIC_20190612_polyic___E3_P1_3,axis_halves,rostral,14398,1464
+Mouse,POLYIC_20190612_polyic___E3_P1_3,axis_halves,caudal,4137,1282
+Mouse,POLYIC_20190612_polyic___E3_P1_3,center,center,4931,382
+Mouse,POLYIC_20190612_polyic___E3_P1_3,brain_position,first 20%,7308,647
+Mouse,POLYIC_20190612_polyic___E3_P1_3,brain_position,middle 60%,10180,1256
+Mouse,POLYIC_20190612_polyic___E3_P1_3,brain_position,last 20%,1047,843
+Mouse,POLYIC_20190612_polyic___E3_P1_4,axis_halves,left,8147,1726
+Mouse,POLYIC_20190612_polyic___E3_P1_4,axis_halves,right,10806,1437
+Mouse,POLYIC_20190612_polyic___E3_P1_4,axis_halves,dorsal,8471,0
+Mouse,POLYIC_20190612_polyic___E3_P1_4,axis_halves,ventral,10482,3163
+Mouse,POLYIC_20190612_polyic___E3_P1_4,axis_halves,rostral,15673,1838
+Mouse,POLYIC_20190612_polyic___E3_P1_4,axis_halves,caudal,3280,1325
+Mouse,POLYIC_20190612_polyic___E3_P1_4,center,center,5134,329
+Mouse,POLYIC_20190612_polyic___E3_P1_4,brain_position,first 20%,7859,1161
+Mouse,POLYIC_20190612_polyic___E3_P1_4,brain_position,middle 60%,10373,1086
+Mouse,POLYIC_20190612_polyic___E3_P1_4,brain_position,last 20%,721,916
+Mouse,POLYIC_20190614_polyic___E3_P1,axis_halves,left,11894,1732
+Mouse,POLYIC_20190614_polyic___E3_P1,axis_halves,right,13103,1344
+Mouse,POLYIC_20190614_polyic___E3_P1,axis_halves,dorsal,13639,0
+Mouse,POLYIC_20190614_polyic___E3_P1,axis_halves,ventral,11358,3076
+Mouse,POLYIC_20190614_polyic___E3_P1,axis_halves,rostral,11932,1684
+Mouse,POLYIC_20190614_polyic___E3_P1,axis_halves,caudal,13065,1392
+Mouse,POLYIC_20190614_polyic___E3_P1,center,center,9411,374
+Mouse,POLYIC_20190614_polyic___E3_P1,brain_position,first 20%,7272,759
+Mouse,POLYIC_20190614_polyic___E3_P1,brain_position,middle 60%,14869,1493
+Mouse,POLYIC_20190614_polyic___E3_P1,brain_position,last 20%,2856,824
+Mouse,POLYIC_20190614_polyic___E3_P1_1,axis_halves,left,20022,1647
+Mouse,POLYIC_20190614_polyic___E3_P1_1,axis_halves,right,27348,1862
+Mouse,POLYIC_20190614_polyic___E3_P1_1,axis_halves,dorsal,38729,1
+Mouse,POLYIC_20190614_polyic___E3_P1_1,axis_halves,ventral,8641,3508
+Mouse,POLYIC_20190614_polyic___E3_P1_1,axis_halves,rostral,31246,1460
+Mouse,POLYIC_20190614_polyic___E3_P1_1,axis_halves,caudal,16124,2049
+Mouse,POLYIC_20190614_polyic___E3_P1_1,center,center,15423,709
+Mouse,POLYIC_20190614_polyic___E3_P1_1,brain_position,first 20%,13003,659
+Mouse,POLYIC_20190614_polyic___E3_P1_1,brain_position,middle 60%,32652,1739
+Mouse,POLYIC_20190614_polyic___E3_P1_1,brain_position,last 20%,1711,1111
+Mouse,POLYIC_20190614_polyic___E3_P1_3,axis_halves,left,17649,1567
+Mouse,POLYIC_20190614_polyic___E3_P1_3,axis_halves,right,16325,767
+Mouse,POLYIC_20190614_polyic___E3_P1_3,axis_halves,dorsal,19120,83
+Mouse,POLYIC_20190614_polyic___E3_P1_3,axis_halves,ventral,14854,2251
+Mouse,POLYIC_20190614_polyic___E3_P1_3,axis_halves,rostral,25671,1061
+Mouse,POLYIC_20190614_polyic___E3_P1_3,axis_halves,caudal,8303,1273
+Mouse,POLYIC_20190614_polyic___E3_P1_3,center,center,10334,535
+Mouse,POLYIC_20190614_polyic___E3_P1_3,brain_position,first 20%,12942,94
+Mouse,POLYIC_20190614_polyic___E3_P1_3,brain_position,middle 60%,19024,1484
+Mouse,POLYIC_20190614_polyic___E3_P1_3,brain_position,last 20%,2008,756
+Mouse,POLYIC_20190614_polyic___E3_P1_4,axis_halves,left,11440,1355
+Mouse,POLYIC_20190614_polyic___E3_P1_4,axis_halves,right,14690,1053
+Mouse,POLYIC_20190614_polyic___E3_P1_4,axis_halves,dorsal,14693,2
+Mouse,POLYIC_20190614_polyic___E3_P1_4,axis_halves,ventral,11437,2406
+Mouse,POLYIC_20190614_polyic___E3_P1_4,axis_halves,rostral,17010,1547
+Mouse,POLYIC_20190614_polyic___E3_P1_4,axis_halves,caudal,9120,861
+Mouse,POLYIC_20190614_polyic___E3_P1_4,center,center,10760,324
+Mouse,POLYIC_20190614_polyic___E3_P1_4,brain_position,first 20%,7840,457
+Mouse,POLYIC_20190614_polyic___E3_P1_4,brain_position,middle 60%,16855,1564
+Mouse,POLYIC_20190614_polyic___E3_P1_4,brain_position,last 20%,1435,387
+Mouse,POLYIC_20190614_polyic___E3_P1_5,axis_halves,left,7312,1936
+Mouse,POLYIC_20190614_polyic___E3_P1_5,axis_halves,right,23741,1003
+Mouse,POLYIC_20190614_polyic___E3_P1_5,axis_halves,dorsal,17517,8
+Mouse,POLYIC_20190614_polyic___E3_P1_5,axis_halves,ventral,13536,2931
+Mouse,POLYIC_20190614_polyic___E3_P1_5,axis_halves,rostral,9470,1720
+Mouse,POLYIC_20190614_polyic___E3_P1_5,axis_halves,caudal,21583,1219
+Mouse,POLYIC_20190614_polyic___E3_P1_5,center,center,11402,681
+Mouse,POLYIC_20190614_polyic___E3_P1_5,brain_position,first 20%,5168,649
+Mouse,POLYIC_20190614_polyic___E3_P1_5,brain_position,middle 60%,16331,1652
+Mouse,POLYIC_20190614_polyic___E3_P1_5,brain_position,last 20%,9018,638
+Mouse,POLYIC_20190614_polyic___E3_P1_6,axis_halves,left,6070,2058
+Mouse,POLYIC_20190614_polyic___E3_P1_6,axis_halves,right,10472,1633
+Mouse,POLYIC_20190614_polyic___E3_P1_6,axis_halves,dorsal,6685,0
+Mouse,POLYIC_20190614_polyic___E3_P1_6,axis_halves,ventral,9857,3691
+Mouse,POLYIC_20190614_polyic___E3_P1_6,axis_halves,rostral,13132,2143
+Mouse,POLYIC_20190614_polyic___E3_P1_6,axis_halves,caudal,3410,1548
+Mouse,POLYIC_20190614_polyic___E3_P1_6,center,center,3620,219
+Mouse,POLYIC_20190614_polyic___E3_P1_6,brain_position,first 20%,8863,1020
+Mouse,POLYIC_20190614_polyic___E3_P1_6,brain_position,middle 60%,6938,1771
+Mouse,POLYIC_20190614_polyic___E3_P1_6,brain_position,last 20%,741,900
+Mouse,POLYIC_20190614_polyic___E4_P1_5,axis_halves,left,12049,1981
+Mouse,POLYIC_20190614_polyic___E4_P1_5,axis_halves,right,22273,1412
+Mouse,POLYIC_20190614_polyic___E4_P1_5,axis_halves,dorsal,24403,19
+Mouse,POLYIC_20190614_polyic___E4_P1_5,axis_halves,ventral,9919,3374
+Mouse,POLYIC_20190614_polyic___E4_P1_5,axis_halves,rostral,24113,1650
+Mouse,POLYIC_20190614_polyic___E4_P1_5,axis_halves,caudal,10209,1743
+Mouse,POLYIC_20190614_polyic___E4_P1_5,center,center,10963,575
+Mouse,POLYIC_20190614_polyic___E4_P1_5,brain_position,first 20%,10362,444
+Mouse,POLYIC_20190614_polyic___E4_P1_5,brain_position,middle 60%,22760,1967
+Mouse,POLYIC_20190614_polyic___E4_P1_5,brain_position,last 20%,1200,982
+Mouse,POLYIC_20190618_mouse30__E3_P1,axis_halves,left,12219,2259
+Mouse,POLYIC_20190618_mouse30__E3_P1,axis_halves,right,14718,1234
+Mouse,POLYIC_20190618_mouse30__E3_P1,axis_halves,dorsal,18156,60
+Mouse,POLYIC_20190618_mouse30__E3_P1,axis_halves,ventral,8781,3433
+Mouse,POLYIC_20190618_mouse30__E3_P1,axis_halves,rostral,21872,1753
+Mouse,POLYIC_20190618_mouse30__E3_P1,axis_halves,caudal,5065,1740
+Mouse,POLYIC_20190618_mouse30__E3_P1,center,center,6771,640
+Mouse,POLYIC_20190618_mouse30__E3_P1,brain_position,first 20%,13357,697
+Mouse,POLYIC_20190618_mouse30__E3_P1,brain_position,middle 60%,13043,1753
+Mouse,POLYIC_20190618_mouse30__E3_P1,brain_position,last 20%,537,1043
+Mouse,POLYIC_20190618_mouse31__E3_P1,axis_halves,left,9278,1636
+Mouse,POLYIC_20190618_mouse31__E3_P1,axis_halves,right,12138,1274
+Mouse,POLYIC_20190618_mouse31__E3_P1,axis_halves,dorsal,9858,5
+Mouse,POLYIC_20190618_mouse31__E3_P1,axis_halves,ventral,11558,2905
+Mouse,POLYIC_20190618_mouse31__E3_P1,axis_halves,rostral,17446,1611
+Mouse,POLYIC_20190618_mouse31__E3_P1,axis_halves,caudal,3970,1299
+Mouse,POLYIC_20190618_mouse31__E3_P1,center,center,4806,591
+Mouse,POLYIC_20190618_mouse31__E3_P1,brain_position,first 20%,9454,627
+Mouse,POLYIC_20190618_mouse31__E3_P1,brain_position,middle 60%,11137,1597
+Mouse,POLYIC_20190618_mouse31__E3_P1,brain_position,last 20%,825,686
+Mouse,POLYIC_20190618_mouse32__E3_P1,axis_halves,left,7839,1953
+Mouse,POLYIC_20190618_mouse32__E3_P1,axis_halves,right,10492,1164
+Mouse,POLYIC_20190618_mouse32__E3_P1,axis_halves,dorsal,8224,16
+Mouse,POLYIC_20190618_mouse32__E3_P1,axis_halves,ventral,10107,3101
+Mouse,POLYIC_20190618_mouse32__E3_P1,axis_halves,rostral,14577,1371
+Mouse,POLYIC_20190618_mouse32__E3_P1,axis_halves,caudal,3754,1746
+Mouse,POLYIC_20190618_mouse32__E3_P1,center,center,5291,551
+Mouse,POLYIC_20190618_mouse32__E3_P1,brain_position,first 20%,7297,665
+Mouse,POLYIC_20190618_mouse32__E3_P1,brain_position,middle 60%,10643,1411
+Mouse,POLYIC_20190618_mouse32__E3_P1,brain_position,last 20%,391,1041
+Mouse,POLYIC_20190618_mouse33__E3_P1,axis_halves,left,9665,1974
+Mouse,POLYIC_20190618_mouse33__E3_P1,axis_halves,right,8883,1290
+Mouse,POLYIC_20190618_mouse33__E3_P1,axis_halves,dorsal,8482,32
+Mouse,POLYIC_20190618_mouse33__E3_P1,axis_halves,ventral,10066,3232
+Mouse,POLYIC_20190618_mouse33__E3_P1,axis_halves,rostral,12371,1719
+Mouse,POLYIC_20190618_mouse33__E3_P1,axis_halves,caudal,6177,1545
+Mouse,POLYIC_20190618_mouse33__E3_P1,center,center,5747,570
+Mouse,POLYIC_20190618_mouse33__E3_P1,brain_position,first 20%,7812,524
+Mouse,POLYIC_20190618_mouse33__E3_P1,brain_position,middle 60%,9978,1717
+Mouse,POLYIC_20190618_mouse33__E3_P1,brain_position,last 20%,758,1023
+Mouse,POLYIC_20190618_mouse34__E3_P1,axis_halves,left,9112,1263
+Mouse,POLYIC_20190618_mouse34__E3_P1,axis_halves,right,16112,1039
+Mouse,POLYIC_20190618_mouse34__E3_P1,axis_halves,dorsal,10026,0
+Mouse,POLYIC_20190618_mouse34__E3_P1,axis_halves,ventral,15198,2302
+Mouse,POLYIC_20190618_mouse34__E3_P1,axis_halves,rostral,21785,1110
+Mouse,POLYIC_20190618_mouse34__E3_P1,axis_halves,caudal,3439,1192
+Mouse,POLYIC_20190618_mouse34__E3_P1,center,center,7013,528
+Mouse,POLYIC_20190618_mouse34__E3_P1,brain_position,first 20%,10557,461
+Mouse,POLYIC_20190618_mouse34__E3_P1,brain_position,middle 60%,13978,1146
+Mouse,POLYIC_20190618_mouse34__E3_P1,brain_position,last 20%,689,695
+Mouse,POLYIC_20190618_mouse35__E3_P1,axis_halves,left,11139,2160
+Mouse,POLYIC_20190618_mouse35__E3_P1,axis_halves,right,18103,1028
+Mouse,POLYIC_20190618_mouse35__E3_P1,axis_halves,dorsal,17431,125
+Mouse,POLYIC_20190618_mouse35__E3_P1,axis_halves,ventral,11811,3063
+Mouse,POLYIC_20190618_mouse35__E3_P1,axis_halves,rostral,25055,1053
+Mouse,POLYIC_20190618_mouse35__E3_P1,axis_halves,caudal,4187,2135
+Mouse,POLYIC_20190618_mouse35__E3_P1,center,center,4351,930
+Mouse,POLYIC_20190618_mouse35__E3_P1,brain_position,first 20%,7824,294
+Mouse,POLYIC_20190618_mouse35__E3_P1,brain_position,middle 60%,20649,1760
+Mouse,POLYIC_20190618_mouse35__E3_P1,brain_position,last 20%,769,1134
+Mouse,POLYIC_20190618_mouse36__E3_P1,axis_halves,left,11650,1622
+Mouse,POLYIC_20190618_mouse36__E3_P1,axis_halves,right,15154,1367
+Mouse,POLYIC_20190618_mouse36__E3_P1,axis_halves,dorsal,14011,15
+Mouse,POLYIC_20190618_mouse36__E3_P1,axis_halves,ventral,12793,2974
+Mouse,POLYIC_20190618_mouse36__E3_P1,axis_halves,rostral,23376,1175
+Mouse,POLYIC_20190618_mouse36__E3_P1,axis_halves,caudal,3428,1814
+Mouse,POLYIC_20190618_mouse36__E3_P1,center,center,5488,600
+Mouse,POLYIC_20190618_mouse36__E3_P1,brain_position,first 20%,10562,481
+Mouse,POLYIC_20190618_mouse36__E3_P1,brain_position,middle 60%,15702,1452
+Mouse,POLYIC_20190618_mouse36__E3_P1,brain_position,last 20%,540,1056
+Mouse,POLYIC_20190619_mouse38__E3_P1,axis_halves,left,13292,1720
+Mouse,POLYIC_20190619_mouse38__E3_P1,axis_halves,right,18563,1165
+Mouse,POLYIC_20190619_mouse38__E3_P1,axis_halves,dorsal,17560,0
+Mouse,POLYIC_20190619_mouse38__E3_P1,axis_halves,ventral,14295,2885
+Mouse,POLYIC_20190619_mouse38__E3_P1,axis_halves,rostral,27930,1275
+Mouse,POLYIC_20190619_mouse38__E3_P1,axis_halves,caudal,3925,1610
+Mouse,POLYIC_20190619_mouse38__E3_P1,center,center,7025,520
+Mouse,POLYIC_20190619_mouse38__E3_P1,brain_position,first 20%,9790,454
+Mouse,POLYIC_20190619_mouse38__E3_P1,brain_position,middle 60%,21376,1560
+Mouse,POLYIC_20190619_mouse38__E3_P1,brain_position,last 20%,689,871
+Mouse,POLYIC_20190619_mouse39__E3_P1,axis_halves,left,6644,2120
+Mouse,POLYIC_20190619_mouse39__E3_P1,axis_halves,right,13936,1507
+Mouse,POLYIC_20190619_mouse39__E3_P1,axis_halves,dorsal,9339,0
+Mouse,POLYIC_20190619_mouse39__E3_P1,axis_halves,ventral,11241,3627
+Mouse,POLYIC_20190619_mouse39__E3_P1,axis_halves,rostral,18001,1915
+Mouse,POLYIC_20190619_mouse39__E3_P1,axis_halves,caudal,2579,1712
+Mouse,POLYIC_20190619_mouse39__E3_P1,center,center,3545,531
+Mouse,POLYIC_20190619_mouse39__E3_P1,brain_position,first 20%,12938,608
+Mouse,POLYIC_20190619_mouse39__E3_P1,brain_position,middle 60%,7045,2009
+Mouse,POLYIC_20190619_mouse39__E3_P1,brain_position,last 20%,597,1010
+Mouse,POLYIC_20190619_mouse40__E3_P1,axis_halves,left,11007,2017
+Mouse,POLYIC_20190619_mouse40__E3_P1,axis_halves,right,10992,1281
+Mouse,POLYIC_20190619_mouse40__E3_P1,axis_halves,dorsal,12527,23
+Mouse,POLYIC_20190619_mouse40__E3_P1,axis_halves,ventral,9472,3275
+Mouse,POLYIC_20190619_mouse40__E3_P1,axis_halves,rostral,11401,1557
+Mouse,POLYIC_20190619_mouse40__E3_P1,axis_halves,caudal,10598,1741
+Mouse,POLYIC_20190619_mouse40__E3_P1,center,center,10265,534
+Mouse,POLYIC_20190619_mouse40__E3_P1,brain_position,first 20%,6354,589
+Mouse,POLYIC_20190619_mouse40__E3_P1,brain_position,middle 60%,15103,1734
+Mouse,POLYIC_20190619_mouse40__E3_P1,brain_position,last 20%,542,975
+Mouse,POLYIC_20190619_mouse41__E3_P1,axis_halves,left,15294,2379
+Mouse,POLYIC_20190619_mouse41__E3_P1,axis_halves,right,21458,1620
+Mouse,POLYIC_20190619_mouse41__E3_P1,axis_halves,dorsal,25118,13
+Mouse,POLYIC_20190619_mouse41__E3_P1,axis_halves,ventral,11634,3986
+Mouse,POLYIC_20190619_mouse41__E3_P1,axis_halves,rostral,32482,1350
+Mouse,POLYIC_20190619_mouse41__E3_P1,axis_halves,caudal,4270,2649
+Mouse,POLYIC_20190619_mouse41__E3_P1,center,center,6524,722
+Mouse,POLYIC_20190619_mouse41__E3_P1,brain_position,first 20%,15760,581
+Mouse,POLYIC_20190619_mouse41__E3_P1,brain_position,middle 60%,20795,1890
+Mouse,POLYIC_20190619_mouse41__E3_P1,brain_position,last 20%,197,1528
+Mouse,POLYIC_20190619_mouse42__E3_P1,axis_halves,left,11077,1996
+Mouse,POLYIC_20190619_mouse42__E3_P1,axis_halves,right,21379,1420
+Mouse,POLYIC_20190619_mouse42__E3_P1,axis_halves,dorsal,23185,17
+Mouse,POLYIC_20190619_mouse42__E3_P1,axis_halves,ventral,9271,3399
+Mouse,POLYIC_20190619_mouse42__E3_P1,axis_halves,rostral,22983,1530
+Mouse,POLYIC_20190619_mouse42__E3_P1,axis_halves,caudal,9473,1886
+Mouse,POLYIC_20190619_mouse42__E3_P1,center,center,10014,1158
+Mouse,POLYIC_20190619_mouse42__E3_P1,brain_position,first 20%,12404,417
+Mouse,POLYIC_20190619_mouse42__E3_P1,brain_position,middle 60%,19486,2051
+Mouse,POLYIC_20190619_mouse42__E3_P1,brain_position,last 20%,566,948
+Mouse,POLYIC_20190619_mouse43__E3_P1,axis_halves,left,6056,1355
+Mouse,POLYIC_20190619_mouse43__E3_P1,axis_halves,right,11428,1049
+Mouse,POLYIC_20190619_mouse43__E3_P1,axis_halves,dorsal,7691,132
+Mouse,POLYIC_20190619_mouse43__E3_P1,axis_halves,ventral,9793,2272
+Mouse,POLYIC_20190619_mouse43__E3_P1,axis_halves,rostral,13316,1160
+Mouse,POLYIC_20190619_mouse43__E3_P1,axis_halves,caudal,4168,1244
+Mouse,POLYIC_20190619_mouse43__E3_P1,center,center,5340,445
+Mouse,POLYIC_20190619_mouse43__E3_P1,brain_position,first 20%,7700,392
+Mouse,POLYIC_20190619_mouse43__E3_P1,brain_position,middle 60%,9056,1252
+Mouse,POLYIC_20190619_mouse43__E3_P1,brain_position,last 20%,728,760
+Mouse,POLYIC_20190619_mouse44__E4_P1,axis_halves,left,9605,1830
+Mouse,POLYIC_20190619_mouse44__E4_P1,axis_halves,right,11917,965
+Mouse,POLYIC_20190619_mouse44__E4_P1,axis_halves,dorsal,12300,24
+Mouse,POLYIC_20190619_mouse44__E4_P1,axis_halves,ventral,9222,2771
+Mouse,POLYIC_20190619_mouse44__E4_P1,axis_halves,rostral,11118,1542
+Mouse,POLYIC_20190619_mouse44__E4_P1,axis_halves,caudal,10404,1253
+Mouse,POLYIC_20190619_mouse44__E4_P1,center,center,10550,310
+Mouse,POLYIC_20190619_mouse44__E4_P1,brain_position,first 20%,5865,607
+Mouse,POLYIC_20190619_mouse44__E4_P1,brain_position,middle 60%,14867,1366
+Mouse,POLYIC_20190619_mouse44__E4_P1,brain_position,last 20%,790,822
+Mouse,POLYIC_20190628_mouse30__E4_P1,axis_halves,left,11940,1660
+Mouse,POLYIC_20190628_mouse30__E4_P1,axis_halves,right,12213,1194
+Mouse,POLYIC_20190628_mouse30__E4_P1,axis_halves,dorsal,7885,0
+Mouse,POLYIC_20190628_mouse30__E4_P1,axis_halves,ventral,16268,2854
+Mouse,POLYIC_20190628_mouse30__E4_P1,axis_halves,rostral,14893,1429
+Mouse,POLYIC_20190628_mouse30__E4_P1,axis_halves,caudal,9260,1425
+Mouse,POLYIC_20190628_mouse30__E4_P1,center,center,10258,221
+Mouse,POLYIC_20190628_mouse30__E4_P1,brain_position,first 20%,9906,663
+Mouse,POLYIC_20190628_mouse30__E4_P1,brain_position,middle 60%,13488,1338
+Mouse,POLYIC_20190628_mouse30__E4_P1,brain_position,last 20%,759,853
+Mouse,POLYIC_20190628_mouse31__E3_P1,axis_halves,left,14202,1935
+Mouse,POLYIC_20190628_mouse31__E3_P1,axis_halves,right,12830,1616
+Mouse,POLYIC_20190628_mouse31__E3_P1,axis_halves,dorsal,15842,0
+Mouse,POLYIC_20190628_mouse31__E3_P1,axis_halves,ventral,11190,3551
+Mouse,POLYIC_20190628_mouse31__E3_P1,axis_halves,rostral,13730,2309
+Mouse,POLYIC_20190628_mouse31__E3_P1,axis_halves,caudal,13302,1242
+Mouse,POLYIC_20190628_mouse31__E3_P1,center,center,13139,362
+Mouse,POLYIC_20190628_mouse31__E3_P1,brain_position,first 20%,6866,967
+Mouse,POLYIC_20190628_mouse31__E3_P1,brain_position,middle 60%,19110,1894
+Mouse,POLYIC_20190628_mouse31__E3_P1,brain_position,last 20%,1056,690
+Mouse,POLYIC_20190628_mouse32__E3_P1,axis_halves,left,7448,1414
+Mouse,POLYIC_20190628_mouse32__E3_P1,axis_halves,right,9401,1417
+Mouse,POLYIC_20190628_mouse32__E3_P1,axis_halves,dorsal,5234,0
+Mouse,POLYIC_20190628_mouse32__E3_P1,axis_halves,ventral,11615,2831
+Mouse,POLYIC_20190628_mouse32__E3_P1,axis_halves,rostral,13418,1611
+Mouse,POLYIC_20190628_mouse32__E3_P1,axis_halves,caudal,3431,1220
+Mouse,POLYIC_20190628_mouse32__E3_P1,center,center,3164,273
+Mouse,POLYIC_20190628_mouse32__E3_P1,brain_position,first 20%,7379,620
+Mouse,POLYIC_20190628_mouse32__E3_P1,brain_position,middle 60%,8420,1396
+Mouse,POLYIC_20190628_mouse32__E3_P1,brain_position,last 20%,1050,815
+Mouse,POLYIC_20190628_mouse33__E3_P1,axis_halves,left,7597,2070
+Mouse,POLYIC_20190628_mouse33__E3_P1,axis_halves,right,8161,1297
+Mouse,POLYIC_20190628_mouse33__E3_P1,axis_halves,dorsal,5462,0
+Mouse,POLYIC_20190628_mouse33__E3_P1,axis_halves,ventral,10296,3367
+Mouse,POLYIC_20190628_mouse33__E3_P1,axis_halves,rostral,12555,2185
+Mouse,POLYIC_20190628_mouse33__E3_P1,axis_halves,caudal,3203,1182
+Mouse,POLYIC_20190628_mouse33__E3_P1,center,center,3425,323
+Mouse,POLYIC_20190628_mouse33__E3_P1,brain_position,first 20%,7727,1328
+Mouse,POLYIC_20190628_mouse33__E3_P1,brain_position,middle 60%,7479,1101
+Mouse,POLYIC_20190628_mouse33__E3_P1,brain_position,last 20%,552,938
+Mouse,POLYIC_20190628_mouse34__E6_P1,axis_halves,left,10403,1724
+Mouse,POLYIC_20190628_mouse34__E6_P1,axis_halves,right,13005,1340
+Mouse,POLYIC_20190628_mouse34__E6_P1,axis_halves,dorsal,10326,0
+Mouse,POLYIC_20190628_mouse34__E6_P1,axis_halves,ventral,13082,3064
+Mouse,POLYIC_20190628_mouse34__E6_P1,axis_halves,rostral,19641,1695
+Mouse,POLYIC_20190628_mouse34__E6_P1,axis_halves,caudal,3767,1369
+Mouse,POLYIC_20190628_mouse34__E6_P1,center,center,6614,390
+Mouse,POLYIC_20190628_mouse34__E6_P1,brain_position,first 20%,10747,720
+Mouse,POLYIC_20190628_mouse34__E6_P1,brain_position,middle 60%,11937,1479
+Mouse,POLYIC_20190628_mouse34__E6_P1,brain_position,last 20%,724,865
+Mouse,POLYIC_20190628_mouse35__E3_P1,axis_halves,left,8126,1343
+Mouse,POLYIC_20190628_mouse35__E3_P1,axis_halves,right,15335,1123
+Mouse,POLYIC_20190628_mouse35__E3_P1,axis_halves,dorsal,10988,0
+Mouse,POLYIC_20190628_mouse35__E3_P1,axis_halves,ventral,12473,2466
+Mouse,POLYIC_20190628_mouse35__E3_P1,axis_halves,rostral,19329,1193
+Mouse,POLYIC_20190628_mouse35__E3_P1,axis_halves,caudal,4132,1273
+Mouse,POLYIC_20190628_mouse35__E3_P1,center,center,7265,452
+Mouse,POLYIC_20190628_mouse35__E3_P1,brain_position,first 20%,8887,691
+Mouse,POLYIC_20190628_mouse35__E3_P1,brain_position,middle 60%,13584,1013
+Mouse,POLYIC_20190628_mouse35__E3_P1,brain_position,last 20%,990,762
+Mouse,POLYIC_20190628_mouse36__E3_P1,axis_halves,left,6837,1814
+Mouse,POLYIC_20190628_mouse36__E3_P1,axis_halves,right,10937,1145
+Mouse,POLYIC_20190628_mouse36__E3_P1,axis_halves,dorsal,5178,0
+Mouse,POLYIC_20190628_mouse36__E3_P1,axis_halves,ventral,12596,2959
+Mouse,POLYIC_20190628_mouse36__E3_P1,axis_halves,rostral,13042,1698
+Mouse,POLYIC_20190628_mouse36__E3_P1,axis_halves,caudal,4732,1261
+Mouse,POLYIC_20190628_mouse36__E3_P1,center,center,5312,401
+Mouse,POLYIC_20190628_mouse36__E3_P1,brain_position,first 20%,6263,658
+Mouse,POLYIC_20190628_mouse36__E3_P1,brain_position,middle 60%,10803,1654
+Mouse,POLYIC_20190628_mouse36__E3_P1,brain_position,last 20%,708,647
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,axis_halves,left,10896,1823
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,axis_halves,right,21742,1677
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,axis_halves,dorsal,22368,0
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,axis_halves,ventral,10270,3500
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,axis_halves,rostral,26640,2180
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,axis_halves,caudal,5998,1320
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,center,center,7177,522
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,brain_position,first 20%,11135,1044
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,brain_position,middle 60%,20257,1735
+Mouse,POLYIC_20190629_polyic_mo__E3_P1,brain_position,last 20%,1246,721
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,axis_halves,left,8703,978
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,axis_halves,right,13179,862
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,axis_halves,dorsal,5821,30
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,axis_halves,ventral,16061,1810
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,axis_halves,rostral,17105,1080
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,axis_halves,caudal,4777,760
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,center,center,5020,545
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,brain_position,first 20%,9389,94
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,brain_position,middle 60%,10299,1358
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_1,brain_position,last 20%,2166,388
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,axis_halves,left,10634,1700
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,axis_halves,right,15666,1223
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,axis_halves,dorsal,13645,0
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,axis_halves,ventral,12655,2923
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,axis_halves,rostral,16649,1754
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,axis_halves,caudal,9651,1169
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,center,center,10912,460
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,brain_position,first 20%,8477,311
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,brain_position,middle 60%,15702,2002
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_2,brain_position,last 20%,2121,610
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,axis_halves,left,9767,1695
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,axis_halves,right,15114,1346
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,axis_halves,dorsal,12937,0
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,axis_halves,ventral,11944,3041
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,axis_halves,rostral,18947,1823
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,axis_halves,caudal,5934,1218
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,center,center,8478,229
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,brain_position,first 20%,9484,841
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,brain_position,middle 60%,14268,1440
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_3,brain_position,last 20%,1129,760
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,axis_halves,left,6148,1601
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,axis_halves,right,11048,1199
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,axis_halves,dorsal,6671,0
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,axis_halves,ventral,10525,2800
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,axis_halves,rostral,13859,1616
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,axis_halves,caudal,3337,1184
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,center,center,2884,465
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,brain_position,first 20%,8581,196
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,brain_position,middle 60%,7422,2043
+Mouse,POLYIC_20190629_polyic_mo__E3_P1_5,brain_position,last 20%,1193,561
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,axis_halves,left,15578,2062
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,axis_halves,right,24074,1318
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,axis_halves,dorsal,29387,8
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,axis_halves,ventral,10265,3372
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,axis_halves,rostral,28965,1810
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,axis_halves,caudal,10687,1570
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,center,center,8867,484
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,brain_position,first 20%,12539,528
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,brain_position,middle 60%,22812,2128
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_2,brain_position,last 20%,4109,724
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,axis_halves,left,11645,2818
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,axis_halves,right,26338,1428
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,axis_halves,dorsal,30298,304
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,axis_halves,ventral,7685,3942
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,axis_halves,rostral,26224,2139
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,axis_halves,caudal,11759,2107
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,center,center,8408,781
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,brain_position,first 20%,14494,593
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,brain_position,middle 60%,20950,2580
+Mouse,POLYIC_20190629_polyic_mo__E4_P1_4,brain_position,last 20%,2539,1073

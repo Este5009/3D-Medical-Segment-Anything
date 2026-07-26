@@ -1,0 +1,257 @@
+{
+  "training_performed": false,
+  "fine_tuning_performed": false,
+  "checkpoint_epoch": 14,
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/generalization_pilot/best_checkpoint.pt",
+  "query_shape": [
+    1,
+    1,
+    32
+  ],
+  "exactly_one_query": true,
+  "decoder_parameters": 170401,
+  "encoder_gradients_enabled": false,
+  "optimizer_created": false,
+  "model_eval_mode": true,
+  "device": "cpu",
+  "scans_evaluated": 101,
+  "scans_excluded": 0,
+  "unique_identifiers": 67,
+  "explicit_unique_mice": 15,
+  "anonymous_scans": 52,
+  "dice": {
+    "mean": 0.8828059217153896,
+    "median": 0.8887797186356754,
+    "std": 0.028788137669072317,
+    "min": 0.8014522711688036,
+    "max": 0.9384235837366574,
+    "percentile_5": 0.833682470885057,
+    "percentile_95": 0.9201906588337685
+  },
+  "mean_precision": 0.8087161682352021,
+  "mean_recall": 0.9734082502009891,
+  "mean_iou": 0.791373782864432,
+  "mean_hd95_mm": 4.38692105667077,
+  "volume_thresholds": {
+    "dice_gte_0.80": 100.0,
+    "dice_gte_0.90": 31.683168316831683,
+    "dice_gte_0.95": 0.0,
+    "dice_gte_0.97": 0.0,
+    "dice_gte_0.98": 0.0,
+    "dice_gte_0.99": 0.0
+  },
+  "slice_analysis": {
+    "total_slices": 3744,
+    "nonempty_expert_slices": 3648,
+    "false_positive_empty_slices": 24,
+    "zero_prediction_nonempty_slices": 10,
+    "cumulative": {
+      "dice_gte_0.80": 81.0032894736842,
+      "dice_gte_0.90": 43.11951754385965,
+      "dice_gte_0.95": 15.81688596491228,
+      "dice_gte_0.97": 2.192982456140351,
+      "dice_gte_0.98": 0.08223684210526316,
+      "dice_gte_0.99": 0.0
+    },
+    "by_position": {
+      "first 20%": {
+        "dice_gte_0.80": 56.80224403927069,
+        "dice_gte_0.90": 14.025245441795231,
+        "dice_gte_0.95": 0.1402524544179523,
+        "dice_gte_0.97": 0.0,
+        "dice_gte_0.98": 0.0,
+        "dice_gte_0.99": 0.0
+      },
+      "middle 60%": {
+        "dice_gte_0.80": 95.85958595859586,
+        "dice_gte_0.90": 58.955895589558956,
+        "dice_gte_0.95": 25.832583258325833,
+        "dice_gte_0.97": 3.6003600360036003,
+        "dice_gte_0.98": 0.135013501350135,
+        "dice_gte_0.99": 0.0
+      },
+      "last 20%": {
+        "dice_gte_0.80": 58.906030855539974,
+        "dice_gte_0.90": 22.86115007012623,
+        "dice_gte_0.95": 0.2805049088359046,
+        "dice_gte_0.97": 0.0,
+        "dice_gte_0.98": 0.0,
+        "dice_gte_0.99": 0.0
+      }
+    },
+    "weakest_position": "first 20%",
+    "total_fp": 2762237,
+    "total_fn": 311791
+  },
+  "statistics": {
+    "dice": {
+      "mean": 0.8828059217153896,
+      "median": 0.8887797186356754,
+      "std": 0.028788137669072317,
+      "minimum": 0.8014522711688036,
+      "maximum": 0.9384235837366574,
+      "percentile_5": 0.833682470885057,
+      "percentile_95": 0.9201906588337685
+    },
+    "iou": {
+      "mean": 0.791373782864432,
+      "median": 0.7998231615718783,
+      "std": 0.04560172941359027,
+      "minimum": 0.6686861540031533,
+      "maximum": 0.8839906099691455,
+      "percentile_5": 0.7147988863101726,
+      "percentile_95": 0.8521788280162687
+    },
+    "precision": {
+      "mean": 0.8087161682352021,
+      "median": 0.8188407361952279,
+      "std": 0.045623997967567845,
+      "minimum": 0.6924259472673471,
+      "maximum": 0.9038728897795537,
+      "percentile_5": 0.7277524677469153,
+      "percentile_95": 0.8698426394884957
+    },
+    "recall": {
+      "mean": 0.9734082502009891,
+      "median": 0.9733088056668192,
+      "std": 0.007701028907226498,
+      "minimum": 0.9505459385194825,
+      "maximum": 0.9911320902070221,
+      "percentile_5": 0.9598338071323128,
+      "percentile_95": 0.984698558031948
+    },
+    "hd95": {
+      "mean": 4.38692105667077,
+      "median": 4.579410948766849,
+      "std": 1.4027667622911661,
+      "minimum": 0.44721360216395983,
+      "maximum": 6.806651440576289,
+      "percentile_5": 0.7999998331069946,
+      "percentile_95": 6.1196406429540176
+    },
+    "expert_brain_volume_mm3": {
+      "mean": 456.8778746779968,
+      "median": 458.20802048349407,
+      "std": 20.50592086151186,
+      "minimum": 316.5640141515138,
+      "maximum": 495.2601328390873,
+      "percentile_5": 435.8038571323111,
+      "percentile_95": 482.73212947881575
+    },
+    "predicted_brain_volume_mm3": {
+      "mean": 551.8338727485325,
+      "median": 549.5761064611702,
+      "std": 41.73940606295813,
+      "minimum": 357.276015971482,
+      "maximum": 649.4074000301177,
+      "percentile_5": 499.233020040323,
+      "percentile_95": 616.8082573523594
+    },
+    "volume_error_percentage": {
+      "mean": 20.7381473884676,
+      "median": 19.190514155824335,
+      "std": 6.684962857433495,
+      "minimum": 7.542384194366567,
+      "maximum": 37.3762064812984,
+      "percentile_5": 12.228914127470883,
+      "percentile_95": 32.39189269443194
+    },
+    "inference_seconds": {
+      "mean": 9.782485344475248,
+      "median": 9.758482125,
+      "std": 0.24579807096223621,
+      "minimum": 9.460384291000025,
+      "maximum": 11.713538290999999,
+      "percentile_5": 9.556454250000002,
+      "percentile_95": 10.126725792000002
+    }
+  },
+  "longitudinal": {
+    "explicit_mice_with_repeats": 15,
+    "scans_with_explicit_mouse_ids": 49,
+    "large_adjacent_prediction_volume_changes_over_20_percent": 2,
+    "flagged_scans": [
+      "POLYIC_20190517_mouse39__E12_P1",
+      "POLYIC_20190510_mouse43__E9_P1"
+    ],
+    "anonymous_scans_excluded_from_longitudinal_linkage": 52
+  },
+  "camri_comparison": {
+    "mouse_mean_dice": 0.8828059217153896,
+    "camri_mean_dice": 0.9779041852059535,
+    "mouse_mean_precision": 0.8087161682352021,
+    "camri_mean_precision": 0.9963546846607977,
+    "mouse_mean_recall": 0.9734082502009891,
+    "camri_mean_recall": 0.9602013691895291,
+    "mouse_mean_hd95_mm": 4.38692105667077,
+    "camri_mean_hd95_mm": 0.19648774229068453,
+    "mouse_nonempty_slice_thresholds": {
+      "dice_gte_0.80": 81.0032894736842,
+      "dice_gte_0.90": 43.11951754385965,
+      "dice_gte_0.95": 15.81688596491228,
+      "dice_gte_0.97": 2.192982456140351,
+      "dice_gte_0.98": 0.08223684210526316,
+      "dice_gte_0.99": 0.0
+    },
+    "camri_nonempty_slice_thresholds": {
+      "dice_gte_0.80": 94.64960744402443,
+      "dice_gte_0.90": 89.73538819424252,
+      "dice_gte_0.95": 81.70979936027915,
+      "dice_gte_0.97": 69.20616458272754,
+      "dice_gte_0.98": 43.704565280604825,
+      "dice_gte_0.99": 1.2212852573422506
+    },
+    "mouse_position": {
+      "first 20%": {
+        "dice_gte_0.80": 56.80224403927069,
+        "dice_gte_0.90": 14.025245441795231,
+        "dice_gte_0.95": 0.1402524544179523,
+        "dice_gte_0.97": 0.0,
+        "dice_gte_0.98": 0.0,
+        "dice_gte_0.99": 0.0
+      },
+      "middle 60%": {
+        "dice_gte_0.80": 95.85958595859586,
+        "dice_gte_0.90": 58.955895589558956,
+        "dice_gte_0.95": 25.832583258325833,
+        "dice_gte_0.97": 3.6003600360036003,
+        "dice_gte_0.98": 0.135013501350135,
+        "dice_gte_0.99": 0.0
+      },
+      "last 20%": {
+        "dice_gte_0.80": 58.906030855539974,
+        "dice_gte_0.90": 22.86115007012623,
+        "dice_gte_0.95": 0.2805049088359046,
+        "dice_gte_0.97": 0.0,
+        "dice_gte_0.98": 0.0,
+        "dice_gte_0.99": 0.0
+      }
+    },
+    "camri_position": {
+      "first 20%": {
+        "dice_gte_0.80": 92.35382308845577,
+        "dice_gte_0.90": 83.35832083958022,
+        "dice_gte_0.95": 70.01499250374813,
+        "dice_gte_0.97": 47.37631184407796,
+        "dice_gte_0.98": 17.841079460269864,
+        "dice_gte_0.99": 1.0494752623688155
+      },
+      "middle 60%": {
+        "dice_gte_0.80": 99.90498812351544,
+        "dice_gte_0.90": 99.47743467933492,
+        "dice_gte_0.95": 97.8147268408551,
+        "dice_gte_0.97": 91.63895486935867,
+        "dice_gte_0.98": 63.56294536817102,
+        "dice_gte_0.99": 1.66270783847981
+      },
+      "last 20%": {
+        "dice_gte_0.80": 80.35982008995502,
+        "dice_gte_0.90": 65.36731634182908,
+        "dice_gte_0.95": 42.57871064467766,
+        "dice_gte_0.97": 20.239880059970016,
+        "dice_gte_0.98": 6.896551724137931,
+        "dice_gte_0.99": 0.0
+      }
+    }
+  }
+}
