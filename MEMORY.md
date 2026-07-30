@@ -2,11 +2,17 @@
 
 # Long-Term Vision
 
-Build a universal 3D medical segmentation foundation model.
+Build a universal query-conditioned volumetric segmentation framework that
+learns anatomically meaningful grouping.
 
-Instead of predicting a single predefined organ, the model should automatically propose every coherent anatomical structure inside a medical volume.
+The long-term objective is not brain segmentation, rodent segmentation, or
+maximizing Dice on one dataset. The model should identify complete anatomical
+entities from image evidence, reason with global, regional, and local 3D
+context, and generalize across species, scanners, institutions, protocols,
+contrast, image quality, artifacts, pathology, and anatomical variation.
 
-A physician should only need to select the desired structure or optionally refine it.
+The model should ultimately propose multiple coherent anatomical structures.
+A clinician may select a proposal or optionally refine it.
 
 ---
 
@@ -62,6 +68,23 @@ Train only a learned query decoder.
 
 Compare against the original RS2-Net decoder.
 
+Current Phase 2 evidence:
+
+- the verified RS2-Net encoder is safely exposed without its decoder;
+- one learned query plus four-scale attention and a top-down FPN has adequate
+  tiny-set capacity;
+- the frozen architecture generalizes strongly within CAMRI;
+- naive Mouse transfer retrieves the brain but over-segments it;
+- Mouse-only boundary adaptation improves Mouse but causes CAMRI forgetting;
+- balanced mixed-domain full-decoder training preserves CAMRI and substantially
+  improves Mouse.
+
+Current controlled question:
+
+Can the identical frozen-encoder, one-query architecture learn better
+cross-domain anatomical boundaries through supervision, optimization, sampling,
+and augmentation alone?
+
 Phase 3
 
 Fine-tune encoder and query decoder jointly.
@@ -78,7 +101,7 @@ Add interactive prompt refinement.
 
 # Research Principles
 
-The encoder should learn anatomy.
+The encoder should represent anatomy.
 
 Queries should retrieve objects.
 
@@ -88,19 +111,33 @@ Avoid organ-specific assumptions whenever possible.
 
 Train for anatomical objectness rather than fixed semantic classes.
 
+Dice is evidence, not the project objective. Prefer anatomically supported
+segmentations and robust generalization over benchmark-specific gains. Do not
+use post-processing, threshold tuning, anatomical shrinking, or dataset-specific
+heuristics as substitutes for learned anatomical grouping.
+
+Change one scientific factor at a time. Do not redesign the architecture until
+error analysis provides evidence of a representational or capacity limitation.
+
 ---
 
-# Current Dataset
+# Current Data
 
-Primary benchmark:
+Controlled benchmarks:
 
-Rodent MRI skull stripping.
+- CAMRI Rat MRI skull stripping.
+- External Mouse MRI skull stripping.
 
 Ground truth:
 
 Whole brain masks.
 
 Future datasets will include multiple anatomical structures.
+
+All experiments must use deterministic subject-level splits. Known longitudinal
+Mouse scans must remain in one split. Identity-unknown Mouse scans are a
+documented residual leakage limitation and must never be assigned invented
+biological identities.
 
 ---
 
@@ -114,6 +151,67 @@ Research code belongs only inside this repository.
 
 ---
 
-# Long-Term Goal
+# Evaluation Contract
 
-Produce a publication-quality architecture capable of becoming a true 3D Segment Anything model for medical imaging.
+Report CAMRI and Mouse independently. Include volumetric, surface, per-subject,
+per-slice, terminal-slice, topology, volume-error, and inference-time evidence.
+Automatically rank worst Dice, HD95, FP, FN, terminal, disconnected-component,
+and leakage-region failures before drawing architectural conclusions.
+
+---
+
+# Completed Residual-Failure Analysis
+
+The validation-selected mixed-domain anatomical checkpoint (epoch 17) was
+analyzed without retraining or rerunning inference. The cohort contained every
+untouched test prediction: 6 CAMRI and 80 Mouse subjects. Analysis used native
+geometry, 26-connected components, and a 0.5 mm physical boundary band.
+
+Exclusive error attribution across 695,034 erroneous voxels:
+
+- Boundary/local contour error: 96.92%.
+- Detached false-positive islands: 2.58%.
+- Terminal endpoint failures: 0.30%.
+- Connected leakage: 0.20%.
+- Detached false-negative regions: 0%.
+- Major localization failures: 0%.
+
+All 86 subjects had some boundary disagreement. Detached FP islands affected
+32 subjects (37.2%), terminal endpoint mismatch affected 16 (18.6%), and small
+connected leakage affected 57 (66.3%). Leakage was frequent but tiny: 0.20% of
+all error voxels and 0.11 mm3 mean category-specific FP volume per affected
+subject. No subject met the declared major-localization criterion.
+
+The predictions contained 57 zero-expert-overlap detached FP islands totaling
+17,961 voxels. Twenty-five islands totaling 7,540 voxels had mean MRI intensity
+within one expert-brain standard deviation. These are the measured cases where
+local appearance supports foreground but 3D disconnection contradicts object
+membership. Grouping-associated categories collectively account for only 2.78%
+of all remaining error voxels.
+
+Representative Failure Atlas examples:
+
+- Boundary representative: Mouse
+  `POLYIC_20190524_polyic___E3_P1_1`, 7,610 boundary-error voxels.
+- Detached-FP severe: Mouse
+  `POLYIC_20190531_polyic_m__E3_P1_3`, a 25.40 mm3 island spanning 11
+  slices, 10.11 mm centroid distance from the main brain, zero expert overlap.
+- Terminal severe: Mouse `POLYIC_20190614_polyic___E3_P1_5`, prediction
+  extends one superior slice beyond the expert endpoint.
+- Leakage severe: Mouse `POLYIC_20190510_mouse43__E9_P1`, 606 connected FP
+  voxels farther than 0.5 mm from expert anatomy.
+
+The primary reference artifacts are under
+`outputs/mixed_domain_anatomical_training/failure_analysis/`, especially
+`failure_statistics.csv`, `connected_component_statistics.csv`,
+`failure_summary.md`, and `Failure_Atlas/`.
+
+Research direction from this completed analysis:
+
+**A. The current architecture is primarily boundary-limited.**
+
+Anatomical grouping errors are real and visually clear in a minority of cases,
+but their 2.78% exclusive attribution is not the dominant current limitation.
+Future work should treat boundary accuracy as the next controlled research
+target; explicit grouping changes are not quantitatively justified as the
+primary next direction by this experiment.

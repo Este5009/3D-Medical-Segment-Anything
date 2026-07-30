@@ -1,0 +1,94 @@
+{
+  "subjects_analyzed": 86,
+  "camri_subjects": 6,
+  "mouse_subjects": 80,
+  "boundary_mm": 0.5,
+  "connectivity": 26,
+  "failure_statistics": [
+    {
+      "failure_category": "Boundary Error",
+      "affected_subjects": 86,
+      "affected_subject_percentage": 100.0,
+      "average_component_size_voxels": 51.06036247819823,
+      "average_slices_occupied": 35.616279069767444,
+      "average_centroid_distance_mm": 0.34891790817399476,
+      "average_false_positive_volume_mm3": 7.158462460372848,
+      "average_false_negative_volume_mm3": 25.231311393190317,
+      "attributed_error_voxels": 673653,
+      "percentage_total_error_attributed": 96.92374761522458
+    },
+    {
+      "failure_category": "Detached False Positive Island",
+      "affected_subjects": 32,
+      "affected_subject_percentage": 37.2093023255814,
+      "average_component_size_voxels": 315.10526315789474,
+      "average_slices_occupied": 2.807017543859649,
+      "average_centroid_distance_mm": 7.5525645219184625,
+      "average_false_positive_volume_mm3": 2.2657146784771287,
+      "average_false_negative_volume_mm3": 0.0,
+      "attributed_error_voxels": 17961,
+      "percentage_total_error_attributed": 2.584190125950673
+    },
+    {
+      "failure_category": "Detached False Negative Region",
+      "affected_subjects": 0,
+      "affected_subject_percentage": 0.0,
+      "average_component_size_voxels": 0.0,
+      "average_slices_occupied": 0.0,
+      "average_centroid_distance_mm": 0.0,
+      "average_false_positive_volume_mm3": 0.0,
+      "average_false_negative_volume_mm3": 0.0,
+      "attributed_error_voxels": 0,
+      "percentage_total_error_attributed": 0.0
+    },
+    {
+      "failure_category": "Terminal Slice Failure",
+      "affected_subjects": 16,
+      "affected_subject_percentage": 18.6046511627907,
+      "average_component_size_voxels": 21.529411764705884,
+      "average_slices_occupied": 2.25,
+      "average_centroid_distance_mm": 8.46297694744322,
+      "average_false_positive_volume_mm3": 0.49650023328886095,
+      "average_false_negative_volume_mm3": 0.23600006356090478,
+      "attributed_error_voxels": 2064,
+      "percentage_total_error_attributed": 0.29696388953633923
+    },
+    {
+      "failure_category": "Leakage",
+      "affected_subjects": 57,
+      "affected_subject_percentage": 66.27906976744185,
+      "average_component_size_voxels": 11.638655462184873,
+      "average_slices_occupied": 2.1052631578947367,
+      "average_centroid_distance_mm": 4.678696609884175,
+      "average_false_positive_volume_mm3": 0.10993851633512106,
+      "average_false_negative_volume_mm3": 0.0,
+      "attributed_error_voxels": 1356,
+      "percentage_total_error_attributed": 0.1950983692884089
+    },
+    {
+      "failure_category": "Major Localization Failure",
+      "affected_subjects": 0,
+      "affected_subject_percentage": 0.0,
+      "average_component_size_voxels": 0.0,
+      "average_slices_occupied": 0.0,
+      "average_centroid_distance_mm": 0.0,
+      "average_false_positive_volume_mm3": 0.0,
+      "average_false_negative_volume_mm3": 0.0,
+      "attributed_error_voxels": 0,
+      "percentage_total_error_attributed": 0.0
+    }
+  ],
+  "grouping_analysis": {
+    "detached_fp_islands": 57,
+    "detached_fp_island_voxels": 17961,
+    "locally_brain_like_detached_islands": 25,
+    "locally_brain_like_detached_island_voxels": 7540,
+    "islands_theoretically_removable_by_global_grouping": 25,
+    "island_voxels_theoretically_removable_by_global_grouping": 7540,
+    "grouping_attributed_error_voxels": 19317,
+    "grouping_attributed_error_percentage": 2.779288495239082,
+    "total_error_voxels": 695034
+  },
+  "atlas_figures": 12,
+  "recommendation": "A. Current architecture is primarily boundary-limited."
+}

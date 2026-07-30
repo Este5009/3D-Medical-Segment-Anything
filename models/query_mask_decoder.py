@@ -235,6 +235,61 @@ def dice_bce_loss(logits: torch.Tensor, target: torch.Tensor, smooth: float = 1e
     return dice_loss + bce_loss, {"dice_loss": dice_loss.detach(), "bce_loss": bce_loss.detach()}
 
 
+def dice_bce_boundary_loss(
+    logits: torch.Tensor,
+    target: torch.Tensor,
+    boundary_weight: float = 0.25,
+    boundary_width: int = 1,
+    smooth: float = 1e-5,
+):
+    """Dice + BCE plus one symmetric ground-truth boundary loss.
+
+    The boundary band is the difference between a dilation and erosion of the
+    target. BCE is averaged only inside that band, so false-positive and
+    false-negative boundary voxels receive exactly the same treatment. This is
+    deliberately different from an FP-heavy Tversky term: it emphasizes hard
+    contours without rewarding conservative mask shrinkage.
+
+    This deliberately supports the immediate one-voxel neighborhood only. It
+    is built from adjacent-voxel label transitions instead of an expensive
+    full-volume morphology kernel. No prediction-derived weighting or
+    post-processing is used, keeping supervision deterministic.
+    """
+    if boundary_width != 1:
+        raise ValueError("Only the controlled one-voxel boundary band is supported")
+    target = target.float()
+    probabilities = logits.sigmoid()
+    reduce_dims = tuple(range(1, logits.ndim))
+    intersection = (probabilities * target).sum(dim=reduce_dims)
+    denominator = probabilities.sum(dim=reduce_dims) + target.sum(dim=reduce_dims)
+    dice_loss = 1.0 - ((2.0 * intersection + smooth) / (denominator + smooth)).mean()
+    bce_loss = F.binary_cross_entropy_with_logits(logits, target)
+
+    # Mark both sides of every 6-connected foreground/background transition.
+    # Targets do not require gradients, so direct boolean indexing is safe.
+    binary_target = target >= 0.5
+    boundary_band = torch.zeros_like(binary_target)
+    for axis in range(2, target.ndim):
+        lower = [slice(None)] * target.ndim
+        upper = [slice(None)] * target.ndim
+        lower[axis] = slice(None, -1)
+        upper[axis] = slice(1, None)
+        transition = binary_target[tuple(lower)] != binary_target[tuple(upper)]
+        boundary_band[tuple(lower)] |= transition
+        boundary_band[tuple(upper)] |= transition
+    boundary_band = boundary_band.to(target.dtype)
+    voxel_bce = F.binary_cross_entropy_with_logits(logits, target, reduction="none")
+    boundary_loss = (voxel_bce * boundary_band).sum() / boundary_band.sum().clamp_min(1.0)
+
+    total = dice_loss + bce_loss + boundary_weight * boundary_loss
+    return total, {
+        "dice_loss": dice_loss.detach(),
+        "bce_loss": bce_loss.detach(),
+        "boundary_loss": boundary_loss.detach(),
+        "boundary_fraction": boundary_band.mean().detach(),
+    }
+
+
 @torch.no_grad()
 def volumetric_dice(logits: torch.Tensor, target: torch.Tensor, threshold: float = 0.5) -> float:
     prediction = logits.sigmoid() >= threshold

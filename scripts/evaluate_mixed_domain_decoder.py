@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independent CAMRI and mouse test evaluation of the mixed-domain decoder."""
 from __future__ import annotations
-import csv,json,sys
+import argparse,csv,json,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 for p in (ROOT,ROOT/"scripts"):
@@ -17,11 +17,15 @@ from evaluate_mouse_boundary_adaptation import run_records,summarize,make_compar
 from train_query_decoder_overfit import choose_device,load_json
 
 def rows(p):return list(csv.DictReader(open(p)))
+def parse_args():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config",default="configs/mixed_domain_decoder.yaml")
+    return parser.parse_args()
 def model_for(checkpoint,paths,config,device):
     c=torch.load(checkpoint,map_location="cpu",weights_only=False);d=MultiScaleOneQueryMaskDecoder(32,4);d.load_state_dict(c["decoder_state_dict"],strict=True);return FrozenEncoderQueryModel(RS2NetEncoderAdapter(paths,image_size=tuple(config["tile_size"]),in_channels=1,out_channels=1,feature_size=48),d).to(device).eval()
 
 def main():
-    config=load_json(ROOT/"configs/mixed_domain_decoder.yaml");out=ROOT/config["output_directory"];split=load_json(out/"split.json");enc=load_json(ROOT/config["encoder_config"]);paths=RS2NetPaths.from_config(enc);device=choose_device();mouse_source={r["scan_id"]:r for r in rows(ROOT/config["mouse_metrics"])};cam_source={r["subject"]:r for r in rows(ROOT/config["camri_metrics"])};mouse=[mouse_source[x] for x in split["mouse"]["test"]["scans"]];camri=[]
+    args=parse_args();config=load_json(ROOT/args.config);out=ROOT/config["output_directory"];split=load_json(out/"split.json");enc=load_json(ROOT/config["encoder_config"]);paths=RS2NetPaths.from_config(enc);device=choose_device();mouse_source={r["scan_id"]:r for r in rows(ROOT/config["mouse_metrics"])};cam_source={r["subject"]:r for r in rows(ROOT/config["camri_metrics"])};mouse=[mouse_source[x] for x in split["mouse"]["test"]["scans"]];camri=[]
     for x in split["camri"]["test"]:
         r=dict(cam_source[x]);r["ground_truth_path"]=r["mask_path"];camri.append(r)
     checkpoints={"original":ROOT/config["initial_checkpoint"],"mouse_adapted":ROOT/"outputs/mouse_boundary_adaptation/checkpoints/boundary_head_best.pt","mixed":out/"checkpoints/best_mixed_domain.pt"};results={}

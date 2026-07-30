@@ -1,0 +1,29 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "initial_checkpoint": "outputs/generalization_pilot/best_checkpoint.pt",
+  "output_directory": "outputs/mixed_domain_anatomical_training",
+  "camri_split": "outputs/generalization_pilot/subject_split.json",
+  "camri_metrics": "outputs/generalization_pilot/metrics.csv",
+  "mouse_split": "outputs/mouse_boundary_adaptation/split.json",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "camri_cache": "/tmp/rs2_generalization_pilot_features",
+  "mouse_cache": "/tmp/rs2_mouse_boundary_adaptation_features",
+  "seed": 20260717,
+  "learning_rate": 0.00005,
+  "weight_decay": 0.0001,
+  "max_epochs": 20,
+  "early_stop_patience": 5,
+  "minimum_validation_improvement": 0.0003,
+  "camri_validation_max_drop": 0.01,
+  "loss": {
+    "name": "dice_bce_boundary",
+    "boundary_weight": 0.25,
+    "boundary_width": 1
+  },
+  "augmentation": {
+    "flip_probability": 0.5,
+    "feature_scale": 0.03,
+    "feature_noise_std": 0.005
+  },
+  "tile_size": [128, 128, 160]
+}

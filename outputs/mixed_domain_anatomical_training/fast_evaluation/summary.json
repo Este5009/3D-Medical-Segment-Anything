@@ -1,0 +1,40 @@
+{
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "checkpoint_epoch": 17,
+  "threshold": 0.5,
+  "post_processing": "none",
+  "all_available_untouched_test_subjects_evaluated": true,
+  "failed_subjects": [],
+  "datasets": {
+    "CAMRI": {
+      "count": 6,
+      "mean_dice": 0.9825178382361764,
+      "standard_deviation_dice": 0.003174371824228812,
+      "median_dice": 0.9830498042350004,
+      "minimum_dice": 0.9778291597421441,
+      "maximum_dice": 0.9864156726255024,
+      "previous_mixed_domain_mean_dice": 0.9822669118770103,
+      "absolute_mean_dice_change": 0.00025092635916612593,
+      "comparison": "improvement"
+    },
+    "Mouse": {
+      "count": 80,
+      "mean_dice": 0.9647620755778487,
+      "standard_deviation_dice": 0.005503834754163353,
+      "median_dice": 0.9660202598018712,
+      "minimum_dice": 0.9348080337234642,
+      "maximum_dice": 0.9711031231034966,
+      "previous_mixed_domain_mean_dice": 0.96175830896833,
+      "absolute_mean_dice_change": 0.003003766609518621,
+      "comparison": "improvement"
+    }
+  },
+  "qualitative_figures": [
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/fast_evaluation/qualitative_figures/camri/good_009.png",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/fast_evaluation/qualitative_figures/camri/medium_007.png",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/fast_evaluation/qualitative_figures/camri/worst_064.png",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/fast_evaluation/qualitative_figures/mouse/good_POLYIC_20190517_mouse43__E3_P1.png",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/fast_evaluation/qualitative_figures/mouse/medium_POLYIC_20190517_mouse42__E4_P1.png",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/fast_evaluation/qualitative_figures/mouse/worst_POLYIC_20190531_polyic_m__E3_P1_3.png"
+  ]
+}

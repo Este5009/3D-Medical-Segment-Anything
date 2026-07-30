@@ -4,11 +4,19 @@
 
 ## Project Goal
 
-Develop a foundation model capable of automatically segmenting any coherent anatomical structure from 3D medical images.
+Develop a generalizable, query-conditioned 3D medical segmentation system that
+identifies complete anatomical structures by learning semantic and anatomical
+grouping rather than memorizing dataset-specific boundaries.
 
-The long-term objective is to build a true 3D analogue of Segment Anything for medical imaging, replacing exhaustive prompt generation with learned object queries while preserving optional interactive refinement.
+The system should learn which voxels belong together as one anatomical entity,
+produce segmentations supported by image evidence, and combine global, regional,
+and local 3D context. Its intended scope includes variation across species,
+scanners, institutions, acquisition protocols, image quality, contrast,
+artifacts, pathology, and anatomy.
 
-The project begins with rodent MRI skull stripping as the first benchmark before extending to multiple organs, tissues, lesions and anatomical structures.
+Rodent MRI skull stripping is a controlled first benchmark, not the final task.
+The long-term system must support multiple anatomical targets through learned
+queries and optional interactive refinement.
 
 ---
 
@@ -20,11 +28,17 @@ Every architectural modification must be supported by controlled experiments and
 
 Never replace multiple components simultaneously unless explicitly instructed.
 
+Optimize for anatomical correctness, robustness, generalization, and scientific
+validity. Dice is an evaluation metric, not the objective of the project.
+Avoid dataset-specific heuristics, threshold tuning, aggressive post-processing,
+or anatomical shrinking that improves a benchmark without improving anatomical
+understanding.
+
 ---
 
 # Current Research Stage
 
-Stage 1
+Stage 1: controlled frozen-encoder query-decoder research.
 
 Evaluate whether a query-based decoder can replace a fixed segmentation decoder while reusing strong volumetric encoder features.
 
@@ -34,11 +48,19 @@ Current baseline:
 - Swin Transformer encoder
 - Fixed U-Net decoder
 
-Research objective:
+The current one-query, multi-scale attention, top-down FPN decoder has
+demonstrated sufficient capacity and useful CAMRI-to-Mouse transfer. The
+immediate research question is whether improved supervision, optimization,
+sampling, and augmentation can produce anatomically correct cross-domain
+segmentations without changing the architecture.
 
-Replace only the decoder.
+Until controlled evidence says otherwise:
 
-Everything else should remain unchanged.
+- keep the RS2-Net encoder frozen;
+- keep exactly one learned query;
+- keep the existing attention, FPN, and mask head unchanged;
+- evaluate CAMRI and Mouse independently;
+- attribute failures before proposing architecture changes.
 
 ---
 
@@ -86,6 +108,10 @@ Every experiment must
 - save configuration
 - save qualitative figures
 - save logs
+- use subject-level splits
+- prevent known longitudinal leakage
+- report each domain independently
+- distinguish training changes from architecture changes
 
 Experiments must be reproducible.
 
@@ -102,7 +128,11 @@ Secondary:
 
 - Precision
 - Recall
-- Hausdorff Distance
+- HD95
+- Average Surface Distance
+- false-positive and false-negative volume
+- volume error
+- terminal-slice accuracy
 - Connected Components
 - Inference Time
 - GPU Memory
