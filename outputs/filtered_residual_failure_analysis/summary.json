@@ -1,0 +1,308 @@
+{
+  "subjects": {
+    "CAMRI": 6,
+    "Mouse": 80,
+    "combined": 86
+  },
+  "prediction_source": "already-saved deterministic component-filter predictions",
+  "filter": {
+    "library": "scipy.ndimage.label",
+    "connectivity": 26,
+    "volumetric": true,
+    "selection": "largest foreground component",
+    "morphology": false,
+    "size_threshold": null
+  },
+  "boundary_mm": 0.5,
+  "exclusive_attribution_order": [
+    "Detached False Positive Island",
+    "Terminal Slice Failure",
+    "Leakage",
+    "Detached False Negative Region",
+    "Major Localization Failure",
+    "Boundary Error"
+  ],
+  "total_error": {
+    "baseline_voxels": 695034,
+    "filtered_voxels": 677073,
+    "voxels_removed": 17961,
+    "percentage_removed": 2.584190125950673
+  },
+  "metrics": {
+    "CAMRI": {
+      "baseline": {
+        "dice": {
+          "mean": 0.9825178382366921,
+          "median": 0.9830498042356162,
+          "standard_deviation": 0.0031743718242603727,
+          "best": 0.9864156726259434,
+          "worst": 0.9778291597425771
+        },
+        "iou": {
+          "mean": 0.9656555426654957,
+          "median": 0.9666655110135685,
+          "standard_deviation": 0.006127473571575219,
+          "best": 0.9731954668067629,
+          "worst": 0.9566200885726385
+        },
+        "precision": {
+          "mean": 0.9947846548953748,
+          "median": 0.9945273623272687,
+          "standard_deviation": 0.0018266932730623105,
+          "best": 0.9973627599395521,
+          "worst": 0.9926292334538295
+        },
+        "recall": {
+          "mean": 0.9705971837265276,
+          "median": 0.9718343568221579,
+          "standard_deviation": 0.007883082130480931,
+          "best": 0.9802794179343542,
+          "worst": 0.9590460028592699
+        },
+        "hd95_mm": {
+          "mean": 0.13333333532015482,
+          "median": 0.10000000149011612,
+          "standard_deviation": 0.04714045278155064,
+          "best": 0.10000000149011612,
+          "worst": 0.20000000298023224
+        }
+      },
+      "filtered": {
+        "dice": {
+          "mean": 0.9826255639482029,
+          "median": 0.9831059801699576,
+          "standard_deviation": 0.003071216873882639,
+          "best": 0.9864444971156343,
+          "worst": 0.9782303329632139
+        },
+        "iou": {
+          "mean": 0.9658624619895247,
+          "median": 0.9667743048076918,
+          "standard_deviation": 0.005930437731196552,
+          "best": 0.9732515824829417,
+          "worst": 0.957388308268137
+        },
+        "precision": {
+          "mean": 0.9950078170963103,
+          "median": 0.9946422887591422,
+          "standard_deviation": 0.0020622761696679885,
+          "best": 0.9981978390017066,
+          "worst": 0.9926876127249465
+        },
+        "recall": {
+          "mean": 0.9705971837265276,
+          "median": 0.9718343568221579,
+          "standard_deviation": 0.007883082130480931,
+          "best": 0.9802794179343542,
+          "worst": 0.9590460028592699
+        },
+        "hd95_mm": {
+          "mean": 0.13333333532015482,
+          "median": 0.10000000149011612,
+          "standard_deviation": 0.04714045278155064,
+          "best": 0.10000000149011612,
+          "worst": 0.20000000298023224
+        }
+      }
+    },
+    "Mouse": {
+      "baseline": {
+        "dice": {
+          "mean": 0.9647620755794015,
+          "median": 0.9660202598033775,
+          "standard_deviation": 0.005503834753898432,
+          "best": 0.9711031231047229,
+          "worst": 0.9348080337262069
+        },
+        "iou": {
+          "mean": 0.93197689185954,
+          "median": 0.9342738764486571,
+          "standard_deviation": 0.01012956373595239,
+          "best": 0.943829401093563,
+          "worst": 0.877595835613988
+        },
+        "precision": {
+          "mean": 0.9816959525175234,
+          "median": 0.9840450754325178,
+          "standard_deviation": 0.008530116561579213,
+          "best": 0.9902854356559876,
+          "worst": 0.9386780895463228
+        },
+        "recall": {
+          "mean": 0.9484919578310222,
+          "median": 0.9484961682907573,
+          "standard_deviation": 0.008714553123520076,
+          "best": 0.9705217953808045,
+          "worst": 0.9234132223523033
+        },
+        "hd95_mm": {
+          "mean": 0.3435413572338102,
+          "median": 0.20000000298023224,
+          "standard_deviation": 0.774128111771822,
+          "best": 0.20000000298023224,
+          "worst": 5.923681472713808
+        }
+      },
+      "filtered": {
+        "dice": {
+          "mean": 0.9656853201024482,
+          "median": 0.966384121503116,
+          "standard_deviation": 0.003417888875287368,
+          "best": 0.9713672664167666,
+          "worst": 0.9556809389597947
+        },
+        "iou": {
+          "mean": 0.9336685609252573,
+          "median": 0.9349548055050111,
+          "standard_deviation": 0.006372008898743867,
+          "best": 0.9443285583902824,
+          "worst": 0.9151235236592529
+        },
+        "precision": {
+          "mean": 0.9836091985692548,
+          "median": 0.9844352067068542,
+          "standard_deviation": 0.005782142810034023,
+          "best": 0.9922655782514254,
+          "worst": 0.9597635474786906
+        },
+        "recall": {
+          "mean": 0.9484919578310222,
+          "median": 0.9484961682907573,
+          "standard_deviation": 0.008714553123520076,
+          "best": 0.9705217953808045,
+          "worst": 0.9234132223523033
+        },
+        "hd95_mm": {
+          "mean": 0.21633002953190603,
+          "median": 0.20000000298023224,
+          "standard_deviation": 0.0370306954142027,
+          "best": 0.20000000298023224,
+          "worst": 0.40000009536743164
+        }
+      }
+    },
+    "Combined": {
+      "baseline": {
+        "dice": {
+          "mean": 0.966000849718282,
+          "median": 0.9664002629862523,
+          "standard_deviation": 0.007024430744465459,
+          "best": 0.9864156726259434,
+          "worst": 0.9348080337262069
+        },
+        "iou": {
+          "mean": 0.9343265651715834,
+          "median": 0.9349850191989566,
+          "standard_deviation": 0.013102736564616975,
+          "best": 0.9731954668067629,
+          "worst": 0.877595835613988
+        },
+        "precision": {
+          "mean": 0.9826091177996988,
+          "median": 0.9848254922960918,
+          "standard_deviation": 0.008890302936625826,
+          "best": 0.9973627599395521,
+          "worst": 0.9386780895463228
+        },
+        "recall": {
+          "mean": 0.9500341828934997,
+          "median": 0.9498585582750284,
+          "standard_deviation": 0.010329249204851197,
+          "best": 0.9802794179343542,
+          "worst": 0.9234132223523033
+        },
+        "hd95_mm": {
+          "mean": 0.3288756812863459,
+          "median": 0.20000000298023224,
+          "standard_deviation": 0.7486569946666098,
+          "best": 0.10000000149011612,
+          "worst": 5.923681472713808
+        }
+      },
+      "filtered": {
+        "dice": {
+          "mean": 0.9668671975800589,
+          "median": 0.9665316326104769,
+          "standard_deviation": 0.005490853706811569,
+          "best": 0.9864444971156343,
+          "worst": 0.9556809389597947
+        },
+        "iou": {
+          "mean": 0.93591464704602,
+          "median": 0.9352309793380675,
+          "standard_deviation": 0.010367683629773557,
+          "best": 0.9732515824829417,
+          "worst": 0.9151235236592529
+        },
+        "precision": {
+          "mean": 0.9844044510246307,
+          "median": 0.9852658111040686,
+          "standard_deviation": 0.006311077641525202,
+          "best": 0.9981978390017066,
+          "worst": 0.9597635474786906
+        },
+        "recall": {
+          "mean": 0.9500341828934997,
+          "median": 0.9498585582750284,
+          "standard_deviation": 0.010329249204851197,
+          "best": 0.9802794179343542,
+          "worst": 0.9234132223523033
+        },
+        "hd95_mm": {
+          "mean": 0.21053956249387693,
+          "median": 0.20000000298023224,
+          "standard_deviation": 0.04333244873196715,
+          "best": 0.10000000149011612,
+          "worst": 0.40000009536743164
+        }
+      }
+    }
+  },
+  "unclassified": {
+    "CAMRI": {
+      "baseline": 0,
+      "filtered": 0
+    },
+    "Mouse": {
+      "baseline": 0,
+      "filtered": 0
+    },
+    "Combined": {
+      "baseline": 0,
+      "filtered": 0
+    }
+  },
+  "removed_expert_overlap_voxels": 0,
+  "nonexclusive_physical_masks": {
+    "boundary_mask_voxels": {
+      "baseline": 673333,
+      "filtered": 673281,
+      "difference": -52
+    },
+    "terminal_mask_voxels": {
+      "baseline": 2562,
+      "filtered": 1933,
+      "difference": -629
+    },
+    "leakage_mask_voxels": {
+      "baseline": 1385,
+      "filtered": 1385,
+      "difference": 0
+    }
+  },
+  "atlas_empty_categories": [
+    {
+      "failure_category": "Detached False Positive Island",
+      "message": "No detached false-positive islands remained after deterministic full-volume connected-component filtering."
+    },
+    {
+      "failure_category": "Detached False Negative Region",
+      "message": "No filtered test subject met the Detached False Negative Region category."
+    },
+    {
+      "failure_category": "Major Localization Failure",
+      "message": "No filtered test subject met the Major Localization Failure category."
+    }
+  ],
+  "conclusion": "A"
+}

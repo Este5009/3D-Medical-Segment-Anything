@@ -122,6 +122,63 @@ Scientific conclusion: deterministic 3D filtering captures the available
 grouping benefit; the learned grouping decoder is not justified on the current
 benchmarks and should not be integrated or made more complex.
 
+## Completed Filtered Residual-Failure Analysis
+
+The complete original residual-failure analysis was repeated on the 86
+already-saved deterministic-filter test predictions. No inference, retraining,
+threshold selection, preprocessing change, or split change occurred. The sole
+changed variable was the prediction path.
+
+The filter uses `scipy.ndimage.label` with a full 3×3×3 structuring element
+(26-connectivity) and retains the largest foreground component. It is applied
+to the complete 3D binary mask. It has no morphology, component-size threshold,
+image input, expert-label input, or dataset-specific parameter.
+
+Absolute exclusive residual attribution changed as follows:
+
+- total error: 695,034 → 677,073 voxels (-17,961; -2.584%);
+- detached FP: 17,961 → 0 voxels; 32 → 0 affected subjects;
+- terminal: 2,064 → 1,933 voxels (-131); 16 → 14 subjects;
+- connected leakage: 1,356 → 1,356 voxels; 57 → 57 subjects;
+- detached FN and localization: zero before and after;
+- final exclusive boundary bucket: 673,653 → 673,784 voxels (+131).
+
+The exclusive boundary increase is attribution reallocation, not newly created
+error. The direct non-exclusive physical 0.5-mm boundary mask decreased by 52
+voxels (673,333 → 673,281). Its exclusive percentage rose from 96.924% to
+99.514% primarily because detached FP voxels disappeared from the denominator.
+All residual voxels remained classified; unclassified count was zero.
+
+Safety audit:
+
+- 57 detached components totaling 17,961 voxels were removed;
+- removed-component overlap with expert anatomy was exactly zero;
+- recall was identical before and after in both domains;
+- full-volume connectivity preserves structures joined across adjacent slices;
+- no erosion, smoothing, or thresholding was used.
+
+Filtered test performance reproduced the prior result exactly:
+
+- CAMRI Dice 0.982518 → 0.982626; HD95 unchanged at 0.1333 mm;
+- Mouse Dice 0.964762 → 0.965685; HD95 0.3435 → 0.2163 mm;
+- combined Dice 0.966001 → 0.966867; HD95 0.3289 → 0.2105 mm.
+
+The regenerated atlas contains mild/representative/severe examples for every
+remaining category. The detached-FP directory is explicitly empty. Six
+prediction-extent-selected comparison figures cover best/median/worst CAMRI and
+Mouse cases.
+
+Scientific conclusion:
+
+**Deterministic largest-26-connected-component filtering should be the default
+binary inference cleanup for the current single-coherent-object task, while raw
+logits/probabilities must remain available. Future architecture work should
+target boundary refinement.**
+
+Primary artifacts:
+
+`outputs/filtered_residual_failure_analysis/`
+
 Phase 3
 
 Fine-tune encoder and query decoder jointly.

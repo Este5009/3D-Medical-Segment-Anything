@@ -1,0 +1,4 @@
+failure_category,message
+Detached False Positive Island,No detached false-positive islands remained after deterministic full-volume connected-component filtering.
+Detached False Negative Region,No filtered test subject met the Detached False Negative Region category.
+Major Localization Failure,No filtered test subject met the Major Localization Failure category.

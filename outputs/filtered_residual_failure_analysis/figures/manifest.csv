@@ -1,0 +1,7 @@
+domain,rank,subject,filtered_dice,figure_path
+CAMRI,worst,064,0.9782303329632139,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/figures/CAMRI_worst_064.png
+CAMRI,median,007,0.9823766067424188,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/figures/CAMRI_median_007.png
+CAMRI,best,099,0.9864444971156343,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/figures/CAMRI_best_099.png
+Mouse,worst,POLYIC_20190524_polyic___E4_P1_9,0.9556809389597947,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/figures/Mouse_worst_POLYIC_20190524_polyic___E4_P1_9.png
+Mouse,median,POLYIC_20190619_mouse39__E3_P1,0.9663069769897907,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/figures/Mouse_median_POLYIC_20190619_mouse39__E3_P1.png
+Mouse,best,POLYIC_20190517_mouse39__E12_P1,0.9713672664167666,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/figures/Mouse_best_POLYIC_20190517_mouse39__E12_P1.png
