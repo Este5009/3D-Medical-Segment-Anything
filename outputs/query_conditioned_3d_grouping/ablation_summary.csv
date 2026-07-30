@@ -1,0 +1,4 @@
+variant,coordinates,query_conditioning,parameters,best_epoch,balanced_validation_dice
+learned_no_coordinates,False,True,8465,1,0.9766827430875741
+learned_coordinates_no_query,True,False,8537,1,0.9767136925503759
+learned_coordinates_query,True,True,8537,1,0.9767059544234036

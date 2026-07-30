@@ -85,6 +85,43 @@ Can the identical frozen-encoder, one-query architecture learn better
 cross-domain anatomical boundaries through supervision, optimization, sampling,
 and augmentation alone?
 
+## Completed Query-Conditioned 3D Grouping Experiment
+
+A controlled post-decoder grouping experiment used the unchanged epoch-17
+mixed-domain checkpoint and the identical locked CAMRI/Mouse splits. The
+RS2-Net encoder and 170,401-parameter one-query decoder remained frozen.
+
+The tested module projected frozen level-2 features, concatenated downsampled
+initial logits/probability/uncertainty and optional normalized coordinates,
+applied two query-FiLM depthwise-separable 3D residual blocks plus a global
+context gate, and added a bounded correction to the frozen logits. It contained
+8,537 parameters with coordinates. The preserved checkpoint is:
+
+`outputs/query_conditioned_3d_grouping/checkpoints/best_grouping_module.pt`
+
+Validation selected the coordinate/no-query ablation at epoch 1:
+
+- baseline balanced validation Dice: 0.976576;
+- selected learned Dice: 0.976714 (+0.000138);
+- coordinate+query Dice: 0.976706;
+- no-coordinate/query Dice: 0.976683.
+
+Query conditioning therefore made no measurable contribution. On the complete
+untouched tests, learned grouping regressed CAMRI Dice from 0.982518 to 0.981967
+and Mouse Dice from 0.964762 to 0.963906. It reduced FP voxels but also removed
+correct anatomy: recall and volume ratio fell in both domains, Mouse HD95
+slightly worsened, and connected-component counts were not improved.
+
+The deterministic inference-only largest-26-connected-component filter was
+stronger: CAMRI Dice 0.982626 and Mouse Dice 0.965685, with unchanged recall and
+Mouse HD95 improved from 0.3435 to 0.2163 mm. Exact three-slice, eight-panel
+good/median/worst figures for each domain and the detached-FP atlas are under
+`outputs/query_conditioned_3d_grouping/`.
+
+Scientific conclusion: deterministic 3D filtering captures the available
+grouping benefit; the learned grouping decoder is not justified on the current
+benchmarks and should not be integrated or made more complex.
+
 Phase 3
 
 Fine-tune encoder and query decoder jointly.

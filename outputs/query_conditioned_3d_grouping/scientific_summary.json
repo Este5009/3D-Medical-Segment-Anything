@@ -1,0 +1,46 @@
+{
+  "changes": {
+    "CAMRI": {
+      "mean_dice_change": -0.0005505075840139076,
+      "improved": 0,
+      "unchanged_within_0.0001": 0,
+      "worsened": 6
+    },
+    "Mouse": {
+      "mean_dice_change": -0.000856321080108291,
+      "improved": 1,
+      "unchanged_within_0.0001": 2,
+      "worsened": 77
+    }
+  },
+  "grouping": {
+    "baseline": {
+      "detached_fp_count": 57,
+      "detached_fp_voxels": 17961,
+      "affected_subjects": 32,
+      "boundary_error_voxels": 675597,
+      "connected_leakage_voxels": 1385,
+      "terminal_error_voxels": 257735,
+      "expert_voxels_outside_primary_component": 0
+    },
+    "filter": {
+      "detached_fp_count": 0,
+      "detached_fp_voxels": 0,
+      "affected_subjects": 0,
+      "boundary_error_voxels": 675545,
+      "connected_leakage_voxels": 1385,
+      "terminal_error_voxels": 248676,
+      "expert_voxels_outside_primary_component": 0
+    },
+    "learned": {
+      "detached_fp_count": 56,
+      "detached_fp_voxels": 17471,
+      "affected_subjects": 33,
+      "boundary_error_voxels": 690780,
+      "connected_leakage_voxels": 1261,
+      "terminal_error_voxels": 261146,
+      "expert_voxels_outside_primary_component": 0
+    }
+  },
+  "recommendation": "B"
+}

@@ -1,0 +1,78 @@
+{
+  "device": "cpu",
+  "test_labels_used_for": "metrics and figures only",
+  "selected_ablation": "learned_coordinates_no_query",
+  "parameter_count": 8537,
+  "test_counts": {
+    "CAMRI": 6,
+    "Mouse": 80
+  },
+  "metrics": {
+    "CAMRI": {
+      "baseline": {
+        "dice": 0.9825178382366921,
+        "precision": 0.9947846548953748,
+        "recall": 0.9705971837265276,
+        "false_positives": 824.6666666666666,
+        "false_negatives": 5615.5,
+        "volume_ratio": 0.97570330127972,
+        "connected_components": 2.5,
+        "hd95_mm": 0.13333333532015482
+      },
+      "deterministic_filter": {
+        "dice": 0.9826255639482029,
+        "precision": 0.9950078170963103,
+        "recall": 0.9705971837265276,
+        "false_positives": 774.6666666666666,
+        "false_negatives": 5615.5,
+        "volume_ratio": 0.9754871188293531,
+        "connected_components": 1.0,
+        "hd95_mm": 0.13333333532015482
+      },
+      "learned": {
+        "dice": 0.9819673306526782,
+        "precision": 0.9952319391099996,
+        "recall": 0.969099709251065,
+        "false_positives": 751.3333333333334,
+        "false_negatives": 5892.166666666667,
+        "volume_ratio": 0.9737590572453373,
+        "connected_components": 2.8333333333333335,
+        "hd95_mm": 0.13333333532015482
+      }
+    },
+    "Mouse": {
+      "baseline": {
+        "dice": 0.9647620755794015,
+        "precision": 0.9816959525175234,
+        "recall": 0.9484919578310222,
+        "false_positives": 2181.95,
+        "false_negatives": 6022.9625,
+        "volume_ratio": 0.9662662225609442,
+        "connected_components": 1.6,
+        "hd95_mm": 0.3435413572338102
+      },
+      "deterministic_filter": {
+        "dice": 0.9656853201024482,
+        "precision": 0.9836091985692548,
+        "recall": 0.9484919578310222,
+        "false_positives": 1961.1875,
+        "false_negatives": 6022.9625,
+        "volume_ratio": 0.964366009346902,
+        "connected_components": 1.0,
+        "hd95_mm": 0.21633002953190603
+      },
+      "learned": {
+        "dice": 0.963905754499293,
+        "precision": 0.9835843237689843,
+        "recall": 0.945088719175336,
+        "false_positives": 1949.275,
+        "false_negatives": 6422.9,
+        "volume_ratio": 0.9609463569151643,
+        "connected_components": 1.6125,
+        "hd95_mm": 0.34613475424069245
+      }
+    }
+  },
+  "absolute_worst_learned": "POLYIC_20190531_polyic_m__E3_P1_3",
+  "query_conditioning_selected": false
+}

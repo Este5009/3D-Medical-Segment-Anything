@@ -1,0 +1,30 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "baseline_checkpoint": "outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "baseline_output": "outputs/mixed_domain_anatomical_training",
+  "output_directory": "outputs/query_conditioned_3d_grouping",
+  "camri_split": "outputs/generalization_pilot/subject_split.json",
+  "camri_metrics": "outputs/generalization_pilot/metrics.csv",
+  "mouse_split": "outputs/mouse_boundary_adaptation/split.json",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "camri_cache": "/tmp/rs2_generalization_pilot_features",
+  "mouse_cache": "/tmp/rs2_mouse_boundary_adaptation_features",
+  "seed": 20260729,
+  "tile_size": [128, 128, 160],
+  "feature_channels": 16,
+  "hidden_channels": 24,
+  "max_correction": 2.0,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "max_epochs": 12,
+  "early_stop_patience": 4,
+  "minimum_validation_improvement": 0.0001,
+  "validation_safety_drop": 0.005,
+  "boundary_weight": 0.25,
+  "residual_weight": 0.01,
+  "ablations": {
+    "learned_no_coordinates": {"use_coordinates": false, "use_query": true},
+    "learned_coordinates_no_query": {"use_coordinates": true, "use_query": false},
+    "learned_coordinates_query": {"use_coordinates": true, "use_query": true}
+  }
+}

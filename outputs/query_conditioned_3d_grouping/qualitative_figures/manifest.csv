@@ -1,0 +1,7 @@
+domain,category,subject,path
+CAMRI,worst,064,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/qualitative_figures/CAMRI_worst_064.png
+CAMRI,median,043,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/qualitative_figures/CAMRI_median_043.png
+CAMRI,good,099,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/qualitative_figures/CAMRI_good_099.png
+Mouse,worst,POLYIC_20190531_polyic_m__E3_P1_3,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/qualitative_figures/Mouse_worst_POLYIC_20190531_polyic_m__E3_P1_3.png
+Mouse,median,POLYIC_20190510_mouse37__E2_P1,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/qualitative_figures/Mouse_median_POLYIC_20190510_mouse37__E2_P1.png
+Mouse,good,POLYIC_20190517_mouse39__E12_P1,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/qualitative_figures/Mouse_good_POLYIC_20190517_mouse39__E12_P1.png

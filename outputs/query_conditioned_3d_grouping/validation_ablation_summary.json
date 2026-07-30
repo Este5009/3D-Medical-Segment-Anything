@@ -1,0 +1,102 @@
+{
+  "device": "cpu",
+  "encoder_frozen": true,
+  "baseline_decoder_frozen": true,
+  "exactly_one_existing_query": true,
+  "selection_data": "validation only",
+  "affinity_objective": "not used in this first controlled residual experiment",
+  "ablations": [
+    {
+      "name": "learned_no_coordinates",
+      "options": {
+        "use_coordinates": false,
+        "use_query": true
+      },
+      "best_epoch": 1,
+      "epochs_run": 5,
+      "balanced_validation_dice": 0.9766827430875741,
+      "validation": {
+        "camri": {
+          "dice": 0.9827948269096972,
+          "precision": 0.9823976248675446,
+          "recall": 0.9832584132976244,
+          "false_positives": 3600.0,
+          "false_negatives": 3607.5,
+          "volume_ratio": 1.0009051646979514
+        },
+        "mouse": {
+          "dice": 0.9705706592654509,
+          "precision": 0.9708473013865685,
+          "recall": 0.9704542211518798,
+          "false_positives": 1627.4,
+          "false_negatives": 1630.8,
+          "volume_ratio": 0.9997849808490255
+        }
+      },
+      "parameter_count": 8465,
+      "baseline_balanced_validation_dice": 0.9765760268919355
+    },
+    {
+      "name": "learned_coordinates_no_query",
+      "options": {
+        "use_coordinates": true,
+        "use_query": false
+      },
+      "best_epoch": 1,
+      "epochs_run": 5,
+      "balanced_validation_dice": 0.9767136925503759,
+      "validation": {
+        "camri": {
+          "dice": 0.982797415400355,
+          "precision": 0.982518465658548,
+          "recall": 0.9831432495511677,
+          "false_positives": 3572.8333333333335,
+          "false_negatives": 3635.6666666666665,
+          "volume_ratio": 1.0006638180619392
+        },
+        "mouse": {
+          "dice": 0.9706299697003967,
+          "precision": 0.9711721300022891,
+          "recall": 0.9702463429986425,
+          "false_positives": 1608.2,
+          "false_negatives": 1642.2,
+          "volume_ratio": 0.9992323034281123
+        }
+      },
+      "parameter_count": 8537,
+      "baseline_balanced_validation_dice": 0.9765760268919355
+    },
+    {
+      "name": "learned_coordinates_query",
+      "options": {
+        "use_coordinates": true,
+        "use_query": true
+      },
+      "best_epoch": 1,
+      "epochs_run": 5,
+      "balanced_validation_dice": 0.9767059544234036,
+      "validation": {
+        "camri": {
+          "dice": 0.9827879967305417,
+          "precision": 0.9825195348123716,
+          "recall": 0.9831235704620114,
+          "false_positives": 3572.5,
+          "false_negatives": 3641.0,
+          "volume_ratio": 1.0006424601307968
+        },
+        "mouse": {
+          "dice": 0.9706239121162653,
+          "precision": 0.9710194635839994,
+          "recall": 0.9703873085669068,
+          "false_positives": 1617.2,
+          "false_negatives": 1634.4,
+          "volume_ratio": 0.9995356712850109
+        }
+      },
+      "parameter_count": 8537,
+      "baseline_balanced_validation_dice": 0.9765760268919355
+    }
+  ],
+  "selected_ablation": "learned_coordinates_no_query",
+  "elapsed_seconds": 656.061919927597
+}
