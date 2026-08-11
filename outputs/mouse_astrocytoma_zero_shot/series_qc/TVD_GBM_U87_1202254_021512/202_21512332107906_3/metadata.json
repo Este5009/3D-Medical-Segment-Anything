@@ -1,0 +1,48 @@
+{
+  "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_U87_1202254_021512/498.3/906.3/4172cb26-b402-440c-b1f5-d0149197d53d.dcm",
+  "position": -7.50745,
+  "instance": 10,
+  "temporal": 1,
+  "acquisition": 8,
+  "rows": 132,
+  "columns": 132,
+  "pixel_spacing": [
+    0.227273,
+    0.227273
+  ],
+  "slice_thickness": 1.0,
+  "spacing_between_slices": 1.0,
+  "orientation": [
+    0.99994248151779,
+    5.1633037401e-07,
+    -0.0107242250815,
+    -2.403023131e-07,
+    1.0,
+    2.5740027922e-05
+  ],
+  "image_position": [
+    -59.825000605108,
+    -63.053262815188,
+    -6.86788749707
+  ],
+  "image_type": "ORIGINAL\\PRIMARY\\M_FFE\\M\\FFE",
+  "series_description": "T1_FFE_PreFA5 SENSE",
+  "protocol_name": "WIP T1_FFE_PreFA5 SENSE",
+  "study_description": "",
+  "manufacturer": "Philips Medical Systems",
+  "subject_id": "TVD_GBM_U87_1202254_021512",
+  "StudyInstanceUID": "1.3.46.670589.11.17169.5.0.548.2012021510554459498.3",
+  "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7588.2012021512332107906.3",
+  "instances": 12,
+  "unique_spatial_slices": 12,
+  "maximum_position_repetitions": 1,
+  "reconstructed_shape": [
+    132,
+    132,
+    12
+  ],
+  "reconstruction_status": "success",
+  "qc_class": "secondary anatomical",
+  "qc_reason": "low-flip-angle anatomical reference",
+  "visual_review_status": "contact sheet generated for review"
+}

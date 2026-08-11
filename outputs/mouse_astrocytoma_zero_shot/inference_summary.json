@@ -1,0 +1,193 @@
+{
+  "training_performed": false,
+  "adaptation_performed": false,
+  "ground_truth_available": false,
+  "quantitative_accuracy_evaluation": false,
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "checkpoint_epoch": 17,
+  "device": "cpu",
+  "exactly_one_learned_query": true,
+  "decoder_parameters": 170401,
+  "encoder_frozen": true,
+  "logit_threshold": 0.0,
+  "filter": "largest 26-connected foreground component",
+  "pilot_count": 4,
+  "pilots": [
+    {
+      "subject_id": "TVD_GBM_IC1_070610_16_100110",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.5780.2010100110490460987.2",
+      "sequence": "TSE_100_Cor_P4 SENSE",
+      "original_shape": [
+        256,
+        256,
+        30
+      ],
+      "preprocessed_shape": [
+        1,
+        1,
+        120,
+        75,
+        188
+      ],
+      "device": "cpu",
+      "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+      "checkpoint_epoch": 17,
+      "inference_seconds": 18.747911290999998,
+      "raw_foreground_voxels": 120758,
+      "filtered_foreground_voxels": 108884,
+      "raw_components": 12,
+      "removed_components": 11,
+      "removed_voxels": 11874,
+      "cavity_components": 1,
+      "cavity_voxels": 38,
+      "boundary_candidate_slices": 1,
+      "mean_probability_inside_filtered_prediction": 0.9703608155250549,
+      "probability_alignment": {
+        "axis_permutation": [
+          1,
+          0,
+          2
+        ],
+        "axis_flips": [
+          false,
+          false,
+          false
+        ],
+        "threshold_mismatched_voxels": 0
+      },
+      "classification_scope": "qualitative candidate flags; no ground truth"
+    },
+    {
+      "subject_id": "TVD_GBM_IC2_11311059_021811",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.4564.2011021813465799742.1",
+      "sequence": "T1_FFE_Cor_PostC SENSE",
+      "original_shape": [
+        256,
+        256,
+        48
+      ],
+      "preprocessed_shape": [
+        1,
+        1,
+        119,
+        60,
+        188
+      ],
+      "device": "cpu",
+      "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+      "checkpoint_epoch": 17,
+      "inference_seconds": 18.169594125000003,
+      "raw_foreground_voxels": 460040,
+      "filtered_foreground_voxels": 460036,
+      "raw_components": 2,
+      "removed_components": 1,
+      "removed_voxels": 4,
+      "cavity_components": 6,
+      "cavity_voxels": 248,
+      "boundary_candidate_slices": 0,
+      "mean_probability_inside_filtered_prediction": 0.9722710847854614,
+      "probability_alignment": {
+        "axis_permutation": [
+          1,
+          0,
+          2
+        ],
+        "axis_flips": [
+          false,
+          false,
+          false
+        ],
+        "threshold_mismatched_voxels": 0
+      },
+      "classification_scope": "qualitative candidate flags; no ground truth"
+    },
+    {
+      "subject_id": "TVD_GBM_U87_1202141_021412",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7588.2012021410522906582.1",
+      "sequence": "TSE_100_Cor_P4 SENSE",
+      "original_shape": [
+        256,
+        256,
+        30
+      ],
+      "preprocessed_shape": [
+        1,
+        1,
+        119,
+        75,
+        173
+      ],
+      "device": "cpu",
+      "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+      "checkpoint_epoch": 17,
+      "inference_seconds": 18.721336000000008,
+      "raw_foreground_voxels": 117909,
+      "filtered_foreground_voxels": 106021,
+      "raw_components": 10,
+      "removed_components": 9,
+      "removed_voxels": 11888,
+      "cavity_components": 1,
+      "cavity_voxels": 14,
+      "boundary_candidate_slices": 0,
+      "mean_probability_inside_filtered_prediction": 0.969944953918457,
+      "probability_alignment": {
+        "axis_permutation": [
+          1,
+          0,
+          2
+        ],
+        "axis_flips": [
+          false,
+          false,
+          false
+        ],
+        "threshold_mismatched_voxels": 0
+      },
+      "classification_scope": "qualitative candidate flags; no ground truth"
+    },
+    {
+      "subject_id": "TVD_GBM_U87_1202252_021512",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7588.2012021512254482849.1",
+      "sequence": "T1_FFE_Cor_PreC SENSE",
+      "original_shape": [
+        256,
+        256,
+        48
+      ],
+      "preprocessed_shape": [
+        1,
+        1,
+        119,
+        60,
+        178
+      ],
+      "device": "cpu",
+      "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+      "checkpoint_epoch": 17,
+      "inference_seconds": 18.064833333000024,
+      "raw_foreground_voxels": 456122,
+      "filtered_foreground_voxels": 456093,
+      "raw_components": 4,
+      "removed_components": 3,
+      "removed_voxels": 29,
+      "cavity_components": 3,
+      "cavity_voxels": 21,
+      "boundary_candidate_slices": 0,
+      "mean_probability_inside_filtered_prediction": 0.9599809646606445,
+      "probability_alignment": {
+        "axis_permutation": [
+          1,
+          0,
+          2
+        ],
+        "axis_flips": [
+          false,
+          false,
+          false
+        ],
+        "threshold_mismatched_voxels": 0
+      },
+      "classification_scope": "qualitative candidate flags; no ground truth"
+    }
+  ]
+}

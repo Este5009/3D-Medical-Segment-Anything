@@ -1,0 +1,28 @@
+{
+  "scope": "visual candidate categories without expert pathology masks",
+  "nonexclusive_categories": {
+    "plausible_complete_inclusion": [
+      "TVD_GBM_IC2_11311059_021811",
+      "TVD_GBM_U87_1202252_021512"
+    ],
+    "partial_exclusion_or_hemisphere_failure_candidate": [
+      "TVD_GBM_IC1_070610_16_100110",
+      "TVD_GBM_U87_1202141_021412"
+    ],
+    "internal_cavity_candidate": [
+      "TVD_GBM_IC1_070610_16_100110",
+      "TVD_GBM_IC2_11311059_021811",
+      "TVD_GBM_U87_1202141_021412",
+      "TVD_GBM_U87_1202252_021512"
+    ],
+    "fragmented_raw_prediction": [
+      "TVD_GBM_IC1_070610_16_100110",
+      "TVD_GBM_IC2_11311059_021811",
+      "TVD_GBM_U87_1202141_021412",
+      "TVD_GBM_U87_1202252_021512"
+    ],
+    "boundary_indentation_candidate": [
+      "TVD_GBM_IC1_070610_16_100110"
+    ]
+  }
+}

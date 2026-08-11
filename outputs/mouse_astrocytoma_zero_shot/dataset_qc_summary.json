@@ -1,0 +1,12 @@
+{
+  "subjects": 48,
+  "series": 283,
+  "qc_class_counts": {
+    "primary anatomical": 140,
+    "secondary anatomical": 47,
+    "dynamic": 50,
+    "subtraction": 46
+  },
+  "reconstruction_failures": 0,
+  "overview_pages": 6
+}

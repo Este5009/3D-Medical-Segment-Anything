@@ -179,6 +179,94 @@ Primary artifacts:
 
 `outputs/filtered_residual_failure_analysis/`
 
+## Completed TCIA Mouse-Astrocytoma Annotation Audit
+
+The local `Mouse-Astrocytoma-doiJNLP` download was exhaustively inspected
+without inference, conversion, or dataset modification. The audit covered
+36,973 files in 382 directories (2.03 GiB):
+
+- 36,966 readable DICOM instances;
+- 283 locally present DICOM series;
+- 48 subjects;
+- one CSV download manifest;
+- six `.DS_Store` files;
+- no archive, unusual binary, extensionless DICOM, or non-DICOM medical image.
+
+Every locally present DICOM instance is standard MR Image Storage
+(`1.2.840.10008.5.1.4.1.1.4`), and every series has Modality `MR`. No DICOM
+SEG, RTSTRUCT, surface segmentation, parametric map, SR, PR, encapsulated
+document, ROI/contour sequence, DICOM overlay, or private annotation-like object
+was found. No NIfTI, NRRD, MHA/MHD, ROI, label map, MAT, HDF5, NumPy, or VTK
+annotation exists locally.
+
+The 218 screened candidates consist of 217 ordinary MR series whose descriptions
+contain disease/anatomy terms (`intracranial` or `brain tumor`) plus the manifest
+CSV. All are rejected as annotations. Confirmed whole-brain masks, tumor masks,
+annotation objects, and annotated subjects are all zero. The local metadata
+contains no annotation reference. Quantitative Dice evaluation is therefore not
+currently possible.
+
+Manifest reconciliation identified a separate download-completeness issue:
+286 successful manifest rows map to 286 UIDs, but only 283 UIDs remain in local
+headers. Three pairs use the same destination folders, so one same-sized
+subtraction image series in each pair appears to have overwritten the other.
+This is not evidence of annotation data, but it prevents claiming that every
+manifest image UID is simultaneously present.
+
+The paper's statement that manual whole-brain and tumor masks were created does
+not prove public release. Highest-priority follow-up: externally verify the TCIA
+collection's Analysis Results/related DOI packages, then request both manual
+mask sets from the study authors if no separate label package exists.
+
+Primary artifacts:
+
+`outputs/mouse_astrocytoma_annotation_audit/`
+
+## Completed Zero-Shot Mouse Astrocytoma Pathology Pilot
+
+The unchanged epoch-17 mixed-domain one-query model was run qualitatively on
+four preselected TCIA primary-anatomical series: IC1 TSE, IC2 post-contrast T1,
+U87 TSE, and U87 pre-contrast T1. The RS2-Net encoder and 170,401-parameter
+decoder were frozen. There was no training, adaptation, architecture,
+preprocessing, or threshold change. Raw masks and the existing
+largest-26-connected-component filtered masks were saved independently.
+
+The complete pre-inference QC reconstructed all 283 series from 48 subjects:
+140 primary anatomical, 47 secondary anatomical, 50 dynamic, and 46
+subtraction. Every series has a contact sheet and metadata record. Every pilot
+has dense native and preprocessed contact sheets, raw/filtered/probability
+review pages, a full-slice MP4, orthogonal views, and raw/filtered 3D surfaces.
+
+Probability export required an in-plane axis-order reconciliation between
+SimpleITK and nibabel. The accepted map was required to reproduce the raw mask
+exactly at probability 0.5; all four maps have zero mismatched voxels.
+
+Confirmed computational observations:
+
+- IC1 TSE: 12 raw components, 11,874 voxels removed, 38 cavity voxels;
+- IC2 post-contrast T1: 2 raw components, 4 removed voxels, 248 cavity voxels;
+- U87 TSE: 10 raw components, 11,888 removed voxels, 14 cavity voxels;
+- U87 pre-contrast T1: 4 raw components, 29 removed voxels, 21 cavity voxels.
+
+Visual review suggests broadly continuous bilateral envelope retrieval in the
+two T1 pilots, but strong partial-exclusion/hemisphere-failure candidates in
+both TSE pilots. This is not a quantitative accuracy claim: no expert
+whole-brain or tumor masks exist locally. Cavity and indentation products are
+analysis-only and never modify predictions. The largest-component filter
+removes detached islands but cannot restore omitted connected anatomy or fill
+cavities.
+
+Scientific conclusion: the learned query does not yet have defensible evidence
+of complete-envelope robustness under unseen pathology. Sequence/contrast
+domain shift and pathology cannot be disentangled in this four-case,
+unmatched-control pilot. Obtain expert whole-brain and tumor masks for these
+same series before changing the architecture or drawing pathology-specific
+conclusions.
+
+Primary artifacts:
+
+`outputs/mouse_astrocytoma_zero_shot/`
+
 Phase 3
 
 Fine-tune encoder and query decoder jointly.

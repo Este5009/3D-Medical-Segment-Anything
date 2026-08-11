@@ -1,0 +1,12 @@
+{
+  "control_id": "CAMRI-007",
+  "domain": "camri_mixed",
+  "scan_id": "007",
+  "raw_components": 1,
+  "filtered_voxels": 142331,
+  "cavity_components": 0,
+  "cavity_voxels": 0,
+  "whole_mask_asymmetry": 0.034265198726911215,
+  "boundary_candidate_slices": 0,
+  "probability_threshold_alignment_mismatches": 0
+}

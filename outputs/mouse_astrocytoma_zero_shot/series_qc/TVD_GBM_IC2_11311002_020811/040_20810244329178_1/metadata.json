@@ -1,0 +1,48 @@
+{
+  "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_IC2_11311002_020811/350.1/178.1/598fd921-7ba4-4976-a278-4aa977430ff3.dcm",
+  "position": -4.14136,
+  "instance": 489,
+  "temporal": 39,
+  "acquisition": 8,
+  "rows": 132,
+  "columns": 132,
+  "pixel_spacing": [
+    0.227273,
+    0.227273
+  ],
+  "slice_thickness": 1.0,
+  "spacing_between_slices": 1.0,
+  "orientation": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "image_position": [
+    -59.790932357311,
+    -63.053321957588,
+    -4.1413559913635
+  ],
+  "image_type": "ORIGINAL\\PRIMARY\\M_FFE\\M\\FFE",
+  "series_description": "Dyn22s_AP_TR9/TE3 SENSE",
+  "protocol_name": "Dyn22s_AP_TR9/TE3 SENSE",
+  "study_description": "GBM_intracranial",
+  "manufacturer": "Philips Medical Systems",
+  "subject_id": "TVD_GBM_IC2_11311002_020811",
+  "StudyInstanceUID": "1.3.46.670589.11.17169.5.0.3164.2011020809040192350.1",
+  "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.6148.2011020810244329178.1",
+  "instances": 600,
+  "unique_spatial_slices": 12,
+  "maximum_position_repetitions": 50,
+  "reconstructed_shape": [
+    132,
+    132,
+    12
+  ],
+  "reconstruction_status": "success",
+  "qc_class": "dynamic",
+  "qc_reason": "50 repeated images per spatial position",
+  "visual_review_status": "contact sheet generated for review"
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_U87_1202795_022312/113.4/980.4/e6f5e456-8e02-4380-a091-b9d12fe5043c.dcm",
+  "position": -0.91769,
+  "instance": 24,
+  "temporal": 1,
+  "acquisition": 8,
+  "rows": 256,
+  "columns": 256,
+  "pixel_spacing": [
+    0.117188,
+    0.117188
+  ],
+  "slice_thickness": 0.5,
+  "spacing_between_slices": 0.25,
+  "orientation": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "image_position": [
+    -59.790930569171,
+    -63.053320169448,
+    -0.9176940917968
+  ],
+  "image_type": "ORIGINAL\\PRIMARY\\M_FFE\\M\\FFE",
+  "series_description": "T1_FFE_Cor_PostC SENSE",
+  "protocol_name": "WIP T1_FFE_Cor_PostC SENSE",
+  "study_description": "",
+  "manufacturer": "Philips Medical Systems",
+  "subject_id": "TVD_GBM_U87_1202795_022312",
+  "StudyInstanceUID": "1.3.46.670589.11.17169.5.0.548.2012022309232575113.4",
+  "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7588.2012022310563684980.4",
+  "instances": 48,
+  "unique_spatial_slices": 48,
+  "maximum_position_repetitions": 1,
+  "reconstructed_shape": [
+    256,
+    256,
+    48
+  ],
+  "reconstruction_status": "success",
+  "qc_class": "primary anatomical",
+  "qc_reason": "full TSE or coronal T1 anatomical acquisition",
+  "visual_review_status": "contact sheet generated for review"
+}

@@ -1,0 +1,48 @@
+{
+  "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_U87_4536_121511/218.2/697.2/24ec0d0c-179d-4bbe-bfe1-8c0bc8694543.dcm",
+  "position": -4.75529,
+  "instance": 37,
+  "temporal": 1,
+  "acquisition": 5,
+  "rows": 256,
+  "columns": 256,
+  "pixel_spacing": [
+    0.117188,
+    0.117188
+  ],
+  "slice_thickness": 0.5,
+  "spacing_between_slices": 0.25,
+  "orientation": [
+    0.99999284744262,
+    0.0,
+    0.0037866232451,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "image_position": [
+    -59.778668224811,
+    -63.053320169448,
+    -4.9816853860393
+  ],
+  "image_type": "ORIGINAL\\PRIMARY\\M_FFE\\M\\FFE",
+  "series_description": "T1_FFE_Cor_PreC SENSE",
+  "protocol_name": "WIP T1_FFE_Cor_PreC SENSE",
+  "study_description": "Spontaneous Brain Tumor Model",
+  "manufacturer": "Philips Medical Systems",
+  "subject_id": "TVD_GBM_U87_4536_121511",
+  "StudyInstanceUID": "1.3.46.670589.11.17169.5.0.8084.2011121508500512218.2",
+  "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.2192.2011121510153548697.2",
+  "instances": 48,
+  "unique_spatial_slices": 48,
+  "maximum_position_repetitions": 1,
+  "reconstructed_shape": [
+    256,
+    256,
+    48
+  ],
+  "reconstruction_status": "success",
+  "qc_class": "primary anatomical",
+  "qc_reason": "full TSE or coronal T1 anatomical acquisition",
+  "visual_review_status": "contact sheet generated for review"
+}

@@ -1,0 +1,8 @@
+{
+  "quantitative_accuracy_claimed": false,
+  "complete_envelope_in_all_pilots": false,
+  "t1_visual_observation": "broadly continuous bilateral inclusion candidate",
+  "tse_visual_observation": "partial exclusion / hemisphere failure candidate",
+  "catastrophic_empty_failure": false,
+  "expert_review_required": true
+}

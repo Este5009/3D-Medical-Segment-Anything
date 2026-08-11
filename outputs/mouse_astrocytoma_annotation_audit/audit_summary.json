@@ -1,0 +1,79 @@
+{
+  "dataset_root": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP",
+  "file_count": 36973,
+  "directory_count": 382,
+  "total_bytes": 2180668307,
+  "extensions": {
+    "[extensionless]": 6,
+    ".csv": 1,
+    ".dcm": 36966
+  },
+  "detected_formats": {
+    "macOS Finder metadata": 6,
+    "CSV metadata table": 1,
+    "DICOM": 36966
+  },
+  "file_size_bytes": {
+    "minimum": 6148,
+    "maximum": 134242,
+    "median": 37960.0
+  },
+  "hidden_files": 6,
+  "duplicate_basename_groups": 1,
+  "duplicate_basenames": {
+    ".DS_Store": 6
+  },
+  "unusual_binary_files": 0,
+  "archives": 0,
+  "dicom_instances": 36966,
+  "dicom_series": 283,
+  "modalities": {
+    "MR": 283
+  },
+  "sop_class_instance_counts": {
+    "1.2.840.10008.5.1.4.1.1.4": 36966
+  },
+  "unreadable_dicom_files": [],
+  "annotation_candidates_total": 218,
+  "annotation_candidate_confidence_counts": {
+    "low": 217,
+    "rejected": 1
+  },
+  "annotation_candidate_type_counts": {
+    "keyword-matched DICOM image/derived series": 217,
+    "metadata table": 1
+  },
+  "confirmed_annotation_objects": 0,
+  "confirmed_brain_masks": 0,
+  "confirmed_tumor_masks": 0,
+  "dicom_seg_objects": 0,
+  "rtstruct_objects": 0,
+  "subjects": 48,
+  "subjects_with_annotations": [],
+  "metadata_keyword_hits": 0,
+  "manifest": {
+    "rows": 286,
+    "unique_series": 286,
+    "modalities_listed": [],
+    "completion_status_counts": {
+      "success": 286
+    },
+    "collection_names": [
+      "mouse_astrocytoma"
+    ],
+    "series_present_in_local_headers": 283,
+    "series_absent_from_local_headers": [
+      "1.3.46.670589.11.17169.5.0.9848.2012020611433050000.1",
+      "1.3.46.670589.11.17169.5.0.9848.2012020611433050000.2",
+      "1.3.46.670589.11.17169.5.0.9848.2012020611433050000.3"
+    ],
+    "parsed_series_not_in_manifest": [],
+    "colliding_destination_paths": {
+      "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse_Astrocytoma_TCIA/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_IC2_11311061_021811/539.2/000.2": 2,
+      "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse_Astrocytoma_TCIA/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_IC2_11311063_021811/539.3/000.3": 2,
+      "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse_Astrocytoma_TCIA/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_IC2_11311059_021811/539.1/000.1": 2
+    }
+  },
+  "quantitative_dice_evaluation_possible": false,
+  "local_primary_conclusion": "No public annotation object was found in this downloaded directory."
+}

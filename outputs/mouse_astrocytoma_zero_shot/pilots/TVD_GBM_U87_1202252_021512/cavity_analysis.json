@@ -1,0 +1,67 @@
+{
+  "analysis_only": true,
+  "not_applied_to_prediction": true,
+  "definition": "binary_fill_holes(filtered prediction) minus filtered prediction",
+  "components": [
+    {
+      "component": 1,
+      "voxels": 16,
+      "volume_mm3": 0.054932126634216524,
+      "centroid_voxel": [
+        89.6875,
+        112.6875,
+        18.0
+      ],
+      "bbox_min_voxel": [
+        88,
+        110,
+        18
+      ],
+      "bbox_max_voxel": [
+        91,
+        116,
+        18
+      ]
+    },
+    {
+      "component": 3,
+      "voxels": 3,
+      "volume_mm3": 0.010299773743915597,
+      "centroid_voxel": [
+        179.0,
+        132.0,
+        31.0
+      ],
+      "bbox_min_voxel": [
+        179,
+        131,
+        31
+      ],
+      "bbox_max_voxel": [
+        179,
+        133,
+        31
+      ]
+    },
+    {
+      "component": 2,
+      "voxels": 2,
+      "volume_mm3": 0.0068665158292770655,
+      "centroid_voxel": [
+        148.5,
+        142.0,
+        45.0
+      ],
+      "bbox_min_voxel": [
+        148,
+        142,
+        45
+      ],
+      "bbox_max_voxel": [
+        149,
+        142,
+        45
+      ]
+    }
+  ]
+}

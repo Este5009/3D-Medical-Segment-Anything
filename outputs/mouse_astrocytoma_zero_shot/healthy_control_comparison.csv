@@ -1,0 +1,5 @@
+control_id,domain,scan_id,raw_components,filtered_voxels,cavity_components,cavity_voxels,whole_mask_asymmetry,boundary_candidate_slices,probability_threshold_alignment_mismatches
+CAMRI-007,camri_mixed,007,1,142331,0,0,0.034265198726911215,0,0
+CAMRI-099,camri_mixed,099,2,153028,0,0,0.027524374624251773,0,0
+Mouse-1,mouse_mixed,POLYIC_20190510_mouse34__E2_P1,2,101528,0,0,0.008903947679457883,2,0
+Mouse-2,mouse_mixed,POLYIC_20190510_mouse35__E3_P1,1,103888,0,0,0.04597258586169721,1,0

@@ -1,4 +1,4 @@
-git add outputs/filtered_residual_failure_analysis/"""Controlled checks for deterministic filtered residual analysis."""
+"""Controlled checks for deterministic filtered residual analysis."""
 from __future__ import annotations
 
 import numpy as np

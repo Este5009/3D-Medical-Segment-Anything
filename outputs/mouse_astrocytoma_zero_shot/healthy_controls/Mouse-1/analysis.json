@@ -1,0 +1,12 @@
+{
+  "control_id": "Mouse-1",
+  "domain": "mouse_mixed",
+  "scan_id": "POLYIC_20190510_mouse34__E2_P1",
+  "raw_components": 2,
+  "filtered_voxels": 101528,
+  "cavity_components": 0,
+  "cavity_voxels": 0,
+  "whole_mask_asymmetry": 0.008903947679457883,
+  "boundary_candidate_slices": 2,
+  "probability_threshold_alignment_mismatches": 0
+}

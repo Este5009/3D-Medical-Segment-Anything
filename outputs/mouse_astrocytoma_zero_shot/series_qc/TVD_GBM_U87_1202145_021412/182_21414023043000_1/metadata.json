@@ -1,0 +1,48 @@
+{
+  "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_U87_1202145_021412/446.1/000.1/5a6678bc-2906-48ef-bdaf-c7826c6e1fed.dcm",
+  "position": -0.04433,
+  "instance": 12,
+  "temporal": 1,
+  "acquisition": 9,
+  "rows": 256,
+  "columns": 256,
+  "pixel_spacing": [
+    0.117188,
+    0.117188
+  ],
+  "slice_thickness": 0.5,
+  "spacing_between_slices": 0.25,
+  "orientation": [
+    0.99951410293579,
+    0.0,
+    -0.031170155853,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "image_position": [
+    -59.664370030164,
+    -63.053320169448,
+    1.81630434095859
+  ],
+  "image_type": "ORIGINAL\\PRIMARY\\M_FFE\\M\\FFE",
+  "series_description": "sWIP T1_FFE_Cor_Subtr",
+  "protocol_name": "sWIP T1_FFE_Cor_Subtr",
+  "study_description": "Group-487 Cells and 425",
+  "manufacturer": "Philips Medical Systems",
+  "subject_id": "TVD_GBM_U87_1202145_021412",
+  "StudyInstanceUID": "1.3.46.670589.11.17169.5.0.548.2012021411421297446.1",
+  "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7448.2012021414023043000.1",
+  "instances": 48,
+  "unique_spatial_slices": 48,
+  "maximum_position_repetitions": 1,
+  "reconstructed_shape": [
+    256,
+    256,
+    48
+  ],
+  "reconstruction_status": "success",
+  "qc_class": "subtraction",
+  "qc_reason": "subtraction series",
+  "visual_review_status": "contact sheet generated for review"
+}

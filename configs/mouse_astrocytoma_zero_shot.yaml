@@ -1,0 +1,32 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "checkpoint": "outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "output_directory": "outputs/mouse_astrocytoma_zero_shot",
+  "dataset_root": "../Datasets/Mouse-Astrocytoma-doiJNLP",
+  "tile_size": [128, 128, 160],
+  "logit_threshold": 0.0,
+  "component_connectivity": 26,
+  "component_selection": "largest foreground component",
+  "pilot_series": [
+    {
+      "subject_id": "TVD_GBM_IC1_070610_16_100110",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.5780.2010100110490460987.2",
+      "sequence": "TSE_100_Cor_P4 SENSE"
+    },
+    {
+      "subject_id": "TVD_GBM_IC2_11311059_021811",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.4564.2011021813465799742.1",
+      "sequence": "T1_FFE_Cor_PostC SENSE"
+    },
+    {
+      "subject_id": "TVD_GBM_U87_1202141_021412",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7588.2012021410522906582.1",
+      "sequence": "TSE_100_Cor_P4 SENSE"
+    },
+    {
+      "subject_id": "TVD_GBM_U87_1202252_021512",
+      "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.7588.2012021512254482849.1",
+      "sequence": "T1_FFE_Cor_PreC SENSE"
+    }
+  ]
+}

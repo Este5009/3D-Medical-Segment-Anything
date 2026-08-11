@@ -1,0 +1,127 @@
+{
+  "analysis_only": true,
+  "not_applied_to_prediction": true,
+  "definition": "binary_fill_holes(filtered prediction) minus filtered prediction",
+  "components": [
+    {
+      "component": 5,
+      "voxels": 125,
+      "volume_mm3": 0.4291571044999995,
+      "centroid_voxel": [
+        181.112,
+        163.16,
+        2.952
+      ],
+      "bbox_min_voxel": [
+        179,
+        151,
+        2
+      ],
+      "bbox_max_voxel": [
+        184,
+        173,
+        5
+      ]
+    },
+    {
+      "component": 4,
+      "voxels": 93,
+      "volume_mm3": 0.31929288574799963,
+      "centroid_voxel": [
+        160.30107526881721,
+        133.8279569892473,
+        38.72043010752688
+      ],
+      "bbox_min_voxel": [
+        157,
+        131,
+        36
+      ],
+      "bbox_max_voxel": [
+        164,
+        137,
+        41
+      ]
+    },
+    {
+      "component": 1,
+      "voxels": 23,
+      "volume_mm3": 0.0789649072279999,
+      "centroid_voxel": [
+        133.8695652173913,
+        177.8695652173913,
+        45.0
+      ],
+      "bbox_min_voxel": [
+        128,
+        176,
+        45
+      ],
+      "bbox_max_voxel": [
+        139,
+        180,
+        45
+      ]
+    },
+    {
+      "component": 2,
+      "voxels": 4,
+      "volume_mm3": 0.013733027343999983,
+      "centroid_voxel": [
+        139.75,
+        110.0,
+        44.0
+      ],
+      "bbox_min_voxel": [
+        139,
+        109,
+        44
+      ],
+      "bbox_max_voxel": [
+        140,
+        111,
+        44
+      ]
+    },
+    {
+      "component": 3,
+      "voxels": 2,
+      "volume_mm3": 0.0068665136719999915,
+      "centroid_voxel": [
+        154.0,
+        170.5,
+        40.0
+      ],
+      "bbox_min_voxel": [
+        154,
+        170,
+        40
+      ],
+      "bbox_max_voxel": [
+        154,
+        171,
+        40
+      ]
+    },
+    {
+      "component": 6,
+      "voxels": 1,
+      "volume_mm3": 0.0034332568359999958,
+      "centroid_voxel": [
+        184.0,
+        146.0,
+        6.0
+      ],
+      "bbox_min_voxel": [
+        184,
+        146,
+        6
+      ],
+      "bbox_max_voxel": [
+        184,
+        146,
+        6
+      ]
+    }
+  ]
+}

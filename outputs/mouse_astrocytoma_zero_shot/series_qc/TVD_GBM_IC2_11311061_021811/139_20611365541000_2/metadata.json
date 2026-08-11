@@ -1,0 +1,48 @@
+{
+  "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mouse-Astrocytoma-doiJNLP/mouse_astrocytoma/TVD_GBM_IC2_11311061_021811/539.2/000.2/03b2edf8-b9b6-44b3-9870-c327d988e1ef.dcm",
+  "position": 0.92762,
+  "instance": 11,
+  "temporal": 1,
+  "acquisition": 8,
+  "rows": 256,
+  "columns": 256,
+  "pixel_spacing": [
+    0.117188,
+    0.117188
+  ],
+  "slice_thickness": 0.5,
+  "spacing_between_slices": 0.25,
+  "orientation": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "image_position": [
+    -60.392937272787,
+    -63.053320169448,
+    0.92762374877929
+  ],
+  "image_type": "ORIGINAL\\PRIMARY\\M_FFE\\M\\FFE",
+  "series_description": "sT1_FFE_Subtr",
+  "protocol_name": "sT1_FFE_Subtr",
+  "study_description": "GBM_intracranial",
+  "manufacturer": "Philips Medical Systems",
+  "subject_id": "TVD_GBM_IC2_11311061_021811",
+  "StudyInstanceUID": "1.3.46.670589.11.17169.5.0.4584.2011021811534083539.2",
+  "SeriesInstanceUID": "1.3.46.670589.11.17169.5.0.9496.2012020611365541000.2",
+  "instances": 48,
+  "unique_spatial_slices": 48,
+  "maximum_position_repetitions": 1,
+  "reconstructed_shape": [
+    256,
+    256,
+    48
+  ],
+  "reconstruction_status": "success",
+  "qc_class": "subtraction",
+  "qc_reason": "subtraction series",
+  "visual_review_status": "contact sheet generated for review"
+}

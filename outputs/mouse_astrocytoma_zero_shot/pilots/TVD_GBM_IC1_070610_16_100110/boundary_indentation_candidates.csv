@@ -1,0 +1,2 @@
+slice,relative_area_drop,left_right_asymmetry,mean_boundary_probability,criteria
+1,0.18723037100949094,0.08280254777070063,0.6557765007019043,area_drop>=0.15 OR asymmetry>=0.35 OR boundary_probability<0.55

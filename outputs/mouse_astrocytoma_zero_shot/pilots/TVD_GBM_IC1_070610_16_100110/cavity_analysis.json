@@ -1,0 +1,27 @@
+{
+  "analysis_only": true,
+  "not_applied_to_prediction": true,
+  "definition": "binary_fill_holes(filtered prediction) minus filtered prediction",
+  "components": [
+    {
+      "component": 1,
+      "voxels": 38,
+      "volume_mm3": 0.2609275195359986,
+      "centroid_voxel": [
+        190.23684210526315,
+        146.94736842105263,
+        1.0
+      ],
+      "bbox_min_voxel": [
+        188,
+        141,
+        1
+      ],
+      "bbox_max_voxel": [
+        193,
+        153,
+        1
+      ]
+    }
+  ]
+}
