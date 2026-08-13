@@ -179,6 +179,153 @@ Primary artifacts:
 
 `outputs/filtered_residual_failure_analysis/`
 
+## Completed Post-Filter Boundary-Error Diagnostics
+
+The geometry of all 677,073 residual error voxels was measured on the complete
+locked filtered test cohort (6 CAMRI, 80 Mouse) without training, inference,
+threshold selection, model changes, or postprocessing changes. Distances were
+measured from every FP/FN voxel to the 26-connected expert inner surface in both
+array-index voxel units and native physical millimetres.
+
+Combined index-space distance distribution:
+
+- <=1 voxel: 96.006%;
+- >1 to 2 voxels: 2.909%;
+- >2 to 3 voxels: 0.817%;
+- >3 to 5 voxels: 0.242%;
+- >5 voxels: 0.026%.
+
+Combined physical distance was mean 0.040 mm, median 0 mm, P95 0.200 mm, and
+maximum 1.625 mm. CAMRI maximum was 1.000 mm and Mouse maximum was 1.625 mm.
+The median is zero because incorrectly excluded expert-surface voxels are FN
+errors located on the reference surface itself.
+
+Errors are strongly under-segmentation dominated: 161,543 FP versus 515,530 FN
+voxels, FP/FN ratio 0.313. The pattern holds in CAMRI (ratio 0.138) and Mouse
+(0.326). Detached FP islands cannot enter these counts because only the saved
+largest-component predictions were analyzed.
+
+Normalized acquisition-slice position is non-uniform after normalization by
+expert-surface opportunities, but terminal regions are not disproportionately
+difficult: their combined rate is 0.795 times the middle-60% rate. The middle
+60% has the highest normalized burden. NIfTI orientations vary (LPS, RIA, RPI),
+so no rostral/caudal, dorsal/ventral, or left/right identities were invented.
+
+Local expert-surface complexity used subject-wise tertiles of physical
+signed-distance normal dispersion. High-complexity regions have 40.309 errors
+per 100 surface voxels versus 26.294 in relatively flat regions, a 1.533-fold
+increase. Thus visually curved/pixel-complex geometry is preferentially
+affected, although the measure remains resolution-dependent.
+
+MRI evidence does not support simple low-gradient ambiguity as the sole cause.
+Regions with >2-voxel disagreement have higher mean gradient (8.294 versus
+5.889 z/mm for correctly localized surface) but lower local inside/outside
+contrast (0.738 versus 1.487 z). Assigned error distance has weak Spearman
+association with gradient (rho 0.052), modest negative association with local
+contrast (rho -0.147), and negligible association with variance (rho 0.008).
+
+Probability errors are heterogeneous rather than predominantly uncertain:
+41.72% of erroneous voxels lie in [0.25, 0.75], while 31.13% are confidently
+incorrect by fixed descriptive definitions (FP >=0.9 or FN <=0.1). Combined FP
+median probability is 0.739 and FN median is 0.181. These observations are not a
+held-out threshold optimization.
+
+Mean post-filter surface metrics are CAMRI Dice 0.982626, HD95 0.133 mm, ASSD
+0.030 mm and Mouse Dice 0.965685, HD95 0.205 mm, ASSD 0.046 mm. Fixed Surface
+Dice tolerances of 0.1/0.2/0.5/1.0 mm were declared before inspecting results.
+
+The historical probability exporter stored equal-sized in-plane arrays in a
+transposed order. Every probability map was aligned by the unique
+shape-compatible axis permutation whose unchanged 0.5 threshold exactly
+reproduced the canonical saved raw prediction. No probability value changed.
+
+Scientific conclusion: most residual disagreement is already at approximately
+one-index-voxel surface precision, but a small physically meaningful tail and a
+clear complexity-associated failure pattern remain. The evidence does not by
+itself justify a loss or architectural change. The next diagnostic should be a
+blinded multi-rater review of the largest physical-distance and high-complexity
+regions to quantify expert-boundary ambiguity.
+
+Primary artifacts:
+
+`outputs/boundary_error_diagnostics/`
+
+## Completed Model Spatial-Resolution Diagnostics
+
+The unchanged epoch-17 mixed-domain model was traced under inference mode on
+CAMRI 064 and Mouse `POLYIC_20190510_mouse43__E9_P1`. The stepwise diagnostic
+decoder agreed exactly with the ordinary forward pass (maximum absolute
+difference 0), and native export reproduced both canonical saved raw masks
+exactly. Geometry and quantization were then measured on all 86 filtered test
+predictions. There was no training, threshold change, model change, or
+postprocessing change.
+
+Actual tensor hierarchy for a `[1,1,128,128,160]` tile:
+
+- level0 `[1,48,128,128,160]`, full grid, available but unused by the decoder;
+- level1 `[1,48,64,64,80]`, 2× downsampled and the finest decoder input;
+- level2 `[1,96,32,32,40]`, 4×;
+- level3 `[1,192,16,16,20]`, 8×;
+- level4 `[1,384,8,8,10]`, 16×.
+
+The decoder projects levels1–4 to 32 channels, performs three coarse-to-fine
+trilinear FPN feature interpolations with additive lateral fusion and 3×3
+refinement, and updates the single query by cross-attention at every fused
+scale. The query-derived mask embedding is dotted with refined fused level1
+features. Segmentation logits therefore first exist at `[1,1,64,64,80]`.
+Exactly one 2× trilinear interpolation (`align_corners=False`) expands logits
+to `[1,1,128,128,160]`; sigmoid and thresholding follow. There is no level0
+skip or mask prediction at full model-input resolution.
+
+Preprocessing is transpose `[1,0,2]`, nonzero crop, z-score normalization, and
+order-1 resampling without anti-aliasing to model-axis spacing
+`(0.25,0.20,0.16) mm`. CAMRI 064 changes from transposed `(144,64,144)` at
+isotropic 0.2 mm to `(115,64,180)`. The Mouse representative changes from
+`(180,35,180)` at model-axis spacing `(0.1,0.4,0.1) mm` to `(72,70,113)`, so
+native Mouse detail is downsampled before encoding on two axes. The configured
+preprocessor also calls its `is_seg=False`, order-1 resampler for segmentation
+and then casts to `int8`; this is a verified implementation fact and a plausible
+source of conservative supervision, not a demonstrated causal effect.
+
+Level1 physical spacing is `(0.50,0.40,0.32) mm` in model axes, corresponding
+to native NIfTI `(x,y,z)` spacing `(0.32,0.50,0.40) mm`. Its native footprint is
+about `3.2×5.0×1.0` Mouse voxels and `1.6×2.5×2.0` CAMRI voxels. Mouse boundary
+coordinates show a strong factor-5 alignment excess on native y (+28.71
+percentage points versus expert), exactly matching its five-pixel level1
+footprint. CAMRI native y also shows factor 5 (+18.74 points), consistent with
+the repeated phase of its 2.5-pixel footprint. Native x-axis excesses are below
+one point and are not meaningful detections.
+
+Predicted contours are objectively less articulated, but not by every metric:
+mean axis-run ratios are approximately 1.000 in both domains. P95 run ratios are
+1.138 CAMRI and 1.177 Mouse; maximum-run ratios are 1.380 and 1.623. Direction
+changes per 100 contour steps are only 0.824× expert in CAMRI and 0.694× expert
+in Mouse. Thus the long-run tail is coarser and direction changes are reduced,
+especially in Mouse, even though average run length is unchanged.
+
+The mapped native probability field is continuous: 19.86% of boundary-band
+samples are between 0.1 and 0.9, and 49.94% of 0.5-isocontour coordinate entries
+are subvoxel. Thresholding reveals the native lattice staircase but does not
+create the underlying coarse evidence; logits already originate at level1.
+
+Scientific conclusion: the hypothesis is supported with qualifications. The
+model localizes the brain very accurately, but fine boundary fidelity is
+limited by two sequential effects: Mouse detail is first reduced during
+native-to-model preprocessing, and the decoder then discards the available
+full-grid level0 feature and forms its first mask at half resolution. This
+mechanically explains why interpolation preserves excellent Dice/ASSD and
+one-voxel localization while complex curves have 1.53× more error. It does not
+prove that the decoder alone causes the error or explain all FN bias.
+
+The next diagnostic should be an offline preprocessing-fidelity audit comparing
+the current order-1/integer-cast preprocessed labels with nearest-neighbor
+labels, measuring boundary displacement, curvature loss, and directional
+erosion without training or modifying predictions.
+
+Primary artifacts:
+
+`outputs/model_spatial_resolution_diagnostics/`
+
 ## Completed TCIA Mouse-Astrocytoma Annotation Audit
 
 The local `Mouse-Astrocytoma-doiJNLP` download was exhaustively inspected
@@ -397,3 +544,33 @@ but their 2.78% exclusive attribution is not the dominant current limitation.
 Future work should treat boundary accuracy as the next controlled research
 target; explicit grouping changes are not quantitatively justified as the
 primary next direction by this experiment.
+## Expert-mask preprocessing lifecycle audit (2026-08-12)
+
+- A full diagnostic audit of the locked mixed-domain cohort (40 CAMRI and 101 Mouse scans) is in `outputs/mask_preprocessing_audit/`; it did not train a model or regenerate predictions.
+- The current train/validation target path is: original expert NIfTI -> SimpleITK float32 `[C,Z,Y,X]` -> RS2 `transpose_forward=[1,0,2]` -> image-nonzero crop -> the shared `3d_fullres` resampler configured with `is_seg=False, order=1, order_z=0` -> final int8 truncation -> `>0` -> center pad/crop to `[1,1,128,128,160]` -> uint8 cached target. Training augmentation may flip this target; validation does not augment it.
+- `DefaultPreprocessor.run_case` uses the exact same `configuration_manager.resampling_fn` for image and segmentation. The project then thresholds the int8 result. Thus training and validation labels are linearly interpolated and integer-truncated, rather than label-aware nearest-neighbor masks.
+- Mixed-domain training validation Dice/precision/recall are computed in model space against this cached processed target. Canonical CAMRI/Mouse native evaluation instead discards the preprocessed segmentation, exports logits to native geometry, reloads the original `mask_path`/`ground_truth_path` directly with nibabel, and binarizes it. Current native Dice, IoU, precision, recall, HD95, ASSD, filtered-error, and boundary-diagnostic values therefore use untouched native expert masks. Order-1 interpolation in native export applies to logits/probabilities, not the expert label.
+- Relative to an otherwise identical label-aware nearest-neighbor forward resample, current processed masks were smaller in all 141/141 subjects and never contained added foreground voxels. CAMRI lost 249,659 pooled processed voxels, mean volume change was -2.939%, mean current-vs-NN Dice 0.985067, HD95 0.1880 mm, ASSD 0.03884 mm, and mean inward shift 0.1839 mm. Mouse lost 230,563 pooled processed voxels, mean volume change was -3.983%, mean Dice 0.979678, HD95 0.1925 mm, ASSD 0.03247 mm, and mean inward shift 0.1840 mm.
+- After identical nearest-neighbor restoration to the native grid, mean Dice against the original expert was 0.984560 (current) versus 0.992641 (NN reference) for CAMRI and 0.975802 (current) versus 0.981712 (NN reference) for Mouse.
+- This is verified systematic erosion and a plausible contributor to learned FN bias, but not proof of causation because final test metrics use untouched native labels and optimization/domain shift remain independent causes. The controlled next step is to build a separate label-aware cache and retrain the unchanged decoder, changing only segmentation interpolation, before interpreting a full-resolution decoder experiment. Preserve all current checkpoints/results as comparators.
+
+## Corrected-label controlled retraining (2026-08-12)
+
+- The segmentation-only preprocessing correction was tested in `outputs/corrected_label_retraining/`. MRI preprocessing and the frozen RS2 encoder were unchanged. The decoder remained the same one-query, levels1–4, 170,401-parameter architecture; split, seed, initialization, augmentations, Dice+BCE+boundary loss, optimizer, 20-epoch schedule, 0.5 threshold, native export, and largest-26-connected-component filter were preserved.
+- Full 141-mask verification confirmed categorical `{0,1}` nearest-neighbor targets and removal of systematic shrinkage. Native round-trip mean volume bias changed from -2.578% to +0.121% CAMRI and -4.042% to -0.084% Mouse. Round-trip Dice improved 0.984560→0.992641 CAMRI and 0.975802→0.981712 Mouse.
+- Training started from the same epoch-14 checkpoint and again selected epoch 17. Balanced validation Dice was 0.976708 versus 0.976576 old; the CAMRI safety stop did not trigger. The checkpoint is `outputs/corrected_label_retraining/checkpoints/best_corrected_labels.pt`.
+- On the same untouched native test cohort after the same deterministic filter, CAMRI Dice improved 0.982626→0.987029, recall 0.970597→0.988249, ASSD 0.03034→0.01997 mm, and total error 38,341→27,398; HD95 remained 0.1333 mm. Mouse Dice improved 0.965685→0.969536, recall 0.948492→0.972760, ASSD 0.04605→0.04214 mm, HD95 0.2050→0.2009 mm, and total error 638,732→585,309.
+- FN voxels fell 33,693→12,791 CAMRI and 481,837→254,256 Mouse, confirming the damaged labels materially contributed to FN bias. FP increased 4,648→14,607 and 156,895→331,053. Pooled FP/FN moved from 0.138→1.142 CAMRI and 0.326→1.302 Mouse: severe under-segmentation was corrected but calibration modestly overshot toward FP.
+- The remaining distance tail did not improve. Combined <=1-voxel share fell 96.006%→89.288%, >1–2 rose 2.909%→7.829%, >2–3 rose 0.817%→2.159%, >3–5 rose 0.242%→0.636%, and >5 rose 0.026%→0.088%; physical mean/P95 rose 0.0397/0.200 mm→0.0883/0.300 mm. Many zero-distance surface FN voxels were recovered while farther outward FP remained.
+- High-complexity errors decreased modestly (256,631→242,849; 40.309→38.145 per 100 surface voxels), but flat errors improved more. Contour articulation and pixelation were unchanged: direction-change ratios stayed about 0.82 CAMRI and 0.69 Mouse; factor-5 native-y alignment excess remained and slightly increased (18.74→22.03 points CAMRI, 28.71→29.69 Mouse).
+- Scientific attribution: erroneous label interpolation caused systematic eroded supervision, severe FN/recall bias, and part of the overlap/ASSD error. It did not cause the factor-5 quantization, reduced contour articulation, or visible staircase pattern. The next justified controlled experiment is corrected labels plus a full-resolution level0 decoder, changing level0 use as the sole architectural factor.
+
+## Full-resolution level0 decoder ablation (2026-08-12)
+
+- The controlled corrected-label level0 ablation is complete in `outputs/full_resolution_level0_decoder/`. The frozen encoder, one learned query, split, seed, initialization, loss, threshold, native export, and deterministic 26-connected-component filter were preserved. Only a lightweight full-grid level0 fusion/query/mask-residual stage was added.
+- The decoder produced genuine learned `[1,1,128,128,160]` logits without final logit interpolation, versus `[1,1,64,64,80]` plus 2x interpolation previously. Trainable parameters increased 170,401→180,466 (+5.91%). Epoch 20 was selected; the encoder remained frozen.
+- On the same filtered untouched tests, CAMRI Dice changed 0.987029→0.986841, HD95 stayed 0.1333 mm, ASSD worsened 0.01997→0.02081 mm, and total error rose 27,398→28,112. Mouse Dice fell 0.969536→0.964860, HD95 worsened 0.2009→0.2649 mm, ASSD 0.04214→0.05524 mm, and total error rose 585,309→680,375. Only 4/80 Mouse subjects improved.
+- Combined <=1-voxel errors fell 89.288%→83.301%; >1–2 rose 7.829%→11.437%, >2–3 2.159%→3.742%, >3–5 0.636%→1.272%, and >5 0.088%→0.248%. Mean/P95 physical distance worsened 0.0883/0.300→0.1315/0.400 mm. CAMRI distance concentration improved modestly, but Mouse dominated the regression.
+- High-complexity error rates worsened 25.232→26.101 per 100 surface voxels CAMRI and 39.700→46.721 Mouse. Direction-change/expert ratios improved only slightly (0.8207→0.8243 and 0.6866→0.6976). Factor-5 alignment excess decreased 22.03→15.94 points CAMRI but remained 29.69→29.30 Mouse; visible lattice/pixelation did not meaningfully disappear.
+- Mouse confident incorrect boundary FP increased 27.48%→38.30%, while boundary gradients and intermediate probabilities did not show useful finer localization. The full-grid field was real but more confident without being more correct.
+- Scientific attribution: the hypothesis that the boundary limitation was primarily caused by discarding level0 spatial information is not supported. Added level0 capacity produced minor contour-statistic changes but worsened cross-domain segmentation. Stop this architecture path. The next diagnostic is a no-training measurement of factor-5 alignment in native level0 activations and preprocessed image gradients, stratified by Mouse acquisition group, to localize the grid/domain source.

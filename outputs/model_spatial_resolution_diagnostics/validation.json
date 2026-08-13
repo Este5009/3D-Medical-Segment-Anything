@@ -1,0 +1,19 @@
+{
+  "subjects_analyzed": 86,
+  "camri_subjects": 6,
+  "mouse_subjects": 80,
+  "representative_forward_passes": 2,
+  "canonical_raw_predictions_reproduced": true,
+  "ordinary_stepwise_decoder_max_abs_difference": 0.0,
+  "encoder_frozen": true,
+  "decoder_parameters": 170401,
+  "checkpoint_epoch": 17,
+  "training_performed": false,
+  "threshold_changed": false,
+  "postprocessing_changed": false,
+  "focused_tests_passed": 4,
+  "python_compile_passed": true,
+  "required_outputs_verified": true,
+  "quantization_rows": 1204,
+  "geometry_rows": 86
+}

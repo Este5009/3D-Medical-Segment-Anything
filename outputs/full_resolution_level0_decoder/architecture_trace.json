@@ -1,0 +1,502 @@
+{
+  "old": {
+    "parameters": 170401,
+    "finest_feature": "level1",
+    "native_logits_shape": [
+      1,
+      1,
+      64,
+      64,
+      80
+    ],
+    "final_2x_interpolation": true
+  },
+  "new": {
+    "parameters": 180466,
+    "level0_fusion": "48\u21928 lateral projection + 32\u21928 top-down projection + additive depthwise-3x3/pointwise-1x1 refinement",
+    "query_conditioning_at_level0": true,
+    "query_level0_tokens": "2x average-pooled solely for global query attention",
+    "mask_logits": "8-channel full-grid voxel/query dot product",
+    "final_logit_interpolation": false
+  },
+  "cases": {
+    "CAMRI": {
+      "source": "/tmp/rs2_level0_corrected_features/camri_validation_035.pt",
+      "encoder_features": {
+        "level0": [
+          1,
+          48,
+          128,
+          128,
+          160
+        ],
+        "level1": [
+          1,
+          48,
+          64,
+          64,
+          80
+        ],
+        "level2": [
+          1,
+          96,
+          32,
+          32,
+          40
+        ],
+        "level3": [
+          1,
+          192,
+          16,
+          16,
+          20
+        ],
+        "level4": [
+          1,
+          384,
+          8,
+          8,
+          10
+        ]
+      },
+      "stages": [
+        {
+          "stage": "projected_level4",
+          "shape": [
+            1,
+            32,
+            8,
+            8,
+            10
+          ]
+        },
+        {
+          "stage": "projected_level3",
+          "shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ]
+        },
+        {
+          "stage": "projected_level2",
+          "shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ]
+        },
+        {
+          "stage": "projected_level1",
+          "shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ]
+        },
+        {
+          "stage": "fused_level3",
+          "shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ]
+        },
+        {
+          "stage": "fused_level2",
+          "shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ]
+        },
+        {
+          "stage": "fused_level1",
+          "shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ]
+        },
+        {
+          "stage": "projected_level0",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "level1_to_level0_interpolation",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ],
+          "purpose": "feature fusion; not final-logit rendering"
+        },
+        {
+          "stage": "fused_level0",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "query_after_level4",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "query_after_level3",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "query_after_level2",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "query_after_level1",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "level0_query_attention_tokens",
+          "shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "note": "pooled only for global query update"
+        },
+        {
+          "stage": "query_after_level0",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "transferred_baseline_logit_skip",
+          "shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "note": "initialization only; not sole final output"
+        },
+        {
+          "stage": "full_grid_mask_voxel_features",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "full_grid_level0_logit_residual",
+          "shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "native_learned_logits",
+          "shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "final_interpolation": false
+        }
+      ],
+      "elapsed_seconds": 1.0146818161010742,
+      "peak_process_memory_mib": 3967.015625,
+      "incremental_peak_memory_mib_lower_bound": 2930.328125
+    },
+    "Mouse": {
+      "source": "/tmp/rs2_level0_corrected_features/mouse_validation_POLYIC_20190510_mouse31__E2_P1.pt",
+      "encoder_features": {
+        "level0": [
+          1,
+          48,
+          128,
+          128,
+          160
+        ],
+        "level1": [
+          1,
+          48,
+          64,
+          64,
+          80
+        ],
+        "level2": [
+          1,
+          96,
+          32,
+          32,
+          40
+        ],
+        "level3": [
+          1,
+          192,
+          16,
+          16,
+          20
+        ],
+        "level4": [
+          1,
+          384,
+          8,
+          8,
+          10
+        ]
+      },
+      "stages": [
+        {
+          "stage": "projected_level4",
+          "shape": [
+            1,
+            32,
+            8,
+            8,
+            10
+          ]
+        },
+        {
+          "stage": "projected_level3",
+          "shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ]
+        },
+        {
+          "stage": "projected_level2",
+          "shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ]
+        },
+        {
+          "stage": "projected_level1",
+          "shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ]
+        },
+        {
+          "stage": "fused_level3",
+          "shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ]
+        },
+        {
+          "stage": "fused_level2",
+          "shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ]
+        },
+        {
+          "stage": "fused_level1",
+          "shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ]
+        },
+        {
+          "stage": "projected_level0",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "level1_to_level0_interpolation",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ],
+          "purpose": "feature fusion; not final-logit rendering"
+        },
+        {
+          "stage": "fused_level0",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "query_after_level4",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "query_after_level3",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "query_after_level2",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "query_after_level1",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "level0_query_attention_tokens",
+          "shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "note": "pooled only for global query update"
+        },
+        {
+          "stage": "query_after_level0",
+          "shape": [
+            1,
+            1,
+            32
+          ]
+        },
+        {
+          "stage": "transferred_baseline_logit_skip",
+          "shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "note": "initialization only; not sole final output"
+        },
+        {
+          "stage": "full_grid_mask_voxel_features",
+          "shape": [
+            1,
+            8,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "full_grid_level0_logit_residual",
+          "shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ]
+        },
+        {
+          "stage": "native_learned_logits",
+          "shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "final_interpolation": false
+        }
+      ],
+      "elapsed_seconds": 0.8397669792175293,
+      "peak_process_memory_mib": 4104.078125,
+      "incremental_peak_memory_mib_lower_bound": 137.0625
+    }
+  }
+}

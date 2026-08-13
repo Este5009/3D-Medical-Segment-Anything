@@ -1,0 +1,10 @@
+stage,train,validation,test,operation,input_shape,output_shape,interpolation,dtype
+load,yes,yes,preprocess only,"SimpleITK GetArrayFromImage; [C,Z,Y,X]",native,"[1,Z,Y,X]",none,float32
+transpose,yes,yes,image/unused seg,"transpose_forward [1,0,2]","[1,Z,Y,X]","[1,Y,Z,X]",none,float32
+crop,yes,yes,image/unused seg,image nonzero bbox; outside label set -1,transposed,bbox dependent,none,float32
+spacing resample,yes,yes,seg result discarded,same configuration.resampling_fn as image,cropped,computed target shape,"is_seg=False, order=1; order_z=0 if separate-z",float32
+integer cast,yes,yes,seg result discarded,DefaultPreprocessor final cast,resampled,unchanged,none; truncation toward zero,int8
+target conversion,yes,yes,no,segmentation > 0; float tensor; center pad/crop,processed,"[1,1,128,128,160]",padding/cropping only,float32 then uint8 cache
+augmentation,yes,no,no,axis flips shared with frozen features,tile,tile,none,float32
+validation metric,training reports too,yes,no,threshold logits at 0.5 vs cached processed tile,model tile,scalar,none,bool
+canonical native test,no,no,yes,export logits to native; reload untouched expert NIfTI,native prediction + native expert,scalar metrics,order=1 applies to logits only,expert thresholded bool

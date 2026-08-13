@@ -1,0 +1,4 @@
+file,function,caller,setting,training_labels,validation_labels,test_labels,metric_calculation,visualization_only
+../RS2-Net-Reproduction/Rodent-Skull-Stripping/RS2/jsons/plans.json,3d_fullres resampling_fn_kwargs,DefaultPreprocessor.run_case,"is_seg=False, order=1, order_z=0",yes,yes,computed then discarded,train/validation model-space only,no
+scripts/evaluate_external_holdout.py,export_native,canonical native evaluators,"configured is_seg=False, order=1 on logits",no,no,no,"affects prediction geometry, never expert GT",no
+scripts/evaluate_mouse_boundary_adaptation.py,export_probability,native evaluation,"configured is_seg=False, order=1 on logits",no,no,no,probability map only,diagnostics/probability

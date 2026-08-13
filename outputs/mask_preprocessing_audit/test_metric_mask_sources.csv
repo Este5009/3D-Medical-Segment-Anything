@@ -1,0 +1,7 @@
+evaluation,script,mask_source,representation,native_untouched,metrics
+mixed training validation Dice/precision/recall,scripts/train_mixed_domain_decoder.py -> evaluate,cached preprocess_pair target,"linearly resampled, int8-cast, >0, center tile",no,"Dice, precision, recall, FP, FN"
+canonical CAMRI/Mouse native test,scripts/evaluate_mouse_boundary_adaptation.py -> run_records/native_eval,ground_truth_path loaded with nibabel,original native expert mask >0,yes,"Dice, IoU, precision, recall, HD95, FP/FN, volume ratio"
+fast mixed-domain Dice,scripts/evaluate_mixed_domain_dice_fast.py,source mask_path/ground_truth_path loaded with nibabel,original native expert mask >0,yes,Dice and overlap metrics
+mixed results analysis,scripts/analyze_mixed_domain_results.py,ground_truth_path loaded with nibabel,original native expert mask >0,yes,native overlap/error analysis
+filtered residual failures,scripts/analyze_filtered_residual_failures.py,ground_truth_path loaded with nibabel,original native expert mask >0,yes,Dice/HD95/error composition
+boundary diagnostics,scripts/analyze_boundary_error_diagnostics.py,ground_truth_path loaded with nibabel,original native expert mask >0,yes,"Dice, HD95, ASSD, surface/boundary diagnostics"

@@ -1,0 +1,4 @@
+domain,subject_count,subjects_shrunk,subjects_expanded,total_lost,total_added,pooled_lost_added_ratio,mean_net_volume_change_percent,median_net_volume_change_percent,mean_inward_shift_mm,mean_outward_shift_mm
+CAMRI,40,40,0,249659,0,inf,-2.939047369188556,-2.417965537093603,0.18391479334232447,0.0
+Mouse,101,101,0,230563,0,inf,-3.983047082252542,-4.023152779762755,0.18403471132574772,0.0
+Combined,141,141,0,480222,0,inf,-3.6868769508868717,-3.961841390548615,0.1840006920396702,0.0

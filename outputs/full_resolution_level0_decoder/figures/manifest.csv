@@ -1,0 +1,13 @@
+domain,role,subject,slice,path
+CAMRI,largest_improvement,099,1,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/camri/largest_improvement_099.png
+CAMRI,largest_regression,078,51,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/camri/largest_regression_078.png
+CAMRI,median_change,007,0,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/camri/median_change_007.png
+CAMRI,previous_pixelated,099,1,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/camri/previous_pixelated_099.png
+CAMRI,previous_worst,007,0,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/camri/previous_worst_007.png
+CAMRI,high_curvature,064,52,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/camri/high_curvature_064.png
+Mouse,largest_improvement,POLYIC_20190614_polyic___E3_P1_5,10,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/mouse/largest_improvement_POLYIC_20190614_polyic___E3_P1_5.png
+Mouse,largest_regression,POLYIC_20190524_polyic___E9_P1_1,3,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/mouse/largest_regression_POLYIC_20190524_polyic___E9_P1_1.png
+Mouse,median_change,POLYIC_20190531_polyic_m__E3_P1_5,6,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/mouse/median_change_POLYIC_20190531_polyic_m__E3_P1_5.png
+Mouse,previous_pixelated,POLYIC_20190517_mouse37__E3_P1,1,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/mouse/previous_pixelated_POLYIC_20190517_mouse37__E3_P1.png
+Mouse,previous_worst,POLYIC_20190510_mouse43__E9_P1,0,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/mouse/previous_worst_POLYIC_20190510_mouse43__E9_P1.png
+Mouse,high_curvature,POLYIC_20190510_mouse43__E9_P1,0,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/full_resolution_level0_decoder/figures/mouse/high_curvature_POLYIC_20190510_mouse43__E9_P1.png

@@ -1,0 +1,13 @@
+domain,condition,complexity_group,error_voxels,errors_per_100_surface_voxels
+CAMRI,old,flat,5038,7.361837683
+CAMRI,old,high complexity,22457,32.81603905
+CAMRI,new,flat,3176,4.64096794
+CAMRI,new,high complexity,17267,25.23197872
+Mouse,old,flat,162368,28.57354033
+Mouse,old,high complexity,234174,41.21185456
+Mouse,new,flat,139350,24.5228299
+Mouse,new,high complexity,225582,39.69976418
+Combined,old,flat,167406,26.29358547
+Combined,old,high complexity,256631,40.30939931
+Combined,new,flat,142526,22.38581391
+Combined,new,high complexity,242849,38.1446408

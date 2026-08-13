@@ -1,0 +1,1564 @@
+{
+  "training_performed": false,
+  "inference_only": true,
+  "model_modified": false,
+  "threshold": 0.5,
+  "postprocessing_changed": false,
+  "decoder_parameters": 170401,
+  "encoder_frozen": true,
+  "representatives": {
+    "CAMRI": {
+      "subject": "064",
+      "device": "cpu",
+      "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+      "checkpoint_epoch": 17,
+      "original_mri_shape": [
+        144,
+        144,
+        64
+      ],
+      "original_expert_shape": [
+        144,
+        144,
+        64
+      ],
+      "original_spacing_mm_nifti_xyz": [
+        0.20000000298023224,
+        0.20000000298023224,
+        0.20000000298023224
+      ],
+      "preprocessed_shape": [
+        115,
+        64,
+        180
+      ],
+      "padded_sliding_window_shape": [
+        128,
+        128,
+        180
+      ],
+      "sliding_window_starts": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "traced_tile_start": [
+        0,
+        0,
+        0
+      ],
+      "probability_export_axis_permutation": [
+        1,
+        0,
+        2
+      ],
+      "ordinary_vs_stepwise_decoder_max_abs_difference": 0.0,
+      "canonical_raw_prediction_reproduced": true,
+      "stages": [
+        {
+          "domain": "CAMRI",
+          "stage": "encoder input tile",
+          "tensor_shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": true,
+          "operation": "center-padded overlapping tile",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "encoder level0",
+          "tensor_shape": [
+            1,
+            48,
+            128,
+            128,
+            160
+          ],
+          "channels": 48,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": false,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "encoder level1",
+          "tensor_shape": [
+            1,
+            48,
+            64,
+            64,
+            80
+          ],
+          "channels": 48,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "encoder level2",
+          "tensor_shape": [
+            1,
+            96,
+            32,
+            32,
+            40
+          ],
+          "channels": 96,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "encoder level3",
+          "tensor_shape": [
+            1,
+            192,
+            16,
+            16,
+            20
+          ],
+          "channels": 192,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "encoder level4",
+          "tensor_shape": [
+            1,
+            384,
+            8,
+            8,
+            10
+          ],
+          "channels": 384,
+          "spatial_shape": [
+            8,
+            8,
+            10
+          ],
+          "downsampling_vs_model_input": [
+            16.0,
+            16.0,
+            16.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            4.0,
+            3.200000047683716,
+            2.559999942779541
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "projected_level1",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "projected_level2",
+          "tensor_shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "projected_level3",
+          "tensor_shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "projected_level4",
+          "tensor_shape": [
+            1,
+            32,
+            8,
+            8,
+            10
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            8,
+            8,
+            10
+          ],
+          "downsampling_vs_model_input": [
+            16.0,
+            16.0,
+            16.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            4.0,
+            3.200000047683716,
+            2.559999942779541
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fused_level4",
+          "tensor_shape": [
+            1,
+            32,
+            8,
+            8,
+            10
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            8,
+            8,
+            10
+          ],
+          "downsampling_vs_model_input": [
+            16.0,
+            16.0,
+            16.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            4.0,
+            3.200000047683716,
+            2.559999942779541
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fpn_upsampled_to_level3",
+          "tensor_shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear FPN feature interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fused_level3",
+          "tensor_shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fpn_upsampled_to_level2",
+          "tensor_shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear FPN feature interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fused_level2",
+          "tensor_shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fpn_upsampled_to_level1",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear FPN feature interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "fused_level1",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "mask_voxel_features",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "native_decoder_logits",
+          "tensor_shape": [
+            1,
+            1,
+            64,
+            64,
+            80
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "query mask embedding dot fused level1 voxel features",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "upsampled_tile_logits",
+          "tensor_shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear logits interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "native_decoder_probability",
+          "tensor_shape": [
+            1,
+            1,
+            64,
+            64,
+            80
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "upsampled_tile_probability",
+          "tensor_shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "preprocessed full MRI",
+          "tensor_shape": "(115, 64, 180)",
+          "channels": 1,
+          "spatial_shape": "(115, 64, 180)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": true,
+          "operation": "transpose, crop, z-score, order-1 resample",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "sliding-window averaged logits",
+          "tensor_shape": "(115, 64, 180)",
+          "channels": 1,
+          "spatial_shape": "(115, 64, 180)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": false,
+          "operation": "average overlapping upsampled tile logits",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "model-space probability",
+          "tensor_shape": "(115, 64, 180)",
+          "channels": 1,
+          "spatial_shape": "(115, 64, 180)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": false,
+          "operation": "sigmoid after logit averaging",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "model-space thresholded mask",
+          "tensor_shape": "(115, 64, 180)",
+          "channels": 1,
+          "spatial_shape": "(115, 64, 180)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": false,
+          "operation": "logit > 0 (equivalent probability >= 0.5)",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "CAMRI",
+          "stage": "final mapped native mask",
+          "tensor_shape": "(144, 144, 64)",
+          "channels": 1,
+          "spatial_shape": "(144, 144, 64)",
+          "downsampling_vs_model_input": "native grid",
+          "effective_spacing_mm_model_axes": "(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)",
+          "used_by_decoder": false,
+          "operation": "order-1 logit resample to cropped native shape, threshold, uncrop, inverse transpose",
+          "coordinate_system": "native NIfTI x/y/z"
+        }
+      ]
+    },
+    "Mouse": {
+      "subject": "POLYIC_20190510_mouse43__E9_P1",
+      "device": "cpu",
+      "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+      "checkpoint_epoch": 17,
+      "original_mri_shape": [
+        180,
+        180,
+        35
+      ],
+      "original_expert_shape": [
+        180,
+        180,
+        35
+      ],
+      "original_spacing_mm_nifti_xyz": [
+        0.10000000149011612,
+        0.10000000149011612,
+        0.3999999463558197
+      ],
+      "preprocessed_shape": [
+        72,
+        70,
+        113
+      ],
+      "padded_sliding_window_shape": [
+        128,
+        128,
+        160
+      ],
+      "sliding_window_starts": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "traced_tile_start": [
+        0,
+        0,
+        0
+      ],
+      "probability_export_axis_permutation": [
+        1,
+        0,
+        2
+      ],
+      "ordinary_vs_stepwise_decoder_max_abs_difference": 0.0,
+      "canonical_raw_prediction_reproduced": true,
+      "stages": [
+        {
+          "domain": "Mouse",
+          "stage": "encoder input tile",
+          "tensor_shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": true,
+          "operation": "center-padded overlapping tile",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "encoder level0",
+          "tensor_shape": [
+            1,
+            48,
+            128,
+            128,
+            160
+          ],
+          "channels": 48,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": false,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "encoder level1",
+          "tensor_shape": [
+            1,
+            48,
+            64,
+            64,
+            80
+          ],
+          "channels": 48,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "encoder level2",
+          "tensor_shape": [
+            1,
+            96,
+            32,
+            32,
+            40
+          ],
+          "channels": 96,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "encoder level3",
+          "tensor_shape": [
+            1,
+            192,
+            16,
+            16,
+            20
+          ],
+          "channels": 192,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "encoder level4",
+          "tensor_shape": [
+            1,
+            384,
+            8,
+            8,
+            10
+          ],
+          "channels": 384,
+          "spatial_shape": [
+            8,
+            8,
+            10
+          ],
+          "downsampling_vs_model_input": [
+            16.0,
+            16.0,
+            16.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            4.0,
+            3.200000047683716,
+            2.559999942779541
+          ],
+          "used_by_decoder": true,
+          "operation": "frozen RS2-Net encoder output",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "projected_level1",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "projected_level2",
+          "tensor_shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "projected_level3",
+          "tensor_shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "projected_level4",
+          "tensor_shape": [
+            1,
+            32,
+            8,
+            8,
+            10
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            8,
+            8,
+            10
+          ],
+          "downsampling_vs_model_input": [
+            16.0,
+            16.0,
+            16.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            4.0,
+            3.200000047683716,
+            2.559999942779541
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fused_level4",
+          "tensor_shape": [
+            1,
+            32,
+            8,
+            8,
+            10
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            8,
+            8,
+            10
+          ],
+          "downsampling_vs_model_input": [
+            16.0,
+            16.0,
+            16.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            4.0,
+            3.200000047683716,
+            2.559999942779541
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fpn_upsampled_to_level3",
+          "tensor_shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear FPN feature interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fused_level3",
+          "tensor_shape": [
+            1,
+            32,
+            16,
+            16,
+            20
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            16,
+            16,
+            20
+          ],
+          "downsampling_vs_model_input": [
+            8.0,
+            8.0,
+            8.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            2.0,
+            1.600000023841858,
+            1.2799999713897705
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fpn_upsampled_to_level2",
+          "tensor_shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear FPN feature interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fused_level2",
+          "tensor_shape": [
+            1,
+            32,
+            32,
+            32,
+            40
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            32,
+            32,
+            40
+          ],
+          "downsampling_vs_model_input": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            1.0,
+            0.800000011920929,
+            0.6399999856948853
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fpn_upsampled_to_level1",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear FPN feature interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "fused_level1",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "mask_voxel_features",
+          "tensor_shape": [
+            1,
+            32,
+            64,
+            64,
+            80
+          ],
+          "channels": 32,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "native_decoder_logits",
+          "tensor_shape": [
+            1,
+            1,
+            64,
+            64,
+            80
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "query mask embedding dot fused level1 voxel features",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "upsampled_tile_logits",
+          "tensor_shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": true,
+          "operation": "trilinear logits interpolation; align_corners=False",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "native_decoder_probability",
+          "tensor_shape": [
+            1,
+            1,
+            64,
+            64,
+            80
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            64,
+            64,
+            80
+          ],
+          "downsampling_vs_model_input": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.5,
+            0.4000000059604645,
+            0.3199999928474426
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "upsampled_tile_probability",
+          "tensor_shape": [
+            1,
+            1,
+            128,
+            128,
+            160
+          ],
+          "channels": 1,
+          "spatial_shape": [
+            128,
+            128,
+            160
+          ],
+          "downsampling_vs_model_input": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "effective_spacing_mm_model_axes": [
+            0.25,
+            0.20000000298023224,
+            0.1599999964237213
+          ],
+          "used_by_decoder": true,
+          "operation": "decoder intermediate",
+          "coordinate_system": "model tile"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "preprocessed full MRI",
+          "tensor_shape": "(72, 70, 113)",
+          "channels": 1,
+          "spatial_shape": "(72, 70, 113)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": true,
+          "operation": "transpose, crop, z-score, order-1 resample",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "sliding-window averaged logits",
+          "tensor_shape": "(72, 70, 113)",
+          "channels": 1,
+          "spatial_shape": "(72, 70, 113)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": false,
+          "operation": "average overlapping upsampled tile logits",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "model-space probability",
+          "tensor_shape": "(72, 70, 113)",
+          "channels": 1,
+          "spatial_shape": "(72, 70, 113)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": false,
+          "operation": "sigmoid after logit averaging",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "model-space thresholded mask",
+          "tensor_shape": "(72, 70, 113)",
+          "channels": 1,
+          "spatial_shape": "(72, 70, 113)",
+          "downsampling_vs_model_input": "full-volume/not a single tile",
+          "effective_spacing_mm_model_axes": "(0.25, 0.20000000298023224, 0.1599999964237213)",
+          "used_by_decoder": false,
+          "operation": "logit > 0 (equivalent probability >= 0.5)",
+          "coordinate_system": "full model volume"
+        },
+        {
+          "domain": "Mouse",
+          "stage": "final mapped native mask",
+          "tensor_shape": "(180, 180, 35)",
+          "channels": 1,
+          "spatial_shape": "(180, 180, 35)",
+          "downsampling_vs_model_input": "native grid",
+          "effective_spacing_mm_model_axes": "(0.10000000149011612, 0.10000000149011612, 0.3999999463558197)",
+          "used_by_decoder": false,
+          "operation": "order-1 logit resample to cropped native shape, threshold, uncrop, inverse transpose",
+          "coordinate_system": "native NIfTI x/y/z"
+        }
+      ]
+    }
+  }
+}

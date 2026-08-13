@@ -1,0 +1,41 @@
+domain,stage,tensor_shape,channels,spatial_shape,downsampling_vs_model_input,effective_spacing_mm_model_axes,used_by_decoder,operation,coordinate_system
+CAMRI,projected_level1,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+CAMRI,projected_level2,"[1, 32, 32, 32, 40]",32,"[32, 32, 40]","[4.0, 4.0, 4.0]","[1.0, 0.800000011920929, 0.6399999856948853]",True,decoder intermediate,model tile
+CAMRI,projected_level3,"[1, 32, 16, 16, 20]",32,"[16, 16, 20]","[8.0, 8.0, 8.0]","[2.0, 1.600000023841858, 1.2799999713897705]",True,decoder intermediate,model tile
+CAMRI,projected_level4,"[1, 32, 8, 8, 10]",32,"[8, 8, 10]","[16.0, 16.0, 16.0]","[4.0, 3.200000047683716, 2.559999942779541]",True,decoder intermediate,model tile
+CAMRI,fused_level4,"[1, 32, 8, 8, 10]",32,"[8, 8, 10]","[16.0, 16.0, 16.0]","[4.0, 3.200000047683716, 2.559999942779541]",True,decoder intermediate,model tile
+CAMRI,fpn_upsampled_to_level3,"[1, 32, 16, 16, 20]",32,"[16, 16, 20]","[8.0, 8.0, 8.0]","[2.0, 1.600000023841858, 1.2799999713897705]",True,trilinear FPN feature interpolation; align_corners=False,model tile
+CAMRI,fused_level3,"[1, 32, 16, 16, 20]",32,"[16, 16, 20]","[8.0, 8.0, 8.0]","[2.0, 1.600000023841858, 1.2799999713897705]",True,decoder intermediate,model tile
+CAMRI,fpn_upsampled_to_level2,"[1, 32, 32, 32, 40]",32,"[32, 32, 40]","[4.0, 4.0, 4.0]","[1.0, 0.800000011920929, 0.6399999856948853]",True,trilinear FPN feature interpolation; align_corners=False,model tile
+CAMRI,fused_level2,"[1, 32, 32, 32, 40]",32,"[32, 32, 40]","[4.0, 4.0, 4.0]","[1.0, 0.800000011920929, 0.6399999856948853]",True,decoder intermediate,model tile
+CAMRI,fpn_upsampled_to_level1,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,trilinear FPN feature interpolation; align_corners=False,model tile
+CAMRI,fused_level1,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+CAMRI,mask_voxel_features,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+CAMRI,native_decoder_logits,"[1, 1, 64, 64, 80]",1,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,query mask embedding dot fused level1 voxel features,model tile
+CAMRI,upsampled_tile_logits,"[1, 1, 128, 128, 160]",1,"[128, 128, 160]","[1.0, 1.0, 1.0]","[0.25, 0.20000000298023224, 0.1599999964237213]",True,trilinear logits interpolation; align_corners=False,model tile
+CAMRI,native_decoder_probability,"[1, 1, 64, 64, 80]",1,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+CAMRI,upsampled_tile_probability,"[1, 1, 128, 128, 160]",1,"[128, 128, 160]","[1.0, 1.0, 1.0]","[0.25, 0.20000000298023224, 0.1599999964237213]",True,decoder intermediate,model tile
+CAMRI,sliding-window averaged logits,"(115, 64, 180)",1,"(115, 64, 180)",full-volume/not a single tile,"(0.25, 0.20000000298023224, 0.1599999964237213)",False,average overlapping upsampled tile logits,full model volume
+CAMRI,model-space probability,"(115, 64, 180)",1,"(115, 64, 180)",full-volume/not a single tile,"(0.25, 0.20000000298023224, 0.1599999964237213)",False,sigmoid after logit averaging,full model volume
+CAMRI,model-space thresholded mask,"(115, 64, 180)",1,"(115, 64, 180)",full-volume/not a single tile,"(0.25, 0.20000000298023224, 0.1599999964237213)",False,logit > 0 (equivalent probability >= 0.5),full model volume
+CAMRI,final mapped native mask,"(144, 144, 64)",1,"(144, 144, 64)",native grid,"(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)",False,"order-1 logit resample to cropped native shape, threshold, uncrop, inverse transpose",native NIfTI x/y/z
+Mouse,projected_level1,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+Mouse,projected_level2,"[1, 32, 32, 32, 40]",32,"[32, 32, 40]","[4.0, 4.0, 4.0]","[1.0, 0.800000011920929, 0.6399999856948853]",True,decoder intermediate,model tile
+Mouse,projected_level3,"[1, 32, 16, 16, 20]",32,"[16, 16, 20]","[8.0, 8.0, 8.0]","[2.0, 1.600000023841858, 1.2799999713897705]",True,decoder intermediate,model tile
+Mouse,projected_level4,"[1, 32, 8, 8, 10]",32,"[8, 8, 10]","[16.0, 16.0, 16.0]","[4.0, 3.200000047683716, 2.559999942779541]",True,decoder intermediate,model tile
+Mouse,fused_level4,"[1, 32, 8, 8, 10]",32,"[8, 8, 10]","[16.0, 16.0, 16.0]","[4.0, 3.200000047683716, 2.559999942779541]",True,decoder intermediate,model tile
+Mouse,fpn_upsampled_to_level3,"[1, 32, 16, 16, 20]",32,"[16, 16, 20]","[8.0, 8.0, 8.0]","[2.0, 1.600000023841858, 1.2799999713897705]",True,trilinear FPN feature interpolation; align_corners=False,model tile
+Mouse,fused_level3,"[1, 32, 16, 16, 20]",32,"[16, 16, 20]","[8.0, 8.0, 8.0]","[2.0, 1.600000023841858, 1.2799999713897705]",True,decoder intermediate,model tile
+Mouse,fpn_upsampled_to_level2,"[1, 32, 32, 32, 40]",32,"[32, 32, 40]","[4.0, 4.0, 4.0]","[1.0, 0.800000011920929, 0.6399999856948853]",True,trilinear FPN feature interpolation; align_corners=False,model tile
+Mouse,fused_level2,"[1, 32, 32, 32, 40]",32,"[32, 32, 40]","[4.0, 4.0, 4.0]","[1.0, 0.800000011920929, 0.6399999856948853]",True,decoder intermediate,model tile
+Mouse,fpn_upsampled_to_level1,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,trilinear FPN feature interpolation; align_corners=False,model tile
+Mouse,fused_level1,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+Mouse,mask_voxel_features,"[1, 32, 64, 64, 80]",32,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+Mouse,native_decoder_logits,"[1, 1, 64, 64, 80]",1,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,query mask embedding dot fused level1 voxel features,model tile
+Mouse,upsampled_tile_logits,"[1, 1, 128, 128, 160]",1,"[128, 128, 160]","[1.0, 1.0, 1.0]","[0.25, 0.20000000298023224, 0.1599999964237213]",True,trilinear logits interpolation; align_corners=False,model tile
+Mouse,native_decoder_probability,"[1, 1, 64, 64, 80]",1,"[64, 64, 80]","[2.0, 2.0, 2.0]","[0.5, 0.4000000059604645, 0.3199999928474426]",True,decoder intermediate,model tile
+Mouse,upsampled_tile_probability,"[1, 1, 128, 128, 160]",1,"[128, 128, 160]","[1.0, 1.0, 1.0]","[0.25, 0.20000000298023224, 0.1599999964237213]",True,decoder intermediate,model tile
+Mouse,sliding-window averaged logits,"(72, 70, 113)",1,"(72, 70, 113)",full-volume/not a single tile,"(0.25, 0.20000000298023224, 0.1599999964237213)",False,average overlapping upsampled tile logits,full model volume
+Mouse,model-space probability,"(72, 70, 113)",1,"(72, 70, 113)",full-volume/not a single tile,"(0.25, 0.20000000298023224, 0.1599999964237213)",False,sigmoid after logit averaging,full model volume
+Mouse,model-space thresholded mask,"(72, 70, 113)",1,"(72, 70, 113)",full-volume/not a single tile,"(0.25, 0.20000000298023224, 0.1599999964237213)",False,logit > 0 (equivalent probability >= 0.5),full model volume
+Mouse,final mapped native mask,"(180, 180, 35)",1,"(180, 180, 35)",native grid,"(0.10000000149011612, 0.10000000149011612, 0.3999999463558197)",False,"order-1 logit resample to cropped native shape, threshold, uncrop, inverse transpose",native NIfTI x/y/z

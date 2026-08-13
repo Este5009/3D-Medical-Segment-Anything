@@ -1,0 +1,13 @@
+domain,surface_region_group,gradient_per_mm_mean,gradient_per_mm_median,inside_outside_contrast_z_mean,inside_outside_contrast_z_median,local_variance_z2_mean,local_variance_z2_median,expert_surface_regions,assigned_distance_vs_gradient_per_mm_spearman_rho,assigned_distance_vs_gradient_per_mm_p_value,assigned_distance_vs_inside_outside_contrast_z_spearman_rho,assigned_distance_vs_inside_outside_contrast_z_p_value,assigned_distance_vs_local_variance_z2_spearman_rho,assigned_distance_vs_local_variance_z2_p_value
+CAMRI,correctly localized,3.736954927,2.281656265,1.552746177,1.407164335,0.4616414607,0.1841062605,194556,,,,,,
+CAMRI,<=1 voxel disagreement,4.722463131,3.004730701,0.883215189,0.7002732754,0.4992902279,0.2190146744,9764,,,,,,
+CAMRI,>2 voxel disagreement,3.445560217,2.735903263,0.4576200545,0.3411423564,0.2795933187,0.1709388047,148,,,,,,
+CAMRI,all-surface correlation,,,,,,,205297,0.05013914838,2.159488614e-114,-0.1824331203,0,0.02223988395,6.910995915e-24
+Mouse,correctly localized,6.015130997,4.736645222,1.507922411,1.555678368,0.6274366379,0.5820935965,1388525,,,,,,
+Mouse,<=1 voxel disagreement,6.751142979,5.465293407,1.256903052,1.288977146,0.6486427784,0.5968087316,256867,,,,,,
+Mouse,>2 voxel disagreement,8.817134857,8.25346756,0.920032084,0.8990514278,0.7162725329,0.6322577,14855,,,,,,
+Mouse,all-surface correlation,,,,,,,1704662,0.0917655819,0,-0.2040727443,0,0.02992562828,0
+Combined,correctly localized,5.735150814,4.421028137,1.513431191,1.545259237,0.6070607901,0.55372715,1583081,,,,,,
+Combined,<=1 voxel disagreement,6.67685461,5.365772247,1.243218541,1.275893807,0.6431734562,0.5891590118,266631,,,,,,
+Combined,>2 voxel disagreement,8.764144897,8.183841705,0.9154705405,0.8944719434,0.7119647861,0.6283976436,15003,,,,,,
+Combined,all-surface correlation,,,,,,,1909959,0.1089337192,0,-0.1935077974,0,0.05103627814,0

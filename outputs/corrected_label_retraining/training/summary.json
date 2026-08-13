@@ -1,0 +1,19 @@
+{
+  "device": "cpu",
+  "selected_epoch": 17,
+  "epochs_run": 20,
+  "best_balanced_validation_dice": 0.9767080819993874,
+  "encoder_frozen": true,
+  "one_query": true,
+  "levels": [
+    "level1",
+    "level2",
+    "level3",
+    "level4"
+  ],
+  "decoder_parameters": 170401,
+  "architecture_changed": false,
+  "label_change_only": true,
+  "camri_safety_stop": false,
+  "elapsed_seconds": 5504.209455728531
+}

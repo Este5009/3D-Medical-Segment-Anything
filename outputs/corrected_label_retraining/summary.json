@@ -1,0 +1,210 @@
+{
+  "selected_epoch": 17,
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/checkpoints/best_corrected_labels.pt",
+  "subjects": {
+    "CAMRI": 6,
+    "Mouse": 80
+  },
+  "architecture_unchanged": true,
+  "decoder_parameters": 170401,
+  "boundary": [
+    {
+      "domain": "CAMRI",
+      "condition": "old",
+      "error_voxels": 38341,
+      "distance_voxels_mean": 0.14537430446651742,
+      "distance_voxels_p95": 1.0,
+      "<=1 voxel_percent": 98.65157403301949,
+      ">1 to 2 voxels_percent": 1.0484859549829164,
+      ">2 to 3 voxels_percent": 0.20343757335489424,
+      ">3 to 5 voxels_percent": 0.09650243864270625,
+      ">5 voxels_percent": 0.0,
+      "flat_errors": 5038,
+      "flat_errors_per_100_surface": 7.361837683023059,
+      "high complexity_errors": 22457,
+      "high complexity_errors_per_100_surface": 32.81603904548975
+    },
+    {
+      "domain": "CAMRI",
+      "condition": "new",
+      "error_voxels": 27398,
+      "distance_voxels_mean": 0.5969865761975504,
+      "distance_voxels_p95": 1.4142135623730951,
+      "<=1 voxel_percent": 93.76596831885539,
+      ">1 to 2 voxels_percent": 4.774071100080298,
+      ">2 to 3 voxels_percent": 0.8431272355646398,
+      ">3 to 5 voxels_percent": 0.5328856120884736,
+      ">5 voxels_percent": 0.0839477334111979,
+      "flat_errors": 3176,
+      "flat_errors_per_100_surface": 4.640967939912909,
+      "high complexity_errors": 17267,
+      "high complexity_errors_per_100_surface": 25.231978723715166
+    },
+    {
+      "domain": "Mouse",
+      "condition": "old",
+      "error_voxels": 638732,
+      "distance_voxels_mean": 0.3073735169698639,
+      "distance_voxels_p95": 1.0,
+      "<=1 voxel_percent": 95.84739765660716,
+      ">1 to 2 voxels_percent": 3.020672206809742,
+      ">2 to 3 voxels_percent": 0.85372268807575,
+      ">3 to 5 voxels_percent": 0.2503397356011598,
+      ">5 voxels_percent": 0.0278677129061954,
+      "flat_errors": 162368,
+      "flat_errors_per_100_surface": 28.573540332883997,
+      "high complexity_errors": 234174,
+      "high complexity_errors_per_100_surface": 41.21185456337334
+    },
+    {
+      "domain": "Mouse",
+      "condition": "new",
+      "error_voxels": 585309,
+      "distance_voxels_mean": 0.6739198148321256,
+      "distance_voxels_p95": 1.7320508075688772,
+      "<=1 voxel_percent": 89.07858925798168,
+      ">1 to 2 voxels_percent": 7.971515900148468,
+      ">2 to 3 voxels_percent": 2.2205365029411817,
+      ">3 to 5 voxels_percent": 0.6410289266011628,
+      ">5 voxels_percent": 0.08832941232750564,
+      "flat_errors": 139350,
+      "flat_errors_per_100_surface": 24.52282990113437,
+      "high complexity_errors": 225582,
+      "high complexity_errors_per_100_surface": 39.699764175847385
+    },
+    {
+      "domain": "Combined",
+      "condition": "old",
+      "error_voxels": 677073,
+      "distance_voxels_mean": 0.2981998949134672,
+      "distance_voxels_p95": 1.0,
+      "<=1 voxel_percent": 96.00619135602808,
+      ">1 to 2 voxels_percent": 2.9089920880023277,
+      ">2 to 3 voxels_percent": 0.8168986209758771,
+      ">3 to 5 voxels_percent": 0.24162830300425509,
+      ">5 voxels_percent": 0.026289631989460514,
+      "flat_errors": 167406,
+      "flat_errors_per_100_surface": 26.293585474649745,
+      "high complexity_errors": 256631,
+      "high complexity_errors_per_100_surface": 40.30939931171297
+    },
+    {
+      "domain": "Combined",
+      "condition": "new",
+      "error_voxels": 612707,
+      "distance_voxels_mean": 0.6704796438007677,
+      "distance_voxels_p95": 1.7320508075688772,
+      "<=1 voxel_percent": 89.28819158259984,
+      ">1 to 2 voxels_percent": 7.828537947175404,
+      ">2 to 3 voxels_percent": 2.1589438344918532,
+      ">3 to 5 voxels_percent": 0.6361931559456641,
+      ">5 voxels_percent": 0.08813347978723925,
+      "flat_errors": 142526,
+      "flat_errors_per_100_surface": 22.385813909656342,
+      "high complexity_errors": 242849,
+      "high complexity_errors_per_100_surface": 38.14464080118997
+    }
+  ],
+  "visual_manifest": [
+    {
+      "domain": "CAMRI",
+      "role": "largest_improvement",
+      "subject": "078",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/camri/largest_improvement_078.png"
+    },
+    {
+      "domain": "CAMRI",
+      "role": "little_no_improvement",
+      "subject": "099",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/camri/little_no_improvement_099.png"
+    },
+    {
+      "domain": "CAMRI",
+      "role": "previous_worst_boundary",
+      "subject": "064",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/camri/previous_worst_boundary_064.png"
+    },
+    {
+      "domain": "CAMRI",
+      "role": "representative",
+      "subject": "007",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/camri/representative_007.png"
+    },
+    {
+      "domain": "CAMRI",
+      "role": "high_curvature",
+      "subject": "064",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/camri/high_curvature_064.png"
+    },
+    {
+      "domain": "CAMRI",
+      "role": "visibly_pixelated",
+      "subject": "099",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/camri/visibly_pixelated_099.png"
+    },
+    {
+      "domain": "Mouse",
+      "role": "largest_improvement",
+      "subject": "POLYIC_20190524_polyic___E3_P1",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/mouse/largest_improvement_POLYIC_20190524_polyic___E3_P1.png"
+    },
+    {
+      "domain": "Mouse",
+      "role": "little_no_improvement",
+      "subject": "POLYIC_20190629_polyic_mo__E3_P1_1",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/mouse/little_no_improvement_POLYIC_20190629_polyic_mo__E3_P1_1.png"
+    },
+    {
+      "domain": "Mouse",
+      "role": "previous_worst_boundary",
+      "subject": "POLYIC_20190524_polyic___E4_P1_9",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/mouse/previous_worst_boundary_POLYIC_20190524_polyic___E4_P1_9.png"
+    },
+    {
+      "domain": "Mouse",
+      "role": "representative",
+      "subject": "POLYIC_20190524_polyic___E3_P1_9",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/mouse/representative_POLYIC_20190524_polyic___E3_P1_9.png"
+    },
+    {
+      "domain": "Mouse",
+      "role": "high_curvature",
+      "subject": "POLYIC_20190510_mouse43__E9_P1",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/mouse/high_curvature_POLYIC_20190510_mouse43__E9_P1.png"
+    },
+    {
+      "domain": "Mouse",
+      "role": "visibly_pixelated",
+      "subject": "POLYIC_20190517_mouse37__E3_P1",
+      "path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/corrected_label_retraining/figures/mouse/visibly_pixelated_POLYIC_20190517_mouse37__E3_P1.png"
+    }
+  ],
+  "CAMRI": {
+    "old": {
+      "direction_changes_ratio": 0.824277321487998,
+      "p95_axis_run_ratio": 1.13756657109873,
+      "max_axis_run_ratio": 1.3800687755139134,
+      "factor5_alignment_excess": 0.1873869398791375
+    },
+    "new": {
+      "direction_changes_ratio": 0.8206848187965902,
+      "p95_axis_run_ratio": 1.1451564362573965,
+      "max_axis_run_ratio": 1.3263329910482082,
+      "factor5_alignment_excess": 0.22025308786066558
+    }
+  },
+  "Mouse": {
+    "old": {
+      "direction_changes_ratio": 0.693584002645135,
+      "p95_axis_run_ratio": 1.1770327227175361,
+      "max_axis_run_ratio": 1.6227322141937475,
+      "factor5_alignment_excess": 0.28710718408245783
+    },
+    "new": {
+      "direction_changes_ratio": 0.6865934070494162,
+      "p95_axis_run_ratio": 1.1745398036847363,
+      "max_axis_run_ratio": 1.6628757842909505,
+      "factor5_alignment_excess": 0.29692942336948597
+    }
+  }
+}

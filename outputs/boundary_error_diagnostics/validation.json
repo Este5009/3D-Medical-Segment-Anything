@@ -1,0 +1,29 @@
+{
+  "subjects": 86,
+  "camri_subjects": 6,
+  "mouse_subjects": 80,
+  "geometry_verified": true,
+  "probability_range_verified": true,
+  "filtered_prediction_subset_of_probability_threshold_mask": true,
+  "aligned_probability_threshold_exactly_matches_raw_prediction": true,
+  "probability_alignment_method": "unique shape-compatible axis permutation with exact p>=0.5 raw-mask match",
+  "training_performed": false,
+  "model_inference_performed": false,
+  "threshold_changed": false,
+  "postprocessing_changed": false,
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "configuration": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/configuration.json",
+  "surface_tolerances_mm": [
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "anatomical_orientation_claimed": false,
+  "csv_totals_verified": true,
+  "surface_dice_overlap_values_match_canonical_filtered_metrics": true,
+  "figure_manifest_files_verified": true,
+  "figure_count": 16,
+  "focused_tests_passed": 5,
+  "python_compile_passed": true
+}

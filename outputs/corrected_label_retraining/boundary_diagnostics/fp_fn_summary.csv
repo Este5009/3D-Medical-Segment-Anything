@@ -1,0 +1,4 @@
+domain,boundary_fp_voxels,boundary_fn_voxels,fp_fn_ratio,classification,fp_distance_mm_mean,fp_distance_mm_median,fp_distance_mm_p95,fn_distance_mm_mean,fn_distance_mm_median,fn_distance_mm_p95
+CAMRI,14607,12791,1.141974826,balanced,0.1703083664,0.1414213628,0.2828427255,0.00128695392,0,0
+Mouse,331053,254256,1.302045969,over-segmentation (FP dominated),0.1531420797,0.1000000015,0.3999996185,0.003457283601,0,0
+Combined,345660,267047,1.294378892,over-segmentation (FP dominated),0.1538674682,0.1000000015,0.3927723765,0.003353329375,0,0

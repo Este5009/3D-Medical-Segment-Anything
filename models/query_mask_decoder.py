@@ -151,6 +151,118 @@ class MultiScaleOneQueryMaskDecoder(nn.Module):
         return logits
 
 
+class FullResolutionLevel0OneQueryMaskDecoder(nn.Module):
+    """Controlled level0 extension of :class:`MultiScaleOneQueryMaskDecoder`.
+
+    The level4→level1 implementation is intentionally identical. One additional
+    lateral projection, additive top-down fusion/refinement, and query update
+    operate on full-grid ``level0``. The mask dot product is formed directly on
+    that `[D,H,W]` grid; interpolation is only a defensive fallback for callers
+    requesting a genuinely different geometry.
+    """
+
+    CHANNELS = {"level0": 48, **MultiScaleOneQueryMaskDecoder.CHANNELS}
+    COARSE_TO_FINE = ("level4", "level3", "level2", "level1", "level0")
+
+    def __init__(self, embedding_dim: int = 32, num_heads: int = 4) -> None:
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.query = nn.Parameter(torch.empty(1, 1, embedding_dim))
+        nn.init.normal_(self.query, std=0.02)
+        self.projections = nn.ModuleDict({
+            name: nn.Conv3d(channels, embedding_dim, kernel_size=1)
+            for name, channels in MultiScaleOneQueryMaskDecoder.CHANNELS.items()
+        })
+        self.level0_width = 8
+        self.level0_projection = nn.Conv3d(48, self.level0_width, 1)
+        self.refinements = nn.ModuleDict({
+            name: nn.Sequential(
+                nn.Conv3d(embedding_dim, embedding_dim, kernel_size=3, padding=1),
+                nn.InstanceNorm3d(embedding_dim, affine=True),
+                nn.GELU(),
+            ) for name in ("level3", "level2", "level1")
+        })
+        # A dense 32x32x3x3x3 convolution over 2.6M voxels is unnecessary for
+        # the one added lateral stage. Depthwise spatial refinement followed by
+        # pointwise channel mixing is the minimum full-grid analogue.
+        self.level1_to_level0 = nn.Conv3d(embedding_dim, self.level0_width, 1)
+        self.level0_refinement = nn.Sequential(
+            nn.Conv3d(self.level0_width, self.level0_width, 3, padding=1,
+                      groups=self.level0_width),
+            nn.Conv3d(self.level0_width, self.level0_width, 1),
+            nn.InstanceNorm3d(self.level0_width, affine=True), nn.GELU())
+        self.query_updates = nn.ModuleDict({
+            name: QueryUpdateBlock(embedding_dim, num_heads)
+            for name in MultiScaleOneQueryMaskDecoder.COARSE_TO_FINE
+        })
+        self.level0_query_projection = nn.Conv3d(
+            self.level0_width, embedding_dim, 1)
+        self.query_updates["level0"] = QueryUpdateBlock(embedding_dim, num_heads)
+        self.mask_embedding = nn.Sequential(
+            nn.Linear(embedding_dim, embedding_dim), nn.GELU(),
+            nn.Linear(embedding_dim, embedding_dim))
+        # Preserve the baseline mask refinement at level1 exactly. The added
+        # lightweight module injects projected level0 after its 2x upsampling.
+        self.mask_refinement = nn.Conv3d(
+            embedding_dim, embedding_dim, kernel_size=3, padding=1)
+        self.level0_mask_embedding = nn.Linear(embedding_dim, self.level0_width)
+        # Zero makes the untrained architecture exactly reproduce the corrected
+        # half-resolution baseline. Training can then introduce only a learned
+        # full-grid residual, avoiding a random level0 branch destroying the
+        # transferred solution on epoch one.
+        self.level0_residual_scale = nn.Parameter(torch.zeros(1))
+        self.mask_bias = nn.Parameter(torch.zeros(1))
+
+    def forward(self, features: Mapping[str, torch.Tensor], output_size=None):
+        projected = {name: self.projections[name](features[name])
+                     for name in MultiScaleOneQueryMaskDecoder.CHANNELS}
+        fused = {"level4": projected["level4"]}
+        previous = fused["level4"]
+        for name in ("level3", "level2", "level1"):
+            previous = F.interpolate(previous, size=projected[name].shape[-3:],
+                                     mode="trilinear", align_corners=False)
+            previous = self.refinements[name](projected[name] + previous)
+            fused[name] = previous
+        level0 = self.level0_projection(features["level0"])
+        level1_up = F.interpolate(
+            self.level1_to_level0(fused["level1"]), size=level0.shape[-3:],
+            mode="trilinear", align_corners=False)
+        fused["level0"] = self.level0_refinement(level0 + level1_up)
+        query = self.query.expand(features["level0"].shape[0], -1, -1)
+        for name in MultiScaleOneQueryMaskDecoder.COARSE_TO_FINE:
+            query = self.query_updates[name](query, fused[name])
+        baseline_query = query
+        # The query is global, so its level0 attention tokens are 2x average-
+        # pooled to bound memory. The mask branch itself remains full-grid.
+        level0_query_feature = self.level0_query_projection(
+            F.avg_pool3d(fused["level0"], kernel_size=2, stride=2))
+        query = self.query_updates["level0"](query, level0_query_feature)
+        baseline_embedding = self.mask_embedding(baseline_query).squeeze(1)
+        mask_embedding = self.mask_embedding(query).squeeze(1)
+        # The preserved baseline head supplies the initialization. Its coarse
+        # logits are interpolated as a skip, not used as the final prediction:
+        # the trainable level0 residual below is formed directly on full voxels.
+        baseline_voxels = self.mask_refinement(fused["level1"])
+        baseline_logits = torch.einsum(
+            "bc,bcdhw->bdhw", baseline_embedding, baseline_voxels).unsqueeze(1)
+        baseline_logits = baseline_logits + self.mask_bias.view(1,1,1,1,1)
+        baseline_logits = F.interpolate(
+            baseline_logits, size=level0.shape[-3:], mode="trilinear",
+            align_corners=False)
+        voxel_features = F.interpolate(
+            self.level1_to_level0(baseline_voxels), size=level0.shape[-3:],
+            mode="trilinear", align_corners=False)
+        voxel_features = self.level0_refinement(voxel_features + level0)
+        residual_embedding = self.level0_mask_embedding(mask_embedding)
+        residual = torch.einsum("bc,bcdhw->bdhw", residual_embedding,
+                                voxel_features).unsqueeze(1)
+        logits = baseline_logits + self.level0_residual_scale * residual
+        if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
+            logits = F.interpolate(logits, size=tuple(output_size),
+                                   mode="trilinear", align_corners=False)
+        return logits
+
+
 class MultiScaleAttentionOneQueryMaskDecoder(nn.Module):
     """Ablation: query attends to every scale, but voxel features are not fused."""
 
