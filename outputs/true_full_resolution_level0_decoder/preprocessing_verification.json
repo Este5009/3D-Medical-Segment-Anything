@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "criteria": "absolute corrected native round-trip volume bias <0.5% and Dice improves over old",
+  "domains": [
+    {
+      "domain": "CAMRI",
+      "subjects": 40,
+      "old_native_roundtrip_mean_dice": 0.9845598378389397,
+      "corrected_native_roundtrip_mean_dice": 0.9926412439803947,
+      "old_mean_net_volume_change_percent": -2.5775680559219722,
+      "corrected_mean_net_volume_change_percent": 0.12092864894006243,
+      "old_lost_voxels": 226355,
+      "corrected_lost_voxels": 46377,
+      "old_added_voxels": 12874,
+      "corrected_added_voxels": 46006,
+      "old_hd95_mm": 0.13750000204890966,
+      "corrected_hd95_mm": 0.06250000093132257,
+      "old_assd_mm": 0.028632511007655424,
+      "corrected_assd_mm": 0.007969814562622557,
+      "old_inward_shift_mm": 0.18391479334232447,
+      "corrected_inward_shift_mm": 0.0,
+      "old_outward_shift_mm": 0.0,
+      "corrected_outward_shift_mm": 0.0
+    },
+    {
+      "domain": "Mouse",
+      "subjects": 101,
+      "old_native_roundtrip_mean_dice": 0.9758020991318328,
+      "corrected_native_roundtrip_mean_dice": 0.9817122931288919,
+      "old_mean_net_volume_change_percent": -4.042144551308553,
+      "corrected_mean_net_volume_change_percent": -0.0840436976998784,
+      "old_lost_voxels": 519466,
+      "corrected_lost_voxels": 222292,
+      "old_added_voxels": 42639,
+      "corrected_added_voxels": 212552,
+      "old_hd95_mm": 0.09998885078940804,
+      "corrected_hd95_mm": 0.09941213017348016,
+      "old_assd_mm": 0.02692607291765977,
+      "corrected_assd_mm": 0.01924694587771237,
+      "old_inward_shift_mm": 0.18403471132574772,
+      "corrected_inward_shift_mm": 0.0,
+      "old_outward_shift_mm": 0.0,
+      "corrected_outward_shift_mm": 0.0
+    }
+  ]
+}
