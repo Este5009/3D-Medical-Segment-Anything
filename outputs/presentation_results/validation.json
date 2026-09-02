@@ -1,0 +1,23 @@
+{
+  "training_performed": false,
+  "inference_performed": false,
+  "subjects_checked": 86,
+  "geometry_matches": true,
+  "raw_filtered_identity_checks": true,
+  "expert_boundary_color": "#24c96b",
+  "prediction_boundary_color": "#00d5e7",
+  "true_positive_color": "#ffffff",
+  "false_positive_color": "#ef3340",
+  "false_negative_color": "#ffd23f",
+  "removed_island_color": "#e83eaf",
+  "final_checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "final_epoch": 17,
+  "final_trainable_decoder_parameters": 170401,
+  "message_supported_by_error_data": true,
+  "filtered_boundary_error_share_percentage": 99.77432270966351,
+  "source_files": [
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/per_subject_metrics.csv",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/query_conditioned_3d_grouping/test_summary.json",
+    "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/summary.json"
+  ]
+}

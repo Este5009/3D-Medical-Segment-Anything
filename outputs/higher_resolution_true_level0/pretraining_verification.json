@@ -1,0 +1,170 @@
+{
+  "gates": {
+    "initialization_checkpoint_is_selected_true_level0": {
+      "passed": true,
+      "expected": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/true_full_resolution_level0_decoder/checkpoints/best_true_level0_decoder.pt",
+      "actual": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/true_full_resolution_level0_decoder/checkpoints/best_true_level0_decoder.pt"
+    },
+    "all_compatible_weights_transferred_exactly": {
+      "passed": true,
+      "old_checkpoint_tensor_count": 102,
+      "transferred_tensor_count": 102,
+      "transferred_fraction_of_182081_total_params": null,
+      "mismatched_keys": [],
+      "unexpected_keys": [],
+      "new_zero_init_keys": [],
+      "total_decoder_parameters": 182081,
+      "checkpoint_parameter_count": 182081,
+      "new_parameter_keys": []
+    },
+    "encoder_frozen": {
+      "passed": true,
+      "trainable_encoder_parameters": 0
+    },
+    "query_count_is_one": {
+      "passed": true,
+      "query_shape": [
+        1,
+        1,
+        32
+      ]
+    },
+    "mri_input_is_new_tile_shape": {
+      "CAMRI": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      },
+      "Mouse": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      }
+    },
+    "target_is_full_grid_binary": {
+      "CAMRI": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ],
+        "unique_values": [
+          0.0,
+          1.0
+        ]
+      },
+      "Mouse": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ],
+        "unique_values": [
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "logits_are_new_full_grid": {
+      "CAMRI": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      },
+      "Mouse": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      }
+    },
+    "no_final_logit_upsampling": {
+      "CAMRI": {
+        "passed": true,
+        "max_abs_diff_no_size_vs_with_size": 0.0
+      },
+      "Mouse": {
+        "passed": true,
+        "max_abs_diff_no_size_vs_with_size": 0.0
+      }
+    }
+  },
+  "cases": {
+    "CAMRI": {
+      "image_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/CAMRI Rat Brain MRI Data/sub-035/ses-1/anat/sub-035_ses-1_acq-RARE_T2w.nii.gz",
+      "mask_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mask_Database/RodentBrainMask/CAMRI Rat/CAMRI_Rat-sub-035_ses-1_acq-RARE_T2w_029.nii.gz",
+      "encoder_level0_feature_shape": [
+        1,
+        48,
+        192,
+        128,
+        160
+      ],
+      "target_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ],
+      "logits_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ]
+    },
+    "Mouse": {
+      "image_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/src_adult/POLYIC_20190510_mouse31__E2_P1.nii.gz",
+      "mask_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mask_Database/label_adult/POLYIC_20190510_mouse31__E2_P1.nii.gz",
+      "encoder_level0_feature_shape": [
+        1,
+        48,
+        192,
+        128,
+        160
+      ],
+      "target_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ],
+      "logits_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ]
+    }
+  },
+  "all_gates_passed": true
+}

@@ -1,0 +1,18 @@
+{
+  "elapsed_seconds_this_script": 72.9581151008606,
+  "control_encoder_seconds_per_sample": 9.125245332717896,
+  "modest_encoder_seconds_per_sample": 13.50766110420227,
+  "measured_slowdown_factor_for_1.5x_voxels": 1.4802518301367247,
+  "extrapolated_unrun_candidates": {
+    "substantial_axis0+2": {
+      "voxel_ratio_vs_control": 2.8,
+      "estimated_seconds_per_sample": 18.975985878583568,
+      "estimated_minutes_per_sample": 0.31626643130972615
+    },
+    "near_native": {
+      "voxel_ratio_vs_control": 8.4,
+      "estimated_seconds_per_sample": 82.0585704570772,
+      "estimated_minutes_per_sample": 1.3676428409512866
+    }
+  }
+}

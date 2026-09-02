@@ -1,0 +1,9 @@
+version,domain,trainable_parameters,mean_dice
+Mouse boundary adaptation,CAMRI,29793,0.9280117269
+Mouse boundary adaptation,Mouse,29793,0.9347007551
+Mixed-domain decoder,CAMRI,170401,0.9825178382
+Mixed-domain decoder,Mouse,170401,0.9647620756
+Learned grouping module,CAMRI,8537,0.9819673307
+Learned grouping module,Mouse,8537,0.9639057545
+Final deterministic filter,CAMRI,0,0.9826255639
+Final deterministic filter,Mouse,0,0.9656853201

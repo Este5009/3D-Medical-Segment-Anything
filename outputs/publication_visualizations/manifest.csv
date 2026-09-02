@@ -1,0 +1,7 @@
+domain,subject,representative_rank,filtered_dice,visualization_files,subject_output
+CAMRI,064,difficult,0.9782303329632139,30,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/publication_visualizations/camri/difficult_064
+CAMRI,043,median,0.9838353535974965,22,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/publication_visualizations/camri/median_043
+CAMRI,099,best,0.9864444971156343,22,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/publication_visualizations/camri/best_099
+Mouse,POLYIC_20190524_polyic___E4_P1_9,difficult,0.9556809389597947,26,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/publication_visualizations/mouse/difficult_POLYIC_20190524_polyic___E4_P1_9
+Mouse,POLYIC_20190619_mouse38__E3_P1,median,0.9664612660164413,26,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/publication_visualizations/mouse/median_POLYIC_20190619_mouse38__E3_P1
+Mouse,POLYIC_20190517_mouse39__E12_P1,best,0.9713672664167666,26,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/publication_visualizations/mouse/best_POLYIC_20190517_mouse39__E12_P1

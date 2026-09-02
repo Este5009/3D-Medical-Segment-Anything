@@ -1,0 +1,50 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "initial_checkpoint": "outputs/higher_resolution_true_level0/checkpoints/best_higher_resolution_true_level0.pt",
+  "output_directory": "outputs/unetr_style_level0_decoder",
+  "camri_split": "outputs/generalization_pilot/subject_split.json",
+  "camri_metrics": "outputs/generalization_pilot/metrics.csv",
+  "mouse_split": "outputs/mouse_boundary_adaptation/split.json",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "camri_cache": "/tmp/rs2_higher_resolution_true_level0_features",
+  "mouse_cache": "/tmp/rs2_higher_resolution_true_level0_features",
+  "corrected_cache": "/tmp/rs2_higher_resolution_true_level0_features",
+  "seed": 20260902,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.0001,
+  "max_epochs": 20,
+  "early_stop_patience": 5,
+  "minimum_validation_improvement": 0.0003,
+  "camri_validation_max_drop": 0.01,
+  "loss": {
+    "name": "dice_bce_boundary",
+    "boundary_weight": 0.25,
+    "boundary_width": 1
+  },
+  "augmentation": {
+    "flip_probability": 0.5,
+    "feature_scale": 0.03,
+    "feature_noise_std": 0.005
+  },
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "decoder depth only -- real UnetrUpBlock skip-connected residual upsampling chain (level4->3->2->1->0) replacing the single depthwise+pointwise level0 fusion pass. Resolution, spacing, tile size, encoder, hyperparameters, loss, and augmentation are all identical to outputs/higher_resolution_true_level0 -- a single isolated architectural variable.",
+  "label_resampling": {
+    "is_seg": true,
+    "order": 0,
+    "order_z": 0
+  },
+  "inference_threshold": 0.5,
+  "filter_connectivity": 26,
+  "level0_width": 8,
+  "level0_width_rationale": "measured on this CPU-only machine before committing to training: UnetrUpBlock(in=32,out=W) at the level0 grid cost 3.05s/4.51s/8.99s/13.89s forward+backward at W=6/8/10/12, and a single forward pass did not complete in >8 minutes at W=16 in the first (embedding_dim=32-throughout) design. level0_width=16 (this project's prior precedent for a single depthwise+pointwise pass) measured 206.71s for one full decoder training step -- infeasible; level0_width=8 measured 7.59-10.62s/step, tractable for an overnight run.",
+  "batch_size": 1
+}

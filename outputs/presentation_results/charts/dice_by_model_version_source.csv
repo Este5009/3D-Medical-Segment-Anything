@@ -1,0 +1,5 @@
+version,CAMRI,Mouse,selected_final
+Mouse boundary adaptation,0.9280117269,0.9347007551,False
+Mixed-domain decoder,0.9825178382,0.9647620756,False
+Learned grouping module,0.9819673307,0.9639057545,False
+Final deterministic filter,0.9826255639,0.9656853201,True

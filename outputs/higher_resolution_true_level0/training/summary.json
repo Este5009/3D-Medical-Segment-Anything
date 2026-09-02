@@ -1,0 +1,51 @@
+{
+  "device": "cpu",
+  "selected_epoch": 17,
+  "epochs_run": 20,
+  "best_balanced_validation_dice": 0.9803863763745798,
+  "encoder_frozen": true,
+  "one_query": true,
+  "levels": [
+    "level0",
+    "level1",
+    "level2",
+    "level3",
+    "level4"
+  ],
+  "baseline_decoder_parameters": 182081,
+  "higher_resolution_decoder_parameters": 182081,
+  "level0_width": 16,
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "none -- input/target resolution only (128x128x160 -> 192x128x160, axis0/native-Y refined)",
+  "native_logits_shape": [
+    1,
+    1,
+    192,
+    128,
+    160
+  ],
+  "final_logit_interpolation": false,
+  "query_conditioning_at_level0": true,
+  "level0_query_tokens_pooled_2x": true,
+  "camri_safety_stop": false,
+  "camri_floor": 0.9728010830803637,
+  "camri_reference": 0.9828010830803637,
+  "safety_ineligible_epochs": [],
+  "camri_safety_rule_semantics": "per-epoch selection eligibility filter, not a training-abort trigger",
+  "mean_epoch_seconds": 581.0996602416038,
+  "peak_process_memory_mib": 11251.765625,
+  "elapsed_seconds": 11622.222373723984,
+  "transferred_baseline_tensors": 102,
+  "new_parameter_keys": [],
+  "unexpected_keys": [],
+  "initial_checkpoint": "outputs/true_full_resolution_level0_decoder/checkpoints/best_true_level0_decoder.pt"
+}

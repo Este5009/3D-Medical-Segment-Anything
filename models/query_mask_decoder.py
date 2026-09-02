@@ -7,6 +7,7 @@ from typing import Dict, Mapping, Optional, Sequence
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from monai.networks.blocks import UnetrUpBlock
 
 
 class OneQueryMaskDecoder(nn.Module):
@@ -376,6 +377,165 @@ class TrueFullResolutionLevel0OneQueryMaskDecoder(nn.Module):
         mask_embedding = self.mask_embedding(query).squeeze(1)  # [B, embedding_dim]
         level0_embedding = self.level0_embedding_projection(mask_embedding)  # [B, level0_width]
         logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, fused_level0).unsqueeze(1)
+        logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
+        if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
+            logits = F.interpolate(logits, size=tuple(output_size), mode="trilinear", align_corners=False)
+        return logits
+
+
+class UnetrStyleLevel0OneQueryMaskDecoder(nn.Module):
+    """Full-depth, literature-matched full-resolution level0 decoder.
+
+    Motivation (see outputs/level0_depth_diagnostic/): the residual boundary
+    error remaining after the 192x128x160 resolution fix is small, scattered,
+    1-4 native-voxel clusters, not axis-locked quantization on an unrefined
+    axis -- a signature consistent with the *decoder* giving each voxel too
+    little local context before its decision is finalized, not with a
+    remaining resolution shortfall. TrueFullResolutionLevel0OneQueryMaskDecoder
+    reaches full resolution with a *single* depthwise+pointwise conv pass at
+    level0 (effective receptive field ~3 model-grid voxels). This class
+    replaces that single pass with a real four-stage skip-connected residual
+    upsampling chain, level4->3->2->1->0, using ``monai.networks.blocks.
+    UnetrUpBlock`` unmodified at every stage -- the exact, published block
+    class the original RS2-Net decoder itself is built from (confirmed from
+    the authors' own RSSNet.forward(); each stage: transpose-conv upsample,
+    concatenate with the frozen encoder's same-resolution skip connection,
+    residual conv block, res_block=True). This is deliberately not a novel
+    design: it is the original paper's own decoder depth, reused unmodified,
+    wrapped around our existing query-conditioning mechanism.
+
+    Channel width is tapered from embedding_dim (32) down to level0_width
+    (8) for the single largest-grid stage (level1->level0, 192x128x160).
+    This is not an aesthetic choice -- it is a measured hardware constraint,
+    profiled directly on this machine before committing to any training:
+    Conv3d forward+backward cost on this CPU build is a sharp, non-linear
+    function of channel count at this grid size, not a smooth one -- an
+    isolated UnetrUpBlock(in=32, out=W) stage at the level0 grid measured
+    3.05s (W=6), 4.51s (W=8), 8.99s (W=10), 13.89s (W=12) forward+backward,
+    and a *single* forward pass did not complete in over 8 minutes at W=32.
+    Whatever the underlying cause (likely a CPU conv-algorithm selection
+    threshold), the practical consequence is that level0_width=16 -- fine
+    for the single depthwise+pointwise pass in
+    TrueFullResolutionLevel0OneQueryMaskDecoder -- makes a real, denser
+    UnetrUpBlock residual stage there take >200s per training sample
+    (measured: one full decoder training step timed at 206.71s), which would
+    put a single 39-sample training epoch at multiple hours and the full
+    20-epoch schedule at many days. level0_width=8 was chosen as the
+    narrowest safely-fast point on that measured curve. Tapering channel
+    width toward the decoder's finest, largest-grid stage is itself standard
+    practice in efficient U-Net-style decoders (and matches this project's
+    own prior, already-validated level0_width precedent, just narrower here
+    because a real residual UnetrUpBlock costs strictly more than a single
+    depthwise+pointwise pass at the same width). Levels 4->3->2->1 stay at
+    the full embedding_dim=32 width throughout -- also measured, not
+    assumed: an isolated level2->level1-scale UnetrUpBlock(32,32) stage
+    (the most expensive of these three) cost 0.63s forward + 1.59s backward,
+    comfortably fast at that width.
+
+    What is unchanged from TrueFullResolutionLevel0OneQueryMaskDecoder (so
+    this is a single, isolated architectural variable, not a re-run of the
+    resolution experiment): the one learned query, the per-level
+    QueryUpdateBlock cross-attention update (it only ever reads the finished
+    canvas at each scale, never the skip connections or upsampling
+    directly), and the final decision rule -- one dot product between the
+    query's mask embedding and the finished full-resolution canvas, with no
+    logit-space interpolation. That final rule is what keeps this a
+    *query-conditioned* decoder (capable, in principle, of segmenting
+    different structures given different queries) rather than the original's
+    fixed, single-purpose 1x1x1 output head. The level0_query_projection /
+    level0_embedding_projection bridge (embedding_dim <-> level0_width for
+    the attention step and final dot product) is reused unchanged from
+    TrueFullResolutionLevel0OneQueryMaskDecoder.
+
+    ``query``, ``mask_embedding``, ``mask_bias``, ``projections.level1/2/3/4``,
+    and ``query_updates.level4/level3/level2/level1`` keep the exact
+    names/shapes of TrueFullResolutionLevel0OneQueryMaskDecoder, so a
+    converged checkpoint's decoder_state_dict transfers wherever the
+    architecture is genuinely unchanged. The four ``up_blocks`` (real
+    UnetrUpBlock residual convolutions), ``projections.level0``,
+    ``query_updates.level0``, ``level0_query_projection``, and
+    ``level0_embedding_projection`` have no prior-checkpoint counterpart with
+    a matching shape (level0_width=16 here vs. the old decoder's level0
+    fusion) and start at random initialization, same as any newly added
+    capacity.
+    """
+
+    CHANNELS = {"level0": 48, "level1": 48, "level2": 96, "level3": 192, "level4": 384}
+    COARSE_TO_FINE = ("level4", "level3", "level2", "level1", "level0")
+    UP_STAGES = ("level3", "level2", "level1")  # embedding_dim-width stages; level0 handled separately below
+
+    def __init__(self, embedding_dim: int = 32, num_heads: int = 4, level0_width: int = 8) -> None:
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.level0_width = level0_width
+        self.query = nn.Parameter(torch.empty(1, 1, embedding_dim))
+        nn.init.normal_(self.query, std=0.02)
+        self.projections = nn.ModuleDict({
+            name: nn.Conv3d(channels, embedding_dim, kernel_size=1)
+            for name, channels in self.CHANNELS.items() if name != "level0"
+        })
+        # level0's skip projects to the narrower, measured-tractable width.
+        self.projections["level0"] = nn.Conv3d(self.CHANNELS["level0"], level0_width, kernel_size=1)
+
+        # Real UNETR-style skip-connected residual upsampling -- the original
+        # decoder's own block (monai.networks.blocks.UnetrUpBlock), reused
+        # unmodified, at every stage including the final one (only its
+        # channel width differs there; the block itself is identical).
+        self.up_blocks = nn.ModuleDict({
+            name: UnetrUpBlock(
+                spatial_dims=3, in_channels=embedding_dim, out_channels=embedding_dim,
+                kernel_size=3, upsample_kernel_size=2, norm_name="instance", res_block=True,
+            ) for name in self.UP_STAGES
+        })
+        self.up_blocks["level0"] = UnetrUpBlock(
+            spatial_dims=3, in_channels=embedding_dim, out_channels=level0_width,
+            kernel_size=3, upsample_kernel_size=2, norm_name="instance", res_block=True,
+        )
+        self.query_updates = nn.ModuleDict({
+            name: QueryUpdateBlock(embedding_dim, num_heads) for name in self.COARSE_TO_FINE
+        })
+        self.mask_embedding = nn.Sequential(
+            nn.Linear(embedding_dim, embedding_dim), nn.GELU(),
+            nn.Linear(embedding_dim, embedding_dim))
+        self.mask_bias = nn.Parameter(torch.zeros(1))
+
+        # Bridge between embedding_dim (query space) and level0_width (mask
+        # canvas space) for the final attention step and dot product --
+        # reused unchanged from TrueFullResolutionLevel0OneQueryMaskDecoder.
+        self.level0_query_projection = nn.Conv3d(level0_width, embedding_dim, 1)
+        self.level0_embedding_projection = nn.Linear(embedding_dim, level0_width)
+
+    def forward(self, features: Mapping[str, torch.Tensor], output_size=None) -> torch.Tensor:
+        projected = {name: self.projections[name](features[name]) for name in self.CHANNELS}
+
+        # Real skip-connected residual upsampling chain, coarsest to finest.
+        # UnetrUpBlock.forward(inp, skip) upsamples `inp` to `skip`'s grid,
+        # concatenates, and applies a residual conv block -- exactly the
+        # original decoder's decoder4->3->2->1 pattern, extended one stage
+        # further to reach level0 (the original's decoder1 already does this
+        # for level0; ours simply keeps the chain going to the same place).
+        canvas = projected["level4"]
+        fused = {"level4": canvas}
+        for name in (*self.UP_STAGES, "level0"):
+            canvas = self.up_blocks[name](canvas, projected[name])
+            fused[name] = canvas
+        # fused["level0"]: [B, level0_width, *tile_size] -- the full native
+        # model-grid canvas the final mask decision reads from directly.
+
+        batch = features["level1"].shape[0]
+        query = self.query.expand(batch, -1, -1)
+        for name in ("level4", "level3", "level2", "level1"):
+            query = self.query_updates[name](query, fused[name])
+        # One additional attention step over level0. Pooled 2x for memory
+        # only -- this affects what the *query* sees, not the mask field.
+        level0_query_tokens = self.level0_query_projection(F.avg_pool3d(fused["level0"], kernel_size=2, stride=2))
+        query = self.query_updates["level0"](query, level0_query_tokens)
+
+        # Single mask head, evaluated once, directly on the full-grid fused
+        # field. No half-resolution logits are ever computed or interpolated.
+        mask_embedding = self.mask_embedding(query).squeeze(1)  # [B, embedding_dim]
+        level0_embedding = self.level0_embedding_projection(mask_embedding)  # [B, level0_width]
+        logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, fused["level0"]).unsqueeze(1)
         logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
         if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
             logits = F.interpolate(logits, size=tuple(output_size), mode="trilinear", align_corners=False)

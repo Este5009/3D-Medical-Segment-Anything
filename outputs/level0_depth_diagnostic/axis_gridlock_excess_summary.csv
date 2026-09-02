@@ -1,0 +1,9 @@
+condition,domain,native_coordinate_axis,prediction_minus_expert_alignment
+baseline_128,CAMRI,x,-0.009410063255026458
+baseline_128,CAMRI,y,0.03594438350615311
+baseline_128,Mouse,x,0.0038338004140225693
+baseline_128,Mouse,y,0.06973969337655592
+higher_res_192,CAMRI,x,-0.01147327053015473
+higher_res_192,CAMRI,y,0.015270200232952563
+higher_res_192,Mouse,x,0.0015199136157282936
+higher_res_192,Mouse,y,0.03595806605392978

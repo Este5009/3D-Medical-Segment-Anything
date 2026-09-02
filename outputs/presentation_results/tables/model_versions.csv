@@ -1,0 +1,8 @@
+version,main_change,epoch,checkpoint,trainable_parameters,CAMRI_Dice,Mouse_Dice,status,reason,scope
+Minimal one-query overfit,L4 attention + L1 mask,15,outputs/query_decoder_overfit/best_checkpoint.pt,24577,0.903080374,,superseded,Tiny 2-subject overfit only; capacity proof,CAMRI 2-subject overfit
+Multiscale decoder overfit,4-scale attention + FPN,40,outputs/query_decoder_multiscale_overfit/best_checkpoint.pt,170401,0.989244014,,accepted architecture,Near-perfect tiny-set capacity,CAMRI 2-subject overfit
+Generalization checkpoint,40-subject CAMRI pilot,14,outputs/generalization_pilot/best_checkpoint.pt,170401,0.987827512,0.8828059217,superseded,Strong CAMRI; poor zero-shot Mouse precision,CAMRI test 6; Mouse external 101
+Mouse boundary adaptation,Mask-head-only Mouse adaptation,16,outputs/mouse_boundary_adaptation/checkpoints/boundary_head_best.pt,29793,0.9280117269,0.9347007551,rejected,Mouse improved; CAMRI forgetting,Locked CAMRI 6; Mouse test 80
+Mixed-domain decoder,Balanced CAMRI + Mouse training,17,outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt,170401,0.9825178382,0.9647620756,accepted,Preserved CAMRI and improved Mouse,Locked CAMRI 6; Mouse test 80
+Learned grouping module,L2 residual grouping refinement,1,outputs/query_conditioned_3d_grouping/checkpoints/best_grouping_module.pt,8537,0.9819673307,0.9639057545,rejected,Regressed both domains; query conditioning not useful,Locked CAMRI 6; Mouse test 80
+Final deterministic filter,Largest 26-connected component,17,same epoch-17 mixed-domain checkpoint,0,0.9826255639,0.9656853201,selected final,Removed detached FP with unchanged recall,Locked CAMRI 6; Mouse test 80

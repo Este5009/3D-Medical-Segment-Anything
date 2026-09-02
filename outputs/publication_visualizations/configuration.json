@@ -1,0 +1,9 @@
+{
+  "training_performed": false,
+  "inference_performed": false,
+  "selection": "minimum, median, maximum existing filtered Dice per domain",
+  "source_metrics": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/filtered_residual_failure_analysis/per_subject_metrics.csv",
+  "checkpoint": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/mixed_domain_anatomical_training/checkpoints/best_mixed_domain.pt",
+  "checkpoint_epoch": 17,
+  "prediction_type": "existing deterministic largest-26-connected-component output"
+}
