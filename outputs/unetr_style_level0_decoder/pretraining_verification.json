@@ -189,7 +189,7 @@
         128,
         160
       ],
-      "decoder_forward_seconds": 2.1134068965911865
+      "decoder_forward_seconds": 0.1408061981201172
     },
     "Mouse": {
       "image_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/src_adult/POLYIC_20190510_mouse31__E2_P1.nii.gz",
@@ -215,14 +215,14 @@
         128,
         160
       ],
-      "decoder_forward_seconds": 2.080315113067627
+      "decoder_forward_seconds": 0.002560853958129883
     }
   },
   "performance_sanity": {
     "note": "Not a hard gate -- informational, logged so the morning report has real per-sample timing from the actual checkpoint/features, not just the synthetic-tensor scoping numbers.",
     "forward_seconds_by_domain": {
-      "CAMRI": 2.1134068965911865,
-      "Mouse": 2.080315113067627
+      "CAMRI": 0.1408061981201172,
+      "Mouse": 0.002560853958129883
     },
     "scoping_measurement_single_training_step_seconds": 7.59,
     "scoping_measurement_level0_width_16_single_training_step_seconds": 206.71

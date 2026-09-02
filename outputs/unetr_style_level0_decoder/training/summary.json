@@ -1,8 +1,8 @@
 {
-  "device": "cpu",
-  "selected_epoch": 0,
-  "epochs_run": 20,
-  "best_balanced_validation_dice": -1,
+  "device": "cuda",
+  "selected_epoch": 35,
+  "epochs_run": 35,
+  "best_balanced_validation_dice": 0.9783256133345875,
   "encoder_frozen": true,
   "one_query": true,
   "levels": [
@@ -35,7 +35,7 @@
   "final_logit_interpolation": false,
   "query_conditioning_at_level0": true,
   "level0_query_tokens_pooled_2x": true,
-  "camri_safety_stop": true,
+  "camri_safety_stop": false,
   "camri_floor": 0.9728010830803637,
   "camri_reference": 0.9828010830803637,
   "safety_ineligible_epochs": [
@@ -58,12 +58,18 @@
     17,
     18,
     19,
-    20
+    20,
+    21,
+    22,
+    24,
+    25,
+    27,
+    30
   ],
   "camri_safety_rule_semantics": "per-epoch selection eligibility filter, not a training-abort trigger",
-  "mean_epoch_seconds": 635.7392753720284,
-  "peak_process_memory_mib": 14528.828125,
-  "elapsed_seconds": 12714.878433942795,
+  "mean_epoch_seconds": 56.02832042830331,
+  "peak_process_memory_mib": 3019.51953125,
+  "elapsed_seconds": 1961.0140902996063,
   "transferred_baseline_tensors": 75,
   "new_parameter_keys": [
     "projections.level0.weight",

@@ -1,0 +1,231 @@
+{
+  "gates": {
+    "initialization_checkpoint_is_higher_resolution_true_level0": {
+      "passed": true,
+      "expected": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/higher_resolution_true_level0/checkpoints/best_higher_resolution_true_level0.pt",
+      "actual": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/higher_resolution_true_level0/checkpoints/best_higher_resolution_true_level0.pt"
+    },
+    "transfer_is_exactly_the_expected_partial_set": {
+      "passed": true,
+      "old_checkpoint_tensor_count": 102,
+      "transferred_tensor_count": 75,
+      "expected_transferred_count": 75,
+      "mismatched_keys": [],
+      "unexpected_keys": [],
+      "not_transferred_keys": [
+        "level0_embedding_projection.bias",
+        "level0_embedding_projection.weight",
+        "level0_projection.bias",
+        "level0_projection.weight",
+        "level0_query_projection.weight",
+        "level0_refinement.0.bias",
+        "level0_refinement.0.weight",
+        "level0_refinement.1.bias",
+        "level0_refinement.1.weight",
+        "level0_refinement.2.bias",
+        "level0_refinement.2.weight",
+        "level1_to_level0.bias",
+        "level1_to_level0.weight",
+        "mask_refinement.bias",
+        "mask_refinement.weight",
+        "refinements.level1.0.bias",
+        "refinements.level1.0.weight",
+        "refinements.level1.1.bias",
+        "refinements.level1.1.weight",
+        "refinements.level2.0.bias",
+        "refinements.level2.0.weight",
+        "refinements.level2.1.bias",
+        "refinements.level2.1.weight",
+        "refinements.level3.0.bias",
+        "refinements.level3.0.weight",
+        "refinements.level3.1.bias",
+        "refinements.level3.1.weight"
+      ],
+      "not_transferred_matches_expected": true,
+      "fresh_init_keys_in_new_architecture": [
+        "level0_embedding_projection.bias",
+        "level0_embedding_projection.weight",
+        "level0_query_projection.weight",
+        "projections.level0.bias",
+        "projections.level0.weight",
+        "up_blocks.level0.conv_block.conv1.conv.weight",
+        "up_blocks.level0.conv_block.conv2.conv.weight",
+        "up_blocks.level0.conv_block.conv3.conv.weight",
+        "up_blocks.level0.transp_conv.conv.weight",
+        "up_blocks.level1.conv_block.conv1.conv.weight",
+        "up_blocks.level1.conv_block.conv2.conv.weight",
+        "up_blocks.level1.conv_block.conv3.conv.weight",
+        "up_blocks.level1.transp_conv.conv.weight",
+        "up_blocks.level2.conv_block.conv1.conv.weight",
+        "up_blocks.level2.conv_block.conv2.conv.weight",
+        "up_blocks.level2.conv_block.conv3.conv.weight",
+        "up_blocks.level2.transp_conv.conv.weight",
+        "up_blocks.level3.conv_block.conv1.conv.weight",
+        "up_blocks.level3.conv_block.conv2.conv.weight",
+        "up_blocks.level3.conv_block.conv3.conv.weight",
+        "up_blocks.level3.transp_conv.conv.weight"
+      ],
+      "total_decoder_parameters": 444449
+    },
+    "encoder_frozen": {
+      "passed": true,
+      "trainable_encoder_parameters": 0
+    },
+    "query_count_is_one": {
+      "passed": true,
+      "query_shape": [
+        1,
+        1,
+        32
+      ]
+    },
+    "mri_input_is_tile_shape": {
+      "CAMRI": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      },
+      "Mouse": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      }
+    },
+    "target_is_full_grid_binary": {
+      "CAMRI": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ],
+        "unique_values": [
+          0.0,
+          1.0
+        ]
+      },
+      "Mouse": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ],
+        "unique_values": [
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "logits_are_full_grid": {
+      "CAMRI": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      },
+      "Mouse": {
+        "passed": true,
+        "shape": [
+          1,
+          1,
+          192,
+          128,
+          160
+        ]
+      }
+    },
+    "no_final_logit_upsampling": {
+      "CAMRI": {
+        "passed": true,
+        "max_abs_diff_no_size_vs_with_size": 0.0
+      },
+      "Mouse": {
+        "passed": true,
+        "max_abs_diff_no_size_vs_with_size": 0.0
+      }
+    }
+  },
+  "cases": {
+    "CAMRI": {
+      "image_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/CAMRI Rat Brain MRI Data/sub-035/ses-1/anat/sub-035_ses-1_acq-RARE_T2w.nii.gz",
+      "mask_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mask_Database/RodentBrainMask/CAMRI Rat/CAMRI_Rat-sub-035_ses-1_acq-RARE_T2w_029.nii.gz",
+      "encoder_level0_feature_shape": [
+        1,
+        48,
+        192,
+        128,
+        160
+      ],
+      "target_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ],
+      "logits_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ],
+      "decoder_forward_seconds": 0.16835546493530273
+    },
+    "Mouse": {
+      "image_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Image_Database/src_adult/POLYIC_20190510_mouse31__E2_P1.nii.gz",
+      "mask_path": "/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/Datasets/Mask_Database/label_adult/POLYIC_20190510_mouse31__E2_P1.nii.gz",
+      "encoder_level0_feature_shape": [
+        1,
+        48,
+        192,
+        128,
+        160
+      ],
+      "target_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ],
+      "logits_shape": [
+        1,
+        1,
+        192,
+        128,
+        160
+      ],
+      "decoder_forward_seconds": 0.002568960189819336
+    }
+  },
+  "performance_sanity": {
+    "note": "Not a hard gate -- informational, logged so the morning report has real per-sample timing from the actual checkpoint/features, not just the synthetic-tensor scoping numbers.",
+    "forward_seconds_by_domain": {
+      "CAMRI": 0.16835546493530273,
+      "Mouse": 0.002568960189819336
+    },
+    "scoping_measurement_single_training_step_seconds": 7.59,
+    "scoping_measurement_level0_width_16_single_training_step_seconds": 206.71
+  },
+  "all_gates_passed": true
+}
