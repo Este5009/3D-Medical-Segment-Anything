@@ -730,23 +730,34 @@ class PaperWidthLevel0OneQueryMaskDecoder(nn.Module):
         self.level0_embedding_projection = nn.Linear(embedding_dim, stage_widths["level0"])
 
     def forward(self, features: Mapping[str, torch.Tensor], output_size=None) -> torch.Tensor:
+        # Interleaved with the query-update loop below (rather than building
+        # a `fused` dict of every level up front) so level4/3/2/1's full-
+        # resolution canvases are dropped as soon as their own query-bridge
+        # step consumes them, instead of staying alive -- unused -- for the
+        # rest of the forward pass. Only level0's canvas needs to survive to
+        # the final logits einsum. This does not change the computation at
+        # all, only how long each intermediate tensor is kept referenced;
+        # it was added after a real measured CUDA OOM during the first
+        # training step at this width/resolution (activation memory for the
+        # backward pass, not this scoping, was the dominant cost -- see the
+        # bf16 autocast in train_paper_width_level0.py for the actual fix --
+        # but this removes the redundant extra cost for free).
         canvas = features["level4"]  # raw encoder features, no projection -- already 384 channels
-        fused = {"level4": canvas}
+        batch = canvas.shape[0]
+        query = self.query.expand(batch, -1, -1)
+        query = self.query_updates["level4"](query, self.query_bridges["level4"](canvas))
         for name in self.UP_STAGES:
             canvas = self.up_blocks[name](canvas, features[name])  # skip connection is also raw, unprojected
-            fused[name] = canvas
-        # fused["level0"]: [B, 48, *tile_size] -- the paper's own final width.
-
-        batch = features["level1"].shape[0]
-        query = self.query.expand(batch, -1, -1)
-        for name in ("level4", "level3", "level2", "level1"):
-            query = self.query_updates[name](query, self.query_bridges[name](fused[name]))
-        level0_tokens = self.query_bridges["level0"](F.avg_pool3d(fused["level0"], kernel_size=2, stride=2))
+            if name == "level0":
+                break
+            query = self.query_updates[name](query, self.query_bridges[name](canvas))
+        # canvas is now fused["level0"]: [B, 48, *tile_size] -- the paper's own final width.
+        level0_tokens = self.query_bridges["level0"](F.avg_pool3d(canvas, kernel_size=2, stride=2))
         query = self.query_updates["level0"](query, level0_tokens)
 
         mask_embedding = self.mask_embedding(query).squeeze(1)
         level0_embedding = self.level0_embedding_projection(mask_embedding)
-        logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, fused["level0"]).unsqueeze(1)
+        logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, canvas).unsqueeze(1)
         logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
         if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
             logits = F.interpolate(logits, size=tuple(output_size), mode="trilinear", align_corners=False)

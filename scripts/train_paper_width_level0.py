@@ -58,9 +58,6 @@ from train_query_decoder_overfit import load_json
 from train_corrected_label_retraining import verification_gate
 
 LEVELS = ("level0", "level1", "level2", "level3", "level4")
-HISTORY_FIELDS = ("epoch", "loss", "epoch_seconds", "balanced_validation_dice", "camri_safety_eligible",
-                   "camri_validation_dice", "camri_validation_iou", "camri_validation_precision", "camri_validation_recall",
-                   "mouse_validation_dice", "mouse_validation_iou", "mouse_validation_precision", "mouse_validation_recall")
 
 
 def peak_mib():
@@ -115,7 +112,7 @@ def save_checkpoint(path, state, epoch, best, config, parameters):
 
 def write_history(path, history):
     with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=HISTORY_FIELDS); w.writeheader(); w.writerows(history)
+        w = csv.DictWriter(f, fieldnames=list(history[0])); w.writeheader(); w.writerows(history)
 
 
 def main():
@@ -141,8 +138,9 @@ def main():
     print(f"PaperWidthLevel0OneQueryMaskDecoder parameters: {parameters}", flush=True)
 
     f, t = load_cached(records["camri"]["validation"][0], device)
-    with_shape = decoder(f, output_size=t.shape[-3:])
-    native = decoder(f)
+    with torch.no_grad():  # shape-only check, no gradients needed -- avoids building an unused autograd graph
+        with_shape = decoder(f, output_size=t.shape[-3:])
+        native = decoder(f)
     if native.shape[-3:] != tile_size or with_shape.shape != t.shape or not torch.equal(with_shape, native):
         raise RuntimeError("Level0 logits are not full-grid, or an interpolation branch fired unexpectedly")
 
@@ -162,8 +160,20 @@ def main():
             features, target = load_cached(r, device)
             features, target = augment(features, target, random.Random(config["seed"] + epoch * 100 + j), config["augmentation"])
             optimizer.zero_grad(set_to_none=True)
-            logits = decoder(features, output_size=target.shape[-3:])
-            loss, parts = training_loss(logits, target, config)
+            # bf16 autocast: the first real training step at this decoder's
+            # true, unreduced paper widths (level4=384..level0=48, no
+            # projection bottleneck) measured a genuine CUDA OOM in plain
+            # float32 on this 24GB GPU (23.13GiB in use, 720MiB requested,
+            # 387MB free -- backward-pass activation memory for the up_block
+            # residual convs at full 192x128x160 resolution, not a leak or
+            # a fixable Python reference). bf16 halves activation memory
+            # with no GradScaler needed (unlike fp16, it does not need loss
+            # scaling) and the RTX 4090 supports it natively. Loss is
+            # computed back in float32 for numerical stability of the
+            # sigmoid/Dice terms near 0/1.
+            with torch.autocast(device_type="cuda" if device.type == "cuda" else "cpu", dtype=torch.bfloat16, enabled=device.type == "cuda"):
+                logits = decoder(features, output_size=target.shape[-3:])
+            loss, parts = training_loss(logits.float(), target, config)
             loss.backward(); optimizer.step()
             losses.append(float(loss.detach()))
         val = {d: aggregate(evaluate(decoder, records[d]["validation"], device)) for d in ("camri", "mouse")}
