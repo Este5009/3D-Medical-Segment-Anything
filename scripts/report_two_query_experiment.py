@@ -13,6 +13,7 @@ for p in (ROOT, ROOT / "scripts"):
         sys.path.insert(0, str(p))
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
 import nibabel as nib
 import numpy as np
 
@@ -53,52 +54,52 @@ def joint_curve():
     print("wrote", JOINT_OUT / "training/learning_curves.png")
 
 
-def lesion_figure(scan_id, image_path, gt_path, lesion_only_pred_path, joint_pred_path, out_path, dice_lo, dice_jt):
+def lesion_figure(scan_id, image_path, gt_path, joint_pred_path, out_path, dice_jt):
+    """4-panel layout focused on the JOINT model itself (the actual subject
+    of this experiment): MRI, expert mask, joint prediction, TP/FP/FN
+    overlay -- matching report_two_query_brain_figures.py's layout."""
     im = np.asarray(nib.load(image_path).dataobj, float)
     gt = np.asarray(nib.load(gt_path).dataobj) > 0
-    lo = np.asarray(nib.load(lesion_only_pred_path).dataobj) > 0
     jt = np.asarray(nib.load(joint_pred_path).dataobj) > 0
     if not gt.any():
         return None
-    z_scores = gt.sum((0, 1))
-    z = int(z_scores.argmax())
+    z = int(gt.sum((0, 1)).argmax())
     a, b = np.percentile(im[:, :, z], [1, 99]); m = np.clip((im[:, :, z] - a) / max(b - a, 1e-8), 0, 1)
+    gz, jz = gt[:, :, z], jt[:, :, z]
 
-    def err(p):
-        x = np.stack([m] * 3, -1); p = p[:, :, z]; x[p & ~gt[:, :, z]] = (1, 0, 0); x[~p & gt[:, :, z]] = (1, 1, 0); return x
+    overlay = np.stack([m] * 3, -1)
+    overlay[jz & gz] = (0, 0.8, 0)
+    overlay[jz & ~gz] = (1, 0, 0)
+    overlay[~jz & gz] = (1, 1, 0)
 
-    fig, ax = plt.subplots(2, 3, figsize=(12, 8), constrained_layout=True)
-    panels = [m, gt[:, :, z], m, err(lo), lo[:, :, z], jt[:, :, z]]
-    titles = ["T2 MRI", "Expert lesion mask", "(unused)", f"Lesion-only FP/FN (Dice {dice_lo:.3f})", "Lesion-only prediction", f"Joint two-query prediction"]
-    for a0, x, t in zip(ax.flat, panels, titles):
+    fig, ax = plt.subplots(1, 4, figsize=(16, 4.3), constrained_layout=True)
+    panels = [m, gz, jz, overlay]
+    titles = ["T2 MRI", "Expert lesion mask", "Joint model prediction", f"Overlay (Dice {dice_jt:.4f})"]
+    for a0, x, t in zip(ax, panels, titles):
         a0.imshow(x.T if x.ndim == 2 else x.transpose(1, 0, 2), cmap="gray" if x.ndim == 2 else None, origin="lower")
         a0.set_title(t); a0.axis("off")
-    ax.flat[2].axis("off")
-    ax.flat[5].contour(gt[:, :, z].T, colors="#24c96b", linewidths=1)
-    ax.flat[5].contour(jt[:, :, z].T, colors="#00d5e7", linewidths=1)
-    ax.flat[5].set_title(f"Joint prediction vs expert (Dice {dice_jt:.3f})")
-    fig.suptitle(f"{scan_id} | slice {z}")
+    fig.legend(handles=[Patch(color=(0, 0.8, 0), label="Agree (TP)"), Patch(color="red", label="False positive"), Patch(color="yellow", label="False negative")],
+               loc="lower center", ncol=3)
+    fig.suptitle(f"{scan_id} | slice {z} | Dice {dice_jt:.4f}")
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_path, dpi=170); plt.close(fig)
+    fig.savefig(out_path, dpi=170, bbox_inches="tight"); plt.close(fig)
     return z
 
 
 def lesion_figures():
-    lo_rows = {r["scan_id"]: r for r in rows(LESION_OUT / "native_metrics_per_subject.csv")}
     jt_rows = {r["scan_id"]: r for r in rows(JOINT_OUT / "lesion_native_metrics_per_subject.csv")}
-    common = sorted(set(lo_rows) & set(jt_rows))
-    if not common:
-        print("no common test subjects between lesion-only and joint eval; skipping figures")
+    if not jt_rows:
+        print("no joint lesion eval rows found; skipping figures")
         return
-    by_joint_dice = sorted(common, key=lambda s: float(jt_rows[s]["dice"]))
-    roles = {"worst_joint_dice": by_joint_dice[0], "median_joint_dice": by_joint_dice[len(by_joint_dice) // 2], "best_joint_dice": by_joint_dice[-1]}
+    by_joint_dice = sorted(jt_rows, key=lambda s: float(jt_rows[s]["dice"]))
+    roles = {"worst_dice": by_joint_dice[0], "median_dice": by_joint_dice[len(by_joint_dice) // 2], "best_dice": by_joint_dice[-1]}
     manifest = []
     for role, sid in roles.items():
-        lo, jt = lo_rows[sid], jt_rows[sid]
+        jt = jt_rows[sid]
         p = LESION_OUT.parent / "two_query_experiment_figures" / f"{role}_{sid}.png"
-        z = lesion_figure(sid, jt["image_path"], jt["ground_truth_path"], lo["prediction_path"], jt["prediction_path"], p, float(lo["dice"]), float(jt["dice"]))
+        z = lesion_figure(sid, jt["image_path"], jt["ground_truth_path"], jt["prediction_path"], p, float(jt["dice"]))
         if z is not None:
-            manifest.append({"role": role, "scan_id": sid, "slice": z, "lesion_only_dice": lo["dice"], "joint_dice": jt["dice"], "path": str(p)})
+            manifest.append({"role": role, "scan_id": sid, "slice": z, "dice": jt["dice"], "path": str(p)})
     if manifest:
         p = LESION_OUT.parent / "two_query_experiment_figures/manifest.csv"
         with p.open("w", newline="") as f:
