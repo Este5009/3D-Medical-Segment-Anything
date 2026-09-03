@@ -52,16 +52,39 @@ def largest_component(mask):
     return lab == (np.bincount(lab.ravel())[1:].argmax() + 1)
 
 
-def mesh_from_mask(mask, spacing):
-    verts, faces, _, _ = measure.marching_cubes(mask.astype(np.uint8), level=0.5, spacing=spacing)
-    return verts, faces
+def mesh_from_mask(mask, spacing, smoothing_sigma=1.2):
+    # Gaussian-smooth the binary mask before marching cubes -- this is
+    # what removes the raw voxel-staircase look and gives an organic,
+    # sculpted surface instead of a jagged blocky one. level=0.5 on the
+    # smoothed field still sits at the true boundary on average.
+    smoothed = ndimage.gaussian_filter(mask.astype(np.float32), sigma=smoothing_sigma)
+    verts, faces, normals, _ = measure.marching_cubes(smoothed, level=0.5, spacing=spacing)
+    return verts, faces, normals
 
 
-def render_mesh_multi_angle(verts, faces, out_path, color, title, angles):
-    fig = plt.figure(figsize=(4.2 * len(angles), 4.6))
+def _hex_to_rgb(c):
+    c = c.lstrip("#")
+    return tuple(int(c[i:i + 2], 16) / 255 for i in (0, 2, 4))
+
+
+def render_mesh_multi_angle(verts, faces, normals, out_path, color, title, angles):
+    from matplotlib.colors import LightSource
+    base = np.array(_hex_to_rgb(color) if isinstance(color, str) else color)
+    # Per-face shading from vertex normals -- gives real relief/shadow
+    # instead of a flat silhouette. Two light sources (a stronger key light
+    # + a soft fill from the opposite side) so shadowed sides are dim, not
+    # pitch black.
+    face_normals = normals[faces].mean(axis=1)
+    key = LightSource(azdeg=300, altdeg=55).shade_normals(face_normals, fraction=1.4)
+    fill = LightSource(azdeg=120, altdeg=25).shade_normals(face_normals, fraction=0.5)
+    intensity = np.clip(0.75 * key + 0.35 * fill, 0.15, 1.0)
+    face_colors = np.clip(base[None, :] * intensity[:, None], 0, 1)
+    face_colors = np.concatenate([face_colors, np.ones((len(face_colors), 1))], axis=1)
+
+    fig = plt.figure(figsize=(3.6 * len(angles), 4.0), facecolor="white")
     for i, (elev, azim, name) in enumerate(angles, 1):
         ax = fig.add_subplot(1, len(angles), i, projection="3d")
-        mesh = Poly3DCollection(verts[faces], alpha=0.95, facecolor=color, edgecolor="none")
+        mesh = Poly3DCollection(verts[faces], facecolor=face_colors, edgecolor="none", antialiased=True)
         ax.add_collection3d(mesh)
         ax.set_xlim(verts[:, 0].min(), verts[:, 0].max())
         ax.set_ylim(verts[:, 1].min(), verts[:, 1].max())
@@ -72,7 +95,7 @@ def render_mesh_multi_angle(verts, faces, out_path, color, title, angles):
         ax.axis("off")
     fig.suptitle(title, fontsize=13)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_path, dpi=160, bbox_inches="tight"); plt.close(fig)
+    fig.savefig(out_path, dpi=130, bbox_inches="tight"); plt.close(fig)
 
 
 def render_mri_slices(image_path, out_path, title, n=4):
@@ -102,11 +125,11 @@ def main():
     spacing = tuple(map(float, obj.header.get_zooms()[:3]))
     pred = largest_component(np.asarray(obj.dataobj) > 0)
     gt = np.asarray(nib.load(brain_gt_path).dataobj) > 0
-    v, f = mesh_from_mask(pred, spacing)
-    render_mesh_multi_angle(v, f, OUT / "brain_3d_prediction.png", "#e0b090",
+    v, f, n = mesh_from_mask(pred, spacing)
+    render_mesh_multi_angle(v, f, n, OUT / "brain_3d_prediction.png", "#e0b090",
                              f"Joint model -- predicted brain surface (CAMRI 078, Dice 0.9928)", ANGLES)
-    v, f = mesh_from_mask(gt, spacing)
-    render_mesh_multi_angle(v, f, OUT / "brain_3d_expert.png", "#90c0e0",
+    v, f, n = mesh_from_mask(gt, spacing)
+    render_mesh_multi_angle(v, f, n, OUT / "brain_3d_expert.png", "#90c0e0",
                              "Expert brain surface (CAMRI 078)", ANGLES)
     render_mri_slices(BRAIN_IMAGE, OUT / "brain_mri_slices.png", "Source MRI -- CAMRI 078")
 
@@ -115,11 +138,11 @@ def main():
     spacing = tuple(map(float, obj.header.get_zooms()[:3]))
     pred = largest_component(np.asarray(obj.dataobj) > 0)
     gt = np.asarray(nib.load(LESION_GT).dataobj) > 0
-    v, f = mesh_from_mask(pred, spacing)
-    render_mesh_multi_angle(v, f, OUT / "tumor_3d_prediction.png", "#e04040",
+    v, f, n = mesh_from_mask(pred, spacing)
+    render_mesh_multi_angle(v, f, n, OUT / "tumor_3d_prediction.png", "#e04040",
                              f"Joint model -- predicted lesion surface ({LESION_SID}, Dice 0.8753)", ANGLES)
-    v, f = mesh_from_mask(gt, spacing)
-    render_mesh_multi_angle(v, f, OUT / "tumor_3d_expert.png", "#e0a040",
+    v, f, n = mesh_from_mask(gt, spacing)
+    render_mesh_multi_angle(v, f, n, OUT / "tumor_3d_expert.png", "#e0a040",
                              f"Expert lesion surface ({LESION_SID})", ANGLES)
     render_mri_slices(LESION_IMAGE, OUT / "tumor_mri_slices.png", f"Source MRI -- {LESION_SID}")
 
