@@ -76,12 +76,20 @@ def main():
     for sid in split["mouse"]["test"]["scans"]:
         r = mouse[sid]; brain_records.append({"domain": "Mouse", "subject": sid, "scan_id": sid, "image_path": r["image_path"], "ground_truth_path": r["ground_truth_path"]})
 
+    # run_records stamps each returned row's own "domain" field with
+    # whatever string is passed in as its `domain` argument (here
+    # "brain_camri"/"brain_mouse", used for the native_predictions/
+    # probability_maps subfolder name) -- it does NOT preserve the
+    # "CAMRI"/"Mouse" domain label from brain_records. Track the real
+    # domain separately via scan_id instead of relying on the returned row.
+    real_domain_by_scan_id = {r["scan_id"]: r["domain"] for r in brain_records}
     brain_native = []
     for domain in ("CAMRI", "Mouse"):
         selected = [r for r in brain_records if r["domain"] == domain]
         rs, _ = run_records(brain_model, selected, paths, config, OUT, device, f"brain_{domain.lower()}")
         brain_native.extend(rs)
     for r in brain_native:
+        r["domain"] = real_domain_by_scan_id[r["scan_id"]]
         raw = np.asarray(nib.load(r["prediction_path"]).dataobj) > 0
         filt = largest(raw)
         gt = np.asarray(nib.load(r["ground_truth_path"]).dataobj) > 0

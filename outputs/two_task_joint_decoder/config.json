@@ -1,0 +1,51 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "output_directory": "outputs/two_task_joint_decoder",
+  "camri_split": "outputs/generalization_pilot/subject_split.json",
+  "camri_metrics": "outputs/generalization_pilot/metrics.csv",
+  "mouse_split": "outputs/mouse_boundary_adaptation/split.json",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "camri_cache": "/workspace/rs2_stroke_and_brain_features",
+  "mouse_cache": "/workspace/rs2_stroke_and_brain_features",
+  "corrected_cache": "/workspace/rs2_stroke_and_brain_features",
+  "stroke_split": "outputs/mouse_stroke_lesion/split.json",
+  "stroke_raw_root": "/workspace/mouse_stroke_lesion_raw",
+  "stroke_cache": "/workspace/rs2_stroke_and_brain_features",
+  "seed": 20260903,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.0001,
+  "max_epochs": 40,
+  "early_stop_patience": 6,
+  "minimum_validation_improvement": 0.0003,
+  "camri_validation_max_drop": 0.01,
+  "loss": {
+    "name": "dice_bce_boundary",
+    "boundary_weight": 0.25,
+    "boundary_width": 1
+  },
+  "augmentation": {
+    "flip_probability": 0.5,
+    "feature_scale": 0.03,
+    "feature_noise_std": 0.005
+  },
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "TwoTaskLevel0OneQueryMaskDecoder: two independent query vectors (query_brain, query_lesion) sharing every other weight -- the canvas trunk, all per-level query bridges, all cross-attention update blocks, and the final mask-embedding head. Each training step is either a brain example (CAMRI/Mouse, starts from query_brain, trained against the brain mask) or a lesion example (stroke, starts from query_lesion, trained against the lesion mask), balanced across the epoch, both pushing gradients through the SAME shared weights. This directly tests whether the query-conditioning mechanism does real work: the comparison is this model's brain Dice against outputs/paper_width_level0_decoder (single-task brain-only, no shared weights with anything else) and this model's lesion Dice against outputs/stroke_lesion_only_decoder (single-task lesion-only, likewise no shared weights). If the joint model matches or beats both single-task models, the shared query mechanism is transferring something real between tasks. If it is clearly worse on one or both, the query is just a label at this scale, not a real conditioning mechanism.",
+  "label_resampling": {
+    "is_seg": true,
+    "order": 0,
+    "order_z": 0
+  },
+  "inference_threshold": 0.5,
+  "filter_connectivity": 26,
+  "embedding_dim": 32,
+  "batch_size": 1
+}

@@ -1,0 +1,2 @@
+domain,condition,subjects,dice_mean,dice_std,dice_median,hd95_mm,assd_mm
+stroke_lesion,raw_unfiltered,77,0.8623165619136491,0.164390431597201,0.9133114215283484,0.7877205801466779,0.5344312186803978

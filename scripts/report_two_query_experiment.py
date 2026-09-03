@@ -68,7 +68,7 @@ def lesion_figure(scan_id, image_path, gt_path, lesion_only_pred_path, joint_pre
         x = np.stack([m] * 3, -1); p = p[:, :, z]; x[p & ~gt[:, :, z]] = (1, 0, 0); x[~p & gt[:, :, z]] = (1, 1, 0); return x
 
     fig, ax = plt.subplots(2, 3, figsize=(12, 8), constrained_layout=True)
-    panels = [m, gt[:, :, z], m, err(lo[:, :, z]), lo[:, :, z], jt[:, :, z]]
+    panels = [m, gt[:, :, z], m, err(lo), lo[:, :, z], jt[:, :, z]]
     titles = ["T2 MRI", "Expert lesion mask", "(unused)", f"Lesion-only FP/FN (Dice {dice_lo:.3f})", "Lesion-only prediction", f"Joint two-query prediction"]
     for a0, x, t in zip(ax.flat, panels, titles):
         a0.imshow(x.T if x.ndim == 2 else x.transpose(1, 0, 2), cmap="gray" if x.ndim == 2 else None, origin="lower")

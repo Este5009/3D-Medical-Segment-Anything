@@ -1,0 +1,37 @@
+{
+  "device": "cuda",
+  "selected_epoch": 13,
+  "epochs_run": 19,
+  "best_validation_dice": 0.8715028402682059,
+  "encoder_frozen": true,
+  "one_query": true,
+  "task": "lesion_only",
+  "levels": [
+    "level0",
+    "level1",
+    "level2",
+    "level3",
+    "level4"
+  ],
+  "decoder_parameters": 4377361,
+  "embedding_dim": 32,
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "Lesion-only control for the two-query generalization experiment: PaperWidthLevel0OneQueryMaskDecoder (paper-matched widths, no canvas bottleneck), fresh initialization, trained ONLY on ischemic-stroke lesion masks (Charite/An et al. 2022 dataset -- data_charite subset, 223 train / 31 validation / 77 test subjects, all with real manual lesion annotations, held-out test set matches the paper's own official evaluation split exactly). This decoder has a single query and never sees brain masks -- it exists purely as the single-task baseline that TwoTaskLevel0OneQueryMaskDecoder's joint lesion performance gets compared against. A decoder trained on only one target cannot demonstrate query-conditioned behavior (there is only ever one query value it handles), so this run does not test the query mechanism itself -- only whether the frozen encoder's features support lesion segmentation at all.",
+  "records": {
+    "train": 223,
+    "validation": 31,
+    "test": 77
+  },
+  "mean_epoch_seconds": 95.21093707335622,
+  "peak_process_memory_mib": 2086.359375,
+  "elapsed_seconds": 1809.5584735870361
+}

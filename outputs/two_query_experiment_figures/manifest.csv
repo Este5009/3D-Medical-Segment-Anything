@@ -1,0 +1,4 @@
+role,scan_id,slice,lesion_only_dice,joint_dice,path
+worst_joint_dice,20170404CH_SC_M05,18,0.0,0.1349911190053286,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/worst_joint_dice_20170404CH_SC_M05.png
+median_joint_dice,20191030CH_Exp8_M20,18,0.855973627372968,0.8752625787736321,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/median_joint_dice_20191030CH_Exp8_M20.png
+best_joint_dice,20170713CH_Exp7_ZFPtm1a_M14,17,0.963415683911509,0.963297539912505,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/best_joint_dice_20170713CH_Exp7_ZFPtm1a_M14.png
