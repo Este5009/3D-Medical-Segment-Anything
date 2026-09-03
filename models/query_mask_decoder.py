@@ -764,6 +764,94 @@ class PaperWidthLevel0OneQueryMaskDecoder(nn.Module):
         return logits
 
 
+class TwoTaskLevel0OneQueryMaskDecoder(nn.Module):
+    """PaperWidthLevel0OneQueryMaskDecoder, but with TWO independent query
+    vectors (`query_brain`, `query_lesion`) instead of one, sharing every
+    other weight: the canvas trunk (up_blocks), the per-level query bridges,
+    the query-update cross-attention blocks, and the final mask_embedding /
+    level0_embedding_projection head. Only the STARTING query differs by
+    task; everything downstream of it -- all the cross-attention weights
+    that decide how a query reads the canvas -- is identical regardless of
+    which task is being run.
+
+    This exists to directly test whether the query-conditioning mechanism
+    itself does anything useful, not just whether the frozen encoder can
+    support a second task. A decoder trained on only one target (e.g. a
+    lesion-only PaperWidthLevel0OneQueryMaskDecoder with a single query) can
+    never demonstrate query-conditioned behavior -- there is only ever one
+    query value it is ever asked to handle, so nothing distinguishes it from
+    an ordinary single-target segmentation network. Here, the SAME shared
+    cross-attention weights must produce a correct brain mask when started
+    from query_brain and a correct lesion mask when started from
+    query_lesion -- a genuine test of whether the mechanism generalizes
+    across targets, not just parameter count or resolution.
+
+    The comparison this is built for: this joint model's brain Dice and
+    lesion Dice, each evaluated with its own query, against two entirely
+    separate single-query PaperWidthLevel0OneQueryMaskDecoder instances (no
+    shared weights at all) trained on brain-only and lesion-only data
+    respectively. If the joint model matches or beats the separate ones on
+    both tasks, the shared query mechanism is doing real work. If it is
+    clearly worse on one or both, the query is not adding anything beyond
+    being a label at this scale.
+    """
+
+    CHANNELS = PaperWidthLevel0OneQueryMaskDecoder.CHANNELS
+    COARSE_TO_FINE = PaperWidthLevel0OneQueryMaskDecoder.COARSE_TO_FINE
+    UP_STAGES = PaperWidthLevel0OneQueryMaskDecoder.UP_STAGES
+    TASKS = ("brain", "lesion")
+
+    def __init__(self, embedding_dim: int = 32, num_heads: int = 4) -> None:
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.query_brain = nn.Parameter(torch.empty(1, 1, embedding_dim))
+        self.query_lesion = nn.Parameter(torch.empty(1, 1, embedding_dim))
+        nn.init.normal_(self.query_brain, std=0.02)
+        nn.init.normal_(self.query_lesion, std=0.02)
+
+        stage_widths = {"level4": 384, "level3": 192, "level2": 96, "level1": 48, "level0": 48}
+        self.up_blocks = nn.ModuleDict({
+            name: PaperUnetrUpBlock(3, stage_widths[self.COARSE_TO_FINE[i]], stage_widths[name], 3, "instance")
+            for i, name in enumerate(self.UP_STAGES)
+        })
+        self.query_bridges = nn.ModuleDict({
+            name: nn.Conv3d(stage_widths[name], embedding_dim, 1) for name in self.COARSE_TO_FINE
+        })
+        self.query_updates = nn.ModuleDict({
+            name: QueryUpdateBlock(embedding_dim, num_heads) for name in self.COARSE_TO_FINE
+        })
+        self.mask_embedding = nn.Sequential(
+            nn.Linear(embedding_dim, embedding_dim), nn.GELU(),
+            nn.Linear(embedding_dim, embedding_dim))
+        self.mask_bias = nn.Parameter(torch.zeros(1))
+        self.level0_embedding_projection = nn.Linear(embedding_dim, stage_widths["level0"])
+
+    def forward(self, features: Mapping[str, torch.Tensor], task: str, output_size=None) -> torch.Tensor:
+        if task not in self.TASKS:
+            raise ValueError(f"Unknown task {task!r}; expected one of {self.TASKS}")
+        starting_query = self.query_brain if task == "brain" else self.query_lesion
+
+        canvas = features["level4"]
+        batch = canvas.shape[0]
+        query = starting_query.expand(batch, -1, -1)
+        query = self.query_updates["level4"](query, self.query_bridges["level4"](canvas))
+        for name in self.UP_STAGES:
+            canvas = self.up_blocks[name](canvas, features[name])
+            if name == "level0":
+                break
+            query = self.query_updates[name](query, self.query_bridges[name](canvas))
+        level0_tokens = self.query_bridges["level0"](F.avg_pool3d(canvas, kernel_size=2, stride=2))
+        query = self.query_updates["level0"](query, level0_tokens)
+
+        mask_embedding = self.mask_embedding(query).squeeze(1)
+        level0_embedding = self.level0_embedding_projection(mask_embedding)
+        logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, canvas).unsqueeze(1)
+        logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
+        if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
+            logits = F.interpolate(logits, size=tuple(output_size), mode="trilinear", align_corners=False)
+        return logits
+
+
 class MultiScaleAttentionOneQueryMaskDecoder(nn.Module):
     """Ablation: query attends to every scale, but voxel features are not fused."""
 
@@ -834,6 +922,25 @@ class FrozenEncoderQueryModel(nn.Module):
 
     def trainable_parameter_count(self) -> int:
         return sum(parameter.numel() for parameter in self.parameters() if parameter.requires_grad)
+
+
+class TaskFixedFrozenEncoderQueryModel(FrozenEncoderQueryModel):
+    """FrozenEncoderQueryModel wrapping a TwoTaskLevel0OneQueryMaskDecoder
+    with one task hard-coded, so existing (volume, output_size)-only
+    evaluation utilities (sliding_window_logits, run_records, etc., which
+    know nothing about the two-query decoder's extra `task` argument) work
+    unmodified. Two instances (one per task) share the SAME underlying
+    encoder and decoder -- no weights are duplicated, this only fixes which
+    query each instance starts from."""
+
+    def __init__(self, encoder: nn.Module, decoder: "TwoTaskLevel0OneQueryMaskDecoder", task: str) -> None:
+        super().__init__(encoder, decoder)
+        if task not in decoder.TASKS:
+            raise ValueError(f"Unknown task {task!r}; expected one of {decoder.TASKS}")
+        self.task = task
+
+    def decode(self, features: Mapping[str, torch.Tensor], output_size=None) -> torch.Tensor:
+        return self.decoder(features, task=self.task, output_size=output_size)
 
 
 def dice_bce_loss(logits: torch.Tensor, target: torch.Tensor, smooth: float = 1e-5):

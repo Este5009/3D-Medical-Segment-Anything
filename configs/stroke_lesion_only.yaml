@@ -1,0 +1,23 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "output_directory": "outputs/stroke_lesion_only_decoder",
+  "stroke_split": "outputs/mouse_stroke_lesion/split.json",
+  "stroke_raw_root": "/workspace/mouse_stroke_lesion_raw",
+  "stroke_cache": "/workspace/rs2_stroke_and_brain_features",
+  "seed": 20260903,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.0001,
+  "max_epochs": 40,
+  "early_stop_patience": 6,
+  "minimum_validation_improvement": 0.0003,
+  "loss": {"name": "dice_bce_boundary", "boundary_weight": 0.25, "boundary_width": 1},
+  "augmentation": {"flip_probability": 0.5, "feature_scale": 0.03, "feature_noise_std": 0.005},
+  "tile_size": [192, 128, 160],
+  "model_spacing_mm": [0.16666666666666666, 0.20000000298023224, 0.1599999964237213],
+  "architecture_change": "Lesion-only control for the two-query generalization experiment: PaperWidthLevel0OneQueryMaskDecoder (paper-matched widths, no canvas bottleneck), fresh initialization, trained ONLY on ischemic-stroke lesion masks (Charite/An et al. 2022 dataset -- data_charite subset, 223 train / 31 validation / 77 test subjects, all with real manual lesion annotations, held-out test set matches the paper's own official evaluation split exactly). This decoder has a single query and never sees brain masks -- it exists purely as the single-task baseline that TwoTaskLevel0OneQueryMaskDecoder's joint lesion performance gets compared against. A decoder trained on only one target cannot demonstrate query-conditioned behavior (there is only ever one query value it handles), so this run does not test the query mechanism itself -- only whether the frozen encoder's features support lesion segmentation at all.",
+  "label_resampling": {"is_seg": true, "order": 0, "order_z": 0},
+  "inference_threshold": 0.5,
+  "filter_connectivity": 26,
+  "embedding_dim": 32,
+  "batch_size": 1
+}
