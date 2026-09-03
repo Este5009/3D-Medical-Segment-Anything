@@ -44,13 +44,43 @@ def stroke_records(config):
     return out
 
 
+def robust_save(payload, dest, attempts=5, backoff_seconds=3):
+    """torch.save with retry -- a real, observed failure mode: a transient
+    write error on the network-backed /workspace volume mid-cache-build
+    (PytorchStreamWriter 'file write failed'), not a capacity problem (the
+    volume has hundreds of TB free). A partial/corrupt file from a failed
+    attempt is removed before retrying so it never looks falsely cached."""
+    last = None
+    for attempt in range(1, attempts + 1):
+        try:
+            torch.save(payload, dest)
+            return
+        except RuntimeError as exc:
+            last = exc
+            dest.unlink(missing_ok=True)
+            if attempt < attempts:
+                print(f"cache write failed (attempt {attempt}/{attempts}) for {dest.name}: {exc}; retrying in {backoff_seconds}s", flush=True)
+                time.sleep(backoff_seconds)
+    raise RuntimeError(f"cache write failed after {attempts} attempts for {dest}: {last}")
+
+
 def prepare_cache(records, config, paths, device):
+    """Caches the PREPROCESSED IMAGE + TARGET only (~20MB/subject), not the
+    frozen encoder's own output features (~420MB/subject at this
+    resolution -- the full 5-level feature set is dominated by level0's
+    uncompressed 48-channel full-resolution tensor). Caching features
+    outright would need >100GB for this dataset's train+validation split
+    alone, which does not fit the pod's real 50GB network-volume quota (a
+    real write failure discovered mid-run tonight, not a hypothetical --
+    /workspace is NOT the effectively-unlimited pool `df -h` makes it look
+    like; RunPod meters each pod's own allocation separately from the
+    filesystem's shared total capacity). The frozen encoder itself is run
+    fresh on every training/eval step instead -- redundant compute across
+    epochs, but the encoder forward pass is fast enough on this GPU that the
+    tradeoff is worth it against genuinely running out of disk mid-run."""
     cache = Path(config["stroke_cache"]); cache.mkdir(parents=True, exist_ok=True)
     tile_size = tuple(config["tile_size"])
     spacing = tuple(config["model_spacing_mm"])
-    encoder = RS2NetEncoderAdapter(paths, image_size=tile_size, in_channels=1, out_channels=1, feature_size=48).to(device).eval()
-    for p in encoder.parameters():
-        p.requires_grad_(False)
     for split in ("train", "validation"):
         for i, r in enumerate(records[split], 1):
             dest = cache / f"stroke_{split}_{r['subject']}.pt"
@@ -59,41 +89,45 @@ def prepare_cache(records, config, paths, device):
                 continue
             image, target, shape, _ = preprocess_image_and_corrected_target_at_spacing(
                 Path(r["image_path"]), Path(r["mask_path"]), paths, spacing, tile_size)
-            with torch.inference_mode():
-                features = encoder(image.to(device))
-            torch.save({
-                "features": {k: features[k].cpu().half() for k in LEVELS},
-                "target": target.byte(),
-            }, dest)
+            robust_save({"image": image.half(), "target": target.byte()}, dest)
             print(f"cache stroke {split} {i}/{len(records[split])}", flush=True)
-    del encoder
 
 
 def load_cached(record, device):
+    """Returns the cached preprocessed image + target (NOT encoder
+    features) -- callers must run the frozen encoder themselves."""
     payload = torch.load(record["cache_path"], map_location="cpu", weights_only=False)
-    features = {k: payload["features"][k].to(device).float() for k in LEVELS}
+    image = payload["image"].to(device).float()
     target = payload["target"].to(device).float()
-    return features, target
+    return image, target
 
 
-def augment_lesion(features, target, rng, config):
+def encode(encoder, image):
+    with torch.no_grad():
+        return encoder(image)
+
+
+def augment_lesion_image(image, target, rng, config):
+    """Spatial/intensity augmentation on the raw preprocessed image, BEFORE
+    encoding -- replaces the old feature-space augmentation now that
+    features are no longer cached (and this is more correct regardless:
+    spatial augmentation belongs before the encoder, not after)."""
     a = config["augmentation"]
-    features = {k: v.clone() for k, v in features.items()}
+    image = image.clone()
     if rng.random() < a["flip_probability"]:
-        features = {k: torch.flip(v, dims=[-1]) for k, v in features.items()}
+        image = torch.flip(image, dims=[-1])
         target = torch.flip(target, dims=[-1])
     scale = 1.0 + (rng.random() * 2 - 1) * a["feature_scale"]
-    features = {k: v * scale for k, v in features.items()}
-    for k in features:
-        features[k] = features[k] + torch.randn_like(features[k]) * a["feature_noise_std"]
-    return features, target
+    image = image * scale + torch.randn_like(image) * a["feature_noise_std"]
+    return image, target
 
 
 @torch.inference_mode()
-def evaluate(decoder, records, device):
+def evaluate(encoder, decoder, records, device):
     decoder.eval(); out = []
     for r in records:
-        f, t = load_cached(r, device)
+        image, t = load_cached(r, device)
+        f = encoder(image)
         logits = decoder(f, output_size=t.shape[-3:])
         out.append({"subject": r["subject"], **metric(logits, t)})
     return out
@@ -125,6 +159,14 @@ def main():
     random.seed(config["seed"]); np.random.seed(config["seed"]); torch.manual_seed(config["seed"])
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     paths = RS2NetPaths.from_config(load_json(ROOT / config["encoder_config"]))
+    # Instantiating the encoder first registers RS2's own package onto
+    # sys.path (RS2NetEncoderAdapter.__init__ -> _import_baseline_model),
+    # which the preprocessing pipeline's own `from RS2....` imports depend
+    # on -- must happen before prepare_cache, not after.
+    encoder = RS2NetEncoderAdapter(paths, image_size=tile_size, in_channels=1, out_channels=1, feature_size=48).to(device).eval()
+    for p in encoder.parameters():
+        p.requires_grad_(False)
+
     records = stroke_records(config)
     prepare_cache(records, config, paths, device)
     print(f"stroke records: train={len(records['train'])} validation={len(records['validation'])} test={len(records['test'])}", flush=True)
@@ -133,8 +175,9 @@ def main():
     parameters = sum(p.numel() for p in decoder.parameters())
     print(f"PaperWidthLevel0OneQueryMaskDecoder (lesion-only) parameters: {parameters}", flush=True)
 
-    f, t = load_cached(records["validation"][0], device)
+    image, t = load_cached(records["validation"][0], device)
     with torch.no_grad():
+        f = encoder(image)
         with_shape = decoder(f, output_size=t.shape[-3:])
         native = decoder(f)
     if native.shape[-3:] != tile_size or with_shape.shape != t.shape or not torch.equal(with_shape, native):
@@ -152,15 +195,16 @@ def main():
         order = list(range(len(records["train"]))); random.Random(config["seed"] + epoch).shuffle(order)
         for j, idx in enumerate(order):
             r = records["train"][idx]
-            features, target = load_cached(r, device)
-            features, target = augment_lesion(features, target, random.Random(config["seed"] + epoch * 100 + j), config)
+            image, target = load_cached(r, device)
+            image, target = augment_lesion_image(image, target, random.Random(config["seed"] + epoch * 100 + j), config)
             optimizer.zero_grad(set_to_none=True)
             with torch.autocast(device_type="cuda" if device.type == "cuda" else "cpu", dtype=torch.bfloat16, enabled=device.type == "cuda"):
+                features = encode(encoder, image)
                 logits = decoder(features, output_size=target.shape[-3:])
             loss, parts = training_loss(logits.float(), target, config)
             loss.backward(); optimizer.step()
             losses.append(float(loss.detach()))
-        val = aggregate(evaluate(decoder, records["validation"], device))
+        val = aggregate(evaluate(encoder, decoder, records["validation"], device))
         elapsed = time.time() - epoch_start; peak = max(peak, peak_mib())
         row = {"epoch": epoch, "loss": np.mean(losses), "epoch_seconds": elapsed,
                **{f"validation_{k}": v for k, v in val.items()}}
