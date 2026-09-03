@@ -655,6 +655,104 @@ class PaperStyleLevel0OneQueryMaskDecoder(nn.Module):
         return logits
 
 
+class PaperWidthLevel0OneQueryMaskDecoder(nn.Module):
+    """PaperStyleLevel0OneQueryMaskDecoder's upsampling mechanism
+    (PaperUnetrUpBlock, free trilinear interpolation, no learned transposed
+    convolution), now ALSO matching the original paper's real per-level
+    channel widths -- 48/96/192/384, direct from RS2/network/RSSNet.py's own
+    feature_size progression -- instead of compressing every level down to
+    one shared, artificially narrow `embedding_dim`.
+
+    This corrects a second, previously untested deviation from the paper:
+    every prior decoder in this project's family (including
+    PaperStyleLevel0OneQueryMaskDecoder) projects every encoder level down
+    to a shared width (typically 32) via 1x1x1 convs before any decoder
+    processing -- a real bottleneck the paper's own decoder never has (its
+    final stage runs at 48 channels in and out, the same as its encoder's
+    own native width there, confirmed directly from their code). This class
+    has NO such projection step: the canvas-building chain runs directly at
+    the encoder's own raw channel counts at every stage (384->192->96->48,
+    ending at exactly 48 -- matching the paper's decoder1 exactly, not the
+    16 or 32 this project used previously at that stage).
+
+    The query itself still needs one fixed width for cross-attention to
+    make sense across differently-wide canvases -- `embedding_dim` (default
+    32, unchanged from every prior decoder in this family) -- so a small
+    1x1x1 bridge projection (canvas_width -> embedding_dim) is used ONLY
+    for the query's attention step at each level, exactly the same pattern
+    TrueFullResolutionLevel0OneQueryMaskDecoder already used for its level0
+    bridge; the canvas itself (what the final dot product reads) is never
+    projected down. The final decision still forms directly at level0's
+    real 48-channel width, with no logit-space interpolation.
+    """
+
+    CHANNELS = {"level0": 48, "level1": 48, "level2": 96, "level3": 192, "level4": 384}
+    COARSE_TO_FINE = ("level4", "level3", "level2", "level1", "level0")
+    UP_STAGES = ("level3", "level2", "level1", "level0")
+
+    def __init__(self, embedding_dim: int = 32, num_heads: int = 4) -> None:
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.query = nn.Parameter(torch.empty(1, 1, embedding_dim))
+        nn.init.normal_(self.query, std=0.02)
+
+        # Real per-level channel widths, matching the paper's own decoder
+        # exactly -- no projection compresses these; they ARE the canvas.
+        stage_widths = {"level4": 384, "level3": 192, "level2": 96, "level1": 48, "level0": 48}
+        self.up_blocks = nn.ModuleDict({
+            # in_channels = the PRECEDING (coarser) stage's width, i.e.
+            # COARSE_TO_FINE[i] where UP_STAGES[i] == name (UP_STAGES is
+            # COARSE_TO_FINE shifted one step finer) -- e.g. level3's block
+            # takes level4's 384-wide canvas in and produces level3's own
+            # 192-wide canvas out.
+            name: PaperUnetrUpBlock(3, stage_widths[self.COARSE_TO_FINE[i]], stage_widths[name], 3, "instance")
+            for i, name in enumerate(self.UP_STAGES)
+        })
+
+        # Query-attention bridges: canvas_width -> embedding_dim, one per
+        # level (all new; the paper has nothing resembling this, since it
+        # has no query -- this is purely how our query-conditioning
+        # mechanism reads a canvas it doesn't share a width with).
+        self.query_bridges = nn.ModuleDict({
+            name: nn.Conv3d(stage_widths[name], embedding_dim, 1) for name in self.COARSE_TO_FINE
+        })
+        self.query_updates = nn.ModuleDict({
+            name: QueryUpdateBlock(embedding_dim, num_heads) for name in self.COARSE_TO_FINE
+        })
+        self.mask_embedding = nn.Sequential(
+            nn.Linear(embedding_dim, embedding_dim), nn.GELU(),
+            nn.Linear(embedding_dim, embedding_dim))
+        self.mask_bias = nn.Parameter(torch.zeros(1))
+        # Final dot product reads the level0 canvas at its own real width
+        # (48) -- this bridges the query's embedding_dim down to that,
+        # exactly the same role TrueFullResolutionLevel0OneQueryMaskDecoder's
+        # level0_embedding_projection already played.
+        self.level0_embedding_projection = nn.Linear(embedding_dim, stage_widths["level0"])
+
+    def forward(self, features: Mapping[str, torch.Tensor], output_size=None) -> torch.Tensor:
+        canvas = features["level4"]  # raw encoder features, no projection -- already 384 channels
+        fused = {"level4": canvas}
+        for name in self.UP_STAGES:
+            canvas = self.up_blocks[name](canvas, features[name])  # skip connection is also raw, unprojected
+            fused[name] = canvas
+        # fused["level0"]: [B, 48, *tile_size] -- the paper's own final width.
+
+        batch = features["level1"].shape[0]
+        query = self.query.expand(batch, -1, -1)
+        for name in ("level4", "level3", "level2", "level1"):
+            query = self.query_updates[name](query, self.query_bridges[name](fused[name]))
+        level0_tokens = self.query_bridges["level0"](F.avg_pool3d(fused["level0"], kernel_size=2, stride=2))
+        query = self.query_updates["level0"](query, level0_tokens)
+
+        mask_embedding = self.mask_embedding(query).squeeze(1)
+        level0_embedding = self.level0_embedding_projection(mask_embedding)
+        logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, fused["level0"]).unsqueeze(1)
+        logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
+        if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
+            logits = F.interpolate(logits, size=tuple(output_size), mode="trilinear", align_corners=False)
+        return logits
+
+
 class MultiScaleAttentionOneQueryMaskDecoder(nn.Module):
     """Ablation: query attends to every scale, but voxel features are not fused."""
 
