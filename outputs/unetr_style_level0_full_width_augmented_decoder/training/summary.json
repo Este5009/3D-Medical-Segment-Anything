@@ -1,0 +1,121 @@
+{
+  "device": "cuda",
+  "selected_epoch": 39,
+  "epochs_run": 40,
+  "best_balanced_validation_dice": 0.9811208021411507,
+  "encoder_frozen": true,
+  "one_query": true,
+  "levels": [
+    "level0",
+    "level1",
+    "level2",
+    "level3",
+    "level4"
+  ],
+  "unetr_style_decoder_parameters": 444449,
+  "level0_width": 32,
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "none -- identical to outputs/unetr_style_level0_full_width_decoder. Sole variable: paper-style training augmentation (rotation/zoom/blur/noise/contrast/gamma/simulated-low-res) applied to raw images before the frozen encoder, replacing the prior feature-space flip+noise trick.",
+  "augmentation_spec": {
+    "flip_probability": 0.5,
+    "rotate_probability": 0.2,
+    "rotate_range_deg": 15,
+    "zoom_probability": 0.2,
+    "zoom_range": [
+      0.85,
+      1.15
+    ],
+    "blur_probability": 0.15,
+    "blur_sigma_range": [
+      0.5,
+      1.5
+    ],
+    "noise_probability": 0.15,
+    "noise_std_fraction": 0.05,
+    "contrast_probability": 0.15,
+    "contrast_range": [
+      0.75,
+      1.25
+    ],
+    "gamma_probability": 0.15,
+    "gamma_range": [
+      0.7,
+      1.5
+    ],
+    "low_res_probability": 0.15,
+    "low_res_scale_range": [
+      0.5,
+      1.0
+    ]
+  },
+  "native_logits_shape": [
+    1,
+    1,
+    192,
+    128,
+    160
+  ],
+  "final_logit_interpolation": false,
+  "query_conditioning_at_level0": true,
+  "level0_query_tokens_pooled_2x": true,
+  "camri_safety_stop": false,
+  "camri_floor": 0.9728010830803637,
+  "camri_reference": 0.9828010830803637,
+  "safety_ineligible_epochs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    20
+  ],
+  "camri_safety_rule_semantics": "per-epoch selection eligibility filter, not a training-abort trigger",
+  "mean_epoch_seconds": 54.24883525371551,
+  "peak_process_memory_mib": 3221.0390625,
+  "elapsed_seconds": 2169.9858598709106,
+  "transferred_baseline_tensors": 75,
+  "new_parameter_keys": [
+    "projections.level0.weight",
+    "projections.level0.bias",
+    "up_blocks.level3.transp_conv.conv.weight",
+    "up_blocks.level3.conv_block.conv1.conv.weight",
+    "up_blocks.level3.conv_block.conv2.conv.weight",
+    "up_blocks.level3.conv_block.conv3.conv.weight",
+    "up_blocks.level2.transp_conv.conv.weight",
+    "up_blocks.level2.conv_block.conv1.conv.weight",
+    "up_blocks.level2.conv_block.conv2.conv.weight",
+    "up_blocks.level2.conv_block.conv3.conv.weight",
+    "up_blocks.level1.transp_conv.conv.weight",
+    "up_blocks.level1.conv_block.conv1.conv.weight",
+    "up_blocks.level1.conv_block.conv2.conv.weight",
+    "up_blocks.level1.conv_block.conv3.conv.weight",
+    "up_blocks.level0.transp_conv.conv.weight",
+    "up_blocks.level0.conv_block.conv1.conv.weight",
+    "up_blocks.level0.conv_block.conv2.conv.weight",
+    "up_blocks.level0.conv_block.conv3.conv.weight",
+    "level0_query_projection.weight",
+    "level0_embedding_projection.weight",
+    "level0_embedding_projection.bias"
+  ],
+  "unexpected_keys": [],
+  "initial_checkpoint": "outputs/higher_resolution_true_level0/checkpoints/best_higher_resolution_true_level0.pt"
+}

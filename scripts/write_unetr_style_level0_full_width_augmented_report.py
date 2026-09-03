@@ -10,6 +10,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs/unetr_style_level0_full_width_augmented_decoder"
+# This run's pre-training architecture gates reused the full-width run's own
+# verify script/config unchanged (augmentation is the only variable; the
+# architecture is identical), so that gate's output file was correctly
+# written to the full-width run's OWN output directory, not this one.
+FULL_WIDTH_OUT = ROOT / "outputs/unetr_style_level0_full_width_decoder"
 
 
 def rows(p):
@@ -22,7 +27,7 @@ def fnum(x, nd=4):
 
 def main():
     summary = json.loads((OUT / "training/summary.json").read_text())
-    pretrain = json.loads((OUT / "pretraining_verification.json").read_text())
+    pretrain = json.loads((FULL_WIDTH_OUT / "pretraining_verification.json").read_text())
     native = rows(OUT / "native_metrics.csv")
     paired = rows(OUT / "paired_subject_changes.csv")
     manifest = rows(OUT / "figures/manifest.csv")
@@ -32,38 +37,46 @@ def main():
         return next(r for r in native if r["domain"] == domain and r["condition"] == condition)
 
     lines = []
-    lines.append("# UNETR-style real-decoder-depth level0 decoder -- experiment report\n")
+    lines.append("# UNETR-style full-width level0 decoder + paper-style augmentation -- experiment report\n")
     lines.append(
-        "Single isolated architectural variable relative to "
-        "`outputs/higher_resolution_true_level0` (192x128x160, current best model): "
-        "`TrueFullResolutionLevel0OneQueryMaskDecoder`'s single depthwise+pointwise "
-        "level0 fusion pass is replaced by `UnetrStyleLevel0OneQueryMaskDecoder`'s real "
-        "four-stage skip-connected residual upsampling chain, level4->3->2->1->0, using "
-        "`monai.networks.blocks.UnetrUpBlock` unmodified -- the exact block class the "
-        "original RS2-Net decoder itself is built from. Motivated by "
-        "`outputs/level0_depth_diagnostic/` (residual error is small, scattered 1-4-voxel "
-        "clusters, not axis-locked quantization on the untouched native-X axis -- a "
-        "decoder local-context signature, not a resolution shortfall). Resolution, "
-        "spacing, tile size, encoder, hyperparameters, loss, and augmentation are all "
-        "unchanged from the initialization checkpoint's own training run.\n"
+        "Single isolated variable relative to `outputs/unetr_style_level0_full_width_decoder` "
+        "(same architecture: `UnetrStyleLevel0OneQueryMaskDecoder`, level0_width=32, matching "
+        "embedding_dim -- the real four-stage skip-connected `UnetrUpBlock` chain at its full "
+        "intended capacity, not the CPU-forced level0_width=8 taper): training augmentation. "
+        "That run improved Mouse boundary metrics broadly (76/80 subjects, every metric) but "
+        "visual inspection found small, locally-confident false-positive 'bulbs' escaping the "
+        "true contour on some subjects -- consistent with a higher-capacity decoder (444,449 "
+        "params) memorizing patterns from only 39 real training images rather than learning "
+        "boundary features that generalize. This run replaces the prior feature-space "
+        "flip+noise augmentation with the original RS2-Net paper's own richer recipe (rotation, "
+        "zoom, Gaussian blur/noise, brightness/contrast, gamma, simulated low-resolution), "
+        "applied to raw images before the frozen encoder (see "
+        "`scripts/paper_style_augmentation.py`) -- the standard remedy for this failure mode. "
+        "Same initial checkpoint (`outputs/higher_resolution_true_level0`, not the possibly-"
+        "overfit full-width checkpoint, so this cleanly tests whether augmentation prevents "
+        "the overfitting rather than corrects an already-overfit model), same resolution, loss, "
+        "optimizer, and seed as the run being followed up on.\n"
     )
 
     lines.append("## 1. Architecture and initialization\n")
     lines.append(f"- Total decoder parameters: **{summary['unetr_style_decoder_parameters']:,}** "
-                  f"(vs. 182,081 for the current-best decoder; 355,889 measured directly, level0_width={summary['level0_width']}).")
+                  f"(level0_width={summary['level0_width']}, identical architecture to "
+                  "`outputs/unetr_style_level0_full_width_decoder`; vs. 182,081 for the original "
+                  "single-depthwise-pass decoder).")
     lines.append(f"- Transferred from `{summary['initial_checkpoint']}`: **{summary['transferred_baseline_tensors']}/102** decoder tensors, "
-                  "by exact name+shape, all bit-identical (verified, not assumed -- see `pretraining_verification.json`).")
+                  "by exact name+shape, all bit-identical (verified, not assumed -- see "
+                  "`outputs/unetr_style_level0_full_width_decoder/pretraining_verification.json`, "
+                  "reused unchanged since the architecture didn't change here).")
     lines.append(f"- Freshly initialized (no prior-checkpoint counterpart): {len(summary['new_parameter_keys'])} tensors "
                   "-- the four real `UnetrUpBlock` stages, `projections.level0`, and `query_updates.level0`.")
     lines.append(
-        "- `level0_width=8` (not this project's prior `level0_width=16` precedent) was set from direct on-machine "
-        "profiling before committing to training: a single dense `UnetrUpBlock(in=32,out=W)` forward+backward pass "
-        "at the level0 grid measured 3.05s/4.51s/8.99s/13.89s at W=6/8/10/12, and did not complete a single forward "
-        "pass in over 8 minutes at W=32; `level0_width=16` (fine for a single depthwise+pointwise pass) measured "
-        "206.71s for one full training step of this real-residual-block design -- infeasible for an overnight run. "
-        "`level0_width=8` measured 7.59-10.62s/step in scoping and "
-        f"{pretrain['performance_sanity']['forward_seconds_by_domain']} seconds/sample forward-only against the "
-        "real checkpoint and cached features -- tractable.\n"
+        "- Augmentation spec (probabilities and ranges): "
+        f"`{json.dumps(summary.get('augmentation_spec', {}))}`. Spatial transforms (rotate, zoom, flip) "
+        "applied identically to image and target; intensity transforms (blur, noise, contrast, gamma, "
+        "simulated low-resolution) to the image only. Applied to raw images before the frozen encoder, "
+        "so training could no longer use this project's usual cached-feature shortcut -- the encoder "
+        "runs fresh every training step, every epoch (validation is unaffected: no augmentation there, "
+        "so its cached-feature path is unchanged).\n"
     )
 
     lines.append("## 2. Training\n")
@@ -130,25 +143,39 @@ def main():
     mean_hd_delta = sum(hd_deltas) / len(hd_deltas)
     regressions = sum(1 for c in dice_deltas if c < -0.0005)
     lines.append("## 7. Verdict\n")
+    lines.append(
+        "**Note on what this verdict compares:** like every prior report in this family, the numbers "
+        "above are against `outputs/higher_resolution_true_level0` (the original current-best model), "
+        "for direct comparability across all three UNETR-style runs. The more directly relevant "
+        "comparison for *this specific experiment's own question* -- did augmentation reduce the "
+        "false-positive 'bulbs' seen in the un-augmented full-width run -- is against "
+        "`outputs/unetr_style_level0_full_width_decoder` (that run's own baseline-relative numbers were: "
+        "Mouse Dice +0.00128, HD95 -0.00138mm, 76/80 improved; CAMRI Dice -0.00044, HD95 +0.01381mm, "
+        "2/6 improved). See its own `paired_subject_changes.csv` and figures for a like-for-like check; "
+        "this report does not re-derive that comparison to avoid silently changing what earlier reports "
+        "in this family measured.\n"
+    )
     if mean_dice_delta > 0.0005 and mean_hd_delta < -0.0005 and regressions <= len(dice_deltas) * 0.1:
-        verdict = ("**A. Real decoder depth (matching the original paper's own UnetrUpBlock skip-connection design) "
-                    "measurably improves boundary quality on top of the current best model.**")
+        verdict = ("**A. Full-width decoder depth with paper-style augmentation measurably improves boundary "
+                    "quality on top of the current best model.**")
     elif regressions > len(dice_deltas) * 0.3 or mean_dice_delta < -0.0005:
-        verdict = ("**C. Real decoder depth does not clearly help, and/or introduces meaningful regressions relative "
-                    "to the current best model.**")
+        verdict = ("**C. Full-width decoder depth with paper-style augmentation does not clearly help, and/or "
+                    "introduces meaningful regressions relative to the current best model.**")
     else:
-        verdict = ("**B. Real decoder depth gives a small, mixed, or inconclusive change relative to the current "
-                    "best model -- direction is not clearly positive across both domains/metrics.**")
+        verdict = ("**B. Full-width decoder depth with paper-style augmentation gives a small, mixed, or "
+                    "inconclusive change relative to the current best model -- direction is not clearly "
+                    "positive across both domains/metrics.**")
     lines.append(verdict)
     lines.append(f"\nMean Dice change: {mean_dice_delta:+.5f}. Mean HD95 change: {mean_hd_delta:+.4f} mm. "
                  f"Subjects with a Dice regression > 0.0005: {regressions}/{len(dice_deltas)}.")
     lines.append(
-        "\nThis experiment tested a single, literature-grounded hypothesis -- the residual pixelation is a "
-        "decoder local-context shortfall, addressed by giving level0 the same real, skip-connected, multi-stage "
-        "residual depth the original paper's own decoder has, rather than a single lightweight conv pass. "
-        "See `outputs/level0_depth_diagnostic/findings.md` for the evidence that motivated this experiment, and "
-        "`configs/unetr_style_level0_full_width_augmented.yaml` / this decoder's docstring for the on-machine timing measurements that "
-        "set `level0_width=8`."
+        "\nThis experiment tested a single, literature-grounded hypothesis -- that the full-width "
+        "decoder's small, locally-confident false-positive boundary excursions are an overfitting "
+        "signature (more decoder capacity, same 39 training images, no added regularization), remedied "
+        "by the original RS2-Net paper's own richer training augmentation rather than by architecture "
+        "changes. See `outputs/unetr_style_level0_full_width_decoder/` for the run and visual evidence "
+        "that motivated this experiment, and `scripts/paper_style_augmentation.py` / "
+        "`configs/unetr_style_level0_full_width_augmented.yaml` for exactly what augmentation was applied."
     )
 
     (OUT / "experiment_report.md").write_text("\n".join(lines) + "\n")

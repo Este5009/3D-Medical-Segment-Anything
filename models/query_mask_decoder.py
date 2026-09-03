@@ -8,6 +8,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from monai.networks.blocks import UnetrUpBlock
+from monai.networks.blocks.dynunet_block import UnetResBlock, get_conv_layer
 
 
 class OneQueryMaskDecoder(nn.Module):
@@ -535,6 +536,118 @@ class UnetrStyleLevel0OneQueryMaskDecoder(nn.Module):
         # field. No half-resolution logits are ever computed or interpolated.
         mask_embedding = self.mask_embedding(query).squeeze(1)  # [B, embedding_dim]
         level0_embedding = self.level0_embedding_projection(mask_embedding)  # [B, level0_width]
+        logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, fused["level0"]).unsqueeze(1)
+        logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
+        if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
+            logits = F.interpolate(logits, size=tuple(output_size), mode="trilinear", align_corners=False)
+        return logits
+
+
+class PaperUnetrUpBlock(nn.Module):
+    """Faithful port of the original RS2-Net authors' own upsampling block
+    (``RS2/network/up_block_unpooling.py`` in their published training repo,
+    read directly, not reconstructed from the paper's prose alone), NOT
+    ``monai.networks.blocks.UnetrUpBlock`` (what UnetrStyleLevel0OneQueryMask
+    Decoder actually used -- an error caught and corrected this session: that
+    class shares its name with the authors' own class, but not its
+    implementation).
+
+    The one real difference: this class's upsampling step has ZERO learned
+    parameters -- a plain ``nn.Upsample(mode="trilinear")`` resize, exactly
+    matching the paper's own stated design ("we have... used linear
+    interpolation upsampling instead of transposed convolution",
+    Section 2.2.3) -- followed by a 1x1x1 channel-mixing conv (also
+    unchanged from theirs: a plain conv, not a transposed one). Everything
+    downstream (concatenate with the skip connection, refine with a real
+    residual conv block) is identical in spirit to
+    UnetrStyleLevel0OneQueryMaskDecoder's stages; only the upsampling
+    mechanism itself changes, and only because that's what their own code
+    actually does.
+    """
+
+    def __init__(self, spatial_dims: int, in_channels: int, out_channels: int,
+                 kernel_size, norm_name) -> None:
+        super().__init__()
+        self.channel_mix = get_conv_layer(
+            spatial_dims, in_channels, out_channels, kernel_size=1, stride=1, conv_only=True)
+        self.conv_block = UnetResBlock(
+            spatial_dims, out_channels + out_channels, out_channels,
+            kernel_size=kernel_size, stride=1, norm_name=norm_name)
+
+    def forward(self, inp: torch.Tensor, skip: torch.Tensor) -> torch.Tensor:
+        out = F.interpolate(inp, size=skip.shape[2:], mode="trilinear", align_corners=False)
+        out = self.channel_mix(out)
+        out = torch.cat((out, skip), dim=1)
+        return self.conv_block(out)
+
+
+class PaperStyleLevel0OneQueryMaskDecoder(nn.Module):
+    """UnetrStyleLevel0OneQueryMaskDecoder, with its one confirmed deviation
+    from the original paper's own decoder corrected: upsampling now uses
+    PaperUnetrUpBlock (free trilinear interpolation + 1x1x1 conv, zero
+    learned upsampling parameters) instead of monai.networks.blocks.
+    UnetrUpBlock (a real learned transposed convolution). Nothing else
+    changes -- same level0_width=32 (matching the already-validated
+    full-width run), same query-conditioning mechanism, same final
+    full-resolution dot-product decision, same names/shapes for every
+    tensor that has a counterpart in UnetrStyleLevel0OneQueryMaskDecoder, so
+    a converged full-width checkpoint's compatible tensors transfer exactly.
+    Only the up_blocks themselves (real conv layers, not just their
+    upsampling step) necessarily start fresh, since PaperUnetrUpBlock's
+    internal parameter shapes/names differ from UnetrUpBlock's.
+    """
+
+    CHANNELS = UnetrStyleLevel0OneQueryMaskDecoder.CHANNELS
+    COARSE_TO_FINE = UnetrStyleLevel0OneQueryMaskDecoder.COARSE_TO_FINE
+    UP_STAGES = UnetrStyleLevel0OneQueryMaskDecoder.UP_STAGES
+
+    def __init__(self, embedding_dim: int = 32, num_heads: int = 4, level0_width: int = 32) -> None:
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.level0_width = level0_width
+        self.query = nn.Parameter(torch.empty(1, 1, embedding_dim))
+        nn.init.normal_(self.query, std=0.02)
+        self.projections = nn.ModuleDict({
+            name: nn.Conv3d(channels, embedding_dim, kernel_size=1)
+            for name, channels in self.CHANNELS.items() if name != "level0"
+        })
+        self.projections["level0"] = nn.Conv3d(self.CHANNELS["level0"], level0_width, kernel_size=1)
+
+        self.up_blocks = nn.ModuleDict({
+            name: PaperUnetrUpBlock(3, embedding_dim, embedding_dim, 3, "instance")
+            for name in self.UP_STAGES
+        })
+        self.up_blocks["level0"] = PaperUnetrUpBlock(3, embedding_dim, level0_width, 3, "instance")
+
+        self.query_updates = nn.ModuleDict({
+            name: QueryUpdateBlock(embedding_dim, num_heads) for name in self.COARSE_TO_FINE
+        })
+        self.mask_embedding = nn.Sequential(
+            nn.Linear(embedding_dim, embedding_dim), nn.GELU(),
+            nn.Linear(embedding_dim, embedding_dim))
+        self.mask_bias = nn.Parameter(torch.zeros(1))
+
+        self.level0_query_projection = nn.Conv3d(level0_width, embedding_dim, 1)
+        self.level0_embedding_projection = nn.Linear(embedding_dim, level0_width)
+
+    def forward(self, features: Mapping[str, torch.Tensor], output_size=None) -> torch.Tensor:
+        projected = {name: self.projections[name](features[name]) for name in self.CHANNELS}
+
+        canvas = projected["level4"]
+        fused = {"level4": canvas}
+        for name in (*self.UP_STAGES, "level0"):
+            canvas = self.up_blocks[name](canvas, projected[name])
+            fused[name] = canvas
+
+        batch = features["level1"].shape[0]
+        query = self.query.expand(batch, -1, -1)
+        for name in ("level4", "level3", "level2", "level1"):
+            query = self.query_updates[name](query, fused[name])
+        level0_query_tokens = self.level0_query_projection(F.avg_pool3d(fused["level0"], kernel_size=2, stride=2))
+        query = self.query_updates["level0"](query, level0_query_tokens)
+
+        mask_embedding = self.mask_embedding(query).squeeze(1)
+        level0_embedding = self.level0_embedding_projection(mask_embedding)
         logits = torch.einsum("bc,bcdhw->bdhw", level0_embedding, fused["level0"]).unsqueeze(1)
         logits = logits + self.mask_bias.view(1, 1, 1, 1, 1)
         if output_size is not None and tuple(logits.shape[-3:]) != tuple(output_size):
