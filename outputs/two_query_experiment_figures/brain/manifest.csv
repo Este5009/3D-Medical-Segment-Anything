@@ -1,0 +1,7 @@
+domain,role,subject,slice,single_task_dice,joint_dice,path
+CAMRI,worst_joint_dice,007,3,0.9874416241198248,0.9889411465615864,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/brain/camri/worst_joint_dice_007.png
+CAMRI,median_joint_dice,043,3,0.988697199531042,0.9915200531128346,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/brain/camri/median_joint_dice_043.png
+CAMRI,best_joint_dice,078,25,0.9906775466276708,0.99279381079521,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/brain/camri/best_joint_dice_078.png
+Mouse,worst_joint_dice,POLYIC_20190531_polyic_m__E3_P1_3,16,0.9826498290188962,0.9424728621022411,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/brain/mouse/worst_joint_dice_POLYIC_20190531_polyic_m__E3_P1_3.png
+Mouse,median_joint_dice,POLYIC_20190510_mouse39__E4_P1,16,0.9809424497169904,0.983463495570503,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/brain/mouse/median_joint_dice_POLYIC_20190510_mouse39__E4_P1.png
+Mouse,best_joint_dice,POLYIC_20190628_mouse36__E3_P1,17,0.9823677796526393,0.98614598410776,/Users/estebanfelixmoran/Desktop/Purdue/Medical_Imaging/3D-Medical-Segment-Anything/outputs/two_query_experiment_figures/brain/mouse/best_joint_dice_POLYIC_20190628_mouse36__E3_P1.png
