@@ -1,0 +1,48 @@
+{
+  "encoder_config": "configs/rs2net_encoder.yaml",
+  "output_directory": "outputs/paper_width_level0_decoder",
+  "camri_split": "outputs/generalization_pilot/subject_split.json",
+  "camri_metrics": "outputs/generalization_pilot/metrics.csv",
+  "mouse_split": "outputs/mouse_boundary_adaptation/split.json",
+  "mouse_metrics": "outputs/mouse_external_evaluation/subject_metrics.csv",
+  "camri_cache": "/tmp/rs2_higher_resolution_true_level0_features",
+  "mouse_cache": "/tmp/rs2_higher_resolution_true_level0_features",
+  "corrected_cache": "/tmp/rs2_higher_resolution_true_level0_features",
+  "seed": 20260902,
+  "learning_rate": 5e-05,
+  "weight_decay": 0.0001,
+  "max_epochs": 35,
+  "early_stop_patience": 5,
+  "minimum_validation_improvement": 0.0003,
+  "camri_validation_max_drop": 0.01,
+  "loss": {
+    "name": "dice_bce_boundary",
+    "boundary_weight": 0.25,
+    "boundary_width": 1
+  },
+  "augmentation": {
+    "flip_probability": 0.5,
+    "feature_scale": 0.03,
+    "feature_noise_std": 0.005
+  },
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "PaperWidthLevel0OneQueryMaskDecoder: PaperUnetrUpBlock upsampling (already validated -- outputs/paper_style_level0_decoder/) PLUS the paper's real per-level channel widths (48/96/192/384, direct from RS2/network/RSSNet.py's own feature_size progression) instead of compressing every level to one shared embedding_dim=32. No projection bottleneck anywhere in the canvas -- confirmed by direct parameter-count comparison to their real decoder before committing to training: 4,377,361 params here vs. their own decoder's measured 4,306,225 (the ~71K difference is entirely this project's added query-conditioning bridges). embedding_dim=32 is retained ONLY for the query itself and its per-level attention bridges, never for the canvas the final mask is drawn from. No checkpoint transfer is possible (every prior checkpoint in this project used a materially different width scheme) -- trained from this class's own standard initialization. Same hyperparameters, same 39 training images, same locked split as every other experiment tonight -- decoder width/channel-scheme is the sole isolated variable against current best.",
+  "label_resampling": {
+    "is_seg": true,
+    "order": 0,
+    "order_z": 0
+  },
+  "inference_threshold": 0.5,
+  "filter_connectivity": 26,
+  "embedding_dim": 32,
+  "batch_size": 1
+}

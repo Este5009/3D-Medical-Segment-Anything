@@ -1,0 +1,56 @@
+{
+  "device": "cuda",
+  "selected_epoch": 35,
+  "epochs_run": 35,
+  "best_balanced_validation_dice": 0.9816865852082426,
+  "encoder_frozen": true,
+  "one_query": true,
+  "levels": [
+    "level0",
+    "level1",
+    "level2",
+    "level3",
+    "level4"
+  ],
+  "decoder_parameters": 396817,
+  "embedding_dim": 48,
+  "level0_width": 48,
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "width sweep on current best's own architecture -- embedding_dim=48, level0_width=48 (unreduced, matching the paper's own final-stage convention), vs current best's embedding_dim=32/level0_width=16. No decoder-depth or upsampling-mechanism change; trained from this class's own standard initialization, not transferred from any checkpoint (width change makes meaningful transfer impossible).",
+  "native_logits_shape": [
+    1,
+    1,
+    192,
+    128,
+    160
+  ],
+  "final_logit_interpolation": false,
+  "camri_safety_stop": false,
+  "camri_floor": 0.9728010830803637,
+  "camri_reference": 0.9828010830803637,
+  "safety_ineligible_epochs": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "camri_safety_rule_semantics": "per-epoch selection eligibility filter, not a training-abort trigger",
+  "mean_epoch_seconds": 54.59628052711487,
+  "peak_process_memory_mib": 2754.48046875,
+  "elapsed_seconds": 1910.9095771312714
+}

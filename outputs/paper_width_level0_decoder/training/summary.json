@@ -1,0 +1,54 @@
+{
+  "device": "cuda",
+  "selected_epoch": 14,
+  "epochs_run": 19,
+  "best_balanced_validation_dice": 0.9834892141575801,
+  "encoder_frozen": true,
+  "one_query": true,
+  "levels": [
+    "level0",
+    "level1",
+    "level2",
+    "level3",
+    "level4"
+  ],
+  "decoder_parameters": 4377361,
+  "embedding_dim": 32,
+  "canvas_widths": {
+    "level0": 48,
+    "level1": 48,
+    "level2": 96,
+    "level3": 192,
+    "level4": 384
+  },
+  "tile_size": [
+    192,
+    128,
+    160
+  ],
+  "model_spacing_mm": [
+    0.16666666666666666,
+    0.20000000298023224,
+    0.1599999964237213
+  ],
+  "architecture_change": "PaperWidthLevel0OneQueryMaskDecoder: PaperUnetrUpBlock upsampling (already validated -- outputs/paper_style_level0_decoder/) PLUS the paper's real per-level channel widths (48/96/192/384, direct from RS2/network/RSSNet.py's own feature_size progression) instead of compressing every level to one shared embedding_dim=32. No projection bottleneck anywhere in the canvas -- confirmed by direct parameter-count comparison to their real decoder before committing to training: 4,377,361 params here vs. their own decoder's measured 4,306,225 (the ~71K difference is entirely this project's added query-conditioning bridges). embedding_dim=32 is retained ONLY for the query itself and its per-level attention bridges, never for the canvas the final mask is drawn from. No checkpoint transfer is possible (every prior checkpoint in this project used a materially different width scheme) -- trained from this class's own standard initialization. Same hyperparameters, same 39 training images, same locked split as every other experiment tonight -- decoder width/channel-scheme is the sole isolated variable against current best.",
+  "native_logits_shape": [
+    1,
+    1,
+    192,
+    128,
+    160
+  ],
+  "final_logit_interpolation": false,
+  "camri_safety_stop": false,
+  "camri_floor": 0.9728010830803637,
+  "camri_reference": 0.9828010830803637,
+  "safety_ineligible_epochs": [
+    1,
+    2
+  ],
+  "camri_safety_rule_semantics": "per-epoch selection eligibility filter, not a training-abort trigger",
+  "mean_epoch_seconds": 37.326889853728446,
+  "peak_process_memory_mib": 3025.109375,
+  "elapsed_seconds": 709.6890711784363
+}
