@@ -128,11 +128,50 @@ python3 scripts/train_paper_width_level0.py --config configs/paper_width_level0.
 python3 scripts/train_stroke_lesion_only.py --config configs/stroke_lesion_only.yaml
 ```
 
-A GPU is strongly recommended — this project's own timing tests found CPU
-inference alone taking minutes per volume; training on CPU is not practical
-at this model's width/resolution. All experiments in this session's history
-were trained on a single rented GPU (RTX 4090 class).
+A GPU is required in practice, not just recommended — a single forward pass
+of the frozen encoder plus decoder at this model's resolution was tested
+directly on a CPU-only machine and was killed by the OS for exceeding
+available memory before completing. All training and evaluation in this
+project has run on a single rented GPU (RTX 4090 class).
 
 This section should be kept current as the architecture and experiment
 scripts change — if a script above no longer matches what's in `scripts/`,
 that's a bug in the README, not in the code.
+
+## Testing and verification
+
+Every training script runs a set of gates *before* touching the network, and
+every evaluation reports native-space, full-resolution metrics rather than
+scores on the resampled model grid.
+
+**Pre-training gates** (raised as a hard failure, not a warning, if they fail):
+- **Label-quality verification** (`train_corrected_label_retraining.verification_gate`) —
+  checks the corrected-label resampling pipeline against a native round-trip
+  test before any training is allowed to start.
+- **Shape/interpolation sanity check** — a single forward pass confirms the
+  decoder's output is full native-grid resolution with no unexpected
+  interpolation branch firing, and (for the dual-query model) that the two
+  tasks' outputs are not identical — i.e. the query is actually doing
+  something, not silently ignored.
+
+**During training**, a per-epoch *CAMRI safety-eligibility* rule filters
+which epochs are allowed to be saved as the "best" checkpoint: an epoch is
+only eligible if CAMRI validation Dice stays within 0.01 of a fixed
+reference score. This is a selection filter, not an abort trigger — training
+keeps running through ineligible epochs, they just cannot become the saved
+checkpoint. This exists to stop a shared-decoder run from quietly trading
+away brain-segmentation quality for a secondary target.
+
+**Evaluation** always runs at native resolution: predictions are resampled
+back from the model grid to each subject's own original voxel spacing before
+Dice, HD95, ASSD, and surface-Dice are computed — scores on the resampled
+model grid are never reported as the result. For the single-object,
+whole-brain task only, the largest connected 3D component is kept as a
+deterministic post-processing step (see the note at the top of this file);
+lesion segmentation evaluation does not apply this filter, since lesions can
+be genuinely multi-focal.
+
+Each new experiment gets its own `verify_*.py` and/or inline sanity checks
+before a full training run is launched — the pattern to follow when adding
+a new target or architecture change is: verify the data/shape assumptions
+cheaply first, then commit to the full (GPU-hours) training run.
