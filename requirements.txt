@@ -1,0 +1,36 @@
+# Core deep learning
+torch>=2.0.0
+monai>=1.1.0
+einops>=0.4.1
+
+# Medical image I/O and preprocessing
+nibabel>=3.1.1
+pydicom>=2.4
+SimpleITK>=2.2.1
+acvl_utils>=0.2
+batchgenerators>=0.25
+tifffile>=2022.10.10
+imageio>=2.22.4
+
+# Scientific computing
+numpy>=1.23.3
+scipy>=1.8.1
+scikit-image>=0.19.3
+scikit-learn>=1.0
+
+# Data handling
+pandas>=1.5.0
+openpyxl>=3.1
+
+# Visualization
+matplotlib>=3.7
+Pillow>=9.0
+
+# Utilities
+tqdm>=4.59.0
+
+# ---
+# The frozen RS2-Net encoder is loaded directly from the sibling
+# RS2-Net-Reproduction checkout (see configs/rs2net_encoder.yaml,
+# "baseline_root") rather than installed as a package -- clone that repo
+# alongside this one; its own requirements.txt is a subset of the above.
