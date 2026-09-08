@@ -7,7 +7,8 @@ species, scanners, protocols, image quality, artifacts, pathology, and
 anatomical variation.
 
 Rodent brain extraction is the first controlled benchmark, not the final
-objective. Current research keeps the verified RS2-Net Swin encoder frozen and
+objective. Current research keeps the verified [RS2-Net](#references) Swin
+encoder frozen and
 tests whether a small trainable, query-conditioned decoder — one learned query
 per target, sharing a single cross-attention trunk — can learn robust,
 cross-domain anatomical grouping, on both healthy brain anatomy and pathology.
@@ -31,7 +32,9 @@ multi-object anatomy or pathology.
 
 ## Current architecture
 
-A frozen Swin-based encoder feeds a small trainable decoder built around one
+A frozen [Swin-based](#references) encoder — the pretrained encoder from
+[RS2-Net](#references), itself built on [Swin-UNETR](#references) — feeds a
+small trainable decoder built around one
 shared cross-attention canvas. Each segmentation target — currently: whole
 rodent brain, and ischemic stroke lesion — gets its own independent learned
 query vector, but every other decoder weight (the upsampling trunk, the
@@ -175,3 +178,27 @@ Each new experiment gets its own `verify_*.py` and/or inline sanity checks
 before a full training run is launched — the pattern to follow when adding
 a new target or architecture change is: verify the data/shape assumptions
 cheaply first, then commit to the full (GPU-hours) training run.
+
+## References
+
+The frozen encoder used throughout this project is the pretrained encoder
+from the RS2-Net reproduction (verified sibling repository, never modified
+in place — see `configs/rs2net_encoder.yaml`). This project's own decoder is
+new work; the encoder's architecture and pretrained weights are entirely
+theirs, credited here:
+
+- Lin, Y., Ding, Y., Chang, S., Ge, X., Sui, X., & Jiang, Y. (2024).
+  **RS2-Net: An end-to-end deep learning framework for rodent skull
+  stripping in multi-center brain MRI.** *NeuroImage*, 298, 120769.
+  https://doi.org/10.1016/j.neuroimage.2024.120769 — original implementation:
+  https://github.com/VitoLin21/Rodent-Skull-Stripping
+- Hatamizadeh, A., Nath, V., Tang, Y., Yang, D., Roth, H., & Xu, D. (2022).
+  **Swin UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors
+  in MRI Images.** *International MICCAI Brainlesion Workshop*, 272–284.
+  RS2-Net's own encoder is built on this architecture (confirmed directly
+  in its abstract).
+- Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., Lin, S., & Guo, B.
+  (2021). **Swin Transformer: Hierarchical Vision Transformer using Shifted
+  Windows.** *ICCV 2021.* The windowed self-attention mechanism both of the
+  above build on — cited directly in RS2-Net's own source comments
+  (`RS2/network/RSSNet.py`).
