@@ -1,0 +1,1698 @@
+{
+  "camri": {
+    "domain": "camri",
+    "model": "RS2-Net original (encoder+decoder, no query)",
+    "mode": "rotation",
+    "subjects": 6,
+    "magnitudes": [
+      5.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "by_stage": [
+      {
+        "transform": "resampling_floor",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 1.7102706427370624e-06,
+        "sd_relative_l2": 2.0914907507008657e-07,
+        "mean_cosine": 0.999999980131785
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 1.872897731421593e-05,
+        "sd_relative_l2": 7.105132311653346e-07,
+        "mean_cosine": 1.0000000099341075
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 1.845082473058331e-05,
+        "sd_relative_l2": 1.2330833131491204e-06,
+        "mean_cosine": 1.0
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 2.0841782315983437e-05,
+        "sd_relative_l2": 2.018238100858348e-06,
+        "mean_cosine": 0.9999999701976776
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 9.128546404705654e-07,
+        "sd_relative_l2": 6.299316889749238e-08,
+        "mean_cosine": 0.9999999900658926
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 3.549003054104105e-06,
+        "sd_relative_l2": 6.075765469952692e-07,
+        "mean_cosine": 0.9999999900658926
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.00011266386475957309,
+        "sd_relative_l2": 2.2818606836486412e-06,
+        "mean_cosine": 0.999999980131785
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.11751959597071011,
+        "sd_relative_l2": 0.01606270554675617,
+        "mean_cosine": 0.9932057758172353
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.3666028330723445,
+        "sd_relative_l2": 0.021368425535028816,
+        "mean_cosine": 0.9311081369717916
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.2552109584212303,
+        "sd_relative_l2": 0.0046199299591544165,
+        "mean_cosine": 0.9670042196909586
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.2769043892621994,
+        "sd_relative_l2": 0.008844824796719887,
+        "mean_cosine": 0.9609101613362631
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.26254237443208694,
+        "sd_relative_l2": 0.037477581563946656,
+        "mean_cosine": 0.9641664723555247
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.1318573815127214,
+        "sd_relative_l2": 0.00839134339733512,
+        "mean_cosine": 0.9916847745577494
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.15042626609404883,
+        "sd_relative_l2": 0.018212113190405225,
+        "mean_cosine": 0.9884664217631022
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.11508052796125412,
+        "sd_relative_l2": 0.01622752402264183,
+        "mean_cosine": 0.9934864540894827
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.3815380781888962,
+        "sd_relative_l2": 0.020654154120161153,
+        "mean_cosine": 0.9248653948307037
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.27394095559914905,
+        "sd_relative_l2": 0.0028812615977411894,
+        "mean_cosine": 0.9618228177229563
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.299465075135231,
+        "sd_relative_l2": 0.004675378570685132,
+        "mean_cosine": 0.954103042682012
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.3055634746948878,
+        "sd_relative_l2": 0.024850335954401753,
+        "mean_cosine": 0.951816976070404
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.2051763484875361,
+        "sd_relative_l2": 0.012514855435303139,
+        "mean_cosine": 0.979846308628718
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.1637416109442711,
+        "sd_relative_l2": 0.01682813413528337,
+        "mean_cosine": 0.9863887627919515
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.11325971161325772,
+        "sd_relative_l2": 0.01604749243229047,
+        "mean_cosine": 0.9937071700890859
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.4493850866953532,
+        "sd_relative_l2": 0.022088720567132177,
+        "mean_cosine": 0.8930987318356832
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.3308503081401189,
+        "sd_relative_l2": 0.00301790897564942,
+        "mean_cosine": 0.943687895933787
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.3651791165272395,
+        "sd_relative_l2": 0.005997608123731339,
+        "mean_cosine": 0.9310063719749451
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.31893999377886456,
+        "sd_relative_l2": 0.026899633857431045,
+        "mean_cosine": 0.9473517636458079
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.31490178406238556,
+        "sd_relative_l2": 0.010694507041991484,
+        "mean_cosine": 0.9508561988671621
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.21918502698342004,
+        "sd_relative_l2": 0.013753615700508343,
+        "mean_cosine": 0.9756354093551636
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.11151204258203506,
+        "sd_relative_l2": 0.01619685269055316,
+        "mean_cosine": 0.9939123690128326
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.5122513175010681,
+        "sd_relative_l2": 0.021499979646176923,
+        "mean_cosine": 0.858632763226827
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.3891531676054001,
+        "sd_relative_l2": 0.0029999924119367195,
+        "mean_cosine": 0.9212027192115784
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.42754679918289185,
+        "sd_relative_l2": 0.004137099854774605,
+        "mean_cosine": 0.9044281045595804
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.32513990501562756,
+        "sd_relative_l2": 0.027827252384998006,
+        "mean_cosine": 0.9452095131079356
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.39219994843006134,
+        "sd_relative_l2": 0.0035709816916422907,
+        "mean_cosine": 0.9204340974489847
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.263776366909345,
+        "sd_relative_l2": 0.010007745881848313,
+        "mean_cosine": 0.9646353920300802
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.10151867320140202,
+        "sd_relative_l2": 0.009033075377846058,
+        "mean_cosine": 0.9949268102645874
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.33940604825814563,
+        "sd_relative_l2": 0.02795162064046829,
+        "mean_cosine": 0.9405729571978251
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.23181267082691193,
+        "sd_relative_l2": 0.014558582552458095,
+        "mean_cosine": 0.9726832012335459
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.2581822797656059,
+        "sd_relative_l2": 0.02497981647345485,
+        "mean_cosine": 0.9658102095127106
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.2522492731610934,
+        "sd_relative_l2": 0.007657209075164458,
+        "mean_cosine": 0.9676675299803416
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.14446667085091272,
+        "sd_relative_l2": 0.013522815597332462,
+        "mean_cosine": 0.9897204637527466
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.12006987258791924,
+        "sd_relative_l2": 0.006435200878044216,
+        "mean_cosine": 0.9927741686503092
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.10469281673431396,
+        "sd_relative_l2": 0.010559433525907875,
+        "mean_cosine": 0.9945860703786215
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.3590377966562907,
+        "sd_relative_l2": 0.027861508719919305,
+        "mean_cosine": 0.9330572883288065
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.2501530001560847,
+        "sd_relative_l2": 0.011812248878648257,
+        "mean_cosine": 0.9681333700815836
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.2870415697495143,
+        "sd_relative_l2": 0.024943541040170263,
+        "mean_cosine": 0.9575804571310679
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.26819122831026715,
+        "sd_relative_l2": 0.007647945771465867,
+        "mean_cosine": 0.9633440673351288
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.22307966649532318,
+        "sd_relative_l2": 0.021846791681346973,
+        "mean_cosine": 0.9753400186697642
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.13885950793822607,
+        "sd_relative_l2": 0.004133658647518262,
+        "mean_cosine": 0.9903187950452169
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.13671705747644106,
+        "sd_relative_l2": 0.026142211193682437,
+        "mean_cosine": 0.9904017547766367
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.43608194092909497,
+        "sd_relative_l2": 0.02333663959103067,
+        "mean_cosine": 0.8996113141377767
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.3302093545595805,
+        "sd_relative_l2": 0.008611487205829554,
+        "mean_cosine": 0.9440145889918009
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.36647552251815796,
+        "sd_relative_l2": 0.02024860432728395,
+        "mean_cosine": 0.9302728573481241
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.2886208047469457,
+        "sd_relative_l2": 0.006242824114971389,
+        "mean_cosine": 0.9574326475461324
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.3174883673588435,
+        "sd_relative_l2": 0.031228360684180636,
+        "mean_cosine": 0.9481971363226572
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.21240725616614023,
+        "sd_relative_l2": 0.00355048680485914,
+        "mean_cosine": 0.9771921634674072
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.17332187046607336,
+        "sd_relative_l2": 0.03841627597893967,
+        "mean_cosine": 0.9842351575692495
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.5076225946346918,
+        "sd_relative_l2": 0.019891844019791244,
+        "mean_cosine": 0.8624525666236877
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.3994795233011246,
+        "sd_relative_l2": 0.007769917616162283,
+        "mean_cosine": 0.917432963848114
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.43835894266764325,
+        "sd_relative_l2": 0.018833562635584306,
+        "mean_cosine": 0.899201879898707
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.31432077288627625,
+        "sd_relative_l2": 0.004286767101391032,
+        "mean_cosine": 0.9493151108423868
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.3914954165617625,
+        "sd_relative_l2": 0.042109151953014956,
+        "mean_cosine": 0.9190860788027445
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.2664255251487096,
+        "sd_relative_l2": 0.010563246489320948,
+        "mean_cosine": 0.9638725419839224
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.09942410265405972,
+        "sd_relative_l2": 0.021024155492603613,
+        "mean_cosine": 0.99501500527064
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.32332996527353924,
+        "sd_relative_l2": 0.013330439907654227,
+        "mean_cosine": 0.9469183186690012
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.22365382313728333,
+        "sd_relative_l2": 0.021844416880409123,
+        "mean_cosine": 0.9744940797487894
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.2557116498549779,
+        "sd_relative_l2": 0.014323979725269729,
+        "mean_cosine": 0.9667210082213084
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.26496843496958417,
+        "sd_relative_l2": 0.04224853772093856,
+        "mean_cosine": 0.9632865687211355
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.13085635751485825,
+        "sd_relative_l2": 0.017654698272997527,
+        "mean_cosine": 0.9916336139043173
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.13883567104736963,
+        "sd_relative_l2": 0.005904272259591203,
+        "mean_cosine": 0.9903894464174906
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.09832178925474484,
+        "sd_relative_l2": 0.020861468727451732,
+        "mean_cosine": 0.9951272010803223
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.3418954213460286,
+        "sd_relative_l2": 0.013263049529292584,
+        "mean_cosine": 0.9401799937089285
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.24304684499899545,
+        "sd_relative_l2": 0.01980771279600752,
+        "mean_cosine": 0.9698508183161417
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.2742092361052831,
+        "sd_relative_l2": 0.017785670311441428,
+        "mean_cosine": 0.9615131119887034
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.29421735803286236,
+        "sd_relative_l2": 0.03841210270176594,
+        "mean_cosine": 0.9549020727475485
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.2019729589422544,
+        "sd_relative_l2": 0.033737530105119075,
+        "mean_cosine": 0.9796242018540701
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.1549198478460312,
+        "sd_relative_l2": 0.005160937964563578,
+        "mean_cosine": 0.9880323112010956
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.0964948336283366,
+        "sd_relative_l2": 0.020883186293280856,
+        "mean_cosine": 0.9953107138474783
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.40688109894593555,
+        "sd_relative_l2": 0.01173312045691974,
+        "mean_cosine": 0.9134961366653442
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.3079790125290553,
+        "sd_relative_l2": 0.02158867072245392,
+        "mean_cosine": 0.9511235853036245
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.34836961328983307,
+        "sd_relative_l2": 0.020134636974874998,
+        "mean_cosine": 0.9371150732040405
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.3042776882648468,
+        "sd_relative_l2": 0.04922815932501803,
+        "mean_cosine": 0.9511650602022806
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.2949773172537486,
+        "sd_relative_l2": 0.05412821411115879,
+        "mean_cosine": 0.9543921649456024
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.21172859271367392,
+        "sd_relative_l2": 0.005254157199112143,
+        "mean_cosine": 0.9774515529473623
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "input",
+        "n": 6,
+        "mean_relative_l2": 0.0951208546757698,
+        "sd_relative_l2": 0.02057014252919412,
+        "mean_cosine": 0.9954549272855123
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level0",
+        "n": 6,
+        "mean_relative_l2": 0.46975263953208923,
+        "sd_relative_l2": 0.010943992892845677,
+        "mean_cosine": 0.8827745815118154
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level1",
+        "n": 6,
+        "mean_relative_l2": 0.3669515748818715,
+        "sd_relative_l2": 0.02447107993670282,
+        "mean_cosine": 0.9298995534578959
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level2",
+        "n": 6,
+        "mean_relative_l2": 0.41991690794626874,
+        "sd_relative_l2": 0.02282893555634151,
+        "mean_cosine": 0.9074625273545583
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level3",
+        "n": 6,
+        "mean_relative_l2": 0.3354901323715846,
+        "sd_relative_l2": 0.05224365714657237,
+        "mean_cosine": 0.9403867324193319
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level4",
+        "n": 6,
+        "mean_relative_l2": 0.3704322775204976,
+        "sd_relative_l2": 0.07009624453940101,
+        "mean_cosine": 0.9257373114426931
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "output_logits",
+        "n": 6,
+        "mean_relative_l2": 0.2626042564709981,
+        "sd_relative_l2": 0.004761895528137451,
+        "mean_cosine": 0.965024600426356
+      }
+    ],
+    "by_mask": [
+      {
+        "transform": "resampling_floor",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9999989845399103,
+        "min_self_consistency_dice": 0.9999969232757268,
+        "mean_accuracy_delta": 2.850208994746121e-09,
+        "worst_accuracy_delta": -3.0357760255617094e-06
+      },
+      {
+        "transform": "axis0_+5deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9958760152344946,
+        "min_self_consistency_dice": 0.995360182090967,
+        "mean_accuracy_delta": -0.0007127774788810252,
+        "worst_accuracy_delta": -0.0010111061138642352
+      },
+      {
+        "transform": "axis0_+10deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9957076170753849,
+        "min_self_consistency_dice": 0.9951312396056786,
+        "mean_accuracy_delta": -0.0008161636291375748,
+        "worst_accuracy_delta": -0.0011389084918607129
+      },
+      {
+        "transform": "axis0_+20deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9947187673265442,
+        "min_self_consistency_dice": 0.9938798410508761,
+        "mean_accuracy_delta": -0.0014297415445029271,
+        "worst_accuracy_delta": -0.002086158758719203
+      },
+      {
+        "transform": "axis0_+30deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9936841004558506,
+        "min_self_consistency_dice": 0.9928608561825397,
+        "mean_accuracy_delta": -0.002287979536401289,
+        "worst_accuracy_delta": -0.003050350572864291
+      },
+      {
+        "transform": "axis1_+5deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9962337159591567,
+        "min_self_consistency_dice": 0.9958060737335337,
+        "mean_accuracy_delta": -0.0005621179694442943,
+        "worst_accuracy_delta": -0.0009703262678947278
+      },
+      {
+        "transform": "axis1_+10deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.995906159030079,
+        "min_self_consistency_dice": 0.9953736299931405,
+        "mean_accuracy_delta": -0.0007438953121320369,
+        "worst_accuracy_delta": -0.0010631794437392372
+      },
+      {
+        "transform": "axis1_+20deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9949333550199738,
+        "min_self_consistency_dice": 0.9943187151131012,
+        "mean_accuracy_delta": -0.0011667041062600376,
+        "worst_accuracy_delta": -0.0016329808762041154
+      },
+      {
+        "transform": "axis1_+30deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9937224633110393,
+        "min_self_consistency_dice": 0.9932594331631047,
+        "mean_accuracy_delta": -0.002050570496210898,
+        "worst_accuracy_delta": -0.0028970499665210703
+      },
+      {
+        "transform": "axis2_+5deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9965740590510873,
+        "min_self_consistency_dice": 0.9962928779598574,
+        "mean_accuracy_delta": -0.0006567828239289845,
+        "worst_accuracy_delta": -0.0008892297691425188
+      },
+      {
+        "transform": "axis2_+10deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9962534055404838,
+        "min_self_consistency_dice": 0.995850622406639,
+        "mean_accuracy_delta": -0.0007201348613309899,
+        "worst_accuracy_delta": -0.0008364062089651902
+      },
+      {
+        "transform": "axis2_+20deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9951566504603558,
+        "min_self_consistency_dice": 0.9946969354376762,
+        "mean_accuracy_delta": -0.0013800152584721448,
+        "worst_accuracy_delta": -0.0018339295724494331
+      },
+      {
+        "transform": "axis2_+30deg",
+        "n": 6,
+        "mean_self_consistency_dice": 0.9939411500231351,
+        "min_self_consistency_dice": 0.9931719803671796,
+        "mean_accuracy_delta": -0.0022220182588734705,
+        "worst_accuracy_delta": -0.0030037277859197298
+      }
+    ]
+  },
+  "mouse": {
+    "domain": "mouse",
+    "model": "RS2-Net original (encoder+decoder, no query)",
+    "mode": "rotation",
+    "subjects": 15,
+    "magnitudes": [
+      5.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "by_stage": [
+      {
+        "transform": "resampling_floor",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 2.530984685715036e-06,
+        "sd_relative_l2": 4.6445271438957476e-07,
+        "mean_cosine": 1.000000003973643
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 1.8475259882203924e-05,
+        "sd_relative_l2": 6.308309356555362e-07,
+        "mean_cosine": 0.9999999761581421
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 1.9866279520404834e-05,
+        "sd_relative_l2": 1.5628205864014443e-06,
+        "mean_cosine": 0.9999999761581421
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 2.252474041597452e-05,
+        "sd_relative_l2": 1.336736296016443e-06,
+        "mean_cosine": 1.0000000278155008
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 7.814492922382973e-07,
+        "sd_relative_l2": 1.4257724278493855e-07,
+        "mean_cosine": 1.0
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 4.109792159094165e-06,
+        "sd_relative_l2": 6.790750825944873e-07,
+        "mean_cosine": 1.000000007947286
+      },
+      {
+        "transform": "resampling_floor",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.0001274132509327804,
+        "sd_relative_l2": 2.0366095460106826e-06,
+        "mean_cosine": 1.0000000238418578
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.16034468213717143,
+        "sd_relative_l2": 0.024856482596053737,
+        "mean_cosine": 0.9872472564379374
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.37853367924690245,
+        "sd_relative_l2": 0.021859987072032162,
+        "mean_cosine": 0.9264957785606385
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.2564897179603577,
+        "sd_relative_l2": 0.011189170903554792,
+        "mean_cosine": 0.9665319681167602
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.28483590483665466,
+        "sd_relative_l2": 0.004663141315350577,
+        "mean_cosine": 0.9586308240890503
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.23882244924704235,
+        "sd_relative_l2": 0.0166612679121983,
+        "mean_cosine": 0.9709333856900533
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.17524134616057077,
+        "sd_relative_l2": 0.019010958428053386,
+        "mean_cosine": 0.9847738305727641
+      },
+      {
+        "transform": "axis0_+5deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.15407451788584392,
+        "sd_relative_l2": 0.008470512149735048,
+        "mean_cosine": 0.988029686609904
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.16040039757887523,
+        "sd_relative_l2": 0.024458295768537683,
+        "mean_cosine": 0.9872573614120483
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.39452467958132426,
+        "sd_relative_l2": 0.019873623635026594,
+        "mean_cosine": 0.9196921149889629
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.2672620316346486,
+        "sd_relative_l2": 0.011867779081974051,
+        "mean_cosine": 0.9635682861010234
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.30187896092732747,
+        "sd_relative_l2": 0.0039041621976392362,
+        "mean_cosine": 0.9533406575520833
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.2934415092070897,
+        "sd_relative_l2": 0.019577706222657053,
+        "mean_cosine": 0.955768104394277
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.2423170228799184,
+        "sd_relative_l2": 0.019109641762543216,
+        "mean_cosine": 0.9710750778516134
+      },
+      {
+        "transform": "axis0_+10deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.16982367336750032,
+        "sd_relative_l2": 0.009015631069128791,
+        "mean_cosine": 0.9854381561279297
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.15849858323733013,
+        "sd_relative_l2": 0.024001548393603585,
+        "mean_cosine": 0.9875962058703105
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.44373042980829874,
+        "sd_relative_l2": 0.016186344286423068,
+        "mean_cosine": 0.8963642477989197
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.3206815640131632,
+        "sd_relative_l2": 0.009473028450751993,
+        "mean_cosine": 0.9471354365348816
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.3613393207391103,
+        "sd_relative_l2": 0.0021233883570637383,
+        "mean_cosine": 0.9325055678685507
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.3009055902560552,
+        "sd_relative_l2": 0.018298448515907752,
+        "mean_cosine": 0.953464686870575
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.33944504459698993,
+        "sd_relative_l2": 0.020859116259529423,
+        "mean_cosine": 0.941478180885315
+      },
+      {
+        "transform": "axis0_+20deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.22823112905025483,
+        "sd_relative_l2": 0.013007910490103029,
+        "mean_cosine": 0.973569917678833
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.15652042925357817,
+        "sd_relative_l2": 0.0238929734886977,
+        "mean_cosine": 0.9879279772440592
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.4947319785753886,
+        "sd_relative_l2": 0.015598499386701074,
+        "mean_cosine": 0.8688920537630717
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.3761087775230408,
+        "sd_relative_l2": 0.00734594078053317,
+        "mean_cosine": 0.9266289790471395
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.423423033952713,
+        "sd_relative_l2": 0.0016602668924639067,
+        "mean_cosine": 0.9064350128173828
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.3061253666877747,
+        "sd_relative_l2": 0.017940129041605437,
+        "mean_cosine": 0.9518085718154907
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.4063194811344147,
+        "sd_relative_l2": 0.021595532986302117,
+        "mean_cosine": 0.9135516087214152
+      },
+      {
+        "transform": "axis0_+30deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.27559334337711333,
+        "sd_relative_l2": 0.01609826006783629,
+        "mean_cosine": 0.9613417983055115
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.1575637310743332,
+        "sd_relative_l2": 0.025392104857209292,
+        "mean_cosine": 0.9876119573911031
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.37572251359621683,
+        "sd_relative_l2": 0.021757121693955262,
+        "mean_cosine": 0.9273369709650675
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.2505927393833796,
+        "sd_relative_l2": 0.013648210364394484,
+        "mean_cosine": 0.9680712779362997
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.28427297870318097,
+        "sd_relative_l2": 0.005736598975426597,
+        "mean_cosine": 0.958765172958374
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.23314474324385326,
+        "sd_relative_l2": 0.0161361196104001,
+        "mean_cosine": 0.9723409533500671
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.15681509772936503,
+        "sd_relative_l2": 0.011233629508323212,
+        "mean_cosine": 0.987885324160258
+      },
+      {
+        "transform": "axis1_+5deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.1516449640194575,
+        "sd_relative_l2": 0.007993724639589927,
+        "mean_cosine": 0.9884075403213501
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.1575994610786438,
+        "sd_relative_l2": 0.025902286910765897,
+        "mean_cosine": 0.9875987887382507
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.3905831078688304,
+        "sd_relative_l2": 0.021512818538040896,
+        "mean_cosine": 0.9210069259007772
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.2659526964028676,
+        "sd_relative_l2": 0.012502650696991814,
+        "mean_cosine": 0.9639491637547811
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.31606906056404116,
+        "sd_relative_l2": 0.00463817276062891,
+        "mean_cosine": 0.9487251440684
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.27169200976689656,
+        "sd_relative_l2": 0.017541292296530973,
+        "mean_cosine": 0.9622241695721944
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.23189423282941182,
+        "sd_relative_l2": 0.014522859223604466,
+        "mean_cosine": 0.9733612259229024
+      },
+      {
+        "transform": "axis1_+10deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.17618932127952575,
+        "sd_relative_l2": 0.010714423778295816,
+        "mean_cosine": 0.9843177080154419
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.15645576715469361,
+        "sd_relative_l2": 0.025567520760648742,
+        "mean_cosine": 0.9878001610438029
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.44240943193435667,
+        "sd_relative_l2": 0.01785875373308393,
+        "mean_cosine": 0.8967448274294535
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.32773218154907224,
+        "sd_relative_l2": 0.00970228856670893,
+        "mean_cosine": 0.9447185476620992
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.38726266622543337,
+        "sd_relative_l2": 0.004721897586423683,
+        "mean_cosine": 0.9221066355705261
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.28812478880087533,
+        "sd_relative_l2": 0.018305455798089443,
+        "mean_cosine": 0.9574107766151428
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.3371915062268575,
+        "sd_relative_l2": 0.01964240316078562,
+        "mean_cosine": 0.9417107701301575
+      },
+      {
+        "transform": "axis1_+20deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.25244239568710325,
+        "sd_relative_l2": 0.025409802233558827,
+        "mean_cosine": 0.9674119353294373
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.15547692875067393,
+        "sd_relative_l2": 0.025478677784244716,
+        "mean_cosine": 0.9879631042480469
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.49474916060765584,
+        "sd_relative_l2": 0.01584925431688877,
+        "mean_cosine": 0.8689300616582235
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.3873851557572683,
+        "sd_relative_l2": 0.008164931982702895,
+        "mean_cosine": 0.9219834367434184
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.4590130031108856,
+        "sd_relative_l2": 0.005198973572619875,
+        "mean_cosine": 0.8892741044362386
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.3184290607770284,
+        "sd_relative_l2": 0.017738999944374514,
+        "mean_cosine": 0.9477690537770589
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.41158488194147747,
+        "sd_relative_l2": 0.017841310088583844,
+        "mean_cosine": 0.9112025539080302
+      },
+      {
+        "transform": "axis1_+30deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.298542328675588,
+        "sd_relative_l2": 0.017480651980041454,
+        "mean_cosine": 0.954442811012268
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.13945199300845465,
+        "sd_relative_l2": 0.0254085017526983,
+        "mean_cosine": 0.9902359088261922
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.33876633445421855,
+        "sd_relative_l2": 0.019978237428408426,
+        "mean_cosine": 0.9416031161944072
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.21411393185456593,
+        "sd_relative_l2": 0.016703135657264244,
+        "mean_cosine": 0.9766965905825297
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.2602563520272573,
+        "sd_relative_l2": 0.008684885250593018,
+        "mean_cosine": 0.9655503074328105
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.2393307993809382,
+        "sd_relative_l2": 0.011546059737379122,
+        "mean_cosine": 0.9708721558252971
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.16991889973481497,
+        "sd_relative_l2": 0.01692882641997762,
+        "mean_cosine": 0.9856034318606058
+      },
+      {
+        "transform": "axis2_+5deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.13984167079130808,
+        "sd_relative_l2": 0.008212529045538436,
+        "mean_cosine": 0.9901466886202495
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.13957504232724507,
+        "sd_relative_l2": 0.02524375748627385,
+        "mean_cosine": 0.9902281483014425
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.3532595078150431,
+        "sd_relative_l2": 0.018539972152795486,
+        "mean_cosine": 0.9362004439036051
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.2305729627609253,
+        "sd_relative_l2": 0.016725977249610124,
+        "mean_cosine": 0.972920290629069
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.2791349172592163,
+        "sd_relative_l2": 0.007460784855392569,
+        "mean_cosine": 0.9602229674657186
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.2656765470902125,
+        "sd_relative_l2": 0.012956911383480282,
+        "mean_cosine": 0.963972020149231
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.22686625520388284,
+        "sd_relative_l2": 0.019453679390748893,
+        "mean_cosine": 0.9742896596590678
+      },
+      {
+        "transform": "axis2_+10deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.15746166010697682,
+        "sd_relative_l2": 0.007202786569045362,
+        "mean_cosine": 0.987510101000468
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.13784904778003693,
+        "sd_relative_l2": 0.025228638817563622,
+        "mean_cosine": 0.9904822905858358
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.4047862927118937,
+        "sd_relative_l2": 0.01653825094337856,
+        "mean_cosine": 0.9146068811416626
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.29154910643895465,
+        "sd_relative_l2": 0.013913663213347955,
+        "mean_cosine": 0.9564480225245158
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.3460475007692973,
+        "sd_relative_l2": 0.006016430626541012,
+        "mean_cosine": 0.9382447997728983
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.26818282107512154,
+        "sd_relative_l2": 0.012877497355994092,
+        "mean_cosine": 0.9632778843243917
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.3066537082195282,
+        "sd_relative_l2": 0.01878945696164114,
+        "mean_cosine": 0.9519675095876058
+      },
+      {
+        "transform": "axis2_+20deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.21514481504758198,
+        "sd_relative_l2": 0.008687431057974216,
+        "mean_cosine": 0.976562496026357
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "input",
+        "n": 15,
+        "mean_relative_l2": 0.13618724495172502,
+        "sd_relative_l2": 0.025095596479026375,
+        "mean_cosine": 0.9907278696695964
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level0",
+        "n": 15,
+        "mean_relative_l2": 0.4575606922308604,
+        "sd_relative_l2": 0.015920767644086665,
+        "mean_cosine": 0.8890371521313986
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level1",
+        "n": 15,
+        "mean_relative_l2": 0.34890961050987246,
+        "sd_relative_l2": 0.011451883447513541,
+        "mean_cosine": 0.9371562997500101
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level2",
+        "n": 15,
+        "mean_relative_l2": 0.41300350427627563,
+        "sd_relative_l2": 0.005419769753007849,
+        "mean_cosine": 0.9110808610916138
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level3",
+        "n": 15,
+        "mean_relative_l2": 0.2987532834211985,
+        "sd_relative_l2": 0.011418574887979854,
+        "mean_cosine": 0.9542568802833558
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "encoder_level4",
+        "n": 15,
+        "mean_relative_l2": 0.3702314635117849,
+        "sd_relative_l2": 0.017438284065549713,
+        "mean_cosine": 0.9287645816802979
+      },
+      {
+        "transform": "axis2_+30deg",
+        "stage": "output_logits",
+        "n": 15,
+        "mean_relative_l2": 0.2719135483105977,
+        "sd_relative_l2": 0.01502329967804638,
+        "mean_cosine": 0.9622565150260926
+      }
+    ],
+    "by_mask": [
+      {
+        "transform": "resampling_floor",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9999920882196189,
+        "min_self_consistency_dice": 0.9999783429466587,
+        "mean_accuracy_delta": 1.7830000681155293e-06,
+        "worst_accuracy_delta": -1.5506892323324806e-05
+      },
+      {
+        "transform": "axis0_+5deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9813873602212844,
+        "min_self_consistency_dice": 0.9695790228413398,
+        "mean_accuracy_delta": -0.004347485190916522,
+        "worst_accuracy_delta": -0.02214678765824374
+      },
+      {
+        "transform": "axis0_+10deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9787022621079786,
+        "min_self_consistency_dice": 0.9646633860328762,
+        "mean_accuracy_delta": -0.0017512043046624534,
+        "worst_accuracy_delta": -0.025991432936330217
+      },
+      {
+        "transform": "axis0_+20deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9730761623573283,
+        "min_self_consistency_dice": 0.9511170059765413,
+        "mean_accuracy_delta": 0.003820488765212208,
+        "worst_accuracy_delta": -0.02681265250111653
+      },
+      {
+        "transform": "axis0_+30deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.970217122994023,
+        "min_self_consistency_dice": 0.9474012025776365,
+        "mean_accuracy_delta": 0.007345848096585798,
+        "worst_accuracy_delta": -0.014361980528239227
+      },
+      {
+        "transform": "axis1_+5deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9826264308317475,
+        "min_self_consistency_dice": 0.9717142121192608,
+        "mean_accuracy_delta": -0.00018203737514754052,
+        "worst_accuracy_delta": -0.011627785077317099
+      },
+      {
+        "transform": "axis1_+10deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.979824601619408,
+        "min_self_consistency_dice": 0.9641055811050286,
+        "mean_accuracy_delta": 0.004517971767621972,
+        "worst_accuracy_delta": -0.006080491433401614
+      },
+      {
+        "transform": "axis1_+20deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9691994000782331,
+        "min_self_consistency_dice": 0.931757534900705,
+        "mean_accuracy_delta": 0.000733493784317966,
+        "worst_accuracy_delta": -0.06086515568597939
+      },
+      {
+        "transform": "axis1_+30deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9664075541701659,
+        "min_self_consistency_dice": 0.942131493959571,
+        "mean_accuracy_delta": -0.002698080686107988,
+        "worst_accuracy_delta": -0.040513669728915125
+      },
+      {
+        "transform": "axis2_+5deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9836493684378139,
+        "min_self_consistency_dice": 0.9736784231794815,
+        "mean_accuracy_delta": -0.003744302106115094,
+        "worst_accuracy_delta": -0.017228637910869593
+      },
+      {
+        "transform": "axis2_+10deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.982056912394544,
+        "min_self_consistency_dice": 0.971652241563746,
+        "mean_accuracy_delta": -0.0026105374704491037,
+        "worst_accuracy_delta": -0.014342684049228227
+      },
+      {
+        "transform": "axis2_+20deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9771780394085482,
+        "min_self_consistency_dice": 0.9650145537521266,
+        "mean_accuracy_delta": 0.0028627221772301223,
+        "worst_accuracy_delta": -0.007626839152759413
+      },
+      {
+        "transform": "axis2_+30deg",
+        "n": 15,
+        "mean_self_consistency_dice": 0.9672334747865078,
+        "min_self_consistency_dice": 0.9411979958340371,
+        "mean_accuracy_delta": 0.00033053204927167753,
+        "worst_accuracy_delta": -0.029581438280787298
+      }
+    ]
+  }
+}
