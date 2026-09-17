@@ -1,0 +1,41 @@
+[
+  {
+    "dataset": "CAMRI (rat brain)",
+    "n": 40,
+    "axis_angle_mean_deg": 34.12428498542492,
+    "axis_angle_sd_deg": 40.34870649707118,
+    "axis_angle_min_deg": 0.6670191173962522,
+    "axis_angle_max_deg": 88.5422452032793,
+    "axis_angle_range_deg": 87.87522608588304,
+    "centroid_offset_mean_mm": 2.0158612186302607,
+    "centroid_offset_sd_mm": 0.6758902924614606,
+    "centroid_offset_max_mm": 3.381838322880955,
+    "nifti_orientation_codes": "RIA,RPI"
+  },
+  {
+    "dataset": "Mouse (POLYIC brain)",
+    "n": 60,
+    "axis_angle_mean_deg": 7.108917034486949,
+    "axis_angle_sd_deg": 10.018141750521934,
+    "axis_angle_min_deg": 0.11705486345873192,
+    "axis_angle_max_deg": 77.3599545021876,
+    "axis_angle_range_deg": 77.24289963872887,
+    "centroid_offset_mean_mm": 3.0552347429828974,
+    "centroid_offset_sd_mm": 0.6190567155400315,
+    "centroid_offset_max_mm": 5.072280290763989,
+    "nifti_orientation_codes": "LPS"
+  },
+  {
+    "dataset": "Mouse (stroke lesion)",
+    "n": 60,
+    "axis_angle_mean_deg": 29.81874824203422,
+    "axis_angle_sd_deg": 18.948407867985473,
+    "axis_angle_min_deg": 2.536822803007057,
+    "axis_angle_max_deg": 75.5833431411939,
+    "axis_angle_range_deg": 73.04652033818684,
+    "centroid_offset_mean_mm": 4.182660872306559,
+    "centroid_offset_sd_mm": 0.46075823711943215,
+    "centroid_offset_max_mm": 5.2383015061210045,
+    "nifti_orientation_codes": "RAS"
+  }
+]
