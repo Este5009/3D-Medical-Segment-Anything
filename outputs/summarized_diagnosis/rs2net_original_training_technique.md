@@ -64,9 +64,19 @@ while the lesion query — a task added entirely by this project, through a deco
 trained with zero rotation augmentation — has never had any exposure to pose
 variation at any stage, frozen or trainable.
 
-**Open follow-up this motivates directly:** run the same orientation/translation
-invariance battery against the *original* RS2-Net model (its own decoder, not
-this project's) on CAMRI + mouse brain data, to see whether their rotation-
-augmented training measurably narrows the gap versus this project's own
-un-augmented decoder on the same brain task. See `rs2net_baseline_invariance/`
-in this folder once that experiment is run.
+**Follow-up result (2026-09-17), and a correction to the paragraph above:**
+that experiment was run -- see `outputs/rs2net_baseline_invariance/{rotation,translation}/report.md`.
+The hypothesis stated above ("this explains the brain query's partial
+rotation-tolerance as inherited from the encoder's own history") is **not
+well supported** by the result. On the same mouse brain rotation test, the
+original RS2-Net model (their encoder + their own rotation-augmented decoder)
+scored 0.9760 mean self-consistency Dice; this project's model (same frozen
+encoder + this project's own decoder, zero rotation augmentation) scored
+0.9764 -- statistically indistinguishable. Translation shows the same pattern
+(RS2-Net baseline 0.9852 vs. this project's 0.9883 on mouse). If their
+rotation-augmented training gave the brain query a measurable edge, it should
+show up as a real gap here, and it does not. The more likely explanation for
+the brain query's robustness is simply **target size** (a large structure's
+decision boundary barely moves under a drifted logit field) -- not inherited
+training exposure. See `outputs/summarized_diagnosis/README.md` section 9 for
+the full comparison.

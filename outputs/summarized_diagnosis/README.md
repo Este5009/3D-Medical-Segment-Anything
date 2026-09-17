@@ -92,18 +92,62 @@ lesion query has no such advantage at any stage of training.
 
 - Full report: `rs2net_original_training_technique.md` (this folder)
 
-## 8. In progress
+## 8. RS2-Net baseline invariance — does their rotation-augmented training actually help?
 
-- **RS2-Net baseline invariance** — same orientation/translation battery,
-  run against the *original* RS2-Net model (its own decoder, CAMRI + mouse
-  brain only, no lesion) to see whether their rotation-augmented training
-  measurably narrows the gap. Needs the GPU pod. → `rs2net_baseline_invariance/`
-  once run.
-- **Noise/blur/intensity robustness** — synthetic image corruption (random
-  Gaussian noise, blur, intensity/contrast shifts) applied to the current
-  two-task model's test inputs, to establish its operating limits under
-  degraded image quality (advisor-requested). Needs the GPU pod. →
-  `noise_robustness/` once run.
+**Result: no measurable advantage.** Same rotation/translation stress test,
+run against the *original* RS2-Net model (their own encoder AND their own
+decoder, no query mechanism) on the same mouse brain test subjects used for
+this project's own brain-query result:
+
+| | rotation, mean self-consistency Dice | translation, mean self-consistency Dice |
+|---|---|---|
+| RS2-Net baseline (their decoder, rotation-augmented training) | 0.9760 | 0.9852 |
+| This project's model (its own decoder, **no** rotation augmentation) | 0.9764 | 0.9883 |
+
+Statistically indistinguishable — if anything this project's un-augmented
+model is marginally higher on both. This **corrects** the hypothesis floated
+in section 7/`rs2net_original_training_technique.md` (that the brain query's
+robustness is partly inherited from the encoder's own rotation-augmented
+training) — the data doesn't support it. The more likely explanation is
+simply target size (see section 2/3): a large structure's decision boundary
+barely moves under a drifted logit field, independent of whether anything in
+the pipeline was ever rotation-trained. CAMRI (rat) scored higher still on
+the baseline model (0.9952 rotation, 0.9934 translation) but has no
+equivalent number from this project's own model to compare against, since
+the earlier brain-query tests only covered mouse.
+
+- Reports: `outputs/rs2net_baseline_invariance/{rotation,translation}/report.md`
+- Figures: `figures/fig8_rs2net_baseline_rotation_mouse.png`,
+  `figures/fig9_rs2net_baseline_translation_mouse.png`
+- Tables: `tables/rs2net_baseline_{rotation,translation}_{mouse,camri}_by_transform.csv`
+- Script: `scripts/test_rs2net_baseline_invariance.py`
+
+## 9. Synthetic noise / blur / intensity robustness (advisor-requested)
+
+**Result: blur is by far the most damaging corruption, and lesion detection
+is fragile across the board.** Each corrupted prediction scored directly
+against the expert mask (not self-consistency), compared to that subject's
+own clean-image Dice; severities span from inside the encoder's own training
+envelope (see section 7) to well past it.
+
+| | mean Dice, clean | mean Dice at blur σ=1 (in envelope) | mean Dice at blur σ=4 | mean Dice at noise std=0.4 |
+|---|---|---|---|---|
+| Brain query | ~0.97 | 0.918 | 0.420 | 0.801 |
+| Lesion query | ~0.69 | 0.594 | 0.053 | 0.475 |
+
+Intensity/contrast shifts were the *least* damaging corruption for both
+queries (brain stayed ≥0.93 even at the most severe setting tested).
+**Caveat, checked directly:** the lesion test set has wide natural difficulty
+spread (clean Dice 0.10–0.94 across subjects); at mild severities the
+"worst subject" in the results is a pre-existing hard case whose clean Dice
+was already 0.0999, not a corruption-induced collapse — the mean-Dice trend
+is the reliable robustness signal, and it does show broad, real degradation
+at higher severities (not just one hard subject).
+
+- Report: `outputs/noise_robustness/report.md`
+- Figures: `figures/fig10_noise_robustness_lesion.png`, `figures/fig11_noise_robustness_brain.png`
+- Tables: `tables/noise_robustness_{brain,lesion}.csv`
+- Script: `scripts/test_noise_robustness.py`
 
 ---
 *Every number above is measured and committed; nothing here is projected or
