@@ -113,7 +113,7 @@
     {
       "corruption": "noise",
       "severity": 0.2,
-      "within_training_envelope": false,
+      "within_training_envelope": true,
       "n": 15,
       "mean_clean_dice": 0.969155329669286,
       "mean_corrupted_dice": 0.9494559505660581,
@@ -247,7 +247,7 @@
     {
       "corruption": "noise",
       "severity": 0.2,
-      "within_training_envelope": false,
+      "within_training_envelope": true,
       "n": 15,
       "mean_clean_dice": 0.6901214728727809,
       "mean_corrupted_dice": 0.5653790314576316,

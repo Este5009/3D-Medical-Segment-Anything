@@ -50,7 +50,13 @@ import space_invariance_common as sic
 NOISE_STDS = (0.05, 0.1, 0.2, 0.4)
 BLUR_SIGMAS = (0.5, 1.0, 2.0, 4.0)
 INTENSITY_SEVERITIES = (0.1, 0.25, 0.5, 0.75)
-TRAINING_ENVELOPE = {"noise": 0.1, "blur": 1.0, "intensity": 0.25}  # from the encoder's own recipe -- see docstring
+TRAINING_ENVELOPE = {"noise": 0.316, "blur": 1.0, "intensity": 0.25}  # from the encoder's own recipe -- see docstring
+# noise: GaussianNoiseTransform(p_per_sample=0.1) in their training code -- that 0.1 is the
+# PROBABILITY the transform fires, not the noise magnitude (a real error caught and fixed
+# after initially conflating the two). The actual magnitude is batchgenerators' own default,
+# noise_variance=(0, 0.1) -> std up to sqrt(0.1) = ~0.316, applied whenever the transform fires.
+# blur/intensity are unaffected -- those ARE the real explicit ranges: blur_sigma=(0.5, 1.0),
+# brightness multiplier=(0.75, 1.25) i.e. severity 0.25.
 
 
 def gaussian_kernel_1d(sigma, device):
@@ -201,9 +207,28 @@ def write_report(summaries, path):
              "self-consistency -- corruption isn't invertible) and compared to that same "
              "subject's own clean-image Dice. The **training envelope** line marks where "
              "the frozen encoder's own original training augmentation tops out "
-             "(see `rs2net_original_training_technique.md`): noise std 0.1, blur sigma "
-             "1.0, intensity severity 0.25 -- severities at or below that line are inside "
-             "what the encoder has already seen; above it is genuinely out of distribution.",
+             "(see `rs2net_original_training_technique.md`): noise std ~0.316 "
+             "(their code's `GaussianNoiseTransform(p_per_sample=0.1)` -- that 0.1 is the "
+             "probability the transform fires, not its magnitude; the actual magnitude is "
+             "batchgenerators' own default `noise_variance=(0, 0.1)`, i.e. std up to "
+             "sqrt(0.1) -- an error caught and corrected here after initially reporting 0.1 "
+             "as the magnitude), blur sigma 1.0, intensity severity 0.25 (both of these "
+             "two ARE explicit in their code, unaffected by the noise correction) -- "
+             "severities at or below these lines are inside what the encoder has already "
+             "seen; above it is genuinely out of distribution.",
+             "",
+             "**Caveat on \"worst subject\" (checked, not assumed):** the lesion test set "
+             "already has a wide natural spread in difficulty -- clean, uncorrupted Dice "
+             "ranges from 0.10 to 0.94 across the 15 subjects. At mild severities, the "
+             "\"worst subject\" in the tables below is consistently subject "
+             "`20170404CH_SC_M05`, whose **clean** Dice was already 0.0999 -- so its "
+             "near-zero corrupted Dice reflects pre-existing difficulty, not corruption-"
+             "induced collapse. Ranking all 15 subjects by clean Dice vs. by their mean "
+             "Dice across all 12 corrupted conditions gives nearly identical orderings: "
+             "corruption amplifies existing difficulty rather than introducing a new, "
+             "independent failure mode. The reliable signal of real corruption damage is "
+             "the **mean** Dice column, which drops across all 15 subjects at higher "
+             "severities, not just the hardest one.",
              ""]
     for task, summary in summaries.items():
         lines += [f"## {task} query", "",
