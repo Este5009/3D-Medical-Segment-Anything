@@ -42,7 +42,14 @@ from spatial_transform_utils import rotation_grid
 import space_invariance_common as sic
 
 AXES = ("axis0", "axis1", "axis2")
-AXIS_ANATOMY = {"axis0": "L-R (sagittal-plane roll)", "axis1": "D-V (coronal-plane)", "axis2": "R-C (axial-plane yaw)"}
+AXIS_ANATOMY = {"axis0": "L-R (sagittal-plane rotation)", "axis1": "D-V (axial/transverse-plane rotation)", "axis2": "R-C (coronal-plane rotation)"}
+# Plane check: a rotation about axis0 (L-R) mixes D-V and R-C, i.e. moves
+# within the plane THOSE two directions span -- the sagittal plane (the one
+# that separates left from right). About axis1 (D-V) it mixes L-R and R-C,
+# the plane perpendicular to D-V -- axial/transverse, not coronal. About
+# axis2 (R-C) it mixes L-R and D-V, the plane perpendicular to R-C -- coronal,
+# not axial. axis1/axis2's plane names were swapped in an earlier version of
+# this line; corrected here after being caught in conversation.
 DEFAULT_ANGLES = (5.0, 10.0, 20.0, 30.0)
 
 

@@ -1,6 +1,6 @@
 # Orientation-invariance test - brain query
 
-**Subjects:** 15 held-out test cases. **Rotations:** 5deg, 10deg, 20deg, 30deg about each of the three anatomical axes (axis0=L-R (sagittal-plane roll), axis1=D-V (coronal-plane), axis2=R-C (axial-plane yaw)), applied about the volume centre in true physical millimetres.
+**Subjects:** 15 held-out test cases. **Rotations:** 5deg, 10deg, 20deg, 30deg about each of the three anatomical axes (axis0=L-R (sagittal-plane rotation), axis1=D-V (axial/transverse-plane rotation), axis2=R-C (coronal-plane rotation)), applied about the volume centre in true physical millimetres.
 
 ## How the pipeline is built (and where invariance could break)
 
