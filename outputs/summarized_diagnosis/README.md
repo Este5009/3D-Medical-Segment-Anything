@@ -195,3 +195,24 @@ and disappears (reverses, even) where it was thinnest.
 - Visual tables: `figures/tables/table_rs2net_comparison_{camri,mouse}_noise.png`
 - Tables: `tables/rs2net_baseline_noise_{camri,mouse}.csv`
 - Script: `scripts/test_rs2net_baseline_noise_robustness.py`
+
+## 11. Unified comparison — this project vs. RS2-Net, all five axes in one view
+
+Sections 8 and 10 as one figure and one table: rotation, translation,
+noise, blur, and intensity, mouse domain (the only domain both models have
+a real number for), this project's decoder vs. RS2-Net's own decoder,
+side by side.
+
+**Pose (rotation + translation): statistically tied**, within ±0.01 Dice at
+every magnitude tested, no consistent winner. **Noise and intensity: this
+project's decoder wins at every single severity tested**, by a growing
+margin as severity increases (noise std=0.4: −0.163 Dice for RS2-Net, i.e.
+this project ahead by 16 points). **Severe blur (σ≥2) is the one place
+RS2-Net's decoder pulls ahead** (+0.07 at σ=2, +0.05 at σ=4) — plausibly
+where their far larger, more diverse training data actually pays off, since
+blur is the corruption most directly tied to genuine image-quality variation
+across real acquisition protocols.
+
+- Figure: `figures/fig14_unified_comparison.png`
+- Visual table: `figures/tables/table_unified_comparison.png`
+- Table: `tables/unified_comparison.csv`
