@@ -29,6 +29,7 @@ stays ≥0.999 cosine-stable throughout.
 - Figures: `figures/fig1_self_consistency_rotation.png`,
   `figures/fig3_stage_drift_bars.png`, `figures/fig4_stage_drift_table.png`
 - Tables: `tables/orientation_{brain,lesion}_by_{transform,stage}.csv`
+- Visual tables: `figures/tables/table_orientation_brain.png`, `figures/tables/table_orientation_lesion.png`
 - Commits: `2994c15` (results), `4694f0e` (compounding-drift correction)
 
 ## 3. Translation invariance — does shifting the scan change the prediction?
@@ -40,6 +41,7 @@ strided-downsampling phase/aliasing effects, not smooth blur).
 - Full report: `outputs/translation_invariance/report.md` (+ per-query reports)
 - Figures: `figures/fig2_self_consistency_translation.png`
 - Tables: `tables/translation_{brain,lesion}_by_{transform,stage}.csv`
+- Visual tables: `figures/tables/table_translation_brain.png`, `figures/tables/table_translation_lesion.png`
 - Commits: `bb52b64` (results), `177e0e2` (compounding-drift correction)
 
 ## 4. Query-embedding stability
@@ -68,6 +70,7 @@ consistent across all three datasets (2–4mm typical).
 - Figure: `figures/fig7_dataset_pose_variance.png`
 - Tables: `tables/dataset_pose_variance_summary.csv`,
   `tables/dataset_pose_variance_per_subject.csv`
+- Visual table: `figures/tables/table_dataset_pose_variance.png`
 - Script: `scripts/diagnose_dataset_pose_variance.py` (runs on CPU, no pod needed)
 
 ## 6. How the current model is actually trained
@@ -85,10 +88,14 @@ all**, for either the brain or lesion query.
 **Result:** the encoder WAS trained with rotation augmentation — but only
 ±30° per axis, applied to just 20% of samples, and only ever on the brain
 task (never lesions). Our rotation test's hardest case (30°) sits right at
-the edge of that trained envelope, not beyond it. This explains the brain
-query's partial rotation-tolerance as inherited from the encoder's own
-history, not just "brains are a bigger target" — and explains why the
-lesion query has no such advantage at any stage of training.
+the edge of that trained envelope, not beyond it.
+
+**Correction (2026-09-17):** this originally speculated that the brain
+query's rotation-tolerance was inherited from that training history. Section
+8 below ran the direct test (RS2-Net's own model vs. this project's
+un-augmented model, same stress test) and found no measurable difference —
+that hypothesis is not supported. See section 8 for the corrected
+explanation (target size, not training history).
 
 - Full report: `rs2net_original_training_technique.md` (this folder)
 
@@ -120,6 +127,7 @@ the earlier brain-query tests only covered mouse.
 - Figures: `figures/fig8_rs2net_baseline_rotation_mouse.png`,
   `figures/fig9_rs2net_baseline_translation_mouse.png`
 - Tables: `tables/rs2net_baseline_{rotation,translation}_{mouse,camri}_by_transform.csv`
+- Visual tables: `figures/tables/table_rs2net_{rotation,translation}_{mouse,camri}.png`
 - Script: `scripts/test_rs2net_baseline_invariance.py`
 
 ## 9. Synthetic noise / blur / intensity robustness (advisor-requested)
@@ -147,6 +155,7 @@ at higher severities (not just one hard subject).
 - Report: `outputs/noise_robustness/report.md`
 - Figures: `figures/fig10_noise_robustness_lesion.png`, `figures/fig11_noise_robustness_brain.png`
 - Tables: `tables/noise_robustness_{brain,lesion}.csv`
+- Visual tables: `figures/tables/table_noise_robustness_brain.png`, `figures/tables/table_noise_robustness_lesion.png`
 - Script: `scripts/test_noise_robustness.py`
 
 ---
