@@ -163,5 +163,35 @@ at higher severities (not just one hard subject).
 estimated. Raw per-subject data for every experiment lives in the CSVs next
 to each report, and every figure is regenerable from
 `scripts/test_orientation_invariance.py`, `scripts/test_translation_invariance.py`,
-`scripts/diagnose_dataset_pose_variance.py`, and (once added)
-`scripts/test_rs2net_baseline_invariance.py` / `scripts/test_noise_robustness.py`.*
+`scripts/diagnose_dataset_pose_variance.py`, `scripts/test_rs2net_baseline_invariance.py`,
+`scripts/test_noise_robustness.py`, and `scripts/test_rs2net_baseline_noise_robustness.py`.*
+
+## 10. RS2-Net baseline vs. this project's decoder, under corruption — a domain split
+
+**Result: RS2-Net's own decoder wins decisively on CAMRI, but this project's
+decoder wins on mouse noise/intensity.** Same noise/blur/intensity battery
+as section 9, run against RS2-Net's own model (brain only, no lesion) on
+both CAMRI and mouse, compared directly to this project's brain-query result.
+
+| Domain | Blur σ=4 (RS2-Net vs ours) | Noise std=0.4 | Intensity 0.75 |
+|---|---|---|---|
+| CAMRI (rat) | 0.926 vs 0.420 (**+0.51**, theirs) | 0.983 vs 0.801 (**+0.18**, theirs) | 0.989 vs 0.929 (**+0.06**, theirs) |
+| Mouse/POLYIC | 0.468 vs 0.420 (+0.05, theirs) | 0.639 vs 0.801 (**+0.16, ours**) | 0.841 vs 0.929 (**+0.09, ours**) |
+
+RS2-Net's decoder is ahead on *every* CAMRI setting tested, often by a wide
+margin. On mouse, this project's decoder is ahead on every noise and
+intensity setting; only severe blur tips slightly toward RS2-Net.
+
+**Plausible explanation, consistent with everything else in this file:**
+RS2-Net's own paper describes far more rat-domain training data (four
+datasets, dozens of centers) than mouse-domain data (two datasets, 26 mice)
+— the same asymmetry that already explained their rat-vs-mouse Dice gap
+(section 7) and the rotation/translation baseline result (section 8). Their
+corruption-robustness advantage tracks where their own training was richest,
+and disappears (reverses, even) where it was thinnest.
+
+- Report: `outputs/rs2net_baseline_noise_robustness/report.md`
+- Figures: `figures/fig12_rs2net_comparison_camri_noise.png`, `figures/fig13_rs2net_comparison_mouse_noise.png`
+- Visual tables: `figures/tables/table_rs2net_comparison_{camri,mouse}_noise.png`
+- Tables: `tables/rs2net_baseline_noise_{camri,mouse}.csv`
+- Script: `scripts/test_rs2net_baseline_noise_robustness.py`

@@ -1,0 +1,138 @@
+{
+  "domain": "camri",
+  "subjects": 6,
+  "rows": [
+    {
+      "corruption": "blur",
+      "severity": 0.5,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9925824124545229,
+      "min_corrupted_dice": 0.9920430103400573,
+      "mean_dice_delta": -0.00011743070743906274,
+      "worst_dice_delta": -0.0002705435063717898
+    },
+    {
+      "corruption": "blur",
+      "severity": 1.0,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9909982461835063,
+      "min_corrupted_dice": 0.9896360503930225,
+      "mean_dice_delta": -0.0017015969784555662,
+      "worst_dice_delta": -0.0025863975617764767
+    },
+    {
+      "corruption": "blur",
+      "severity": 2.0,
+      "within_training_envelope": false,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9807462313954846,
+      "min_corrupted_dice": 0.9792779578557244,
+      "mean_dice_delta": -0.011953611766477227,
+      "worst_dice_delta": -0.013739955597755538
+    },
+    {
+      "corruption": "blur",
+      "severity": 4.0,
+      "within_training_envelope": false,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9257394370512495,
+      "min_corrupted_dice": 0.8978911244812329,
+      "mean_dice_delta": -0.06696040611071237,
+      "worst_dice_delta": -0.0943313234735661
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.1,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9926839943851475,
+      "min_corrupted_dice": 0.9922908059089123,
+      "mean_dice_delta": -1.5848776814301562e-05,
+      "worst_dice_delta": -0.00014114652270036387
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.25,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9924294061525726,
+      "min_corrupted_dice": 0.9919351496514626,
+      "mean_dice_delta": -0.0002704370093892979,
+      "worst_dice_delta": -0.0008122105769288179
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.5,
+      "within_training_envelope": false,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9919539428196947,
+      "min_corrupted_dice": 0.9914934976675719,
+      "mean_dice_delta": -0.0007459003422671991,
+      "worst_dice_delta": -0.002051727037035711
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.75,
+      "within_training_envelope": false,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9891523198929008,
+      "min_corrupted_dice": 0.9856311154349631,
+      "mean_dice_delta": -0.003547523269061085,
+      "worst_dice_delta": -0.007914109269644531
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.05,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9925601365687599,
+      "min_corrupted_dice": 0.9920904301295774,
+      "mean_dice_delta": -0.00013970659320215276,
+      "worst_dice_delta": -0.0002550510314350829
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.1,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9923578423388452,
+      "min_corrupted_dice": 0.9918801779687021,
+      "mean_dice_delta": -0.0003420008231167874,
+      "worst_dice_delta": -0.0005368464523703986
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.2,
+      "within_training_envelope": true,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9905821000384399,
+      "min_corrupted_dice": 0.9896399603175364,
+      "mean_dice_delta": -0.002117743123521957,
+      "worst_dice_delta": -0.0027353212195622145
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.4,
+      "within_training_envelope": false,
+      "n": 6,
+      "mean_clean_dice": 0.9926998431619619,
+      "mean_corrupted_dice": 0.9828615709617706,
+      "min_corrupted_dice": 0.9804591352792152,
+      "mean_dice_delta": -0.009838272200191142,
+      "worst_dice_delta": -0.012558778174264651
+    }
+  ]
+}
