@@ -1,0 +1,270 @@
+{
+  "brain": [
+    {
+      "corruption": "blur",
+      "severity": 0.5,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.961335979242314,
+      "min_corrupted_dice": 0.9416651950520111,
+      "mean_dice_delta": -0.00781935042697186,
+      "worst_dice_delta": -0.015211806592583366
+    },
+    {
+      "corruption": "blur",
+      "severity": 1.0,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9181992010889937,
+      "min_corrupted_dice": 0.8806664265693751,
+      "mean_dice_delta": -0.05095612858029212,
+      "worst_dice_delta": -0.07892247134366759
+    },
+    {
+      "corruption": "blur",
+      "severity": 2.0,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.6599759838783872,
+      "min_corrupted_dice": 0.587001676161201,
+      "mean_dice_delta": -0.3091793457908988,
+      "worst_dice_delta": -0.3800513039712493
+    },
+    {
+      "corruption": "blur",
+      "severity": 4.0,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.41970124441923484,
+      "min_corrupted_dice": 0.37343940112094365,
+      "mean_dice_delta": -0.5494540852500511,
+      "worst_dice_delta": -0.5838981483688056
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.1,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9690735837930288,
+      "min_corrupted_dice": 0.9554763258065072,
+      "mean_dice_delta": -8.174587625722948e-05,
+      "worst_dice_delta": -0.001959810997441025
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.25,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9695756033170047,
+      "min_corrupted_dice": 0.9573852529517554,
+      "mean_dice_delta": 0.0004202736477189273,
+      "worst_dice_delta": -0.0064560183304825935
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.5,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9522524868562546,
+      "min_corrupted_dice": 0.7518776605840406,
+      "mean_dice_delta": -0.016902842813031418,
+      "worst_dice_delta": -0.20545988890570865
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.75,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9286758658801691,
+      "min_corrupted_dice": 0.7763982542979222,
+      "mean_dice_delta": -0.04047946378911666,
+      "worst_dice_delta": -0.19730095305179374
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.05,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9649651772289672,
+      "min_corrupted_dice": 0.9502401405867449,
+      "mean_dice_delta": -0.004190152440318699,
+      "worst_dice_delta": -0.006636861057849552
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.1,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9591660308124447,
+      "min_corrupted_dice": 0.9398939354338277,
+      "mean_dice_delta": -0.009989298856841123,
+      "worst_dice_delta": -0.01698306621076673
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.2,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.9494559505660581,
+      "min_corrupted_dice": 0.9181029703983558,
+      "mean_dice_delta": -0.01969937910322781,
+      "worst_dice_delta": -0.03877403124623868
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.4,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.969155329669286,
+      "mean_corrupted_dice": 0.8012733391704966,
+      "min_corrupted_dice": 0.7065033783783784,
+      "mean_dice_delta": -0.16788199049878932,
+      "worst_dice_delta": -0.25909768692508117
+    }
+  ],
+  "lesion": [
+    {
+      "corruption": "blur",
+      "severity": 0.5,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.6667413699871326,
+      "min_corrupted_dice": 0.04716379859783301,
+      "mean_dice_delta": -0.02338010288564823,
+      "worst_dice_delta": -0.08722779541780612
+    },
+    {
+      "corruption": "blur",
+      "severity": 1.0,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.5934622471524709,
+      "min_corrupted_dice": 0.009763617677286743,
+      "mean_dice_delta": -0.09665922572031004,
+      "worst_dice_delta": -0.28184169456631736
+    },
+    {
+      "corruption": "blur",
+      "severity": 2.0,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.143252572449096,
+      "min_corrupted_dice": 0.0010181296495551469,
+      "mean_dice_delta": -0.546868900423685,
+      "worst_dice_delta": -0.7492206790696632
+    },
+    {
+      "corruption": "blur",
+      "severity": 4.0,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.05295834412774725,
+      "min_corrupted_dice": 0.00045236806604573765,
+      "mean_dice_delta": -0.6371631287450336,
+      "worst_dice_delta": -0.8407629263268737
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.1,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.7046434329915852,
+      "min_corrupted_dice": 0.18131993605846083,
+      "mean_dice_delta": 0.01452196011880438,
+      "worst_dice_delta": -0.07609290199953853
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.25,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.6933275796473478,
+      "min_corrupted_dice": 0.1270175438596491,
+      "mean_dice_delta": 0.0032061067745670136,
+      "worst_dice_delta": -0.09529393316116974
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.5,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.66281761800077,
+      "min_corrupted_dice": 0.006207737501385656,
+      "mean_dice_delta": -0.027303854872010813,
+      "worst_dice_delta": -0.27296803259626845
+    },
+    {
+      "corruption": "intensity",
+      "severity": 0.75,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.5193105989447986,
+      "min_corrupted_dice": 0.0035600762873490145,
+      "mean_dice_delta": -0.17081087392798228,
+      "worst_dice_delta": -0.6540132858867524
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.05,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.6826825399885058,
+      "min_corrupted_dice": 0.033783783783783786,
+      "mean_dice_delta": -0.007438932884275041,
+      "worst_dice_delta": -0.06610270883823664
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.1,
+      "within_training_envelope": true,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.6597108640840379,
+      "min_corrupted_dice": 0.0074487895716946,
+      "mean_dice_delta": -0.030410608788743018,
+      "worst_dice_delta": -0.14157044120333162
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.2,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.5653790314576316,
+      "min_corrupted_dice": 0.0004935834155972359,
+      "mean_dice_delta": -0.12474244141514924,
+      "worst_dice_delta": -0.4692321625913101
+    },
+    {
+      "corruption": "noise",
+      "severity": 0.4,
+      "within_training_envelope": false,
+      "n": 15,
+      "mean_clean_dice": 0.6901214728727809,
+      "mean_corrupted_dice": 0.47486068085404176,
+      "min_corrupted_dice": 0.00032605151613955004,
+      "mean_dice_delta": -0.21526079201873916,
+      "worst_dice_delta": -0.6227054080305444
+    }
+  ]
+}
